@@ -1,22 +1,21 @@
-# Social Slides — Personal Context (Example)
+# Social Slides — Setup
 
-Copy this file to `context.md` and fill in your details.
-The skill will read it automatically for brand personalization.
+This skill uses two config layers:
 
-## Brand
-- **Brand name (footer):** Your Brand
-- **Handle:** @yourhandle
-- **Logo:** Path to your logo SVG, or inline SVG markup for the footer
+## 1. Identity (shared across all skills)
+Create `~/.config/<yourname>/identity.md` with your brand info.
+This is read by every skill — set it up once.
 
-## Default Template
-Which template to use by default (e.g., `elegant-founder`).
+See the skill-system skill for the full identity spec.
 
-## Audience
-Describe your target audience, platform, and voice.
-This helps the AI match tone and content density.
+## 2. Skill config
+Create `~/.config/social-slides/.env`:
 
-## Dimensions
-Default slide dimensions (e.g., 1080×1350 for LinkedIn carousel).
+```
+SETUP_COMPLETE=true
+DEFAULT_TEMPLATE=elegant-founder
+DEFAULT_DIMENSIONS=1080x1350
+DEFAULT_PLATFORM=linkedin
+```
 
-## Close Slide Handle
-What handle or CTA to show on the final slide.
+Or just run the skill — it will walk you through setup on first use.

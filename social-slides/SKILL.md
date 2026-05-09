@@ -7,19 +7,30 @@ description: Generate carousel/slide images for social media (LinkedIn, X, Insta
 
 Generate social media carousel/slide images from content. HTML → Playwright screenshot → PNG.
 
-**Personal context:** If `{baseDir}/context.md` exists, read it first. It contains brand-specific overrides (footer name, logo, handle, default template, audience context) that should be applied throughout the workflow.
+## Setup
+
+**Step 0: Check configuration**
+
+1. Read `~/.config/sid/identity.md` (or the owner's identity file at `~/.config/<owner>/identity.md`). This has the brand name, logo, handle, voice, and audience context. If it doesn't exist, ask the user for their name, brand, handle, and audience — then create it. This file is shared across all skills.
+
+2. Read `~/.config/social-slides/.env`. If it doesn't exist or doesn't contain `SETUP_COMPLETE=true`, this is a first run:
+   - Ask the user: "Which template should I default to?" (currently available: `elegant-founder`)
+   - Ask: "What platform are slides primarily for?" (linkedin/x/instagram)
+   - Write answers to `~/.config/social-slides/.env` with `SETUP_COMPLETE=true`
+
+If both exist and setup is complete, proceed directly to the workflow.
 
 ## Workflow
 
-1. **Check for context** — Read `{baseDir}/context.md` if it exists for brand/template overrides.
-2. **Choose template** — Match the content type to a template. Use the default from context.md, or fall back to `elegant-founder`.
-3. **Read the template reference** — Load `references/<template-name>.md` for full design specs (colors, typography, layout, slide types).
+1. **Choose template** — Use the `DEFAULT_TEMPLATE` from `.env`, or fall back to `elegant-founder`. User can override per-request.
+2. **Read the template reference** — Load `references/<template-name>.md` for full design specs (colors, typography, layout, slide types).
+3. **Apply brand from identity** — Use the brand name, logo, and handle from the identity file for footers and close slides.
 4. **Structure the content into slides** — One idea per slide. Typical flow:
    - Slide 1: Hook (bold statement or question)
    - Slides 2–3: Evidence (data, stats, quotes)
    - Slide 4: Insight (the "so what")
-   - Slide 5: Close (takeaway + handle)
-5. **Generate HTML** per slide using the template's shell and slide type specs. Apply any brand overrides from context.md (footer name, logo, handle).
+   - Slide 5: Close (takeaway + handle from identity)
+5. **Generate HTML** per slide using the template's shell and slide type specs. Replace `BRAND_NAME` in the template with the brand name from identity. Use the logo SVG from identity for the footer.
 6. **Render to PNG** via Playwright: `npx playwright screenshot --viewport-size="WIDTH,HEIGHT" "file:///path/to/slide.html" "/path/to/slide.png"`
 7. **Review each rendered slide** visually. Check against the template's quality checklist.
 8. **Iterate** — If a slide feels cluttered, split it. If text is hard to read, increase contrast or reduce content.
