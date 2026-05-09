@@ -1,9 +1,9 @@
 ---
-name: skill-porter
+name: skill-system
 description: Cross-environment skill management system. Use when building, extracting, publishing, or installing skills across multiple environments. Triggers on "build a skill", "port this skill", "publish this skill", "clean this up for my portfolio", "install from my skills repo", "make this a general skill", or any skill lifecycle task. Also use when setting up the skills system on a new environment or explaining how the skill portfolio works.
 ---
 
-# Skill Porter
+# Skill System
 
 Manage skills across multiple environments — build once, personalize anywhere, publish everywhere.
 
