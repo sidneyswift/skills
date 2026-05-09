@@ -1,6 +1,8 @@
 # Skills
 
-AI agent skills that work across any environment. Built by [@sidneyswift](https://x.com/sidneyswift).
+AI agent skills — build once, personalize anywhere.
+
+Built by [@sidneyswift](https://x.com/sidneyswift).
 
 ## Install
 
@@ -17,7 +19,7 @@ npx skills add sidneyswift/skills
 | Skill | Description |
 |-------|-------------|
 | [social-slides](./social-slides/) | Generate carousel/slide images for LinkedIn, X, Instagram. HTML → Playwright → PNG. |
-| [sid-skills-system](./sid-skills-system/) | Cross-environment skill management system. Build once, personalize anywhere. |
+| [skill-porter](./skill-porter/) | Cross-environment skill management. Build skills once, personalize with context.md, publish everywhere. |
 
 ## How Personalization Works
 
