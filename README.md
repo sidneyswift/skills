@@ -20,6 +20,7 @@ npx skills add sidneyswift/skills
 |-------|-------------|
 | [social-slides](./social-slides/) | Generate carousel/slide images for LinkedIn, X, Instagram. HTML → Playwright → PNG. |
 | [skill-system](./skill-system/) | Cross-environment skill management. Build skills once, personalize with context.md, publish everywhere. |
+| [ai-onboarding](./ai-onboarding/) | Progressive AI onboarding that meets users where they are. One question entry, no dead ends, workspace becomes their OS. |
 
 ## How Personalization Works
 
