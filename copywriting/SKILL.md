@@ -88,7 +88,7 @@ When writing for a specific format, read the relevant section of [references/for
 
 ## Persuasion, positioning, and story (Every playbook)
 
-When writing anything meant to sell, convert, or build an audience (landing pages, launch copy, email sequences, content strategy, brand voice), read [references/every-playbook.md](references/every-playbook.md). It contains persuasion architecture (Chain of Beliefs, Before-state symptom diagnosis, parable-based selling, sacred vs. secular framing), positioning formulas (anchor and twist, workflow stories for novel products), story structure (minimum viable story, Five Whys for stakes, named arcs), trust mechanics (trust thermocline, public accuracy audits), and the AI smoothing problem (keep the harder reading). Distilled from the full every.to archive.
+When writing anything meant to sell, convert, or build an audience (landing pages, launch copy, email sequences, content strategy, brand voice), read [references/every-playbook.md](references/every-playbook.md). It contains persuasion architecture (Chain of Beliefs, Before-state symptom diagnosis, parable-based selling, sacred vs. secular framing, the stoplight readiness model), positioning formulas (anchor and twist, workflow stories for novel products, visible incentive alignment, ceiling-raising frames), story structure (minimum viable story, Five Whys for stakes, named arcs), virality and attention mechanics (psychological packaging, persona pre-testing, stream vs. garden), trust mechanics (trust thermocline, public accuracy audits), generative process (Madman/Judge, the unstuck loop), and the AI smoothing problem (keep the harder reading). Distilled from the full every.to archive in two passes.
 
 ## Long-form essay architecture
 

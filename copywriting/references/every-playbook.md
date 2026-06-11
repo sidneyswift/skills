@@ -118,6 +118,52 @@ Run drafts past three readers in your head (or as separate AI passes):
 - **Asshole:** attacks the weakest version of the argument, which is sometimes the version you wrote.
 (working-overtime-my-editor-caught-me-sounding-like-ai)
 
+## Virality and attention mechanics
+
+**Psychological packaging beats capability.** ChatGPT wasn't a technical leap (the models had been API-available since 2018); it wrapped existing capability in a familiar chat interface. NotebookLM had the same features for a year; visits went parabolic only after the podcast-generation feature. When launching, the question is not "what can it do" but "what psychological trigger does the packaging fire." Rory Sutherland: the next revolution may be psychological, not technological. (learning-curve-the-psychology-of-viral-technologies, context-window-psych-101)
+
+**Virality is partly cascade luck.** AI persona simulations (1,903 cloned Hacker News users) predict viral headlines at only 60% accuracy, because one early upvote sends identical content down completely different paths. Implication: treat virality as a portfolio game with many shots, not a craft guarantee; and pre-test headlines on simulated audiences anyway, since 60% beats 50% meaningfully at scale. A persona given a 2-hour interview brief matches human survey answers at 85%. Use many personas, not one model: a single AI gives the averaged textbook answer; 100 personas give a distribution. Give one persona a harsh-critic brief to defeat default AI politeness. (also-true-for-humans HN simulator pieces)
+
+**Attention has shape and quality.** It can be narrowed (more sensitive), widened, filtered, held in reserve; its quality ranges sharp, diffuse, warm, cold. What you direct the reader's attention to grows in their experience; that choice is the core creative act of copy. Holding attention requires constant change: "the effort to capture it has to be constantly changing, constantly tracking the changing mood." (forte-labs-the-topology-of-attention)
+
+**Stream vs. garden.** Stream content (takes, posts) is ephemeral participation; garden content (frameworks, guides, "thingified ideas" that stand alone) compounds and can earn money on its own. Ideas gain value as they age only in gardens. Everyone wants to play in the stream; those who build gardens win. (forte-labs-a-makers-ethos)
+
+## Readiness and influence
+
+**The stoplight model.** Direct pitches land only when the prospect's light is green (already talking about wanting change). Most people are red most of the time, and pitching at red backfires. CRAFT-style indirect influence (helping people connect with their own desire to change) succeeds ~70% vs ~30% for confrontation. Copy sequencing: shift readers toward green first (belief installation, parables, problem mirroring), pitch second. (no-small-plans-the-art-of-subtle-influence)
+
+**Make incentive alignment visible.** "Companies that profit from doing what's in customers' interest outcompete those that profit from what customers dislike." Sharpest version: expose the incumbent's misalignment with their own numbers (Warby Parker vs. $15-to-make, $800-to-buy glasses; even LensCrafters' founder called it "a complete rip-off"). State your own alignment plainly: "we only make money when you X." Align messaging with every actor in the value chain, not just the buyer. (divinations-how-to-use-incentive-alignment)
+
+**Name the underserved audience that doesn't expect it.** Telling ambitious founders they're an "underserved population" produces surprise plus strong recognition. Template: high-status audience + unacknowledged private struggle + the word "underserved." Related: position as ceiling-raising (making capable people exceptional), not floor-raising (fixing dysfunction); ceiling-raising is the neglected, premium frame. The "beyond X, actually Y" structure reframes generic category advice: "beyond realistic goals, honesty about long odds." (p-the-psychological-needs-of-the-extremely-ambitious)
+
+**Demonstrate value instead of applying.** The crash-pitch move: skip the resume/cover-letter format everyone uses; send the specific company your analysis and proposal. Two requirements: provide value, and show you can provide value. Works for jobs, partnerships, and cold outreach alike. Related: resumes are myth-making with zero predictive power; the hidden struggle is the interesting part, so acknowledge and subvert the polished format when pitching. (napkin-math-crash-pitch, masterful-storytelling-who-the-fuck-are-you)
+
+## Generative process (getting words out)
+
+**Madman before Judge.** Two energies compete: the Madman (generates, ten pages an hour) and the Judge (educated, critical, "can't create anything"). Blocks happen when the Judge runs first. Sequence them; never run both at once. If you can't make writing, "just make it typing." More words down = better odds the right ones are among them. (the-long-conversation-first-thought-best-thought)
+
+**First thought = first image.** Scan prompts until one fires a solid visual image from the physical world; start there, not from an abstraction. The image is the seed. (the-long-conversation-first-thought-best-thought)
+
+**The unstuck loop.** Brainstorm 10 big-concept keywords; free-associate 5 minutes on each; take the richest; write 5 questions from it; mine one word or phrase into another freewrite; loop until an idea you could write about for a long time surfaces. Variants: invisible freewriting (dim the screen so you can't self-edit); write "I can't think of anything" until content surfaces; Particle/Wave/Field (is the topic a thing, a process, or a system of relationships?); Look In / Look Out / Look Forward. Don't write to prove something; write to learn something. (the-long-conversation-unstuck-yourself)
+
+**Generative questions that reliably open pieces:** What do I experience regularly that others might not? What would I write if I could publish anonymously? If one named person were guaranteed to read this, what would I write? What seems obvious to me that isn't obvious to others? What do I accept as true that most people doubt? (the-long-conversation-unstuck-yourself)
+
+**Mind-wandering is the engine.** Creativity science: idea generation runs on the brain's default network, which forced focus shuts off. Incubation is irreplaceable; schedule input, then walks, not more screen time. Semantic memory richness predicts creative output, so feeding the notebook is training. Capture contradictions, typos, misheard lines; decontextualized fragments generate new meaning. Re-reading your own old writing is a creative act. (superorganizers-understanding-the-science-of-creativity, the-long-conversation-re-happiness)
+
+## Intros and endings, refined
+
+**Every's intro rhythm:** spark of the idea on top, stakes established within 150 words, quick zoom out, thesis pointing forward. Not background-problem-thesis. (working-overtime-i-taught-claude-every-s-standards)
+
+**Abstraction must be grounded.** Abstract claims pass the bar only when anchored in specific, sensory, or narrative detail. (working-overtime-i-taught-claude-every-s-standards)
+
+**A recap is a photocopy; a reframe is a second exposure.** Endings shift the angle of view on the same material. (working-overtime-i-taught-claude-every-s-standards)
+
+**Every's three voice principles:** optimistic realism (never cynicism), intellectual generosity (argue in a way that invites people in), conversational authority (confidence coexisting with humility). Style is the how (syntax, rhythm, imagery); voice is the why (the convictions underneath). Rules alone describe a style; a voice requires encoded values. (working-overtime-i-taught-claude-every-s-standards)
+
+## Submissions and pitches (procedural)
+
+Most rejections are procedural, not quality-based: follow the guidelines exactly (submissions are judged against a consistent baseline; "innovating the format" reads as carelessness), respect word limits, read the publication until you can describe its aesthetic, keep the bio short (it's a writing sample too), and treat "we enjoyed your work, submit again" as a real signal, not boilerplate. (the-long-conversation-stop-getting-rejected-for-dumb-stuff)
+
 ## Pre-publication checklist (Every's, verbatim)
 
 - Stakes clear by paragraph one?
