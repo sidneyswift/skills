@@ -86,6 +86,10 @@ When writing for a specific format, read the relevant section of [references/for
 - Sales copy and proposals
 - Internal comms
 
+## Persuasion, positioning, and story (Every playbook)
+
+When writing anything meant to sell, convert, or build an audience (landing pages, launch copy, email sequences, content strategy, brand voice), read [references/every-playbook.md](references/every-playbook.md). It contains persuasion architecture (Chain of Beliefs, Before-state symptom diagnosis, parable-based selling, sacred vs. secular framing), positioning formulas (anchor and twist, workflow stories for novel products), story structure (minimum viable story, Five Whys for stakes, named arcs), trust mechanics (trust thermocline, public accuracy audits), and the AI smoothing problem (keep the harder reading). Distilled from the full every.to archive.
+
 ## Long-form essay architecture
 
 When writing essays or thought pieces of 3,000+ words, also read [references/dan-shipper-every.md](references/dan-shipper-every.md). It contains the full essay blueprint: 7-section structure with word count targets, extended example technique, counterargument depth, the evocative register, footnote usage, and section connection patterns. Voice principles (loaded above) provide the sentence-level and paragraph-level craft; this reference provides the essay-level structure.
