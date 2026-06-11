@@ -142,6 +142,22 @@ Before sending, search for: like, as if, as though, imagine, picture, kind of li
 
 ---
 
+## Filler emphasis words
+
+AI pads sentences with low-information intensifiers that simulate sincerity or emphasis: actual, actually, really, truly, genuinely, very, simply, just, literally, in fact.
+
+- Bad: "Here's my actual setup, 2 days in:" → "Here's my setup, two days in:"
+
+Principle: "actual" adds nothing — there is no fake setup being contrasted. If deleting the word changes nothing, the word was never doing work. Audit every intensifier; keep it only when it draws a real contrast ("the actual invoice, not the estimate").
+
+## Abstract-noun summary callbacks
+
+Do not wrap the preceding paragraph into a tidy abstract noun and hand it back to the reader: "the shift," "the move," "the unlock," "the play," "the takeaway," "the pattern," "the lesson."
+
+- Bad: "That's the shift I'd plan for."
+
+Principle: no human would say that sentence out loud. It's the AI bottling an idea into a label to sound conclusive. Run the say-it-aloud test on every short summary sentence; either restate the concrete claim ("Plan on managing agents, not doing the work yourself") or cut the sentence — the paragraph already made the point.
+
 ## AI patterns to avoid
 
 - **Puffery**: "a key turning point", "a pivotal moment", "marking a significant evolution" — state the fact
