@@ -19,6 +19,7 @@ npx skills add sidneyswift/skills
 | Skill | Description |
 |-------|-------------|
 | [social-slides](./social-slides/) | Generate carousel/slide images for LinkedIn, X, Instagram. HTML → Playwright → PNG. |
+| [tweetclaw](./tweetclaw/) | X/Twitter automation from OpenClaw: search tweets, post approved replies, export followers, monitor accounts, and run giveaway draws. |
 | [skill-system](./skill-system/) | Cross-environment skill management. Build skills once, personalize with context.md, publish everywhere. |
 | [ai-onboarding](./ai-onboarding/) | Progressive AI onboarding that meets users where they are. One question entry, no dead ends, workspace becomes their OS. |
 
