@@ -1,16 +1,18 @@
-# Dan Shipper / Every — long-form essay architecture
+# Long-form essay architecture
 
-This reference covers essay-specific structure. The universal voice principles (tone, sentence patterns, specificity, evidence, openings, endings) are in [voice-principles.md](voice-principles.md) and apply to all writing. Load this reference when writing essays of 3,000+ words.
-
-Source: "After Automation" (May 2026), "The Allocation Economy" (Jan 2024), "Smuggled Intelligence" (Oct 2025).
+This reference covers essay-specific structure. The universal voice principles (tone, sentence patterns, specificity, evidence, openings, endings) are in [voice-principles.md](voice-principles.md) and apply to all writing. Load this reference when writing essays, articles, or thought pieces of 1,000+ words. See "Scaling by length" below to fit the blueprint to your word count.
 
 ---
 
-## Who Dan Shipper is (context)
+## Scaling by length
 
-CEO and cofounder of Every, a media company covering AI and the future of work. Writes a weekly column called "Chain of Thought." Runs a ~30 person company that uses AI extensively in its own operations. Not a pure pundit — reports from inside the work. His essays are arguments grounded in operational evidence, then extended outward.
+The full 7-section blueprint below targets 4,000 to 8,000 words. Shorter pieces use the same structure with less depth. Compress, don't pad:
 
-Audience: founders, knowledge workers, investors, AI practitioners. People who are both excited and anxious about AI.
+- **1,000-2,000 words:** hook and thesis, one evidence section, the argument in 2-3 steps, one paragraph of counterargument, a resonant ending. Skip the philosophical extension and the evocative register.
+- **2,000-4,000 words:** add the dedicated counterargument section and one extended example.
+- **4,000+ words:** the full blueprint below.
+
+Keep the section order. Cut depth, not structure. Below 1,000 words this is the wrong reference; use the format rules in [formats.md](formats.md) instead.
 
 ---
 
@@ -20,7 +22,7 @@ Audience: founders, knowledge workers, investors, AI practitioners. People who a
 
 State a counterintuitive observation. Ground it immediately in operational specifics. Build tension with evidence that the conventional wisdom is wrong. End with the thesis stated plainly.
 
-Example flow from "After Automation":
+Example flow:
 - Open: "There is a paradox at the heart of AI."
 - Evidence: "We've automated everything we can. And yet there's more human work to do than ever."
 - Conventional wisdom: Quotes from Amodei, Griffin, benchmark numbers
@@ -120,7 +122,7 @@ Sections don't use transition words. They use transition structures:
 
 ## Evocative register (essay-only)
 
-Near the end, after the argument is complete, Dan shifts into a more sensory, present-tense register:
+Near the end, after the argument is complete, the essay shifts into a more sensory, present-tense register:
 
 > "You sit and watch the tokens stream in hypnotically. And you begin to imagine yourself running in this race, too, a ghost of yourself superimposed onto the track."
 

@@ -46,6 +46,8 @@ Match the tone. "Thanks" or a name beats "Best regards" or "Warm wishes."
 
 ## Landing pages and product copy
 
+For full page structure (section library, page templates by type, headline and CTA formulas), read [landing-pages.md](landing-pages.md). Quick version:
+
 - Headline: what the product does, for whom, in plain language.
 - Subhead: one specific proof point or differentiator.
 - Features → outcomes. "Automated invoicing" → "Invoices go out the day the work ships."

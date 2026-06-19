@@ -86,13 +86,17 @@ When writing for a specific format, read the relevant section of [references/for
 - Sales copy and proposals
 - Internal comms
 
-## Persuasion, positioning, and story (Every playbook)
+## Persuasion, positioning, and story
 
-When writing anything meant to sell, convert, or build an audience (landing pages, launch copy, email sequences, content strategy, brand voice), read [references/every-playbook.md](references/every-playbook.md). It contains persuasion architecture (Chain of Beliefs, Before-state symptom diagnosis, parable-based selling, sacred vs. secular framing, the stoplight readiness model), positioning formulas (anchor and twist, workflow stories for novel products, visible incentive alignment, ceiling-raising frames), story structure (minimum viable story, Five Whys for stakes, named arcs), virality and attention mechanics (psychological packaging, persona pre-testing, stream vs. garden), trust mechanics (trust thermocline, public accuracy audits), generative process (Madman/Judge, the unstuck loop), and the AI smoothing problem (keep the harder reading). Distilled from the full every.to archive in two passes.
+When writing anything meant to sell, convert, or build an audience (landing pages, launch copy, email sequences, content strategy, brand voice), read [references/persuasion-playbook.md](references/persuasion-playbook.md). It contains persuasion architecture (Chain of Beliefs, Before-state symptom diagnosis, parable-based selling, sacred vs. secular framing, the stoplight readiness model), positioning formulas (anchor and twist, workflow stories for novel products, visible incentive alignment, ceiling-raising frames), story structure (minimum viable story, Five Whys for stakes, named arcs), virality and attention mechanics (psychological packaging, persona pre-testing, stream vs. garden), trust mechanics (trust thermocline, public accuracy audits), generative process (Madman/Judge, the unstuck loop), and the AI smoothing problem (keep the harder reading).
 
 ## Long-form essay architecture
 
-When writing essays or thought pieces of 3,000+ words, also read [references/dan-shipper-every.md](references/dan-shipper-every.md). It contains the full essay blueprint: 7-section structure with word count targets, extended example technique, counterargument depth, the evocative register, footnote usage, and section connection patterns. Voice principles (loaded above) provide the sentence-level and paragraph-level craft; this reference provides the essay-level structure.
+When writing essays, articles, or thought pieces of 1,000+ words, also read [references/long-form-essay.md](references/long-form-essay.md). It contains the full essay blueprint: 7-section structure with word count targets (plus a "scaling by length" guide for shorter pieces), extended example technique, counterargument depth, the evocative register, footnote usage, and section connection patterns. Voice principles (loaded above) provide the sentence-level and paragraph-level craft; this reference provides the essay-level structure.
+
+## Landing page and conversion architecture
+
+When writing a landing page, homepage, pricing page, feature page, or any conversion-focused page, read [references/landing-pages.md](references/landing-pages.md). It contains the section library (hero, social proof, problem, benefits, how it works, objection handling, final CTA), full-page templates by page type, headline formulas, and CTA formulas. Voice-principles and anti-slop govern the words; this reference governs the shape and order. Persuasion strategy (why people buy) lives in [references/persuasion-playbook.md](references/persuasion-playbook.md); this is the page-mechanics layer.
 
 ## Final pass (silent, every time)
 

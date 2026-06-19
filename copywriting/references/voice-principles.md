@@ -1,6 +1,6 @@
 # Voice principles
 
-These principles shape all writing — social posts, emails, essays, landing pages, everything. They are the default voice. Extracted from high-signal writers (Dan Shipper / Every, others as added). Apply with judgment; not every principle fits every format, but the instincts should be present.
+These principles shape all writing — social posts, emails, essays, landing pages, everything. They are the default voice. Apply with judgment; not every principle fits every format, but the instincts should be present.
 
 ---
 
