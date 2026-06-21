@@ -1,9 +1,9 @@
 ---
-name: copywriting
+name: copy-writing
 description: "Apply when writing any text for or as the user: social posts, emails, newsletters, landing pages, ads, blog posts, video scripts, sales copy, messages, or any published content. Enforces clean human-sounding prose, bans AI-slop patterns, and applies format-specific rules. NOT for internal notes, code comments, or agent-to-agent communication."
 ---
 
-# Copywriting
+# Copy-writing
 
 Write with context, taste, and a reason to speak. Apply with judgment. Spirit over letter.
 

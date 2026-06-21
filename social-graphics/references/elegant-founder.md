@@ -25,19 +25,25 @@ Load via Google Fonts:
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 ```
 
-## Dimensions
+## Dimensions & formats
 
-| Platform | Width | Height |
-|----------|-------|--------|
-| LinkedIn carousel | 1080px | 1350px |
-| X/Instagram square | 1080px | 1080px |
-| Instagram story | 1080px | 1920px |
+This template works at any canvas. For the full size/aspect-ratio/safe-zone reference, see [dimensions.md](dimensions.md). Common targets:
 
-Default: 1080×1350 (LinkedIn).
+| Use | Size | Ratio |
+|-----|------|-------|
+| LinkedIn / feed (default) | 1080 × 1350 | 4:5 |
+| Square / carousel | 1080 × 1080 | 1:1 |
+| Story / reel cover | 1080 × 1920 | 9:16 |
+| Link / OG card | 1200 × 630 | 1.91:1 |
+
+**Default: 1080×1350 (4:5).**
+
+**Adapting the type scale across formats.** The pixel sizes below are tuned for the 1080-wide canvas, so they hold across the vertical/square family (1:1, 4:5, 3:4, 9:16) unchanged. When the canvas width changes, scale type proportionally: `size = base × (canvas_width / 1080)`. For wide formats (16:9, banners, OG cards) the height is the constraint — anchor type to height instead and shorten copy. Keep the 80px margin as `~7.4%` of canvas width so it scales too.
 
 ## Layout Rules
 
 - **Margins:** 80px left/right, content never touches edges
+- **Safe zones:** for 9:16 (stories/reels), keep headlines, footer, and the page count inside the center band — clear the top ~250px and bottom ~340px (UI overlays). For banners/headers, keep content centered. See [dimensions.md](dimensions.md).
 - **Content position:** Upper third to center. Do NOT center vertically — editorial layouts anchor content high with generous space below
 - **Alignment:** Left-aligned throughout. Exception: the final/CTA slide may center for a deliberate shift
 - **Footer:** Logo mark + brand name (17px, 600 weight) left, page count right. Positioned at bottom: 52px. Always present. Use the brand name from `context.md` if available, otherwise use no brand name (logo only).
@@ -127,10 +133,12 @@ Replace `N / T` with slide number / total.
 
 ## Rendering
 
-Generate HTML per slide, then screenshot with Playwright:
+Generate HTML per slide, then screenshot with Playwright at the target canvas:
 ```bash
 npx playwright screenshot --viewport-size="1080,1350" "file:///path/to/slide.html" "/path/to/slide.png"
 ```
+
+To output the same design at several sizes, change `body` width/height (and scale type per the rule above) or re-render a width-relative layout at each viewport. See the "Create once, adapt everywhere" section in SKILL.md.
 
 ## Quality Checklist
 
@@ -143,5 +151,6 @@ Before finalizing slides, verify:
 - [ ] Footer logo + page number present on every slide
 - [ ] No decorative elements that don't serve the content (accent lines, ghost numbers, colored dots)
 - [ ] Generous white space — at least 40% of the slide is empty
-- [ ] Text never runs wider than ~920px (80px margins)
-- [ ] Slides render cleanly at 1080×1350
+- [ ] Text never runs wider than ~920px (80px margins) on a 1080-wide canvas
+- [ ] Content respects the format's safe zone (no headline/footer under platform UI on 9:16)
+- [ ] Renders cleanly at the target canvas size and reads at phone-thumbnail scale

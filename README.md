@@ -17,10 +17,9 @@ npx skills add sidneyswift/skills
 ## Skills
 
 | Skill | Description |
-|-------|-------------|
-| [social-slides](./social-slides/) | Generate carousel/slide images for LinkedIn, X, Instagram. HTML → Playwright → PNG. |
-| [skill-system](./skill-system/) | Cross-environment skill management. Build skills once, personalize with context.md, publish everywhere. |
-| [ai-onboarding](./ai-onboarding/) | Progressive AI onboarding that meets users where they are. One question entry, no dead ends, workspace becomes their OS. |
+| --- | --- |
+| [social-graphics](./social-graphics/) | Generate on-brand social graphics for any platform & format — feed posts, carousels, stories, banners, profile pics, thumbnails, pins, OG cards. Full dimensions/safe-zone reference included. HTML → Playwright → PNG. |
+| [workspace-os](./workspace-os/) | Spin up a complete, self-managing workspace operating system for any domain — scaffolds folders, a self-managing CLAUDE.md, domain skills, an installable plugin, a janitor, and a compound-learning loop. |
 
 ## How Personalization Works
 
