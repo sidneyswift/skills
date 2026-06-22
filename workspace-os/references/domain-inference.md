@@ -21,14 +21,20 @@ Answer these explicitly:
 - **External tools / systems of record** likely in play (CRM, tracker, DAW, repo, drive).
 
 ## Step 3 — Handle sparse input with best-judgment prediction
-When you only have a thin prompt, do NOT build a minimal stub and wait. Predict the full system:
+When you only have a thin prompt, do NOT build a minimal stub and wait — predict the full system, but
+express that prediction inside a **lean root**, not as a wide row of empty top-level folders.
 - Pick the closest archetype from `blueprint.md` and adopt its mappings as a starting point.
-- Enumerate the entities/stages/assets/rituals/metrics a competent operator in that domain would
-  need within 90 days, and scaffold for all of them.
-- Seed starter templates and a `reference/principles.md` with domain best practices, each marked
-  **"draft — confirm"** so the user can correct.
-- Prefer over-preparing (extra empty, well-labeled folders + stubs) to under-preparing. Empty
-  folders with a one-line README cost nothing and teach the user where things go.
+- Enumerate the entities/stages/assets/routines/metrics a competent operator in that domain would
+  need within 90 days.
+- Scaffold that depth as **subfolders, stubs, and templates inside the core top-level folders**
+  (predicted stages under `{pipeline}/`, starter templates in `library/`, FAQ/decision stubs under
+  `knowledge/`) — not by adding more top-level directories.
+- Keep the root to the core set; add an optional top-level folder (`reference/`, `proof/`, `content/`,
+  `business/`) only when there's real material for it. When unsure, leave it out — it's one `mkdir`
+  to add later.
+- Seed starter templates and, when you have canon to seed, a `reference/principles.md` of domain best
+  practices — each marked **"draft — confirm"** so the user can correct. A stub with a one-line README
+  teaches where things go; an empty top-level folder just clutters the root.
 
 ## Step 4 — Write the brief
 A compact brief, e.g.:

@@ -1,22 +1,23 @@
 ---
 name: {DOMAIN}-janitor
-description: Reconcile and de-stale the {DOMAIN} workspace. Use on "audit the system", "is everything up to date", "clean up the workspace", or on a schedule. Catches drift between the filesystem, dashboards, boards, and any external system of record.
+description: Reconcile and de-stale the {DOMAIN} workspace. Use on "clean up the workspace", "reconcile", "fix the drift", or on a schedule. Runs the read-only {DOMAIN}-doctor, then fixes what is safe and flags the rest.
 ---
 
 # {DOMAIN} Janitor
 
-Keep the OS never-stale. Run end to end and report a prioritized punch list; fix what is safe to fix
-automatically, and flag what needs the user.
+Keep the OS never-stale. The doctor finds problems; the janitor fixes them.
 
 ## Steps
-1. **Inbox sweep.** Find un-ingested files in raw/inbox folders -> run `{DOMAIN}-intake` on each.
-2. **Stage truth.** Check every flowing item is in the correct `{PIPELINE}/` stage; move mismatches;
-   sync the external system of record.
-3. **Dashboard truth.** Recompute `operating-system/dashboard.html` counts/KPIs from the folders;
-   fix anything that disagrees.
-4. **Entity freshness.** Flag `{ENTITY}/*/README.md` with a "next action" date in the past or a status
-   that contradicts recent activity.
-5. **Board sync.** Reconcile `{PIPELINE}/_board.md` with the actual folders.
-6. **Knowledge gaps.** Find answers given 2+ times not yet in `knowledge-base/faqs/`; outcomes missing
-   from `proof/`; tasks done 2+ times not yet skills (propose authoring them).
-7. **Report** the punch list (fixed vs. needs-you). Don't change facts the user owns without confirming.
+1. **Run `{DOMAIN}-doctor`** to produce the current punch list + score in `operations/health.md`.
+2. **Fix what is safe automatically**, in the punch list's priority order:
+   - file un-ingested inbox items (run `{DOMAIN}-intake` on each);
+   - move flowing items into the correct `{PIPELINE}/` stage; sync the external system of record;
+   - recompute `artifacts/dashboard.html` from the folders;
+   - move one-off work stranded at the root into `work/`;
+   - reconcile `{PIPELINE}/_board.md` with the actual folders.
+3. **Flag what needs the user** — facts they own, ambiguous status, a skill to author. Don't change
+   owned facts without confirming.
+4. **Propose promotions.** For any task done 2+ times, hand off to `{DOMAIN}-skillify` (a new
+   capability) or `{DOMAIN}-reflect` (a system improvement).
+5. **Re-run `{DOMAIN}-doctor`** and report the before/after score. "Clean" is the doctor's verdict,
+   not a feeling.

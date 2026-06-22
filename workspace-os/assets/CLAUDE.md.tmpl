@@ -1,43 +1,59 @@
 # Working conventions for this workspace — {DOMAIN} OS
 
 You operate the {DOMAIN} operating system. Your job is not just to file things — it is to keep the
-system **current and compounding**. Act autonomously on the rules below. (AGENTS.md is a symlink to
-this file.)
+system **current and compounding**, and to decide "done" and "consistent" by evidence (a
+`{DOMAIN}-doctor` run), not by feeling. Act autonomously on the rules below. (AGENTS.md is a symlink
+to this file.)
 
 ## Auto-manage loop (run on new input, without being asked)
 1. Place the raw file in its correct home, dated YYYY-MM-DD.
 2. Read it.
-3. Extract reusable value into `knowledge-base/` (insights / faqs / decisions).
+3. Extract reusable value into `knowledge/` (insights / faqs / decisions).
 4. Scan the related {ENTITY}/{PIPELINE} folder; read its README; reconcile.
 5. Update everything affected in the SAME turn: entity README dashboards, `{PIPELINE}/_board.md`,
-   `operating-system/dashboard.html`, metrics. (never-stale rule)
+   `artifacts/dashboard.html`, metrics. (never-stale rule)
 6. Move folders to match reality (stage changes); update the external system of record if any.
 7. Mine for compounding assets (templates, proof, FAQs).
 8. Report what changed.
 
 Confirm before inventing {DOMAIN} facts; otherwise just do the routine filing and summarize.
 
-## Never stale (state management is your job)
-If you touched the project, leave it consistent. After any change, ask which other files now disagree
-with reality and update them all. The `{DOMAIN}-janitor` skill is the backstop and runs on a schedule.
+## Never stale (checked, not felt)
+If you touched the project, leave it consistent — and "consistent" is what `{DOMAIN}-doctor` reports,
+not a feeling. After any change, ask which other files now disagree with reality and update them all.
+Run `{DOMAIN}-doctor` to verify; the `{DOMAIN}-janitor` skill runs it + fixes drift on a schedule.
 
-## Compound learning (get smarter every session)
+## Compound learning + self-improvement (get smarter every session)
 Every session deposits at least one durable learning (a decision, a canonical answer, an insight, or
-an improved template/skill). Search `knowledge-base/` before solving anything — never twice.
+an improved template/skill). Search `knowledge/` before solving anything — never twice. And improve the
+**system**, not just its contents: when the same friction recurs, run `{DOMAIN}-reflect` to turn it
+into a new skill, routing row, doctor check, or rule, logged to `operations/improvements.md` (~half
+your effort on the system that does the work).
 
-## Anything done more than once becomes a skill
-When a task repeats, author `skills/{name}/SKILL.md` and repackage the plugin (see `skills/_packaging/`).
+## After work, ask: "skillify this?"
+When you finish a task, ask whether it will be done again, need maintaining, or prevent a failure from
+recurring. If yes, run the `{DOMAIN}-skillify` skill. It stages a draft in `work/`, extracts the
+repeatable process, verifies it, asks for approval, then moves it to `plugin/skills/{name}/SKILL.md`
+and repackages. If it's a one-off, the output goes in `work/{project}/YYYY-MM-DD-…/`, never a new
+top-level folder.
+
+## Agent compatibility
+`plugin/skills/` is the source of truth. `.agents/skills` points there so Cursor and Codex can discover
+the same project skills. Do not edit `.agents/skills` directly, and do not create `.cursor/skills`
+unless the user explicitly wants a Cursor-only mirror.
 
 ## Filing decision tree
 1. Reusable instrument (template/script/checklist)? -> `library/`
-2. Repeatable task/capability? -> `skills/`
-3. Reusable answer/insight/decision/SOP? -> `knowledge-base/`
-4. Flowing item not yet done? -> `{PIPELINE}/`
-5. Tied to a core entity? -> `{ENTITY}/`
-6. Outcome/proof? -> `proof/`
-7. Raw/idea/draft/published? -> `content/`
-8. Canon/source/spec? -> `reference/`
-9. Legal/finance/metrics? -> `business-ops/`
+2. A task that will repeat or need upkeep? -> run `{DOMAIN}-skillify`
+3. A finalized output you regenerate (dashboard, recurring report)? -> `artifacts/`
+4. A one-off / ad-hoc build (won't repeat)? -> `work/{project}/YYYY-MM-DD-…/`
+5. Reusable answer/insight/decision/SOP? -> `knowledge/`
+6. Flowing item not yet done? -> `{PIPELINE}/`
+7. Tied to a core entity? -> `{ENTITY}/`
+8. Outcome/proof? -> `proof/`
+9. Raw/idea/draft/published? -> `content/`
+10. Canon/source/spec? -> `reference/`
+11. Legal/finance/metrics? -> `business/`
 
 ## Don't
 - Don't duplicate canon; reference `reference/`.

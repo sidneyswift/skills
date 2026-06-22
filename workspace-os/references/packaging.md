@@ -1,63 +1,137 @@
-# Packaging the skills/ folder into an installable plugin
+# Packaging the workspace `plugin/` for Claude, Cursor, and Codex
 
-## Plugin layout
+The workspace's `plugin/` directory is the source of truth for skills. Build it once, then expose it
+through the install/discovery surfaces each agent expects.
+
+## Naming
+Default the plugin name to `{DOMAIN_SLUG}-os` (kebab-case). Use the user's explicit name only if they give
+one. The workspace folder stays `plugin/` to keep the root taxonomy simple; the packaged artifact and
+both manifest `"name"` fields use `{DOMAIN_SLUG}-os`.
+
+- `DOMAIN_SLUG`: lowercase kebab-case domain label (`product`, `record-label`, `research`).
+- `DOMAIN_TITLE`: human title case label for UI text (`Product`, `Record Label`, `Research`).
+
+## Multi-agent layout
 ```
-{name}-os/
-├── .claude-plugin/
-│   └── plugin.json        # required; minimal field is name
-├── skills/
-│   └── {skill}/SKILL.md   # one folder per skill
-└── README.md
+{workspace}/
+├── AGENTS.md                 # symlink -> CLAUDE.md
+├── .agents/
+│   └── skills -> ../plugin/skills
+│
+└── plugin/
+    ├── .claude-plugin/
+    │   └── plugin.json       # Claude plugin manifest
+    ├── .codex-plugin/
+    │   └── plugin.json       # Codex plugin manifest
+    ├── skills/
+    │   └── {skill}/SKILL.md  # one folder per skill
+    └── README.md
 ```
 
-## plugin.json (minimal)
+Use `.agents/skills` as the repo-discovery adapter because both Cursor and Codex discover project
+skills there. Do **not** also create `.cursor/skills` by default; Cursor also reads `.agents/skills`,
+and creating both surfaces can show duplicates. Only add `.cursor/skills` if the user explicitly wants
+a Cursor-only mirror.
+
+Prefer a symlink so `plugin/skills` remains the single source of truth:
+```bash
+mkdir -p {workspace}/.agents
+ln -s ../plugin/skills {workspace}/.agents/skills
+```
+If directory symlinks are unavailable, copy `plugin/skills/` into `.agents/skills/` and record that it
+is a compatibility mirror that must be refreshed after skill changes.
+
+## Claude manifest
+Write `plugin/.claude-plugin/plugin.json` from `assets/claude-plugin.json.tmpl`:
 ```json
 {
-  "name": "{name}-os",
+  "name": "{DOMAIN_SLUG}-os",
   "version": "0.1.0",
-  "description": "Operating system for {domain} — N skills covering …",
+  "description": "Operating system for {DOMAIN_TITLE} — skills for intake, maintenance, learning, and repeatable work.",
   "author": { "name": "{author}" },
-  "keywords": ["{domain}", "operating-system"]
+  "keywords": ["{DOMAIN_SLUG}", "workspace-os", "skills"]
 }
 ```
-`name` must be kebab-case. Bump the version on each rebuild.
 
-## Validate BEFORE zipping (these are the failures that actually happen)
-1. `.claude-plugin/plugin.json` is valid JSON and has a kebab-case `name`.
-2. Every `skills/*/` folder contains a `SKILL.md` with valid frontmatter (`name` + `description`).
-3. **No `<` or `>` in any skill `description`** (the loader rejects XML-looking tags). Grep for them.
-4. No stray non-skill folders inside `skills/` (everything there needs a SKILL.md).
+## Codex manifest
+Write `plugin/.codex-plugin/plugin.json` from `assets/codex-plugin.json.tmpl`:
+```json
+{
+  "name": "{DOMAIN_SLUG}-os",
+  "version": "0.1.0",
+  "description": "Operating system for {DOMAIN_TITLE} — skills for intake, maintenance, learning, and repeatable work.",
+  "author": { "name": "{author}" },
+  "keywords": ["{DOMAIN_SLUG}", "workspace-os", "skills"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "{DOMAIN_TITLE} OS",
+    "shortDescription": "Workspace operating system for {DOMAIN_TITLE}.",
+    "longDescription": "A workspace operating system with skills for intake, maintenance, compound learning, and promoting repeatable work into durable capabilities.",
+    "developerName": "{author}",
+    "category": "Productivity",
+    "capabilities": ["Skills"],
+    "defaultPrompt": "Use {DOMAIN_SLUG}-os to organize this workspace and run the right workflow."
+  }
+}
+```
 
-A quick validator (run in the sandbox):
+Paths in the Codex manifest are relative to `plugin/` and must begin with `./`.
+
+## Validate BEFORE zipping
+1. Both manifests exist:
+   - `plugin/.claude-plugin/plugin.json`
+   - `plugin/.codex-plugin/plugin.json`
+2. Both manifests are valid JSON and share the same kebab-case `"name"` (`{DOMAIN_SLUG}-os` by default).
+3. The Codex manifest includes `"skills": "./skills/"`.
+4. Every `plugin/skills/*/` folder contains a `SKILL.md` with valid frontmatter (`name` + `description`).
+5. No `<` or `>` in any skill `description` (some loaders reject XML-looking tags).
+6. No stray non-skill folders inside `plugin/skills/`.
+7. `.agents/skills` points to or mirrors `plugin/skills`.
+
+A quick validator:
 ```bash
 python3 - <<'PY'
-import json,glob,re,sys
-plg="/tmp/{name}-os"
-d=json.load(open(f"{plg}/.claude-plugin/plugin.json"))
-assert re.fullmatch(r"[a-z0-9-]+", d["name"]), "name not kebab-case"
-bad=[]
+import json, glob, os, re, sys
+plg = "{workspace}/plugin"
+claude = json.load(open(f"{plg}/.claude-plugin/plugin.json"))
+codex = json.load(open(f"{plg}/.codex-plugin/plugin.json"))
+assert claude["name"] == codex["name"], "manifest names differ"
+assert re.fullmatch(r"[a-z0-9-]+", claude["name"]), "name not kebab-case"
+assert codex.get("skills") == "./skills/", "Codex skills path must be ./skills/"
+bad = []
 for sk in glob.glob(f"{plg}/skills/*/SKILL.md"):
-    fm=re.match(r"^---\n(.*?)\n---", open(sk).read(), re.S).group(1)
-    desc=re.search(r"^description:\s*(.+)$", fm, re.M).group(1)
-    if "<" in desc or ">" in desc: bad.append(sk)
+    text = open(sk).read()
+    fm = re.match(r"^---\n(.*?)\n---", text, re.S)
+    if not fm:
+        bad.append(f"{sk}: missing frontmatter")
+        continue
+    name = re.search(r"^name:\s*(.+)$", fm.group(1), re.M)
+    desc = re.search(r"^description:\s*(.+)$", fm.group(1), re.M)
+    if not name or not desc:
+        bad.append(f"{sk}: missing name/description")
+    elif "<" in desc.group(1) or ">" in desc.group(1):
+        bad.append(f"{sk}: angle bracket in description")
+adapter = "{workspace}/.agents/skills"
+assert os.path.exists(adapter), ".agents/skills adapter missing"
 print("FAIL" if bad else "OK", *bad)
 sys.exit(1 if bad else 0)
 PY
 ```
 
 ## Package + deliver
-Always zip in `/tmp` first, then copy to the outputs folder (writing the zip directly to outputs can
-fail on permissions):
+Zip the **contents** of `plugin/` (so `.claude-plugin/` and `.codex-plugin/` sit at the zip root) into
+`/tmp` first, then copy to the outputs folder:
 ```bash
-cd /tmp/{name}-os && zip -rq /tmp/{name}-os.plugin . -x "*.DS_Store"
-cp /tmp/{name}-os.plugin {OUTPUTS}/{name}-os.plugin
+cd {workspace}/plugin && zip -rq /tmp/{DOMAIN_SLUG}-os.plugin . -x "*.DS_Store"
+cp /tmp/{DOMAIN_SLUG}-os.plugin {OUTPUTS}/{DOMAIN_SLUG}-os.plugin
 ```
-Then present the `.plugin` file so the user can install it with the in-chat button. Once installed,
-the skills trigger non-deterministically by description.
+
+Claude and Codex install from the plugin manifests. Cursor and Codex can also use the checked-in
+project skills directly through `.agents/skills`.
 
 ## AGENTS.md
-In the *target workspace* (not inside the plugin), symlink so any agent runner finds the same brain:
+In the target workspace, symlink so any agent runner finds the same brain:
 ```bash
 cd {workspace} && ln -s CLAUDE.md AGENTS.md
 ```
-Don't rely on symlinks surviving inside a zipped plugin — create the symlink at workspace build time.
+If symlinks are not supported, write an `AGENTS.md` that says "See CLAUDE.md".
