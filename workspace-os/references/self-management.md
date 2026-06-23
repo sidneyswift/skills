@@ -39,13 +39,19 @@ When the user adds material (file, transcript, note, result) OR asks for work, r
 - **Ask "skillify this?"** After finishing work, ask whether it will repeat, need upkeep, or prevent a
   failure from recurring. If yes, run the `{DOMAIN}-skillify` skill; it stages the draft under
   `work/`, verifies it, asks for approval, then moves it into `plugin/skills/` and repackages. One-off
-  work stays in `work/` (dated) — it never becomes its own top-level folder.
+  work stays in `work/` (dated) — it never becomes its own top-level folder. **Unattended** (a scheduled
+  janitor with no human present): skillify stops at staged + verified + *proposed* (logged to
+  `operations/improvements.md`); publishing to `plugin/skills/` waits for approval unless the workspace
+  sets an explicit autonomous-publish policy.
 - **Improve the system, not just its contents.** `knowledge/` and `plugin/skills/` compound *content*
   and *capabilities*; `{DOMAIN}-reflect` compounds the *machinery* — when the same friction recurs,
   turn it into a new skill, routing row, doctor check, template, or `CLAUDE.md` rule, logged to
   `operations/improvements.md`. Spend ~half the effort on the system that does the work (50/50).
 - Keep `operations/routines.md` with the cadences (e.g. weekly review, periodic value review)
   and prefer wiring the recurring ones as scheduled tasks.
+- **Burn down draft-debt.** When you touch a file/folder carrying "draft — confirm" markers, confirm or
+  correct them in the same turn. Sparse-input builds start with many predictions; the doctor counts
+  them, and normal work should retire them rather than let them pile up.
 - Keep `plugin/skills/` as the source of truth for skills. `.agents/skills` is only the Cursor/Codex
   discovery adapter and should point to or mirror `plugin/skills/`.
 

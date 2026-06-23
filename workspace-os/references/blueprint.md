@@ -118,6 +118,11 @@ lowercase word** (`operations`, not `operating-system`). The split that matters 
   behind.
 - **Name plugins `{DOMAIN_SLUG}-os` by default.** Use the same kebab-case name in
   `plugin/.claude-plugin/plugin.json` and `plugin/.codex-plugin/plugin.json`.
+- **The packaged plugin is a transient artifact, not taxonomy.** The `{DOMAIN_SLUG}-os.plugin` zip is a
+  release output delivered outside the workspace (via `/tmp`), never a top-level `outputs/` folder —
+  `plugin/skills/` is the source of truth. After any in-place skill/manifest change, re-zip and stamp
+  `operations/.packaged-version` so `{domain}-doctor`'s package-freshness check can tell the installable
+  artifact apart from a stale one.
 - **Expose skills once for Cursor/Codex.** Use `.agents/skills -> ../plugin/skills` as the shared
   project-skill adapter. Do not also create `.cursor/skills` unless the user explicitly wants a
   Cursor-only mirror, because duplicate discovery can surface the same skill twice.

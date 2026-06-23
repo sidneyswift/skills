@@ -3,7 +3,7 @@ name: workspace-os
 description: Spin up a complete workspace operating system for any domain that both manages itself and improves itself — from a kickoff input (files, transcripts, or just a prompt). It scaffolds the folders and files, writes a self-managing CLAUDE.md mirrored to AGENTS.md, authors domain skills, packages them into an installable plugin, wires a never-stale janitor (with a read-only doctor) on a schedule, and builds compound-learning and self-improvement loops so the system stays current and gets better at running itself over time. Make sure to use this skill whenever the user wants to set up a workspace, build or scaffold a workspace/operating system, organize a project, turn files or notes into a managed system, or stand up an OS for a new domain — even if they don't say "operating system." Domain-agnostic: consulting, product management, a record label, research, an agency, personal projects, anything.
 metadata:
   author: Sidney Swift
-  version: "0.9.1"
+  version: "0.10.0"
 ---
 
 # Workspace OS Builder
@@ -118,7 +118,10 @@ Read `references/skill-authoring.md` and `references/skillifying-work.md` (promo
   description with real trigger phrases, then imperative steps referencing the workspace paths).
 - Always include the maintenance skills (the OS's feedback organs), generated from the templates:
   - a **doctor** (`assets/doctor-SKILL.md.tmpl`) — the read-only verification surface (health score +
-    punch list to `operations/health.md`); the janitor and the build report are gated on it.
+    punch list to `operations/health.md`); the janitor and the build report are gated on it. Also
+    generate `operations/doctor.py` from `assets/doctor.py.tmpl` (fill the `PIPELINE`/`ENTITY`/slug) as
+    its deterministic fast path — so the mechanical checks ship with the build instead of being
+    reinvented later.
   - a **janitor** (`assets/janitor-SKILL.md.tmpl`) — run the doctor, then reconcile and fix what's safe.
   - a **compound-learn** skill (`assets/compound-learn-SKILL.md.tmpl`) — capture
     decisions/answers/patterns into `knowledge/` after each work session.
@@ -153,8 +156,11 @@ Read `references/packaging.md`.
 - Try to create a scheduled task that runs the janitor skill (default weekly) so the workspace
   self-reconciles even when the user isn't looking.
 - **If no scheduling tool is available, or the user declines:** this is not a failure. Record the
-  intended cadence in `operations/routines.md`, and tell the user the one step to enable it
-  later (run the janitor on a schedule). The OS is still complete — the janitor also runs on demand.
+  intended cadence in `operations/routines.md`, AND drop a ready-to-use schedule from
+  `assets/janitor-schedule.tmpl` (GitHub Actions / cron / launchd / agent-runner task) so enabling it
+  later is a single copy, not a research project. The OS is still complete — the janitor also runs on
+  demand — but until the schedule is armed, the doctor keeps a standing low "schedule armed" finding,
+  because "self-reconciles when no one is looking" is only true once it actually runs unattended.
 - Don't block or leave the build "unfinished" over scheduling; treat it as the one optional step.
 
 ## Phase 7 — Report

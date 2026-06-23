@@ -14,6 +14,12 @@ Walk the checks below against the actual filesystem, then write `operations/heal
 a score (0-100), and a prioritized punch list (each item: what, where, severity, who-fixes). The
 report scales with the system — a few lines for a small workspace, longer as it grows.
 
+**Fast path.** Run `operations/doctor.py` first (generated from `assets/doctor.py.tmpl`) — it
+recomputes counts and flags the mechanical drift (board/dashboard truth, manifest parity, dark skills,
+package freshness, root hygiene, draft-confirm debt) deterministically and exits non-zero on findings.
+The checklist below is still the contract; the script just makes the mechanical subset cheap so you
+spend judgment on the rest.
+
 ## Checks
 1. **Dashboard truth.** `artifacts/dashboard.html` counts/KPIs match the actual folders.
 2. **Entity freshness.** No `{ENTITY}/*/README.md` whose "next action" date is in the past, or whose
@@ -32,6 +38,15 @@ report scales with the system — a few lines for a small workspace, longer as i
 8. **Knowledge gaps.** Answers given 2+ times not yet in `knowledge/faqs/`; outcomes missing from
    `proof/`; tasks done 2+ times not yet skillified.
 9. **Brain currency.** The `CLAUDE.md` / `AGENTS.md` filing tree still matches the real folders.
+10. **Package freshness.** The packaged plugin reflects the current `plugin/skills/` + manifest
+    version. The package is a transient release artifact, not a workspace folder — its version is
+    stamped in `operations/.packaged-version`. If skills/manifests changed since that stamp, flag
+    "re-zip plugin/" (the janitor or skillify does it).
+11. **Schedule armed.** The `{DOMAIN}-janitor` is actually wired to a scheduler. If not (no scheduler
+    at build time), keep this as a standing low finding — "self-reconciles when no one is looking" is
+    only true once it's armed — with the one-step enable from `operations/routines.md`.
+12. **Draft debt.** Count items still marked "draft — confirm" and surface them so the user confirms or
+    corrects predictions over time (informational; matters most after a sparse-input build).
 
 ## Score + report
 - Start at 100; subtract per finding by severity (broken or contradictory state hurts most; a missing

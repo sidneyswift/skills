@@ -4,3 +4,6 @@
 # System
 .DS_Store
 .clawhub/
+
+# Workspace-OS eval run artifacts (generated workspaces + reports)
+workspace-os/evals/runs/

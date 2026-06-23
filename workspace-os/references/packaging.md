@@ -129,6 +129,22 @@ cp /tmp/{DOMAIN_SLUG}-os.plugin {OUTPUTS}/{DOMAIN_SLUG}-os.plugin
 Claude and Codex install from the plugin manifests. Cursor and Codex can also use the checked-in
 project skills directly through `.agents/skills`.
 
+## Keep the package fresh (the artifact is transient, not taxonomy)
+The packaged `{DOMAIN_SLUG}-os.plugin` is a **release artifact, not a workspace folder**. Never create
+an `outputs/` (or similar) top-level directory for it inside the workspace — that would trip the
+doctor's root-hygiene check. Zip to `/tmp` and deliver to the external outputs location.
+
+Because `plugin/skills/` is the source of truth, the package goes **stale** the moment a skill or
+manifest changes in place — e.g. when `{DOMAIN}-skillify` publishes a skill or the janitor reconciles
+one. After any such change, re-zip and record the packaged version so the doctor can verify freshness:
+```bash
+cd {workspace}/plugin && zip -rq /tmp/{DOMAIN_SLUG}-os.plugin . -x "*.DS_Store"
+cp /tmp/{DOMAIN_SLUG}-os.plugin {OUTPUTS}/{DOMAIN_SLUG}-os.plugin
+python3 -c "import json;print(json.load(open('.claude-plugin/plugin.json'))['version'])" > {workspace}/operations/.packaged-version
+```
+The `{DOMAIN}-janitor` and `{DOMAIN}-skillify` skills own this step; `{DOMAIN}-doctor` only reports when
+the stamp and the manifest version disagree (its package-freshness check).
+
 ## AGENTS.md
 In the target workspace, symlink so any agent runner finds the same brain:
 ```bash

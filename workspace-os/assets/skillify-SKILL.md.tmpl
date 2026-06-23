@@ -27,9 +27,14 @@ in `work/`; repeated or maintained work becomes a staged, verified skill in `plu
    command, sample prompt replay, fixture comparison, checklist dry run, or review rubric. Record what
    passed in the staged folder.
 8. **Ask before committing.** Show the proposed skill name, triggers, destination, and verification
-   result. Move to `plugin/skills/{name}/` only after approval.
-9. **Publish + repackage.** Move the staged skill into `plugin/skills/`, re-zip `plugin/`, update
-   plugin README/index if present, and note any changed routine in `operations/`.
+   result. Move to `plugin/skills/{name}/` only after approval. **Unattended runs (e.g. a scheduled
+   janitor, no human present):** do not publish — leave the verified draft in `work/` and log a proposal
+   to `operations/improvements.md` for later approval. Publish to `plugin/skills/` only with explicit
+   approval, or when the workspace declares an explicit autonomous-publish policy.
+9. **Publish + repackage.** Move the staged skill into `plugin/skills/`, then re-zip `plugin/` to the
+   delivery path (a transient artifact — never an `outputs/` folder inside the workspace) and update
+   `operations/.packaged-version` so `{DOMAIN}-doctor` sees a fresh package. Update plugin README/index
+   if present, and note any changed routine in `operations/`.
 10. **Capture the learning.** If the skill came from a failure or important decision, write a short
     note to `knowledge/` so future agents understand why the skill exists.
 
