@@ -3,8 +3,5 @@
 .clawhub/
 __pycache__/
 
-# Build artifacts (packaged plugins)
-*.zip
-
 # Workspace-OS eval run artifacts (generated workspaces + reports)
 workspace-os/evals/runs/
