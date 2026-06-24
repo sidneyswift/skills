@@ -13,7 +13,7 @@ by inspection or by an evaluator subagent.
 
 ### Structure & taxonomy — 20
 - **5** `[auto]` Lean core present: a flowing `{pipeline}/` + an `{entities}/` folder, plus
-  `knowledge/`, `library/`, `work/`, `artifacts/`, `plugin/`, `operations/`.
+  `knowledge/`, `library/`, `work/`, `artifacts/`, `routines/`, `plugin/`, `operations/`.
 - **5** `[auto]` Every top-level folder name is a single lowercase word.
 - **5** No unjustified empty optional top-level folders (`reference/ proof/ content/ business/` only
   when they hold real material). Over-preparation lives in subfolders/stubs, not extra root dirs.
@@ -46,7 +46,7 @@ by inspection or by an evaluator subagent.
 - **5** Inferred facts are marked "draft — confirm"; no invented hard facts the user must own.
 - **5** No one-off work promoted to a top-level folder; `validate.py` packaging checks pass.
 - **5** A packaged `{slug}-os.plugin` was produced (or the attempt + outputs noted); intended janitor
-  cadence recorded in `operations/routines.md` if no scheduler was available.
+  cadence + `armed:` status recorded in `routines/README.md` if no scheduler was available.
 
 ---
 

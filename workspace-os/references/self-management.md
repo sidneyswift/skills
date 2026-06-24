@@ -23,7 +23,8 @@ When the user adds material (file, transcript, note, result) OR asks for work, r
   it scores the workspace and writes a punch list to `operations/health.md`. "Left it consistent"
   means a clean doctor run, not a confident summary.
 - The **janitor skill** is the backstop: it runs the doctor, fixes what's safe, and is wired to a
-  scheduled task (default weekly) so drift is caught even when no one is looking.
+  scheduled task (default weekly) — its runnable prompt is `routines/janitor.md` — so drift is caught
+  even when no one is looking.
 - Staleness signals the doctor hunts: entity READMEs whose "next action" is in the past; items in the
   wrong pipeline stage; un-ingested files in inbox/raw; dashboards that don't match the folders;
   recurring answers not yet in the knowledge base; repeated tasks not yet skills; one-off work left at
@@ -47,8 +48,9 @@ When the user adds material (file, transcript, note, result) OR asks for work, r
   and *capabilities*; `{DOMAIN}-reflect` compounds the *machinery* — when the same friction recurs,
   turn it into a new skill, routing row, doctor check, template, or `CLAUDE.md` rule, logged to
   `operations/improvements.md`. Spend ~half the effort on the system that does the work (50/50).
-- Keep `operations/routines.md` with the cadences (e.g. weekly review, periodic value review)
-  and prefer wiring the recurring ones as scheduled tasks.
+- Keep runnable workflow prompts in `routines/` — one file per scheduled/remote workflow (janitor,
+  reflect, learn, and domain runs) — indexed by `routines/README.md` with each one's cadence + arm
+  status, and prefer wiring the recurring ones as scheduled tasks.
 - **Burn down draft-debt.** When you touch a file/folder carrying "draft — confirm" markers, confirm or
   correct them in the same turn. Sparse-input builds start with many predictions; the doctor counts
   them, and normal work should retire them rather than let them pile up.
@@ -67,3 +69,5 @@ When the user adds material (file, transcript, note, result) OR asks for work, r
 9. Raw/idea/draft/published content? -> `content/`
 10. Canon/source/spec/brand? -> `reference/`
 11. Legal/finance/metrics? -> `business/`
+12. A workflow to run on a schedule / unattended (remote/headless)? -> a routine prompt in `routines/`
+    (indexed in `routines/README.md`)

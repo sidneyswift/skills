@@ -3,8 +3,9 @@
 
 Read-only. It recomputes counts from the folders and flags drift the {DOMAIN}-doctor would otherwise
 hunt by hand (board/dashboard truth, manifest parity, dark skills, package freshness, root hygiene,
-draft-confirm debt). The SKILL.md checklist is still the contract — this just makes the mechanical
-subset cheap and repeatable. Exits non-zero when there is a FINDING, so it is cron/CI ready.
+routines + schedule-armed, draft-confirm debt). The SKILL.md checklist is still the contract — this
+just makes the mechanical subset cheap and repeatable. Exits non-zero on a FINDING, so it is cron/CI
+ready.
 
 Usage:
     python3 operations/doctor.py            # run from the workspace root
@@ -24,7 +25,7 @@ ENTITY_DIR = "{ENTITY}"              # the core-unit records folder, e.g. "clien
 PLUGIN_SLUG = "{DOMAIN_SLUG}-os"     # plugin name, used for the package stamp
 # Top-level folders allowed by this workspace's taxonomy (lean core + any justified optionals):
 TAXONOMY = ["reference", "library", "knowledge", PIPELINE_DIR, ENTITY_DIR, "work",
-            "artifacts", "proof", "content", "business", "plugin", "operations"]
+            "artifacts", "routines", "proof", "content", "business", "plugin", "operations"]
 ROOT_FILES_OK = {"README.md", "CLAUDE.md", "AGENTS.md", ".gitignore", ".DS_Store"}
 
 findings: list[str] = []   # things that should be fixed (non-zero exit)
@@ -169,13 +170,22 @@ def check_package_freshness(ws: str, version: str) -> None:
         ok(f"package fresh: last package matches manifests (v{version})")
 
 
-def check_schedule(ws: str) -> None:
-    routines = read(os.path.join(ws, "operations", "routines.md")).lower()
-    if "wired" in routines or "scheduled task" in routines and "enable" not in routines:
-        ok("janitor schedule appears wired")
+def check_routines(ws: str) -> None:
+    """routines/ holds the runnable workflow prompts; routines/README.md indexes them with an
+    'armed: yes|no' marker the scheduler flips once it actually runs unattended."""
+    base = os.path.join(ws, "routines")
+    if not os.path.isdir(base):
+        find("routines/ missing — runnable workflow prompts (janitor, reflect, learn) have no home")
+        return
+    prompts = [f for f in glob.glob(os.path.join(base, "*.md"))
+               if os.path.basename(f).lower() != "readme.md"]
+    ok(f"routines: {len(prompts)} runnable workflow prompt(s) in routines/")
+    index = read(os.path.join(base, "README.md")).lower()
+    if "armed: yes" in index:
+        ok("janitor schedule armed (per routines/README.md)")
     else:
-        find("janitor schedule not armed — wire the scheduling asset (one step) so drift is caught "
-             "when no one is looking")
+        find("janitor schedule not armed — wire a scheduler to run routines/janitor.md, then set "
+             "'armed: yes' in routines/README.md, so drift is caught when no one is looking")
 
 
 def check_root_hygiene(ws: str) -> None:
@@ -220,7 +230,7 @@ def main() -> int:
     version = check_manifests(ws)
     check_skills(ws)
     check_package_freshness(ws, version)
-    check_schedule(ws)
+    check_routines(ws)
     check_root_hygiene(ws)
     check_draft_debt(ws)
 

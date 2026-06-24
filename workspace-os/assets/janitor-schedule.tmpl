@@ -1,9 +1,10 @@
 # Arming the {DOMAIN}-janitor (pick one — enabling is one step)
 
 The never-stale safety net is only real once the janitor runs on a schedule. If no scheduler exists at
-build time, record the cadence in `operations/routines.md` AND drop one of the snippets below so the
-user can enable it with a single copy. Default cadence: **weekly, Monday 09:00**. After enabling, note
-it in `operations/routines.md` so the doctor's "schedule armed" check passes.
+build time, record the cadence + arm status in `routines/README.md` AND drop one of the snippets below
+so the user can enable it with a single copy. Each snippet runs the prompt in `routines/janitor.md`.
+Default cadence: **weekly, Monday 09:00**. After enabling, set `armed: yes` in `routines/README.md` so
+the doctor's "schedule armed" check passes.
 
 ## Option A — GitHub Actions (if the workspace is a GitHub repo)
 Save as `.github/workflows/{DOMAIN_SLUG}-janitor.yml`. Needs an agent CLI + API key available to CI.
@@ -19,13 +20,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run the {DOMAIN}-janitor skill
+      - name: Run the {DOMAIN}-janitor routine
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           # wire your agent runner here, e.g.:
-          # npx @anthropic-ai/claude-code -p "Run the {DOMAIN}-janitor skill" --permission-mode acceptEdits
-          echo "invoke the {DOMAIN}-janitor via your agent runner"
+          # npx @anthropic-ai/claude-code -p "Execute the routine in routines/janitor.md" --permission-mode acceptEdits
+          echo "invoke routines/janitor.md via your agent runner"
       - name: Commit any reconciliation
         run: |
           git config user.name  "{DOMAIN}-janitor"
@@ -38,7 +39,7 @@ jobs:
 `crontab -e`, then (adjust the path + your agent CLI):
 
 ```cron
-0 9 * * 1 cd {workspace} && <agent-cli> -p "Run the {DOMAIN}-janitor skill" >> operations/janitor.log 2>&1
+0 9 * * 1 cd {workspace} && <agent-cli> -p "Execute the routine in routines/janitor.md" >> operations/janitor.log 2>&1
 ```
 
 ## Option C — launchd (macOS, survives reboots)
@@ -51,7 +52,7 @@ Save as `~/Library/LaunchAgents/local.{DOMAIN_SLUG}.janitor.plist`, then `launch
   <key>Label</key><string>local.{DOMAIN_SLUG}.janitor</string>
   <key>ProgramArguments</key>
   <array><string>/bin/sh</string><string>-c</string>
-    <string>cd {workspace} &amp;&amp; &lt;agent-cli&gt; -p "Run the {DOMAIN}-janitor skill"</string>
+    <string>cd {workspace} &amp;&amp; &lt;agent-cli&gt; -p "Execute the routine in routines/janitor.md"</string>
   </array>
   <key>StartCalendarInterval</key><dict>
     <key>Weekday</key><integer>1</integer><key>Hour</key><integer>9</integer><key>Minute</key><integer>0</integer>
@@ -60,4 +61,5 @@ Save as `~/Library/LaunchAgents/local.{DOMAIN_SLUG}.janitor.plist`, then `launch
 ```
 
 ## Option D — agent-runner scheduled task
-If your agent runner has native scheduled tasks, create one that runs the `{DOMAIN}-janitor` weekly.
+If your agent runner has native scheduled tasks, create one that runs the `routines/janitor.md` prompt
+weekly (it drives the `{DOMAIN}-janitor`).

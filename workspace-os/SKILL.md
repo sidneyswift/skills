@@ -67,8 +67,8 @@ Read `references/blueprint.md`.
 - Start from the small **core** the loops maintain: the flowing stores (a staged pipeline folder +
   an entity folder like `clients/` / `artists/` / `features/`), the compounding stores `knowledge/`
   and `library/`, `work/` (non-recurring output, by project), `artifacts/` (finalized recurring
-  outputs like the dashboard), `plugin/` (the in-place plugin), and `operations/` (routines, sync,
-  health, improvements).
+  outputs like the dashboard), `routines/` (runnable prompt instructions for scheduled/remote workflow
+  runs), `plugin/` (the in-place plugin), and `operations/` (sync, health, improvements).
 - Add an **optional** top-level folder only when the domain has real material for it now —
   `reference/` (canon/source), `proof/` (outcomes), `content/` (a real content motion), `business/`
   (legal/finance/metrics). When unsure, leave it out; adding later is one `mkdir`.
@@ -86,6 +86,11 @@ Read `references/blueprint.md`.
 - Write `artifacts/dashboard.html` from `assets/dashboard.html.tmpl` (HTML, not md). Seed
   `operations/health.md` (empty — the `{domain}-doctor` fills it) and `operations/improvements.md`
   (a header for the `{domain}-reflect` ledger).
+- Scaffold `routines/` from `assets/routine.md.tmpl`: seed the maintenance runs `routines/janitor.md`,
+  `routines/reflect.md`, and `routines/compound-learn.md`, plus a stub per recurring remote workflow in
+  the brief (e.g. `routines/weekly-brief.md`, marked "draft — confirm"). Add a `routines/README.md`
+  index listing each routine with its cadence and an `armed: yes|no` marker — the `{domain}-doctor`
+  reads this index for its schedule-armed check, so seed it `armed: no` until Phase 6 wires a scheduler.
 - Write the self-managing `CLAUDE.md` from `assets/CLAUDE.md.tmpl`, customized to the
   domain (filing decision tree, the auto-manage loop, never-stale contract, repetition-to-skill rule).
   Read `references/self-management.md` for what the contract must contain.
@@ -129,6 +134,9 @@ Read `references/skill-authoring.md` and `references/skillifying-work.md` (promo
     checks, templates) into `operations/improvements.md`; the 50/50 budget.
   - a **skillify** skill (`assets/skillify-SKILL.md.tmpl`) — promote proven repeatable work into
     staged, verified skills.
+- Pair the unattended loops with runnable routines: confirm the `routines/` prompts seeded in Phase 2
+  (`janitor.md`, `reflect.md`, `compound-learn.md`) each drive the matching skill, and give any domain
+  workflow meant to run remotely its own `routines/{workflow}.md`.
 - Also include an orchestrator skill (the auto-manage loop as one trigger) named `{domain}-intake`.
 - **Routing stays lean:** rely on each skill's `description` for routing while the pack is small; add
   a `plugin/skills/RESOLVER.md` (trigger -> skill table) only once skills grow enough that
@@ -153,14 +161,15 @@ Read `references/packaging.md`.
 
 ## Phase 6 — Wire the never-stale schedule
 
-- Try to create a scheduled task that runs the janitor skill (default weekly) so the workspace
-  self-reconciles even when the user isn't looking.
+- Try to create a scheduled task that runs `routines/janitor.md` (the janitor routine, default weekly)
+  so the workspace self-reconciles even when the user isn't looking.
 - **If no scheduling tool is available, or the user declines:** this is not a failure. Record the
-  intended cadence in `operations/routines.md`, AND drop a ready-to-use schedule from
-  `assets/janitor-schedule.tmpl` (GitHub Actions / cron / launchd / agent-runner task) so enabling it
-  later is a single copy, not a research project. The OS is still complete — the janitor also runs on
-  demand — but until the schedule is armed, the doctor keeps a standing low "schedule armed" finding,
-  because "self-reconciles when no one is looking" is only true once it actually runs unattended.
+  intended cadence + arm status in `routines/README.md`, AND drop a ready-to-use schedule from
+  `assets/janitor-schedule.tmpl` (GitHub Actions / cron / launchd / agent-runner task) — each snippet
+  runs the routine prompt — so enabling it later is a single copy, not a research project. The OS is
+  still complete — the routines also run on demand — but until the schedule is armed, the doctor keeps
+  a standing low "schedule armed" finding, because "self-reconciles when no one is looking" is only
+  true once it actually runs unattended.
 - Don't block or leave the build "unfinished" over scheduling; treat it as the one optional step.
 
 ## Phase 7 — Report

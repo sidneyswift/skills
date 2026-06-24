@@ -1,0 +1,37 @@
+# Routine: {ROUTINE_NAME}
+
+<!--
+A routine is a saved, runnable PROMPT for ONE workflow that can run unattended (scheduled / remote /
+headless) as well as on demand. One file per workflow, living in routines/. Keep it self-contained:
+an agent that opens only this file (plus the workspace) should be able to run the workflow correctly.
+The cadence + arm status for every routine is indexed in routines/README.md (the doctor reads it).
+Fill every {PLACEHOLDER}; delete this comment.
+-->
+
+- **Purpose:** {one line — what this run accomplishes and why it exists}
+- **Cadence:** {e.g. weekly, Monday 09:00 — or "on demand"}
+- **Invoked by:** {the trigger — a scheduler row in routines/README.md (GitHub Action / cron / launchd /
+  agent-runner task), or "manual"}
+- **Unattended-safe:** {yes / no — "no" means a human must be in the loop}
+
+## Prompt (paste this into the remote/scheduled run)
+> {The exact instruction the agent executes, written so it works with no extra context, e.g.:
+> "Run the {DOMAIN}-janitor skill against this workspace, then report the before/after health score."}
+
+## Context to read first
+- `CLAUDE.md` — the operating contract for this workspace
+- {anything else the run needs: a folder, a prior artifact, the skill it drives}
+
+## Steps
+1. {usually "Invoke the {DOMAIN}-{skill} skill", or explicit instructions if there is no skill}
+2. {…}
+
+## Success check (evidence, not a feeling)
+- {how the run proves it worked, e.g. "`{DOMAIN}-doctor` returns a clean or explained report"}
+
+## Outputs / where results land
+- {e.g. updates operations/health.md; commits reconciliation; writes a brief to artifacts/}
+
+## Unattended guardrails
+- Don't invent {DOMAIN} facts the user owns — mark anything inferred "draft — confirm".
+- {workflow-specific limit — e.g. "do not publish skills unattended; leave verified drafts for approval"}

@@ -56,10 +56,16 @@ lowercase word** (`operations`, not `operating-system`). The split that matters 
 │   │   └── {domain}-skillify/  #   promote proven repeatable work into a skill
 │   └── README.md             #   what the plugin is + how to install
 │
-└── operations/               # META: how the OS runs (not its outputs)
+├── routines/                 # CORE: runnable prompt instructions for scheduled/remote workflow runs
+│   ├── README.md             #   index: each routine + its cadence + arm status (the doctor reads this)
+│   ├── janitor.md            #   the never-stale scheduled run (drives {domain}-janitor)
+│   ├── reflect.md            #   periodic system-improvement run (drives {domain}-reflect)
+│   ├── compound-learn.md     #   end-of-session learning capture (drives {domain}-learn)
+│   └── {workflow}.md         #   one prompt per recurring domain workflow (e.g. weekly-brief)
+│
+└── operations/               # META: the OS's own state + logs (not its outputs)
     ├── health.md             #   latest {domain}-doctor report (score + punch list)
     ├── improvements.md       #   self-improvement ledger ({domain}-reflect)
-    ├── routines.md           #   cadences (daily/weekly/periodic)
     └── sync.md               #   how the filesystem maps to any external system of record (CRM, etc.)
 ```
 
@@ -80,6 +86,10 @@ lowercase word** (`operations`, not `operating-system`). The split that matters 
 - **doctor** (`plugin/skills/{domain}-doctor`) — read-only verification surface; scores the workspace
   and writes a punch list to `operations/health.md`. "Consistent" = a clean doctor run, not a feeling.
 - **janitor** — runs the doctor, then fixes what's safe. Remediation, gated on the doctor.
+- **routines** (`routines/`) — the runnable prompts that let the loops run *unattended*: one markdown
+  file per scheduled/remote workflow (janitor, reflect, learn, and domain runs), indexed by
+  `routines/README.md` with each one's cadence + arm status. The scheduler executes these; the doctor
+  reads that index for its "schedule armed" check.
 - **reflect** (`plugin/skills/{domain}-reflect`) — improves the *system* (skills, routing, checks,
   templates) into `operations/improvements.md`; the 50/50 budget.
 - **resolver** — routing. Each skill's `description` routes it while the pack is small; graduate to an
@@ -103,8 +113,9 @@ lowercase word** (`operations`, not `operating-system`). The split that matters 
   inside `plugin/skills/` are the exception: they stay kebab-case per the Agent Skills spec. Hidden
   agent config directories (`.agents/`) are compatibility adapters, not workspace taxonomy.
 - **Don't over-scaffold the root.** Build the core (flowing `{pipeline}/` + `{entities}/`,
-  `knowledge/`, `library/`, `work/`, `artifacts/`, `plugin/`, `operations/`); add an optional folder
-  (`reference/`, `proof/`, `content/`, `business/`) only when the domain has real material for it now.
+  `knowledge/`, `library/`, `work/`, `artifacts/`, `routines/`, `plugin/`, `operations/`); add an
+  optional folder (`reference/`, `proof/`, `content/`, `business/`) only when the domain has real
+  material for it now.
   Core folders may start empty because the loops fill them; optional folders should not. Over-prepare
   *inside* folders (subfolders + stubs), never as a wide row of empty top-level dirs.
 - **One-off work never earns a top-level folder.** Ad-hoc or task-specific work (building a catalog,

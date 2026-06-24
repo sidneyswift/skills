@@ -34,7 +34,7 @@ in `work/`; repeated or maintained work becomes a staged, verified skill in `plu
 9. **Publish + repackage.** Move the staged skill into `plugin/skills/`, then re-zip `plugin/` to the
    delivery path (a transient artifact — never an `outputs/` folder inside the workspace) and update
    `operations/.packaged-version` so `{DOMAIN}-doctor` sees a fresh package. Update plugin README/index
-   if present, and note any changed routine in `operations/`.
+   if present, and if the new skill should run unattended, add or update its prompt in `routines/`.
 10. **Capture the learning.** If the skill came from a failure or important decision, write a short
     note to `knowledge/` so future agents understand why the skill exists.
 

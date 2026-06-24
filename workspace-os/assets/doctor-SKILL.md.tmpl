@@ -16,7 +16,8 @@ report scales with the system — a few lines for a small workspace, longer as i
 
 **Fast path.** Run `operations/doctor.py` first (generated from `assets/doctor.py.tmpl`) — it
 recomputes counts and flags the mechanical drift (board/dashboard truth, manifest parity, dark skills,
-package freshness, root hygiene, draft-confirm debt) deterministically and exits non-zero on findings.
+package freshness, root hygiene, routines + schedule-armed, draft-confirm debt) deterministically and
+exits non-zero on findings.
 The checklist below is still the contract; the script just makes the mechanical subset cheap so you
 spend judgment on the rest.
 
@@ -42,9 +43,11 @@ spend judgment on the rest.
     version. The package is a transient release artifact, not a workspace folder — its version is
     stamped in `operations/.packaged-version`. If skills/manifests changed since that stamp, flag
     "re-zip plugin/" (the janitor or skillify does it).
-11. **Schedule armed.** The `{DOMAIN}-janitor` is actually wired to a scheduler. If not (no scheduler
-    at build time), keep this as a standing low finding — "self-reconciles when no one is looking" is
-    only true once it's armed — with the one-step enable from `operations/routines.md`.
+11. **Routines + schedule armed.** `routines/` holds a runnable prompt per scheduled/remote workflow
+    (janitor, reflect, learn, domain runs), indexed by `routines/README.md`. The `{DOMAIN}-janitor` is
+    actually wired to a scheduler that runs `routines/janitor.md`; if not (no scheduler at build time),
+    keep this as a standing low finding — "self-reconciles when no one is looking" is only true once
+    `routines/README.md` is marked `armed: yes` via the one-step enable in `assets/janitor-schedule.tmpl`.
 12. **Draft debt.** Count items still marked "draft — confirm" and surface them so the user confirms or
     corrects predictions over time (informational; matters most after a sparse-input build).
 

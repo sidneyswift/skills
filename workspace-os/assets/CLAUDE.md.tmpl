@@ -21,7 +21,8 @@ Confirm before inventing {DOMAIN} facts; otherwise just do the routine filing an
 ## Never stale (checked, not felt)
 If you touched the project, leave it consistent — and "consistent" is what `{DOMAIN}-doctor` reports,
 not a feeling. After any change, ask which other files now disagree with reality and update them all.
-Run `{DOMAIN}-doctor` to verify; the `{DOMAIN}-janitor` skill runs it + fixes drift on a schedule.
+Run `{DOMAIN}-doctor` to verify; the `{DOMAIN}-janitor` skill runs it + fixes drift on a schedule (its
+runnable prompt lives in `routines/janitor.md`, the one the scheduler executes).
 When you touch anything carrying a "draft — confirm" marker, confirm or correct it in the same turn —
 burn that debt down instead of letting predictions accrue.
 
@@ -56,6 +57,8 @@ unless the user explicitly wants a Cursor-only mirror.
 9. Raw/idea/draft/published? -> `content/`
 10. Canon/source/spec? -> `reference/`
 11. Legal/finance/metrics? -> `business/`
+12. A workflow to run on a schedule / unattended (remote/headless)? -> a routine prompt in `routines/`
+    (and index it in `routines/README.md`)
 
 ## Don't
 - Don't duplicate canon; reference `reference/`.

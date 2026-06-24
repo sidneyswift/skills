@@ -35,7 +35,8 @@ is the same: the next agent should not rediscover the process from scratch.
 7. **Ask before committing.** Show the proposed name, triggers, verification result, and destination.
    Only move the staged skill into `plugin/skills/{name}/` after approval.
 8. **Repackage and register.** Re-zip `plugin/`, update any plugin README/index, and note the new skill
-   in `artifacts/dashboard.html` or `operations/routines.md` if it changes how the OS is run.
+   in `artifacts/dashboard.html`; if it should run unattended, add a prompt in `routines/` (indexed in
+   `routines/README.md`) so the scheduler can run it.
 
 ## Minimum skillified bundle
 - `plugin/skills/{name}/SKILL.md` with valid frontmatter and trigger-rich description.
