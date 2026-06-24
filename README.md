@@ -18,7 +18,6 @@ npx skills add sidneyswift/skills
 
 | Skill | Description |
 | --- | --- |
-| [social-graphics](./social-graphics/) | Generate on-brand social graphics for any platform & format — feed posts, carousels, stories, banners, profile pics, thumbnails, pins, OG cards. Full dimensions/safe-zone reference included. HTML → Playwright → PNG. |
 | [workspace-os](./workspace-os/) | Spin up a complete, self-managing workspace operating system for any domain — scaffolds folders, a self-managing CLAUDE.md, domain skills, an installable plugin, a janitor, and a compound-learning loop. |
 
 ## How Personalization Works
