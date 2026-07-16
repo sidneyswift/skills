@@ -18,6 +18,7 @@ npx skills add sidneyswift/skills
 
 | Skill | Description |
 | --- | --- |
+| [finding-unknowns](./finding-unknowns/) | Surface gaps between the task description and what the work actually requires — before writing code. Quadrant-based discovery with techniques like blindspot passes, design directions, mocks, spec interviews, and tweakable plans. |
 | [workspace-os](./workspace-os/) | Spin up a complete, self-managing workspace operating system for any domain — scaffolds folders, a self-managing CLAUDE.md, domain skills, an installable plugin, a janitor, and a compound-learning loop. |
 
 ## License
