@@ -18,6 +18,7 @@ npx skills add sidneyswift/skills
 
 | Skill | Description |
 | --- | --- |
+| [design-inspiration](./design-inspiration/) | Break through design blocks by systematically mining nine curated high-signal galleries — social posts, web UI, minimal sites, OG images, decks, logos, branding, editorial, and brand guidelines. Structured sweep → cross-pollinate → extract patterns → restart momentum. |
 | [ecosystem-mapping](./ecosystem-mapping/) | Take a core solution and map every friction point around it into a compounding product ecosystem. Walks through core transformation extraction, friction mapping (before/during/after), two-sided market scans, and reinforcement mapping — so products strengthen each other instead of standing alone. |
 | [finding-unknowns](./finding-unknowns/) | Surface gaps between the task description and what the work actually requires — before writing code. Quadrant-based discovery with techniques like blindspot passes, design directions, mocks, spec interviews, and tweakable plans. |
 | [problem-mining](./problem-mining/) | Interview-driven discovery that surfaces profitable problems hiding in your own experience. 1-question-at-a-time interview across four phases — achievements, problems overcome, desire mapping, and root-cause reframing — then synthesizes validated product ideas. |
