@@ -3,7 +3,7 @@ name: workspace-os
 description: Spin up a complete workspace operating system for any domain that both manages itself and improves itself — from a kickoff input (files, transcripts, or just a prompt). Before scaffolding it deeply interviews the user, scans available connectors/MCPs for context, researches the domain, and has a systems-designer review its plan. Then it scaffolds a lean spine, writes a self-managing and self-updating CLAUDE.md mirrored to AGENTS.md, authors domain skills named {OS}-{area}-{verb}-{noun}, packages them into an installable plugin with a marketplace manifest, wires a never-stale janitor (with a read-only doctor) on a schedule, keeps a PROGRESS.md log, and builds compound-learning and self-improvement loops so the system stays current and gets better at running itself over time. Make sure to use this skill whenever the user wants to set up a workspace, build or scaffold a workspace/operating system, organize a project, turn files or notes into a managed system, or stand up an OS for a new domain — even if they don't say "operating system." Domain-agnostic: consulting, product management, a record label, research, an agency, personal projects, anything.
 metadata:
   author: Sidney Swift
-  version: "0.11.0"
+  version: "0.11.1"
 ---
 
 # Workspace OS Builder

@@ -193,8 +193,9 @@ def check_routines(ws: str) -> None:
     prompts = [f for f in glob.glob(os.path.join(base, "*.md"))
                if os.path.basename(f).lower() != "readme.md"]
     ok(f"routines: {len(prompts)} runnable workflow prompt(s) in routines/")
-    index = read(os.path.join(base, "README.md")).lower()
-    if "armed: yes" in index:
+    index = read(os.path.join(base, "README.md"))
+    # Match an actual "armed: yes" status field (allow list/table prefixes), not the phrase in prose.
+    if re.search(r"(?mi)^[\s|>*-]*armed:\s*yes\b", index):
         ok("janitor schedule armed (per routines/README.md)")
     else:
         find("janitor schedule not armed — wire a scheduler to run routines/janitor.md, then set "

@@ -30,3 +30,15 @@ _Findings 1–5 applied to `workspace-os` v0.10.0 (2026-06-22) and **verified** 
 | 5 | LOW | `draft — confirm` debt **accumulates with no burn-down ritual** on sparse builds. The doctor surfaces the count but nothing drives confirmation. | research-lab draft-confirm markers 28 (build) → 44 (after use); only surfaced, never reduced. | Add a tiny "confirm predictions" routine to the `operations/routines.md` template and an intake nudge (offer to confirm draft items when a folder with them is touched). | **verified** (run 1814) |
 | H1 | harness | The harness auto-scores only 56/100 of the build rubric; the 44 judgment pts were scored by the parent this run. | This run. | Add an optional evaluator-subagent step (readonly) to score judgment + use-time rubric at scale, so larger runs don't bottleneck on the parent. | proposed |
 | 6 | LOW | `doctor.py.tmpl` entity-freshness heuristic matched the word "follow", so a *filed* "follow-up" note with a past date raised a false freshness finding. | run 2026-06-22-1814 (verify-operate agent renamed the note to dodge the gauge, then logged it). | Tighten the cue from `next/due/follow` to `next action / due / overdue` so history doesn't trip it. | **applied** |
+
+### Run 2026-07-23-1035 (v0.11.0 verification — personal OS "daniel")
+
+Fresh-context build on v0.11.0 scored **56/56** static + verified judgment items: 4-word naming across
+areas (`daniel-content-*`, `daniel-consulting-*`, `daniel-personal-*`, `daniel-system-*`), lean spine,
+marketplace manifest, `PROGRESS.md`, `scripts/doctor.py`, vendored `find-unknowns`, self-updating brain.
+The interview/connector/research/review front half is best verified interactively; this run verified the
+build artifacts. One finding:
+
+| # | Pri | Finding (observed) | Evidence | Change in workspace-os | Status |
+|---|-----|--------------------|----------|------------------------|--------|
+| 7 | LOW | `doctor.py.tmpl` schedule-armed check used a naive `"armed: yes" in text` match, so the phrase in prose (e.g. "set armed: yes to enable") falsely reports the schedule as armed. | daniel-os builder hit it and worked around it in the build. | Match an actual status field only: `^[\s\|>*-]*armed:\s*yes` (anchored, allows list/table prefixes). Bumped to v0.11.1. | **applied** |

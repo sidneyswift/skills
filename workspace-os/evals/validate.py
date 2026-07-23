@@ -16,9 +16,11 @@ import os
 import re
 import sys
 
-# Organs every OS must author (matched by folder-name suffix, since they're domain-prefixed).
-ORGANS = ["intake", "doctor", "janitor", "learn", "reflect", "skillify"]
-CORE_DIRS = ["knowledge", "library", "work", "artifacts", "routines", "plugin", "operations"]
+# Organs every OS authors (matched by folder-name suffix; names are {os}-{area}-{verb}-{noun}).
+ORGANS = ["process-input", "check-health", "fix-drift", "capture-learning",
+          "improve-machinery", "promote-skill", "find-unknowns"]
+# The lean spine — the only folders always created; everything else is created on demand.
+SPINE_DIRS = ["plugin", "routines", "scripts", "docs", "work"]
 PLACEHOLDERS = ["{DOMAIN}", "{OS}", "{OS_TITLE}", "{PIPELINE}", "{ENTITY}", "{DOMAIN_SLUG}", "{DOMAIN_TITLE}", "{AUTHOR}"]
 
 
@@ -64,24 +66,21 @@ def frontmatter(text: str) -> dict[str, str]:
 
 
 def check_structure(ws: str, r: Report) -> None:
-    present = [d for d in CORE_DIRS if os.path.isdir(os.path.join(ws, d))]
-    missing = [d for d in CORE_DIRS if d not in present]
-    pts = 3 * len(present) / len(CORE_DIRS)
+    present = [d for d in SPINE_DIRS if os.path.isdir(os.path.join(ws, d))]
+    missing = [d for d in SPINE_DIRS if d not in present]
     r.add(
-        "core_dirs",
-        pts,
-        3,
+        "spine_dirs",
+        5 * len(present) / len(SPINE_DIRS),
+        5,
         "PASS" if not missing else "FAIL",
-        f"core dirs present {len(present)}/{len(CORE_DIRS)}" + (f"; missing {missing}" if missing else ""),
+        f"spine present {len(present)}/{len(SPINE_DIRS)}" + (f"; missing {missing}" if missing else ""),
     )
+    # Pipeline is on-demand (a personal OS may have none) — report it, don't score it.
     pipeline = glob.glob(os.path.join(ws, "*", "_board.md"))
     r.add(
-        "pipeline_detected",
-        2 if pipeline else 0,
-        2,
-        "PASS" if pipeline else "WARN",
-        f"flowing pipeline (_board.md) at {os.path.basename(os.path.dirname(pipeline[0]))}/" if pipeline
-        else "no _board.md found in any top-level folder",
+        "pipeline_detected", 0, 0, "PASS" if pipeline else "WARN",
+        f"flowing pipeline at {os.path.basename(os.path.dirname(pipeline[0]))}/" if pipeline
+        else "no _board.md (fine — created on demand)",
     )
 
 
@@ -139,23 +138,18 @@ def check_brain(ws: str, r: Report) -> None:
     else:
         r.add("brain_agents", 0, 4, "FAIL", "AGENTS.md missing")
 
-    dash = read(os.path.join(ws, "artifacts", "dashboard.html"))
-    got = 0.0
-    if "<html" in dash.lower():
-        got += 2
-    elif dash:
-        notes = ["dashboard exists but isn't HTML"]
-    if dash and not any(p in dash for p in PLACEHOLDERS):
-        got += 2
-    r.add("brain_dashboard", got, 4, "PASS" if got == 4 else ("WARN" if got else "FAIL"),
-          "dashboard.html is HTML and customized" if got == 4 else "dashboard missing/placeholder/not-HTML")
+    prog = read(os.path.join(ws, "PROGRESS.md"))
+    if prog.strip() and "##" in prog:
+        r.add("brain_progress", 4, 4, "PASS", "PROGRESS.md present with entries")
+    elif prog.strip():
+        r.add("brain_progress", 2, 4, "WARN", "PROGRESS.md present but has no dated entries")
+    else:
+        r.add("brain_progress", 0, 4, "FAIL", "PROGRESS.md missing or empty")
 
-    ops = 0
-    for f in ("health.md", "improvements.md"):
-        if os.path.isfile(os.path.join(ws, "operations", f)):
-            ops += 2
-    r.add("brain_operations", ops, 4, "PASS" if ops == 4 else "FAIL",
-          f"operations seeded {ops//2}/2 files")
+    if os.path.isfile(os.path.join(ws, "scripts", "doctor.py")):
+        r.add("brain_scripts", 4, 4, "PASS", "scripts/doctor.py shipped (doctor fast path)")
+    else:
+        r.add("brain_scripts", 0, 4, "FAIL", "scripts/doctor.py missing")
 
 
 def skill_dirs(ws: str) -> list[str]:
@@ -174,7 +168,7 @@ def check_skills(ws: str, r: Report) -> None:
     total = min(10, organ_score + (2 if domain_skill else 0))
     missing = [o for o in ORGANS if o not in found]
     r.add("skills_organs", total, 10, "PASS" if total >= 9 else ("WARN" if total >= 6 else "FAIL"),
-          f"organs {len(found)}/6" + (f", missing {missing}" if missing else "") +
+          f"organs {len(found)}/{len(ORGANS)}" + (f", missing {missing}" if missing else "") +
           (", +domain skill" if domain_skill else ", NO domain skill"))
 
     valid, problems = 0, []
@@ -195,6 +189,9 @@ def check_skills(ws: str, r: Report) -> None:
         elif "<" in fm["description"] or ">" in fm["description"]:
             problems.append(f"{name}: angle bracket in description")
             ok = False
+        if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+){3,}", name):
+            problems.append(f"{name}: not 4-word os-area-verb-noun")
+            ok = False
         valid += ok
     sv = 6 * valid / len(dirs) if dirs else 0
     r.add("skills_valid", sv, 6, "PASS" if dirs and valid == len(dirs) else ("WARN" if valid else "FAIL"),
@@ -204,26 +201,35 @@ def check_skills(ws: str, r: Report) -> None:
 def check_manifests(ws: str, r: Report) -> None:
     cpath = os.path.join(ws, "plugin", ".claude-plugin", "plugin.json")
     xpath = os.path.join(ws, "plugin", ".codex-plugin", "plugin.json")
+    mpath = os.path.join(ws, "plugin", ".claude-plugin", "marketplace.json")
     got, notes = 0.0, []
-    claude = codex = None
+    claude = codex = market = None
     try:
         claude = json.loads(read(cpath))
         codex = json.loads(read(xpath))
         got += 2
     except (json.JSONDecodeError, ValueError):
-        notes.append("a manifest is missing or invalid JSON")
+        notes.append("a plugin manifest is missing or invalid JSON")
     if claude and codex:
         cn, xn = claude.get("name", ""), codex.get("name", "")
         if cn and cn == xn and re.fullmatch(r"[a-z0-9-]+", cn):
-            got += 2
+            got += 1
         else:
             notes.append(f"name parity/kebab fail (claude={cn!r} codex={xn!r})")
         if codex.get("skills") == "./skills/":
-            got += 2
+            got += 1
         else:
             notes.append(f"codex skills path is {codex.get('skills')!r}, want './skills/'")
+    try:
+        market = json.loads(read(mpath))
+    except (json.JSONDecodeError, ValueError):
+        market = None
+    if market and claude and any(p.get("name") == claude.get("name") for p in market.get("plugins", [])):
+        got += 2
+    else:
+        notes.append("marketplace.json missing/invalid or doesn't list the plugin")
     r.add("manifests", got, 6, "PASS" if got == 6 else ("WARN" if got else "FAIL"),
-          "; ".join(notes) or f"manifests valid + parity (name={claude.get('name')!r})")
+          "; ".join(notes) or f"manifests + marketplace parity (name={claude.get('name')!r})")
 
 
 def check_adapter(ws: str, r: Report) -> None:
