@@ -25,6 +25,28 @@ metadata:                    # optional
 ---
 ```
 
+## Skill naming convention (4 words, scannable)
+Every skill in a workspace OS is named `{OS}-{area}-{verb}-{noun}` — four kebab words — so anyone can
+scan at a glance *whose* OS it belongs to, *what area* it serves, and *what it does*.
+- **`{OS}`** — the OS's identity slug, matching the plugin name `{OS}-os`. For a **personal** OS it is
+  the owner's name (`daniel` -> `daniel-os`); for a **domain** OS it is the domain (`consulting` ->
+  `consulting-os`). The interview (Phase 0) establishes which.
+- **`{area}`** — the domain / category / topic the skill serves (`marketing`, `sales`, `linkedin`).
+  For the maintenance organs, `{area}` = `system`.
+- **`{verb}-{noun}`** — the action, verb first (`draft-proposal`, `check-health`, `find-unknowns`).
+
+Examples: `daniel-marketing-write-post`, `consulting-sales-draft-proposal`, `daniel-system-check-health`.
+
+The generated `CLAUDE.md` MUST carry this rule so every future skill the workspace authors obeys it.
+The organ role -> name mapping (default verbs; keep them unless the user prefers others):
+
+| role | skill name | role | skill name |
+|---|---|---|---|
+| intake | `{OS}-system-process-input` | reflect | `{OS}-system-improve-machinery` |
+| doctor | `{OS}-system-check-health` | skillify | `{OS}-system-promote-skill` |
+| janitor | `{OS}-system-fix-drift` | find-unknowns | `{OS}-system-find-unknowns` |
+| learn | `{OS}-system-capture-learning` | | |
+
 ## Description = the trigger (make it a little "pushy")
 The description is the primary triggering mechanism, and Claude tends to UNDER-trigger skills. Combat
 that: state what it does AND explicit contexts, e.g. "...Make sure to use this skill whenever the user
@@ -51,28 +73,35 @@ mentions X, Y, or wants Z — even if they don't explicitly say 'X'." Third pers
 Author every skill under the workspace `plugin/skills/` (the `plugin/` folder is the installable
 plugin itself — see `packaging.md`). Expose those same skills to Cursor and Codex through the
 workspace `.agents/skills` adapter; do not author a second copy there.
-1. An **orchestrator**: `{domain}-intake` — the auto-manage loop as one trigger.
-2. One skill per **recurring task** from the brief (work that repeats or needs upkeep — one-off builds
-   stay in `work/`, not a throwaway skill).
-3. A **doctor** (from `assets/doctor-SKILL.md.tmpl`) — read-only verification surface (health score +
-   punch list to `operations/health.md`).
-4. A **janitor** (from `assets/janitor-SKILL.md.tmpl`) — runs the doctor, then reconciles + fixes.
-5. A **compound-learn** skill (from `assets/compound-learn-SKILL.md.tmpl`) — domain knowledge.
-6. A **reflect** skill (from `assets/reflect-SKILL.md.tmpl`) — improves the OS itself into
-   `operations/improvements.md` (the 50/50 budget).
-7. A **skillify** skill (from `assets/skillify-SKILL.md.tmpl`) — promote proven repeatable work into
-   staged, verified skills.
-Prefix skills with the domain (e.g. `label-`, `pm-`) so they group together. Repackaging is just
-re-zipping `plugin/`, so no separate packager skill is needed.
+Name every skill `{OS}-{area}-{verb}-{noun}` (above). The always-authored set (organs use
+`area = system`):
+1. An **orchestrator** `{OS}-system-process-input` — the auto-manage loop as one trigger (intake).
+2. A **doctor** `{OS}-system-check-health` (from `assets/doctor-SKILL.md.tmpl`) — read-only
+   verification surface (score + punch list to `operations/health.md`).
+3. A **janitor** `{OS}-system-fix-drift` (from `assets/janitor-SKILL.md.tmpl`) — runs the doctor, then
+   reconciles + fixes.
+4. A **learn** skill `{OS}-system-capture-learning` (from `assets/compound-learn-SKILL.md.tmpl`) —
+   compound domain knowledge.
+5. A **reflect** skill `{OS}-system-improve-machinery` (from `assets/reflect-SKILL.md.tmpl`) — improves
+   the OS itself into `operations/improvements.md` (the 50/50 budget).
+6. A **skillify** skill `{OS}-system-promote-skill` (from `assets/skillify-SKILL.md.tmpl`) — promote
+   proven repeatable work into staged, verified skills.
+7. A **find-unknowns** skill `{OS}-system-find-unknowns` — pre-work discovery (surface gaps before
+   building). Author it by reading the `finding-unknowns` skill at
+   github.com/sidneyswift/skills/tree/main/finding-unknowns and adapting it to this OS's naming.
+8. One skill per **recurring task** from the brief (`{OS}-{area}-{verb}-{noun}`) — work that repeats or
+   needs upkeep; one-off builds stay in `work/`, not a throwaway skill.
+
+Repackaging is just re-zipping `plugin/`, so no separate packager skill is needed.
 
 **Routing (graduated).** While the pack is small, each skill's `description` is the resolver — make it
-trigger-rich and non-overlapping. Once skills multiply (descriptions overlap, or `{domain}-doctor`
+trigger-rich and non-overlapping. Once skills multiply (descriptions overlap, or `{OS}-system-check-health`
 flags reachability), add an explicit `plugin/skills/RESOLVER.md` (a trigger -> skill table) and keep it
 honest. Either way, author a trigger for *every* skill so none goes **dark** (built but unreachable) —
 that's what the doctor's reachability check catches.
 
 ## Plugin manifests and adapters
-- Default the plugin name to `{DOMAIN_SLUG}-os` unless the user explicitly names it.
+- Default the plugin name to `{OS}-os` unless the user explicitly names it.
 - Write both manifests with the same `"name"` and `"version"`:
   - `plugin/.claude-plugin/plugin.json`
   - `plugin/.codex-plugin/plugin.json`

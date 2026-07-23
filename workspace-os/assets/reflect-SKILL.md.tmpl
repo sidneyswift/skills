@@ -1,11 +1,11 @@
 ---
-name: {DOMAIN}-reflect
+name: {OS}-system-improve-machinery
 description: Improve the {DOMAIN} OS itself — its brain, routing, skills, templates, and checks — not just its contents. Use after a batch of work, when the same friction recurs, on "improve the system", "what should we automate", or for a periodic system review. Powers the 50/50 budget: half the effort on the system that does the work.
 ---
 
 # {DOMAIN} Reflect
 
-`{DOMAIN}-learn` compounds **domain knowledge** (decisions, faqs, insights). `{DOMAIN}-skillify`
+`{OS}-system-capture-learning` compounds **domain knowledge** (decisions, faqs, insights). `{OS}-system-promote-skill`
 compounds **capabilities**. This skill compounds the **system itself** — so the OS gets better at
 operating, not just fuller of content. Forward-only: every pass should leave the machinery sharper.
 
@@ -15,9 +15,9 @@ operating, not just fuller of content. Forward-only: every pass should leave the
 2. **Propose grounded improvements only.** For each, name the *observed instance* that justifies it.
    No improvement from generic best-practice — if you can't cite a real friction, don't propose it.
 3. **Pick the cheapest durable fix per friction:**
-   - a recurring task -> a new skill (run `{DOMAIN}-skillify`);
+   - a recurring task -> a new skill (run `{OS}-system-promote-skill`);
    - a skill that mis-fires or never fires -> a `description` fix or a `plugin/skills/RESOLVER.md` row;
-   - a recurring inconsistency -> a new check in `{DOMAIN}-doctor`;
+   - a recurring inconsistency -> a new check in `{OS}-system-check-health`;
    - a deliverable rebuilt from scratch -> a template in `library/`;
    - a rule the agent keeps missing -> one line in `CLAUDE.md`.
 4. **Log it.** Append to `operations/improvements.md`, dated: the change + the friction that grounds it

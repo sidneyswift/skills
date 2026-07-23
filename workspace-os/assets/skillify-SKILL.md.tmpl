@@ -1,5 +1,5 @@
 ---
-name: {DOMAIN}-skillify
+name: {OS}-system-promote-skill
 description: Promote proven {DOMAIN} work into a durable workspace skill. Use after a task succeeds, after repeated manual work, when a failure should not recur, or when the user says "skillify this", "make this repeatable", "save this as a skill", or "we will do this again".
 ---
 
@@ -14,8 +14,9 @@ in `work/`; repeated or maintained work becomes a staged, verified skill in `plu
    in `knowledge/`, and stop.
 2. **Prove provenance.** Identify the accepted result, source artifact, conversation, or failure that
    justifies the skill. Do not synthesize from vague memory.
-3. **Name + triggers.** Choose a short kebab-case skill name and 3-5 trigger phrases a future user or
-   agent would actually say.
+3. **Name + triggers.** Name it `{OS}-{area}-{verb}-{noun}` (4 kebab words — the OS slug, the area it
+   serves, then verb-noun; e.g. `{OS}-marketing-write-post`). Choose 3-5 trigger phrases a future user
+   or agent would actually say.
 4. **Stage first.** Draft in `work/YYYY-MM-DD-skillify-{name}/`; never write a half-working skill
    directly into `plugin/skills/`.
 5. **Extract the repeatable process.** Keep the invariant steps, decision rules, examples, and reusable
@@ -33,7 +34,7 @@ in `work/`; repeated or maintained work becomes a staged, verified skill in `plu
    approval, or when the workspace declares an explicit autonomous-publish policy.
 9. **Publish + repackage.** Move the staged skill into `plugin/skills/`, then re-zip `plugin/` to the
    delivery path (a transient artifact — never an `outputs/` folder inside the workspace) and update
-   `operations/.packaged-version` so `{DOMAIN}-doctor` sees a fresh package. Update plugin README/index
+   `operations/.packaged-version` so `{OS}-system-check-health` sees a fresh package. Update plugin README/index
    if present, and if the new skill should run unattended, add or update its prompt in `routines/`.
 10. **Capture the learning.** If the skill came from a failure or important decision, write a short
     note to `knowledge/` so future agents understand why the skill exists.

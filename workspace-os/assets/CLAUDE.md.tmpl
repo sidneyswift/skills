@@ -1,66 +1,92 @@
 # Working conventions for this workspace — {DOMAIN} OS
 
-You operate the {DOMAIN} operating system. Your job is not just to file things — it is to keep the
-system **current and compounding**, and to decide "done" and "consistent" by evidence (a
-`{DOMAIN}-doctor` run), not by feeling. Act autonomously on the rules below. (AGENTS.md is a symlink
-to this file.)
+You operate the {DOMAIN} OS. Your job is not just to file things — it is to keep the system **current,
+compounding, and self-describing**, and to decide "done" and "consistent" by evidence (a
+`{OS}-system-check-health` run), not by feeling. Act autonomously on the rules below. (AGENTS.md is a
+symlink to this file, so editing this file updates both.)
+
+## The two modes of work — always know which you're in
+- **One-off / output work** — a deliverable or answer that won't repeat. It goes in
+  `work/{project}/YYYY-MM-DD-…/` and never earns a top-level folder.
+- **System / design work** — improving the OS itself: a new skill, template, doctor check, routing
+  rule, folder, or `CLAUDE.md` edit. This compounds; spend ~half your effort here (50/50).
+
+Name which mode a task is, then act accordingly. Confusing the two is how workspaces rot.
 
 ## Auto-manage loop (run on new input, without being asked)
-1. Place the raw file in its correct home, dated YYYY-MM-DD.
+1. Place the raw file in its correct home, dated YYYY-MM-DD (create the folder if it doesn't exist yet).
 2. Read it.
-3. Extract reusable value into `knowledge/` (insights / faqs / decisions).
+3. Extract reusable value into `knowledge/` (insights / faqs / decisions) — create `knowledge/` if absent.
 4. Scan the related {ENTITY}/{PIPELINE} folder; read its README; reconcile.
-5. Update everything affected in the SAME turn: entity README dashboards, `{PIPELINE}/_board.md`,
+5. Update everything affected in the SAME turn: entity READMEs, `{PIPELINE}/_board.md`,
    `artifacts/dashboard.html`, metrics. (never-stale rule)
 6. Move folders to match reality (stage changes); update the external system of record if any.
 7. Mine for compounding assets (templates, proof, FAQs).
-8. Report what changed.
+8. Append a line to `PROGRESS.md`, then report what changed.
 
 Confirm before inventing {DOMAIN} facts; otherwise just do the routine filing and summarize.
 
+## Grow the structure on demand (don't pre-build; don't hoard folders)
+The workspace starts as a lean spine (`plugin/ routines/ scripts/ docs/ work/` + root files). Create a
+top-level folder the moment real material needs it — `knowledge/`, a pipeline, an entity folder, or a
+brand-new one-word folder the domain genuinely calls for — and never create folders speculatively.
+Every top-level folder and file name is a single lowercase word. When you add or rename a folder you
+own the consequence: update this file's filing tree in the same turn.
+
+## Self-updating brain (you MUST keep this file current)
+This file is the brain; a stale brain is the worst drift there is. Whenever the system changes — a new
+folder, a new skill, a new convention, a new routine, a moved boundary — update `CLAUDE.md` in the SAME
+turn so it always matches reality. `AGENTS.md` is a symlink, so it follows automatically. The doctor
+checks brain currency; don't make it catch a lie.
+
+## Always append to PROGRESS.md
+Every work session, append one entry to the root `PROGRESS.md` — no exceptions:
+
+```
+## YYYY-MM-DD
+- **{what you did}** — {why it was done, 1-2 sentences}.
+```
+
+Pitch it between technical and plain-English so a human and an agent both understand it. It's a log:
+date, thing done, why. Append; never rewrite history.
+
 ## Never stale (checked, not felt)
-If you touched the project, leave it consistent — and "consistent" is what `{DOMAIN}-doctor` reports,
-not a feeling. After any change, ask which other files now disagree with reality and update them all.
-Run `{DOMAIN}-doctor` to verify; the `{DOMAIN}-janitor` skill runs it + fixes drift on a schedule (its
-runnable prompt lives in `routines/janitor.md`, the one the scheduler executes).
-When you touch anything carrying a "draft — confirm" marker, confirm or correct it in the same turn —
-burn that debt down instead of letting predictions accrue.
+If you touched the project, leave it consistent — "consistent" is what `{OS}-system-check-health`
+reports, not a feeling. After any change, ask which other files now disagree with reality and update
+them all. `{OS}-system-fix-drift` (the janitor) runs the doctor + fixes drift on a schedule (its
+runnable prompt is `routines/janitor.md`).
 
 ## Compound learning + self-improvement (get smarter every session)
-Every session deposits at least one durable learning (a decision, a canonical answer, an insight, or
-an improved template/skill). Search `knowledge/` before solving anything — never twice. And improve the
-**system**, not just its contents: when the same friction recurs, run `{DOMAIN}-reflect` to turn it
-into a new skill, routing row, doctor check, or rule, logged to `operations/improvements.md` (~half
-your effort on the system that does the work).
+Deposit at least one durable learning each session (a decision, faq, insight, or an improved
+template/skill). Search `knowledge/` before solving anything — never twice. Improve the **system**, not
+only its contents: when the same friction recurs, run `{OS}-system-improve-machinery` (reflect) to turn
+it into a new skill, routing row, doctor check, or rule, logged to `operations/improvements.md`.
 
 ## After work, ask: "skillify this?"
-When you finish a task, ask whether it will be done again, need maintaining, or prevent a failure from
-recurring. If yes, run the `{DOMAIN}-skillify` skill. It stages a draft in `work/`, extracts the
-repeatable process, verifies it, asks for approval, then moves it to `plugin/skills/{name}/SKILL.md`
-and repackages. If it's a one-off, the output goes in `work/{project}/YYYY-MM-DD-…/`, never a new
-top-level folder.
+When you finish a task, ask whether it will repeat, need upkeep, or prevent a failure from recurring.
+If yes, run `{OS}-system-promote-skill` (skillify): it stages a draft in `work/`, verifies it, then
+(with approval) publishes it and repackages. **Every skill lives in `plugin/skills/` — never author one
+outside this workspace or outside that folder** — and is named `{OS}-{area}-{verb}-{noun}` (4 words;
+maintenance organs use the area `system`). Reusable scripts go in `scripts/`.
 
 ## Agent compatibility
-`plugin/skills/` is the source of truth. `.agents/skills` points there so Cursor and Codex can discover
-the same project skills. Do not edit `.agents/skills` directly, and do not create `.cursor/skills`
-unless the user explicitly wants a Cursor-only mirror.
+`plugin/skills/` is the source of truth. `.agents/skills` points there so Cursor and Codex discover the
+same skills. Don't edit `.agents/skills` directly, and don't create `.cursor/skills` unless asked.
 
 ## Filing decision tree
-1. Reusable instrument (template/script/checklist)? -> `library/`
-2. A task that will repeat or need upkeep? -> run `{DOMAIN}-skillify`
-3. A finalized output you regenerate (dashboard, recurring report)? -> `artifacts/`
-4. A one-off / ad-hoc build (won't repeat)? -> `work/{project}/YYYY-MM-DD-…/`
-5. Reusable answer/insight/decision/SOP? -> `knowledge/`
-6. Flowing item not yet done? -> `{PIPELINE}/`
-7. Tied to a core entity? -> `{ENTITY}/`
-8. Outcome/proof? -> `proof/`
-9. Raw/idea/draft/published? -> `content/`
-10. Canon/source/spec? -> `reference/`
-11. Legal/finance/metrics? -> `business/`
-12. A workflow to run on a schedule / unattended (remote/headless)? -> a routine prompt in `routines/`
-    (and index it in `routines/README.md`)
+1. Reusable instrument (template/checklist/boilerplate)? -> `library/`
+2. Reusable executable script? -> `scripts/`
+3. A task that will repeat or need upkeep? -> run `{OS}-system-promote-skill` (skill lands in `plugin/skills/`)
+4. A finalized output you regenerate (dashboard, recurring report)? -> `artifacts/`
+5. A one-off / ad-hoc build (won't repeat)? -> `work/{project}/YYYY-MM-DD-…/`
+6. Reusable answer/insight/decision/SOP? -> `knowledge/`
+7. Human-facing doc about how this OS works? -> `docs/`
+8. Flowing item not yet done? -> `{PIPELINE}/`
+9. Tied to a core entity? -> `{ENTITY}/`
+10. A workflow to run on a schedule / unattended? -> a routine prompt in `routines/` (indexed in `routines/README.md`)
+11. Something genuinely new the domain needs? -> a new one-word top-level folder — then update this tree.
 
 ## Don't
-- Don't duplicate canon; reference `reference/`.
+- Don't leave the system stale, the brain outdated, or `PROGRESS.md` un-appended after a session.
 - Don't invent facts the user must own — mark inferred items "draft — confirm".
-- Don't leave the system stale after input — run the loop.
+- Don't pre-create empty folders; don't author a skill outside `plugin/skills/`.

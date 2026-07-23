@@ -13,13 +13,13 @@ When the user adds material (file, transcript, note, result) OR asks for work, r
    `artifacts/dashboard.html`, metrics. This is the never-stale rule.
 6. **Move** folders to match reality (stage changes); update any external system of record.
 7. **Mine** for compounding assets (templates, proof, FAQs).
-8. **Report** what changed.
+8. **Append** a line to `PROGRESS.md`, then report what changed.
 
 ## 2. The never-stale contract (state management is the agent's job)
 - "Touched the project" = "left it consistent." Never end a turn with a dashboard, board, or README
   that contradicts what just happened.
 - After any change, ask: *which other files now disagree with reality?* Update them all.
-- **Consistency is checked, not felt.** The read-only `{DOMAIN}-doctor` is the verification surface —
+- **Consistency is checked, not felt.** The read-only `{OS}-system-check-health` is the verification surface —
   it scores the workspace and writes a punch list to `operations/health.md`. "Left it consistent"
   means a clean doctor run, not a confident summary.
 - The **janitor skill** is the backstop: it runs the doctor, fixes what's safe, and is wired to a
@@ -38,14 +38,14 @@ When the user adds material (file, transcript, note, result) OR asks for work, r
 - Never solve the same problem twice — search the knowledge base first; if the answer exists, reuse it;
   if it doesn't and the question is recurring, write it down.
 - **Ask "skillify this?"** After finishing work, ask whether it will repeat, need upkeep, or prevent a
-  failure from recurring. If yes, run the `{DOMAIN}-skillify` skill; it stages the draft under
+  failure from recurring. If yes, run the `{OS}-system-promote-skill` skill; it stages the draft under
   `work/`, verifies it, asks for approval, then moves it into `plugin/skills/` and repackages. One-off
   work stays in `work/` (dated) — it never becomes its own top-level folder. **Unattended** (a scheduled
   janitor with no human present): skillify stops at staged + verified + *proposed* (logged to
   `operations/improvements.md`); publishing to `plugin/skills/` waits for approval unless the workspace
   sets an explicit autonomous-publish policy.
 - **Improve the system, not just its contents.** `knowledge/` and `plugin/skills/` compound *content*
-  and *capabilities*; `{DOMAIN}-reflect` compounds the *machinery* — when the same friction recurs,
+  and *capabilities*; `{OS}-system-improve-machinery` compounds the *machinery* — when the same friction recurs,
   turn it into a new skill, routing row, doctor check, template, or `CLAUDE.md` rule, logged to
   `operations/improvements.md`. Spend ~half the effort on the system that does the work (50/50).
 - Keep runnable workflow prompts in `routines/` — one file per scheduled/remote workflow (janitor,
@@ -57,9 +57,26 @@ When the user adds material (file, transcript, note, result) OR asks for work, r
 - Keep `plugin/skills/` as the source of truth for skills. `.agents/skills` is only the Cursor/Codex
   discovery adapter and should point to or mirror `plugin/skills/`.
 
+## 4. The self-describing contract (brain currency, progress log, grow-on-demand)
+- **The brain updates itself.** `CLAUDE.md` must always match the real folders and rules. Whenever the
+  system changes — a folder added/renamed, a skill authored, a convention or routine changed — update
+  `CLAUDE.md` in the same turn (`AGENTS.md` is its symlink). A stale brain is the highest-severity
+  drift; the doctor's brain-currency check gates on it.
+- **Append to `PROGRESS.md` every session.** The root `PROGRESS.md` is append-only: `## YYYY-MM-DD` then
+  `- **{what}** — {why}` in 1-2 sentences, pitched between technical and plain-English so a human and an
+  agent both read it. Date, thing done, why. Never rewrite it.
+- **Grow on demand, stay lean.** Start from the spine (`plugin/ routines/ scripts/ docs/ work/`); create
+  any other top-level folder (`knowledge/`, a pipeline, an entity folder, or a new one-word folder the
+  domain needs) only when real material arrives or an organ needs it. Each organ creates the folder it
+  writes to on first use. Every top-level folder and file name is a single lowercase word.
+- **Two modes.** Separate one-off output (-> `work/`) from system/design improvement (-> a skill,
+  template, doctor check, routine, or `CLAUDE.md` rule). Spend ~half the effort on the system (50/50).
+- **Scripts live in `scripts/`; skills live in `plugin/skills/`** (named `{OS}-{area}-{verb}-{noun}`),
+  never elsewhere.
+
 ## Filing decision tree (customize labels per domain)
 1. Reusable instrument (template/script/checklist)? -> `library/`
-2. A task that will repeat or need upkeep? -> run `{DOMAIN}-skillify`
+2. A task that will repeat or need upkeep? -> run `{OS}-system-promote-skill`
 3. A finalized output you regenerate/keep current (dashboard, recurring report/export)? -> `artifacts/`
 4. A one-off / ad-hoc build (won't repeat)? -> `work/{project}/YYYY-MM-DD-…/` (not a new top-level folder)
 5. Reusable answer/insight/decision/SOP? -> `knowledge/`

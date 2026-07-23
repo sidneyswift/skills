@@ -1,4 +1,4 @@
-# Arming the {DOMAIN}-janitor (pick one — enabling is one step)
+# Arming the {OS}-system-fix-drift (pick one — enabling is one step)
 
 The never-stale safety net is only real once the janitor runs on a schedule. If no scheduler exists at
 build time, record the cadence + arm status in `routines/README.md` AND drop one of the snippets below
@@ -7,10 +7,10 @@ Default cadence: **weekly, Monday 09:00**. After enabling, set `armed: yes` in `
 the doctor's "schedule armed" check passes.
 
 ## Option A — GitHub Actions (if the workspace is a GitHub repo)
-Save as `.github/workflows/{DOMAIN_SLUG}-janitor.yml`. Needs an agent CLI + API key available to CI.
+Save as `.github/workflows/{OS}-janitor.yml`. Needs an agent CLI + API key available to CI.
 
 ```yaml
-name: {DOMAIN_SLUG}-janitor
+name: {OS}-janitor
 on:
   schedule:
     - cron: "0 9 * * 1"        # Mondays 09:00 UTC
@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run the {DOMAIN}-janitor routine
+      - name: Run the {OS}-system-fix-drift routine
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
@@ -29,9 +29,9 @@ jobs:
           echo "invoke routines/janitor.md via your agent runner"
       - name: Commit any reconciliation
         run: |
-          git config user.name  "{DOMAIN}-janitor"
+          git config user.name  "{OS}-system-fix-drift"
           git config user.email "janitor@users.noreply.github.com"
-          git add -A && git commit -m "chore: scheduled {DOMAIN}-janitor reconcile" || echo "nothing to reconcile"
+          git add -A && git commit -m "chore: scheduled {OS}-system-fix-drift reconcile" || echo "nothing to reconcile"
           git push || true
 ```
 
@@ -43,13 +43,13 @@ jobs:
 ```
 
 ## Option C — launchd (macOS, survives reboots)
-Save as `~/Library/LaunchAgents/local.{DOMAIN_SLUG}.janitor.plist`, then `launchctl load` it:
+Save as `~/Library/LaunchAgents/local.{OS}.janitor.plist`, then `launchctl load` it:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0"><dict>
-  <key>Label</key><string>local.{DOMAIN_SLUG}.janitor</string>
+  <key>Label</key><string>local.{OS}.janitor</string>
   <key>ProgramArguments</key>
   <array><string>/bin/sh</string><string>-c</string>
     <string>cd {workspace} &amp;&amp; &lt;agent-cli&gt; -p "Execute the routine in routines/janitor.md"</string>
@@ -62,4 +62,4 @@ Save as `~/Library/LaunchAgents/local.{DOMAIN_SLUG}.janitor.plist`, then `launch
 
 ## Option D — agent-runner scheduled task
 If your agent runner has native scheduled tasks, create one that runs the `routines/janitor.md` prompt
-weekly (it drives the `{DOMAIN}-janitor`).
+weekly (it drives the `{OS}-system-fix-drift`).

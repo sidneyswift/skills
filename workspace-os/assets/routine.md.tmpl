@@ -16,18 +16,18 @@ Fill every {PLACEHOLDER}; delete this comment.
 
 ## Prompt (paste this into the remote/scheduled run)
 > {The exact instruction the agent executes, written so it works with no extra context, e.g.:
-> "Run the {DOMAIN}-janitor skill against this workspace, then report the before/after health score."}
+> "Run the {OS}-system-fix-drift skill against this workspace, then report the before/after health score."}
 
 ## Context to read first
 - `CLAUDE.md` — the operating contract for this workspace
 - {anything else the run needs: a folder, a prior artifact, the skill it drives}
 
 ## Steps
-1. {usually "Invoke the {DOMAIN}-{skill} skill", or explicit instructions if there is no skill}
+1. {usually "Invoke the {OS}-{area}-{verb}-{noun} skill", or explicit instructions if there is no skill}
 2. {…}
 
 ## Success check (evidence, not a feeling)
-- {how the run proves it worked, e.g. "`{DOMAIN}-doctor` returns a clean or explained report"}
+- {how the run proves it worked, e.g. "`{OS}-system-check-health` returns a clean or explained report"}
 
 ## Outputs / where results land
 - {e.g. updates operations/health.md; commits reconciliation; writes a brief to artifacts/}

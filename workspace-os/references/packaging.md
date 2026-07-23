@@ -4,12 +4,13 @@ The workspace's `plugin/` directory is the source of truth for skills. Build it 
 through the install/discovery surfaces each agent expects.
 
 ## Naming
-Default the plugin name to `{DOMAIN_SLUG}-os` (kebab-case). Use the user's explicit name only if they give
+Default the plugin name to `{OS}-os` (kebab-case). Use the user's explicit name only if they give
 one. The workspace folder stays `plugin/` to keep the root taxonomy simple; the packaged artifact and
-both manifest `"name"` fields use `{DOMAIN_SLUG}-os`.
+both manifest `"name"` fields use `{OS}-os`.
 
-- `DOMAIN_SLUG`: lowercase kebab-case domain label (`product`, `record-label`, `research`).
-- `DOMAIN_TITLE`: human title case label for UI text (`Product`, `Record Label`, `Research`).
+- `OS`: the OS slug (kebab) — the owner's name for a personal OS (`daniel`), or the domain for a domain
+  OS (`consulting`, `research`). The plugin, both manifests, and the marketplace all use `{OS}-os`.
+- `DOMAIN`: the OS's display name in title case (`Daniel`, `Consulting`, `Research`).
 
 ## Multi-agent layout
 ```
@@ -20,11 +21,12 @@ both manifest `"name"` fields use `{DOMAIN_SLUG}-os`.
 │
 └── plugin/
     ├── .claude-plugin/
-    │   └── plugin.json       # Claude plugin manifest
+    │   ├── plugin.json       # Claude plugin manifest
+    │   └── marketplace.json  # marketplace manifest (lists this one plugin, source ".")
     ├── .codex-plugin/
     │   └── plugin.json       # Codex plugin manifest
     ├── skills/
-    │   └── {skill}/SKILL.md  # one folder per skill
+    │   └── {OS}-{area}-{verb}-{noun}/SKILL.md   # one folder per skill (organs use area=system)
     └── README.md
 ```
 
@@ -45,11 +47,11 @@ is a compatibility mirror that must be refreshed after skill changes.
 Write `plugin/.claude-plugin/plugin.json` from `assets/claude-plugin.json.tmpl`:
 ```json
 {
-  "name": "{DOMAIN_SLUG}-os",
+  "name": "{OS}-os",
   "version": "0.1.0",
-  "description": "Operating system for {DOMAIN_TITLE} — skills for intake, maintenance, learning, and repeatable work.",
+  "description": "Operating system for {DOMAIN} — skills for intake, maintenance, learning, and repeatable work.",
   "author": { "name": "{author}" },
-  "keywords": ["{DOMAIN_SLUG}", "workspace-os", "skills"]
+  "keywords": ["{OS}", "workspace-os", "skills"]
 }
 ```
 
@@ -57,36 +59,58 @@ Write `plugin/.claude-plugin/plugin.json` from `assets/claude-plugin.json.tmpl`:
 Write `plugin/.codex-plugin/plugin.json` from `assets/codex-plugin.json.tmpl`:
 ```json
 {
-  "name": "{DOMAIN_SLUG}-os",
+  "name": "{OS}-os",
   "version": "0.1.0",
-  "description": "Operating system for {DOMAIN_TITLE} — skills for intake, maintenance, learning, and repeatable work.",
+  "description": "Operating system for {DOMAIN} — skills for intake, maintenance, learning, and repeatable work.",
   "author": { "name": "{author}" },
-  "keywords": ["{DOMAIN_SLUG}", "workspace-os", "skills"],
+  "keywords": ["{OS}", "workspace-os", "skills"],
   "skills": "./skills/",
   "interface": {
-    "displayName": "{DOMAIN_TITLE} OS",
-    "shortDescription": "Workspace operating system for {DOMAIN_TITLE}.",
+    "displayName": "{DOMAIN} OS",
+    "shortDescription": "Workspace operating system for {DOMAIN}.",
     "longDescription": "A workspace operating system with skills for intake, maintenance, compound learning, and promoting repeatable work into durable capabilities.",
     "developerName": "{author}",
     "category": "Productivity",
     "capabilities": ["Skills"],
-    "defaultPrompt": "Use {DOMAIN_SLUG}-os to organize this workspace and run the right workflow."
+    "defaultPrompt": "Use {OS}-os to organize this workspace and run the right workflow."
   }
 }
 ```
 
 Paths in the Codex manifest are relative to `plugin/` and must begin with `./`.
 
+## Marketplace manifest
+Write `plugin/.claude-plugin/marketplace.json` from `assets/marketplace.json.tmpl` so the workspace is
+directly installable as a one-plugin marketplace (`/plugin marketplace add {path-or-repo}`):
+```json
+{
+  "name": "{OS}-os",
+  "owner": { "name": "{AUTHOR}" },
+  "metadata": { "description": "Marketplace for the {DOMAIN} OS plugin.", "version": "0.1.0" },
+  "plugins": [
+    { "name": "{OS}-os", "source": ".",
+      "description": "Operating system for {DOMAIN} — intake, maintenance, learning, repeatable work.",
+      "version": "0.1.0", "author": { "name": "{AUTHOR}" }, "keywords": ["{OS}", "workspace-os", "skills"] }
+  ]
+}
+```
+The plugin `name` must match both plugin manifests (`{OS}-os`); `source: "."` points at the plugin at
+the marketplace root. The doctor's manifest check gates on this file existing and listing the plugin.
+
 ## Validate BEFORE zipping
 1. Both manifests exist:
    - `plugin/.claude-plugin/plugin.json`
    - `plugin/.codex-plugin/plugin.json`
-2. Both manifests are valid JSON and share the same kebab-case `"name"` (`{DOMAIN_SLUG}-os` by default).
+2. Both manifests are valid JSON and share the same kebab-case `"name"` (`{OS}-os` by default).
 3. The Codex manifest includes `"skills": "./skills/"`.
 4. Every `plugin/skills/*/` folder contains a `SKILL.md` with valid frontmatter (`name` + `description`).
 5. No `<` or `>` in any skill `description` (some loaders reject XML-looking tags).
 6. No stray non-skill folders inside `plugin/skills/`.
 7. `.agents/skills` points to or mirrors `plugin/skills`.
+8. `plugin/.claude-plugin/marketplace.json` exists, is valid JSON, and lists a plugin whose `name`
+   matches the manifests.
+9. Every `plugin/skills/*/` folder is named `{OS}-{area}-{verb}-{noun}` (4 kebab words; organs use
+   `area = system`).
 
 A quick validator:
 ```bash
@@ -98,6 +122,8 @@ codex = json.load(open(f"{plg}/.codex-plugin/plugin.json"))
 assert claude["name"] == codex["name"], "manifest names differ"
 assert re.fullmatch(r"[a-z0-9-]+", claude["name"]), "name not kebab-case"
 assert codex.get("skills") == "./skills/", "Codex skills path must be ./skills/"
+market = json.load(open(f"{plg}/.claude-plugin/marketplace.json"))
+assert any(p.get("name") == claude["name"] for p in market.get("plugins", [])), "marketplace must list the plugin"
 bad = []
 for sk in glob.glob(f"{plg}/skills/*/SKILL.md"):
     text = open(sk).read()
@@ -122,27 +148,27 @@ PY
 Zip the **contents** of `plugin/` (so `.claude-plugin/` and `.codex-plugin/` sit at the zip root) into
 `/tmp` first, then copy to the outputs folder:
 ```bash
-cd {workspace}/plugin && zip -rq /tmp/{DOMAIN_SLUG}-os.plugin . -x "*.DS_Store"
-cp /tmp/{DOMAIN_SLUG}-os.plugin {OUTPUTS}/{DOMAIN_SLUG}-os.plugin
+cd {workspace}/plugin && zip -rq /tmp/{OS}-os.plugin . -x "*.DS_Store"
+cp /tmp/{OS}-os.plugin {OUTPUTS}/{OS}-os.plugin
 ```
 
 Claude and Codex install from the plugin manifests. Cursor and Codex can also use the checked-in
 project skills directly through `.agents/skills`.
 
 ## Keep the package fresh (the artifact is transient, not taxonomy)
-The packaged `{DOMAIN_SLUG}-os.plugin` is a **release artifact, not a workspace folder**. Never create
+The packaged `{OS}-os.plugin` is a **release artifact, not a workspace folder**. Never create
 an `outputs/` (or similar) top-level directory for it inside the workspace — that would trip the
 doctor's root-hygiene check. Zip to `/tmp` and deliver to the external outputs location.
 
 Because `plugin/skills/` is the source of truth, the package goes **stale** the moment a skill or
-manifest changes in place — e.g. when `{DOMAIN}-skillify` publishes a skill or the janitor reconciles
+manifest changes in place — e.g. when `{OS}-system-promote-skill` publishes a skill or the janitor reconciles
 one. After any such change, re-zip and record the packaged version so the doctor can verify freshness:
 ```bash
-cd {workspace}/plugin && zip -rq /tmp/{DOMAIN_SLUG}-os.plugin . -x "*.DS_Store"
-cp /tmp/{DOMAIN_SLUG}-os.plugin {OUTPUTS}/{DOMAIN_SLUG}-os.plugin
+cd {workspace}/plugin && zip -rq /tmp/{OS}-os.plugin . -x "*.DS_Store"
+cp /tmp/{OS}-os.plugin {OUTPUTS}/{OS}-os.plugin
 python3 -c "import json;print(json.load(open('.claude-plugin/plugin.json'))['version'])" > {workspace}/operations/.packaged-version
 ```
-The `{DOMAIN}-janitor` and `{DOMAIN}-skillify` skills own this step; `{DOMAIN}-doctor` only reports when
+The `{OS}-system-fix-drift` and `{OS}-system-promote-skill` skills own this step; `{OS}-system-check-health` only reports when
 the stamp and the manifest version disagree (its package-freshness check).
 
 ## AGENTS.md

@@ -19,7 +19,7 @@ import sys
 # Organs every OS must author (matched by folder-name suffix, since they're domain-prefixed).
 ORGANS = ["intake", "doctor", "janitor", "learn", "reflect", "skillify"]
 CORE_DIRS = ["knowledge", "library", "work", "artifacts", "routines", "plugin", "operations"]
-PLACEHOLDERS = ["{DOMAIN}", "{PIPELINE}", "{ENTITY}", "{DOMAIN_SLUG}", "{DOMAIN_TITLE}", "{AUTHOR}"]
+PLACEHOLDERS = ["{DOMAIN}", "{OS}", "{OS_TITLE}", "{PIPELINE}", "{ENTITY}", "{DOMAIN_SLUG}", "{DOMAIN_TITLE}", "{AUTHOR}"]
 
 
 class Report:

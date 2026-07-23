@@ -1,12 +1,12 @@
 ---
-name: {DOMAIN}-doctor
+name: {OS}-system-check-health
 description: Read-only health check for the {DOMAIN} workspace. Use on "audit the system", "health check", "is everything consistent", "is anything stale", before a release, or as the verification surface the janitor and the build report are gated on. Reports a score and a punch list; fixes nothing.
 ---
 
 # {DOMAIN} Doctor
 
 The workspace's **verification surface**: answer "is this OS consistent?" with checkable evidence, not
-a feeling. Read-only — find and report problems, never fix them (the `{DOMAIN}-janitor` fixes). A
+a feeling. Read-only — find and report problems, never fix them (the `{OS}-system-fix-drift` fixes). A
 doctor that edits the workspace is a cage, not a gauge.
 
 ## Run
@@ -14,7 +14,7 @@ Walk the checks below against the actual filesystem, then write `operations/heal
 a score (0-100), and a prioritized punch list (each item: what, where, severity, who-fixes). The
 report scales with the system — a few lines for a small workspace, longer as it grows.
 
-**Fast path.** Run `operations/doctor.py` first (generated from `assets/doctor.py.tmpl`) — it
+**Fast path.** Run `scripts/doctor.py` first (generated from `assets/doctor.py.tmpl`) — it
 recomputes counts and flags the mechanical drift (board/dashboard truth, manifest parity, dark skills,
 package freshness, root hygiene, routines + schedule-armed, draft-confirm debt) deterministically and
 exits non-zero on findings.
@@ -22,7 +22,10 @@ The checklist below is still the contract; the script just makes the mechanical 
 spend judgment on the rest.
 
 ## Checks
-1. **Dashboard truth.** `artifacts/dashboard.html` counts/KPIs match the actual folders.
+Only check folders that exist — this OS grows on demand, so an absent `knowledge/`, `artifacts/`, or
+pipeline is not a finding unless there is material that belongs there.
+
+1. **Dashboard truth.** If `artifacts/dashboard.html` exists, its counts/KPIs match the actual folders.
 2. **Entity freshness.** No `{ENTITY}/*/README.md` whose "next action" date is in the past, or whose
    status contradicts recent activity.
 3. **Stage + board truth.** Every flowing item sits in a valid `{PIPELINE}/` stage; `_board.md`
@@ -34,7 +37,8 @@ spend judgment on the rest.
    a clear, non-overlapping `description` (or a `plugin/skills/RESOLVER.md` row once the pack is
    large). A built-but-unreachable skill is a finding: "a surgeon the hospital can't find."
 7. **Manifest parity.** `plugin/.claude-plugin/plugin.json` and `plugin/.codex-plugin/plugin.json`
-   share the same kebab `name` and `version`; the Codex manifest points at `./skills/`;
+   share the same kebab `name` (`{OS}-os`) and `version`; the Codex manifest points at `./skills/`;
+   `plugin/.claude-plugin/marketplace.json` exists and lists the plugin (`source: "."`);
    `.agents/skills` resolves to `plugin/skills`.
 8. **Knowledge gaps.** Answers given 2+ times not yet in `knowledge/faqs/`; outcomes missing from
    `proof/`; tasks done 2+ times not yet skillified.
@@ -44,19 +48,23 @@ spend judgment on the rest.
     stamped in `operations/.packaged-version`. If skills/manifests changed since that stamp, flag
     "re-zip plugin/" (the janitor or skillify does it).
 11. **Routines + schedule armed.** `routines/` holds a runnable prompt per scheduled/remote workflow
-    (janitor, reflect, learn, domain runs), indexed by `routines/README.md`. The `{DOMAIN}-janitor` is
+    (janitor, reflect, learn, domain runs), indexed by `routines/README.md`. The `{OS}-system-fix-drift` is
     actually wired to a scheduler that runs `routines/janitor.md`; if not (no scheduler at build time),
     keep this as a standing low finding — "self-reconciles when no one is looking" is only true once
     `routines/README.md` is marked `armed: yes` via the one-step enable in `assets/janitor-schedule.tmpl`.
 12. **Draft debt.** Count items still marked "draft — confirm" and surface them so the user confirms or
     corrects predictions over time (informational; matters most after a sparse-input build).
+13. **Naming convention.** Every `plugin/skills/*/` folder is named `{OS}-{area}-{verb}-{noun}` (4 kebab
+    words; organs use `area = system`). Flag any skill that breaks the pattern.
+14. **Progress log.** `PROGRESS.md` exists at the root and was appended to for recent work (date · what
+    · why) — an empty or stale log means sessions aren't recording themselves.
 
 ## Score + report
 - Start at 100; subtract per finding by severity (broken or contradictory state hurts most; a missing
   nice-to-have least). Record the number and the punch list in `operations/health.md`.
 - "Consistent" is what this report says — not what a turn *felt* like. The never-stale contract and
   the build's done-report are gated on a clean (or explicitly explained) doctor run.
-- Technical workspaces MAY back these checks with a script (e.g. `operations/doctor.py`) for speed and
+- Technical workspaces MAY back these checks with a script (e.g. `scripts/doctor.py`) for speed and
   reliability; the checklist is the contract either way.
 
 ## Terminal states
