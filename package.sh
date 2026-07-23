@@ -3,7 +3,7 @@
 # package.sh — build a versioned, distributable zip for every skill in the repo.
 #
 # A "skill" is any top-level folder that contains a SKILL.md. For each one this
-# builds {skill}-v{version}.zip, with the version read from that skill's own
+# builds packages/{skill}-v{version}.zip, with the version read from that skill's own
 # SKILL.md frontmatter, so a package filename can never drift from its source.
 # Each skill's previous package is removed first (with a precise pattern, so
 # similarly-named skills like "workspace" and "workspace-os" never clobber one
@@ -15,6 +15,10 @@ set -euo pipefail
 
 # Operate from the repo root (this script's own directory) regardless of caller.
 cd "$(dirname "$0")"
+
+# Built packages live in one place, not scattered at the repo root.
+PKG_DIR="packages"
+mkdir -p "$PKG_DIR"
 
 # Echo the `version` value from a SKILL.md's YAML frontmatter (the block between
 # the first two `---` lines). Prints nothing when absent.
@@ -46,10 +50,10 @@ for skill_md in */SKILL.md; do
 
   # Remove only THIS skill's old package(s); the precise "{skill}-v" pattern
   # can't match a different skill that merely shares a name prefix.
-  rm -f "${skill}.zip" "${skill}-v"*.zip
+  rm -f "$PKG_DIR/${skill}.zip" "$PKG_DIR/${skill}-v"*.zip
 
   # Zip the shippable files only — exclude dev-only evals and junk caches.
-  zip -rq "$zip_name" "$skill" \
+  zip -rq "$PKG_DIR/$zip_name" "$skill" \
     -x "${skill}/evals/*" \
     -x "*/__pycache__/*" \
     -x "*.DS_Store"
@@ -63,9 +67,9 @@ done
 # Flag any root .zip that no longer matches a current skill+version — a leftover
 # from a renamed/removed skill, which is exactly the silent drift this script
 # exists to prevent. Reported, not deleted, so the choice stays yours.
-for z in *.zip; do
+for z in "$PKG_DIR"/*.zip; do
   [ -e "$z" ] || continue
-  if ! printf '%s' "$built_zips" | grep -qxF "$z"; then
+  if ! printf '%s' "$built_zips" | grep -qxF "$(basename "$z")"; then
     echo "package.sh: note: '$z' matches no current skill — consider deleting it" >&2
   fi
 done
