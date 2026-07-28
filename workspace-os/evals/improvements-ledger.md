@@ -42,3 +42,9 @@ build artifacts. One finding:
 | # | Pri | Finding (observed) | Evidence | Change in workspace-os | Status |
 |---|-----|--------------------|----------|------------------------|--------|
 | 7 | LOW | `doctor.py.tmpl` schedule-armed check used a naive `"armed: yes" in text` match, so the phrase in prose (e.g. "set armed: yes to enable") falsely reports the schedule as armed. | daniel-os builder hit it and worked around it in the build. | Match an actual status field only: `^[\s\|>*-]*armed:\s*yes` (anchored, allows list/table prefixes). Bumped to v0.11.1. | **applied** |
+
+### Run 2026-07-28 (v0.12.0 work continuity)
+
+| # | Pri | Finding (observed) | Evidence | Change in workspace-os | Status |
+| --- | --- | --- | --- | --- | --- |
+| 8 | HIGH | Cross-session work could resume, but three v0.11.1 samples improvised three different domain-dependent handoff structures with no shared lifecycle or health contract. | `evals/baselines/v0.11.1-work-continuity.md` | Add a thin canonical work-package README, shared work instructions, package-aware organs and doctor checks, and hidden-oracle fresh-context evals. Three candidate builds and start/resume/discovery sequences passed; extended closeout repetitions were stopped after the user narrowed scope. | **applied** |

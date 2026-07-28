@@ -17,11 +17,3 @@ Tasks, in order:
 
 5. (optional) "We rebuild proposals from scratch every time and it's painful. Anything here worth
    turning into something repeatable?"
-
-**What a strong run looks like:** task 1 moves Acme from the `proposal` stage to `won`/`signed`,
-updates `clients/acme-corp/README.md`, the pipeline `_board.md`, and `artifacts/dashboard.html` *in
-the same turn*, and captures the new "standard SOW structure" question as an FAQ; task 2 moves Globex
-to `lost` and writes a decision/insight about price-based losses to `knowledge/`; task 3 runs the
-read-only doctor → scored `operations/health.md`; task 4 runs the janitor; task 5 proposes skillifying
-the proposal builder (the template already exists in `library/`, so this is ripe). The stage moves and
-dashboard refresh in task 1 should happen **without** being told to "update the dashboard."

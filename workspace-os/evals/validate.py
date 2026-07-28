@@ -152,6 +152,54 @@ def check_brain(ws: str, r: Report) -> None:
         r.add("brain_scripts", 0, 4, "FAIL", "scripts/doctor.py missing")
 
 
+def check_work_contract(ws: str, r: Report) -> None:
+    """Score the generated managed-work control surface."""
+    work = os.path.join(ws, "work")
+    got = 0.0
+    notes = []
+
+    if os.path.isfile(os.path.join(work, "README.md")):
+        got += 2
+    else:
+        notes.append("work/README.md missing")
+
+    if os.path.isfile(os.path.join(work, "AGENTS.md")):
+        got += 2
+    else:
+        notes.append("work/AGENTS.md missing")
+
+    claude_adapter = os.path.join(work, "CLAUDE.md")
+    adapter_text = read(claude_adapter).lower()
+    if os.path.islink(claude_adapter) or "agents.md" in adapter_text:
+        got += 1
+    else:
+        notes.append("work/CLAUDE.md adapter missing")
+
+    setup_readme = os.path.join(work, "workspace-os-setup", "README.md")
+    if os.path.isfile(setup_readme):
+        got += 1
+    else:
+        notes.append("workspace-os setup package missing")
+
+    root_brain = read(os.path.join(ws, "CLAUDE.md")).lower()
+    continuity_language = any(
+        phrase in root_brain
+        for phrase in ("session or agent", "context boundary", "survive context")
+    )
+    if "work/agents.md" in root_brain and continuity_language:
+        got += 2
+    else:
+        notes.append("root brain does not route managed work")
+
+    r.add(
+        "work_contract",
+        got,
+        8,
+        "PASS" if got == 8 else ("WARN" if got >= 5 else "FAIL"),
+        "; ".join(notes) or "managed-work control surface complete",
+    )
+
+
 def skill_dirs(ws: str) -> list[str]:
     base = os.path.join(ws, "plugin", "skills")
     if not os.path.isdir(base):
@@ -260,6 +308,7 @@ def main() -> int:
     check_structure(ws, r)
     check_naming(ws, r)
     check_brain(ws, r)
+    check_work_contract(ws, r)
     check_skills(ws, r)
     check_manifests(ws, r)
     check_adapter(ws, r)

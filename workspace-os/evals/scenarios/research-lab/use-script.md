@@ -20,9 +20,3 @@ Tasks, in order:
 
 5. (optional) "Is there anything we keep doing by hand here that's worth making repeatable, or any way
    the system itself should be improved?"
-
-**What a strong run looks like:** task 1 files the raw note into its dated home, updates the relevant
-experiment/study record + the dashboard *in the same turn*; task 2 deposits a durable decision in
-`knowledge/`; task 3 runs the read-only doctor and writes a scored report to `operations/health.md`;
-task 4 runs the janitor (fixes safe drift, re-scores); task 5 logs a grounded improvement or proposes
-a skillify. Crucially, the updates in task 1 happen **without** being told to "update the dashboard."

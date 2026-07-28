@@ -1,6 +1,6 @@
 ---
 name: {OS}-system-improve-machinery
-description: Improve the {DOMAIN} OS itself — its brain, routing, skills, templates, and checks — not just its contents. Use after a batch of work, when the same friction recurs, on "improve the system", "what should we automate", or for a periodic system review. Powers the 50/50 budget: half the effort on the system that does the work.
+description: Improve the {DOMAIN} OS itself — its brain, routing, skills, templates, checks, and evals. Use after evidence-backed friction, a meaningful failure, on "improve the system", "what should we automate", or for a periodic system review.
 ---
 
 # {DOMAIN} Reflect
@@ -10,8 +10,8 @@ compounds **capabilities**. This skill compounds the **system itself** — so th
 operating, not just fuller of content. Forward-only: every pass should leave the machinery sharper.
 
 ## Steps
-1. **Look for repetition.** Scan recent `work/`, the janitor's punch lists, `operations/health.md`,
-   `knowledge/`, and friction from this session. What did you do — or correct — more than once?
+1. **Look for grounded friction.** Scan completed, cancelled, and failed package outcomes; the
+   janitor's punch lists; `operations/health.md`; and prior rejected improvements.
 2. **Propose grounded improvements only.** For each, name the *observed instance* that justifies it.
    No improvement from generic best-practice — if you can't cite a real friction, don't propose it.
 3. **Pick the cheapest durable fix per friction:**
@@ -19,13 +19,15 @@ operating, not just fuller of content. Forward-only: every pass should leave the
    - a skill that mis-fires or never fires -> a `description` fix or a `plugin/skills/RESOLVER.md` row;
    - a recurring inconsistency -> a new check in `{OS}-system-check-health`;
    - a deliverable rebuilt from scratch -> a template in `library/`;
+   - an important recurring failure -> a fresh-context eval or regression test;
    - a rule the agent keeps missing -> one line in `CLAUDE.md`.
 4. **Log it.** Append to `operations/improvements.md`, dated: the change + the friction that grounds it
-   + status (proposed / applied / embodied / rejected). Keep rejected reasoning so it isn't re-proposed.
+   + status (`proposed`, `applied`, `verified`, or `rejected`). Keep rejected reasoning so it is not
+   re-proposed.
 5. **Apply the safe ones now; flag the larger ones** for the user.
-6. **Budget check (50/50).** After a work batch, ask whether the next highest-leverage move is a
-   *system* improvement (skill, routing row, doctor check, template, rule) rather than more content.
-   If you make none, log why — a genuine "nothing recurred" is a clean no-op, not a failure.
+6. **Verify by replay.** `applied` is not `verified`. Promote it only after a replay, fresh-context
+   eval, or later package proves the change prevented recurrence or reduced handoff cost.
+7. **Allow the clean no-op.** If no observed friction warrants machinery work, record why and stop.
 
 ## Don't
 - Don't manufacture a change when nothing recurred (that's a cage, not a ratchet).

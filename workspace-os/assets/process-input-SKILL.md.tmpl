@@ -1,0 +1,40 @@
+---
+name: {OS}-system-process-input
+description: Process new {DOMAIN} files, notes, results, and requests into the correct authoritative records. Use whenever new material arrives, the user says "process this", "file this", "update the workspace", or asks for consequential work that may need a managed handoff.
+---
+
+# {DOMAIN} Intake
+
+Process new material end to end. Filing is not complete until affected truth, handoff state, and
+derived views agree.
+
+## Steps
+
+1. **Load the contracts.** Read root `CLAUDE.md`, `work/AGENTS.md`, and any related package or domain
+   instructions.
+2. **Find existing work.** Search `work/README.md`, package IDs, domain records, and declared external
+   systems before creating anything. Resume equivalent work.
+3. **Decide whether continuity is needed.** Create a package only when another session/agent is likely,
+   a blocker or review gate exists, research can change the approach, durable evidence is required, or
+   the user asks to track it. Keep routine same-turn work package-free.
+4. **Place and read the input.** File raw material in its dated domain or package home, then read it
+   fully and preserve provenance.
+5. **Reconcile authority.** Update package coordination state, domain records, board/dashboard, and
+   declared external fields only where each surface is authoritative.
+6. **Revise the work.** When evidence changes assumptions, scope, acceptance, or sequencing, update
+   the package README and optional `plan.md` in the same turn.
+7. **Extract durable value selectively.** Promote only settled reusable answers, instruments, proof,
+   recurring output, or verified repeatable work. Raw findings stay with the package. A justified
+   "nothing reusable" result is valid.
+8. **Leave a handoff.** Record current state, exact next action, changed artifacts, verification,
+   blockers/review needs, and unresolved assumptions. Reconcile the derived work index and append a
+   material lifecycle event to `PROGRESS.md`.
+9. **Verify consequential changes.** Run `{OS}-system-check-health`; report a clean or explained
+   result rather than claiming consistency by confidence.
+
+## Guardrails
+
+- Do not invent {DOMAIN} facts, ownership, completion, cancellation, evidence, or external state.
+- Do not duplicate facts across package, domain, and external authorities.
+- Do not create empty optional folders.
+- Do not manufacture a learning or skill merely to complete the loop.

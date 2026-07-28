@@ -23,18 +23,31 @@ never read `workspace-os`. So every stage uses a subagent with a clean context w
 If a loop only fires when a human reminds the agent, that's a finding — the generated `CLAUDE.md`
 isn't pulling its weight.
 
+## RED before GREEN
+
+Before changing `workspace-os`, run the relevant scenario against a frozen prior package and record
+the observed failure under `baselines/`. If the baseline succeeds, tighten the scenario or narrow the
+claim instead of inventing a failure. The work-continuity baseline intentionally records that
+fresh-agent resume passed while the package topology and lifecycle contract varied.
+
+## Keep answers hidden
+
+Agent-visible kickoff and use prompts contain realistic user context only. Expected behavior lives in
+separate `*-oracle.md` or `oracle.md` files that only the evaluator reads. Passing an oracle to a
+builder/operator invalidates the run.
+
 ## The pipeline
 
 ```
-scenario kickoff ─▶ [builder agent] ─▶ built workspace ─▶ git snapshot
+scenario kickoff ─▶ [builder agent] ─▶ built workspace ─▶ turn snapshot
                                               │
                                        [static eval]  validate.py + rubric (build-time)
                                               │
-                          new input + asks ─▶ [user agent] ─▶ operated workspace
+                          one realistic ask ─▶ [fresh user agent] ─▶ turn snapshot
                                               │
-                                        git diff (before/after)
+                                 repeat with a fresh context per turn
                                               │
-                                     [behavioral eval]  rubric (use-time)
+                              [behavioral eval] hidden oracle + rubric
                                               │
                                         [synthesis] ─▶ improvements-ledger.md + a dated report
 ```
@@ -46,10 +59,12 @@ evals/
 ├── README.md               # this file — the methodology
 ├── rubric.md               # build-time + use-time scoring (tied to the skill's contracts)
 ├── validate.py             # automated static checks on a built workspace (the mechanical subset)
+├── baselines/              # committed RED evidence from frozen prior versions
 ├── improvements-ledger.md  # accumulating, dated findings → concrete edits to workspace-os
 ├── scenarios/              # the test cases (inputs are committed; outputs are not)
 │   ├── research-lab/       #   SPARSE input → tests Phase 0 prediction + "lean root"
-│   └── consulting-firm/    #   RICH input → tests extraction into knowledge/entities/library
+│   ├── consulting-firm/    #   RICH input → tests extraction into knowledge/entities/library
+│   └── work-continuity/    #   start → fresh resume → discovery → close + no-package control
 └── runs/                   # GITIGNORED generated artifacts: one dir per run
     └── YYYY-MM-DD-HHMM/
         ├── research-lab/workspace/      # what the builder produced
@@ -60,10 +75,14 @@ evals/
 A scenario folder contains:
 
 - `kickoff.md` — what the **builder** receives (a prompt, or a pointer to a `kickoff/` input packet).
+- `builder-oracle.md` — hidden build expectations; never pass this to the builder.
 - `kickoff/` — (rich scenarios only) the input files the builder ingests.
 - `use-script.md` — the natural-language tasks the **user agent** performs after the build.
+- `use-oracle.md` — hidden use expectations; never pass this to an operator.
 - `use-input/` — new material dropped into the workspace during the use phase (tests never-stale on
   genuinely new input the builder never saw).
+
+The work-continuity scenario uses one agent-visible file per turn plus one hidden `oracle.md`.
 
 ## How to run it
 
@@ -72,12 +91,16 @@ A scenario folder contains:
    absolute path to `workspace-os/SKILL.md`, told to build *only* inside its workspace dir.
 3. **Static eval:** `python3 workspace-os/evals/validate.py <workspace_dir>` → JSON score + findings.
    Score the judgment items in `rubric.md` by inspection.
-4. **Freeze:** `git -C <workspace_dir> init -q && git -C <workspace_dir> add -A && git -C <workspace_dir> commit -qm baseline`.
-5. **Use:** dispatch a user subagent per workspace — fresh context, given the workspace path and the
-   `use-script.md`, **never** told about `workspace-os` or the words "never-stale"/"doctor".
-6. **Behavioral eval:** `git -C <workspace_dir> diff baseline` is the evidence. Score the use-time
-   rubric (an evaluator subagent reads the diff + the user agent's report).
-7. **Synthesize:** write `runs/<timestamp>/report.md` and append the cross-run patterns to
+4. **Snapshot after build:** preserve the workspace state without giving later agents the snapshot or
+   oracle.
+5. **Use:** dispatch a fresh-context user agent for exactly one realistic turn. Never tell it about
+   hidden contracts such as "never-stale" or the doctor.
+6. **Snapshot after every turn:** this is required to prove same-turn behavior. A later janitor run
+   must not conceal an earlier intake or handoff failure.
+7. **Behavioral eval:** compare each turn snapshot and score against the hidden oracle + rubric.
+   Agent self-report is context, not evidence.
+8. **Repeat:** run high-value scenarios three times. Mechanical invariants must pass 3/3.
+9. **Synthesize:** write `runs/<timestamp>/report.md` and append the cross-run patterns to
    `improvements-ledger.md` as concrete, grounded edits to `workspace-os`.
 
 ## What a result looks like

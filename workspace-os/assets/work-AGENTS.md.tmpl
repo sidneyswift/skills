@@ -1,0 +1,91 @@
+# Managed-work contract
+
+## Purpose
+
+A fresh human or agent can recover current truth, take the next correct action, verify closure, and
+leave reusable value without prior chat history.
+
+## Read order
+
+1. Root `CLAUDE.md` / `AGENTS.md`.
+2. This file.
+3. `work/README.md`.
+4. The package `README.md`.
+5. Optional `plan.md`, package instructions, linked domain records, and latest evidence.
+
+## Create a package when
+
+- another session or agent will probably continue the work;
+- a dependency, blocker, or review gate exists;
+- research can materially change the approach;
+- completion needs durable evidence; or
+- the user explicitly asks to track it.
+
+Do not package routine same-turn work. Search before creating and resume equivalent work.
+
+## Status
+
+Use exactly:
+
+- `active` — work can advance now;
+- `blocked` — an external dependency prevents progress;
+- `paused` — work was intentionally deferred;
+- `review` — a named person must evaluate a question or deliverable;
+- `complete` — acceptance criteria were evaluated and satisfied;
+- `cancelled` — work intentionally stopped without satisfying the original acceptance criteria.
+
+An active package may become blocked, paused, review, complete, or cancelled. Blocked, paused, and
+review packages may return to active or become cancelled; review may become complete. Complete and
+cancelled packages reopen only through the explicit reopen contract below.
+
+## Start and resume
+
+1. Search the index, package records, linked domain records, and declared external systems first.
+2. Resume equivalent work instead of creating a duplicate.
+3. Create a package atomically with outcome, acceptance, owner, authority, and first next action.
+4. Create `plan.md` or supporting folders only when they contain useful material.
+5. On resume, reread all canonical files from disk and reconcile them with actual artifacts.
+6. Continue from the exact next action.
+
+## Update and handoff
+
+- When evidence changes assumptions, scope, acceptance, or sequencing, update the package and optional
+  plan in the same turn.
+- Reconcile only the domain and external fields that actually changed.
+- Before stopping, record last known-good state, exact next action, changed artifacts, verification,
+  blockers or review needs, and unresolved assumptions.
+- For `blocked`, record `Responsible:`, `Condition:`, and `Check: YYYY-MM-DD`.
+- For `paused`, record `Responsible:`, `Restart:`, and `Check: YYYY-MM-DD`.
+- For `review`, record `Reviewer:`, `Question:`, and `Check: YYYY-MM-DD`.
+- Do not claim completion because an agent must stop.
+- Reconcile the derived work index and append only material lifecycle events to `PROGRESS.md`.
+
+## Complete, cancel, and reopen
+
+1. Evaluate every acceptance criterion against linked evidence.
+2. Record the outcome, remaining work, and linked domain/external reconciliation.
+3. Record durable-value disposition: knowledge, library, proof, skill, check/eval, recurring artifact,
+   or a valid "nothing reusable" reason.
+4. Set `complete` or `cancelled` plus `closed: YYYY-MM-DD`; keep the package path stable.
+5. Put terminal packages under their closure year in the derived archive view.
+6. Reopening requires an explicit reason, refreshed next action, changed acceptance when applicable,
+   and a `PROGRESS.md` entry.
+
+## Authority
+
+The package owns initiative coordination: status, owner, acceptance, current state, next execution
+action, evidence, and closeout. Linked domain and external systems keep their declared fields.
+`plan.md` owns detailed tasks only. `work/README.md` is a derived view; `PROGRESS.md` is history.
+
+## Exceptional package instructions
+
+Create package-level `AGENTS.md` only for additive constraints unique to that initiative. When it
+exists, create a package `CLAUDE.md` symlink or fallback that directs Claude to the same file. Never
+put status, tasks, history, or copied global rules in package instructions.
+
+## Do not
+
+- Do not duplicate domain state in a package.
+- Do not invent owners, facts, completion, cancellation, evidence, or learning.
+- Do not create empty optional folders.
+- Do not move terminal packages merely to represent archive state.

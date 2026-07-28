@@ -1,22 +1,27 @@
 ---
 name: {OS}-system-capture-learning
-description: Capture durable learning so the {DOMAIN} workspace gets smarter every session. Use at the end of a work session, after a decision is made, when a question gets answered, or "capture what we learned". Powers the compound-learning loop.
+description: Capture durable, evidence-backed learning for the {DOMAIN} workspace. Use after a meaningful discovery or closure, when a reusable decision or answer is accepted, or when the user says "capture what we learned".
 ---
 
 # {DOMAIN} Learn
 
-Make every session improve the system. Run at the end of meaningful work.
+Run after a meaningful discovery or closure. Capture only what a future initiative can reuse; package
+specific notes remain with their source work.
 
 ## Steps
-1. **Decisions.** Log any choice made (what + why + alternatives) to `knowledge/decisions/` dated.
-2. **Answers.** If a question was answered that could recur, write a canonical FAQ to
-   `knowledge/faqs/`. If it was answered before, point to the existing one (never twice).
-3. **Insights.** Capture reusable explanations/patterns to `knowledge/insights/`.
-4. **Templatize.** If a deliverable was produced from scratch that will recur, add a template to
-   `library/` and note it.
-5. **Skillify?** Ask whether the work will repeat, need upkeep, or prevent a failure from recurring.
-   If yes, run `{OS}-system-promote-skill`. One-off output stays in `work/` (dated), not a new top-level
-   folder.
-6. **Update the index.** Keep a running `knowledge/README.md` index so future sessions find prior
-   learning fast.
-7. Report the learnings captured.
+1. **Read the source package.** Identify the accepted discovery or terminal outcome and its evidence.
+2. **Search first.** Reuse an existing decision, FAQ, insight, SOP, or template instead of creating a
+   duplicate.
+3. **Classify only durable value:**
+   - accepted choice + rationale + alternatives -> dated `knowledge/decisions/`;
+   - recurring canonical answer -> `knowledge/faqs/`;
+   - reusable explanation or pattern -> `knowledge/insights/`;
+   - reusable procedure -> `knowledge/sops/`;
+   - reusable instrument -> `library/`.
+4. **Preserve provenance.** Link every promoted item back to the package and evidence that earned it.
+5. **Skillify selectively.** If a proven process will repeat, need upkeep, or prevent a meaningful
+   failure, run `{OS}-system-promote-skill`.
+6. **Allow the clean no-op.** If there is nothing reusable, record `Nothing reusable` plus the reason
+   in the package and create no knowledge, template, or skill.
+7. **Update discovery.** Reconcile `knowledge/README.md` and the package's durable-value disposition.
+8. Report what was captured or why the no-op was correct.

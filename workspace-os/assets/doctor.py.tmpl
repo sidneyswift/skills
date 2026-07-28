@@ -13,6 +13,7 @@ Usage:
 """
 from __future__ import annotations
 
+import datetime
 import glob
 import json
 import os
@@ -27,6 +28,27 @@ PLUGIN_SLUG = "{OS}-os"     # plugin name, used for the package stamp
 TAXONOMY = ["reference", "library", "knowledge", PIPELINE_DIR, ENTITY_DIR, "work", "scripts", "docs",
             "artifacts", "routines", "proof", "content", "business", "plugin", "operations"]
 ROOT_FILES_OK = {"README.md", "CLAUDE.md", "AGENTS.md", "PROGRESS.md", ".gitignore", ".DS_Store"}
+WORK_STATUSES = {"active", "blocked", "paused", "review", "complete", "cancelled"}
+WORK_HEADINGS = {
+    "Outcome",
+    "Done when",
+    "Current state",
+    "Next action",
+    "Blocker or review",
+    "Links and authority",
+    "Evidence and outcome",
+    "Durable value",
+}
+TERMINAL_WORK_STATUSES = {"complete", "cancelled"}
+OPTIONAL_WORK_DIRS = {"research", "notes", "deliverables"}
+EMPTY_WORK_VALUES = {
+    "",
+    "not applicable.",
+    "no terminal outcome yet.",
+    "not evaluated until closure.",
+    "not evaluated until a meaningful discovery or closure.",
+    "_none_.",
+}
 
 findings: list[str] = []   # things that should be fixed (non-zero exit)
 infos: list[str] = []      # informational (no exit penalty)
@@ -51,6 +73,168 @@ def read(path: str) -> str:
             return fh.read()
     except OSError:
         return ""
+
+
+def parse_frontmatter(text: str) -> dict[str, str]:
+    """Parse scalar key/value fields from the opening YAML frontmatter block."""
+    match = re.match(r"^---\n(.*?)\n---", text, re.S)
+    if not match:
+        return {}
+    fields: dict[str, str] = {}
+    for line in match.group(1).splitlines():
+        field = re.match(r"^([A-Za-z_-]+):\s*(.*)$", line)
+        if field:
+            fields[field.group(1)] = field.group(2).strip().strip("\"'")
+    return fields
+
+
+def parse_h2_sections(text: str) -> dict[str, str]:
+    """Return level-two heading content keyed by heading text."""
+    matches = list(re.finditer(r"^##\s+(.+?)\s*$", text, re.M))
+    sections: dict[str, str] = {}
+    for index, match in enumerate(matches):
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(text)
+        sections[match.group(1)] = text[match.end():end].strip()
+    return sections
+
+
+def iter_work_packages(ws: str) -> list[str]:
+    """Return direct managed-work directories; dated one-off work remains unclassified."""
+    base = os.path.join(ws, "work")
+    if not os.path.isdir(base):
+        return []
+    packages = []
+    for name in sorted(os.listdir(base)):
+        package = os.path.join(base, name)
+        readme_path = os.path.join(package, "README.md")
+        if name.startswith(".") or not os.path.isdir(package) or not os.path.isfile(readme_path):
+            continue
+        if read(readme_path).startswith("---\n"):
+            packages.append(package)
+    return packages
+
+
+def local_markdown_links(text: str) -> list[str]:
+    """Return relative local Markdown targets, excluding URLs, anchors, and email links."""
+    links = []
+    for raw_target in re.findall(r"\[[^\]]+\]\(([^)]+)\)", text):
+        target = raw_target.strip().strip("<>")
+        target = target.split(" ", 1)[0]
+        if not target or target.startswith("#"):
+            continue
+        if re.match(r"^[a-z][a-z0-9+.-]*:", target, re.I):
+            continue
+        links.append(target)
+    return links
+
+
+def has_work_value(value: str) -> bool:
+    """Return whether a package section carries meaningful state."""
+    return value.strip().lower() not in EMPTY_WORK_VALUES
+
+
+def has_check_date(details: str) -> bool:
+    """Return whether continuation details include an ISO check date."""
+    return bool(re.search(r"(?mi)^check:\s*\d{4}-\d{2}-\d{2}\s*$", details))
+
+
+def check_work_packages(ws: str) -> None:
+    """Check managed-work lifecycle, links, optional folders, IDs, and derived index state."""
+    before = len(findings)
+    work_root = os.path.join(ws, "work")
+    if not os.path.isdir(work_root):
+        find("work package: work/ is missing")
+        return
+
+    index_text = read(os.path.join(work_root, "README.md"))
+    if not index_text:
+        find("work package: work/README.md derived index is missing")
+
+    packages = iter_work_packages(ws)
+    if not packages:
+        find("work package: no managed package exists, including workspace-os-setup")
+        return
+
+    ids: dict[str, list[str]] = {}
+    for package in packages:
+        name = os.path.basename(package)
+        readme_path = os.path.join(package, "README.md")
+        text = read(readme_path)
+        metadata = parse_frontmatter(text)
+        sections = parse_h2_sections(text)
+
+        work_id = metadata.get("id", "")
+        if not work_id:
+            find(f"work package: {name} missing id")
+        else:
+            ids.setdefault(work_id, []).append(name)
+
+        status = metadata.get("status", "")
+        if status not in WORK_STATUSES:
+            find(f"work package: {name} invalid status {status!r}")
+        if not metadata.get("owner"):
+            find(f"work package: {name} missing owner")
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", metadata.get("updated", "")):
+            find(f"work package: {name} missing valid updated date")
+
+        missing_sections = sorted(WORK_HEADINGS - sections.keys())
+        if missing_sections:
+            find(f"work package: {name} missing section(s) {missing_sections}")
+
+        next_action = sections.get("Next action", "")
+        details = sections.get("Blocker or review", "")
+        if status == "active" and not has_work_value(next_action):
+            find(f"work package: {name} active work has no next action")
+
+        detail_fields = {
+            "blocked": ("Responsible:", "Condition:"),
+            "paused": ("Responsible:", "Restart:"),
+            "review": ("Reviewer:", "Question:"),
+        }
+        if status in detail_fields:
+            has_fields = all(
+                field.lower() in details.lower() for field in detail_fields[status]
+            )
+            if not has_fields or not has_check_date(details):
+                find(f"work package: {name} {status} details are incomplete")
+
+        if status in TERMINAL_WORK_STATUSES:
+            evidence = sections.get("Evidence and outcome", "")
+            durable = sections.get("Durable value", "")
+            valid_closed = re.fullmatch(r"\d{4}-\d{2}-\d{2}", metadata.get("closed", ""))
+            if not valid_closed or not has_work_value(evidence) or not has_work_value(durable):
+                find(f"work package: {name} terminal closeout is incomplete")
+
+        for target in local_markdown_links(text):
+            path_only = target.split("#", 1)[0]
+            resolved = os.path.normpath(os.path.join(package, path_only))
+            if path_only and not os.path.exists(resolved):
+                find(f"work package: {name} broken link {target!r}")
+
+        for optional in OPTIONAL_WORK_DIRS:
+            optional_path = os.path.join(package, optional)
+            if os.path.isdir(optional_path) and not any(os.scandir(optional_path)):
+                find(f"work package: {name} empty optional folder {optional}/")
+
+        index_line = next(
+            (
+                line
+                for line in index_text.splitlines()
+                if f"({name}/README.md)" in line
+            ),
+            "",
+        )
+        if not index_line:
+            find(f"work package: {name} missing from derived index")
+        elif status in WORK_STATUSES and f"— {status} —" not in index_line:
+            find(f"work package: {name} index mismatch for status {status!r}")
+
+    for work_id, names in ids.items():
+        if len(names) > 1:
+            find(f"work package: duplicate id {work_id!r} in {names}")
+
+    if len(findings) == before:
+        ok(f"work packages: {len(packages)} valid package(s)")
 
 
 def count_stages(ws: str) -> dict[str, int]:
@@ -230,7 +414,7 @@ def check_draft_debt(ws: str) -> None:
 def check_progress(ws: str) -> None:
     prog = read(os.path.join(ws, "PROGRESS.md"))
     if not prog.strip():
-        find("PROGRESS.md missing or empty — every session must append date / what / why")
+        find("PROGRESS.md missing or empty — material lifecycle events need date / what / why")
     elif "##" not in prog:
         find("PROGRESS.md has no dated entries yet")
     else:
@@ -242,7 +426,6 @@ TODAY = ""
 
 def main() -> int:
     global TODAY
-    import datetime
     TODAY = datetime.date.today().isoformat()
     ws = os.path.abspath(sys.argv[1]) if len(sys.argv) > 1 else os.getcwd()
 
@@ -256,6 +439,7 @@ def main() -> int:
     check_package_freshness(ws, version)
     check_routines(ws)
     check_root_hygiene(ws)
+    check_work_packages(ws)
     check_progress(ws)
     check_draft_debt(ws)
 
