@@ -24,7 +24,7 @@ npx skills add sidneyswift/skills
 | [gauntlet-loop](./gauntlet-loop/) | Run iterative build-critique loops that push AI output past "good enough" toward a concrete quality bar. Decompose the goal, assign separate builders and critics, compare against a real reference, and keep looping until the output wins. For games, websites, writing, code, design, or anything where output can be inspected and improved. |
 | [graph-max](./graph-max/) | Turn any hand-drawn workflow graph into a working multi-agent script. Draw the graph (whiteboard, paper, Excalidraw), send the image to a coding agent with one prompt, get a running orchestration script back. Teaches graph literacy — nodes, edges, fan-outs, feedback loops, decision gates. |
 | [problem-mining](./problem-mining/) | Interview-driven discovery that surfaces profitable problems hiding in your own experience. 1-question-at-a-time interview across four phases — achievements, problems overcome, desire mapping, and root-cause reframing — then synthesizes validated product ideas. |
-| [workspace-os](./workspace-os/) | Spin up a complete, self-managing workspace operating system for any domain — scaffolds folders, a self-managing CLAUDE.md, domain skills, an installable plugin, a janitor, and a compound-learning loop. |
+| [workspace-os](./workspace-os/) | Build a self-managing workspace OS with resumable work packages, shared agent instructions, domain skills, an installable plugin, report-only health checks, and evidence-backed learning loops. |
 
 ## License
 

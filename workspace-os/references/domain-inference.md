@@ -17,6 +17,11 @@ Answer these explicitly:
 - **Key entities** that own records (clients, artists, teams, products).
 - **Compounding assets** the domain reuses (templates, checklists, brand kits, datasets, scripts).
 - **Recurring tasks** → these become skills.
+- **Likely cross-session initiatives** that need managed work even when they are not the core domain
+  entity (internal R&D, a one-off deliverable with review, or OS improvement).
+- **Authority map** — which coordination state is local, which domain records own business state,
+  and which external systems own declared fields.
+- **Handoff/review cadence** — when active, blocked, paused, or review work should be checked.
 - **Metrics** that should be tracked over time.
 - **External tools / systems of record** likely in play (CRM, tracker, DAW, repo, drive).
 
@@ -45,6 +50,9 @@ Stages: demo -> A&R -> signed -> production -> release -> promo -> catalog
 Entities: artists/, releases/
 Compounding: split sheets, release checklist, promo templates, press kit, contract clauses
 Recurring tasks (skills): ingest-demo, build-release-plan, splits-tracker, promo-rollout, royalty-check, janitor, learn
+Managed-work examples: release-brand refresh, royalty-audit R&D, investor deck review
+Authority: package = coordination; artists/releases = domain; distributor = delivery state
+Handoff cadence: active weekly; blocked/review on the recorded check date
 Metrics: releases/quarter, streams, save rate, revenue/release, roster size
 External SoR: distributor dashboard, DAW project store, accounting
 Confidence: medium (from 1 transcript + roster list)

@@ -1,13 +1,13 @@
 ---
 name: {OS}-system-check-health
-description: Read-only health check for the {DOMAIN} workspace. Use on "audit the system", "health check", "is everything consistent", "is anything stale", before a release, or as the verification surface the janitor and the build report are gated on. Reports a score and a punch list; fixes nothing.
+description: Report-only health check for the {DOMAIN} workspace. Use on "audit the system", "health check", "is everything consistent", "is anything stale", before a release, or as the verification surface the janitor and the build report are gated on. Reports a score and punch list; fixes no workspace state.
 ---
 
 # {DOMAIN} Doctor
 
 The workspace's **verification surface**: answer "is this OS consistent?" with checkable evidence, not
-a feeling. Read-only — find and report problems, never fix them (the `{OS}-system-fix-drift` fixes). A
-doctor that edits the workspace is a cage, not a gauge.
+a feeling. Report-only — inspect state and write only `operations/health.md`; never fix the state it
+measures (the `{OS}-system-fix-drift` fixes). A doctor that remediates is a cage, not a gauge.
 
 ## Run
 Walk the checks below against the actual filesystem, then write `operations/health.md` with the date,
@@ -15,9 +15,9 @@ a score (0-100), and a prioritized punch list (each item: what, where, severity,
 report scales with the system — a few lines for a small workspace, longer as it grows.
 
 **Fast path.** Run `scripts/doctor.py` first (generated from `assets/doctor.py.tmpl`) — it
-recomputes counts and flags the mechanical drift (board/dashboard truth, manifest parity, dark skills,
-package freshness, root hygiene, routines + schedule-armed, draft-confirm debt) deterministically and
-exits non-zero on findings.
+recomputes counts and flags mechanical drift (board/dashboard truth, manifest parity, dark skills,
+package freshness, root hygiene, managed-work lifecycle/index/links, routines + schedule-armed,
+draft-confirm debt) deterministically and exits non-zero on findings.
 The checklist below is still the contract; the script just makes the mechanical subset cheap so you
 spend judgment on the rest.
 
@@ -57,7 +57,13 @@ pipeline is not a finding unless there is material that belongs there.
 13. **Naming convention.** Every `plugin/skills/*/` folder is named `{OS}-{area}-{verb}-{noun}` (4 kebab
     words; organs use `area = system`). Flag any skill that breaks the pattern.
 14. **Progress log.** `PROGRESS.md` exists at the root and was appended to for recent work (date · what
-    · why) — an empty or stale log means sessions aren't recording themselves.
+    · why). Require material lifecycle events, not prose for every trivial task.
+15. **Managed-work continuity.** Every package has a unique ID, valid status, owner, updated date,
+    required handoff sections, exact next action when active, complete blocked/paused/review details,
+    resolvable local links, and no empty optional folders. Terminal work has a closure date, acceptance
+    evidence, outcome, and durable-value disposition. `work/README.md` is a derived view that matches
+    package records. Judge whether acceptance/evidence are meaningful and whether domain/external
+    state was linked rather than copied.
 
 ## Score + report
 - Start at 100; subtract per finding by severity (broken or contradictory state hurts most; a missing

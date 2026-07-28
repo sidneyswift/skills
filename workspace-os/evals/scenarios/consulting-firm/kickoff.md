@@ -10,10 +10,3 @@ file:
   reusable proposal structure.
 
 The builder reads all three fully, then builds the OS for this boutique strategy-consulting practice.
-
-**What a strong build looks like:** archetype = consulting (leads → qualifying → discovery → proposal
-→ negotiation → won/lost); a `clients/` entity folder with a record per CSV row (each with a README
-dashboard); the pipeline `_board.md` reflecting the CSV; `knowledge/faqs/` + `knowledge/decisions/`
-populated from `notes.md` (standard discovery deliverable, value-based-pricing decision, guarantee
-policy); a proposal template in `library/` mined from the notes; the one-off "pricing calculator idea"
-parked in `work/` (NOT a top-level folder). Inferred facts marked "draft — confirm".

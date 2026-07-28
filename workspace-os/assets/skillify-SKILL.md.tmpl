@@ -6,19 +6,22 @@ description: Promote proven {DOMAIN} work into a durable workspace skill. Use af
 # {DOMAIN} Skillify
 
 Turn completed work into a reusable capability without cluttering the workspace. One-off output stays
-in `work/`; repeated or maintained work becomes a staged, verified skill in `plugin/skills/`.
+with its source package; repeated or maintained work becomes a staged, verified skill in
+`plugin/skills/`.
 
 ## Steps
 1. **Confirm it should become a skill.** Ask: will this repeat, need upkeep, or prevent a failure from
-   recurring? If no, keep the artifact in `work/{project}/YYYY-MM-DD-…/`, capture any reusable lesson
-   in `knowledge/`, and stop.
-2. **Prove provenance.** Identify the accepted result, source artifact, conversation, or failure that
-   justifies the skill. Do not synthesize from vague memory.
+   recurring? If no, keep the artifact with its source work package, record the durable-value
+   disposition, and stop.
+2. **Prove package provenance.** Identify the closed package, accepted result, source artifact, and
+   evidence or failure that justifies the skill. Do not synthesize from vague memory.
 3. **Name + triggers.** Name it `{OS}-{area}-{verb}-{noun}` (4 kebab words — the OS slug, the area it
    serves, then verb-noun; e.g. `{OS}-marketing-write-post`). Choose 3-5 trigger phrases a future user
    or agent would actually say.
-4. **Stage first.** Draft in `work/YYYY-MM-DD-skillify-{name}/`; never write a half-working skill
-   directly into `plugin/skills/`.
+4. **Stage first.** When a source package exists, draft in
+   `work/{source-initiative}/YYYY-MM-DD-skillify-{name}/`. If no package exists and skillification
+   itself crosses the managed-work threshold, create a package first. Never write a half-working
+   skill directly into `plugin/skills/`.
 5. **Extract the repeatable process.** Keep the invariant steps, decision rules, examples, and reusable
    assets. Remove false starts, chat fragments, and one-off facts.
 6. **Separate judgment from exact work.** Put the workflow and decision rules in `SKILL.md`. Put
@@ -27,7 +30,7 @@ in `work/`; repeated or maintained work becomes a staged, verified skill in `plu
 7. **Verify before publishing.** Use the strongest cheap check for the domain: a script test, smoke
    command, sample prompt replay, fixture comparison, checklist dry run, or review rubric. Record what
    passed in the staged folder.
-8. **Ask before committing.** Show the proposed skill name, triggers, destination, and verification
+8. **Ask before publishing.** Show the proposed skill name, triggers, destination, and verification
    result. Move to `plugin/skills/{name}/` only after approval. **Unattended runs (e.g. a scheduled
    janitor, no human present):** do not publish — leave the verified draft in `work/` and log a proposal
    to `operations/improvements.md` for later approval. Publish to `plugin/skills/` only with explicit
@@ -36,8 +39,9 @@ in `work/`; repeated or maintained work becomes a staged, verified skill in `plu
    delivery path (a transient artifact — never an `outputs/` folder inside the workspace) and update
    `operations/.packaged-version` so `{OS}-system-check-health` sees a fresh package. Update plugin README/index
    if present, and if the new skill should run unattended, add or update its prompt in `routines/`.
-10. **Capture the learning.** If the skill came from a failure or important decision, write a short
-    note to `knowledge/` so future agents understand why the skill exists.
+10. **Reconcile provenance.** Link the published skill and verification result from the source
+    package. If it came from a failure or important decision, capture a reusable note in `knowledge/`
+    with the same package evidence.
 
 ## Quality bar
 - No skill without a real source result or failure.

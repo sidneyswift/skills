@@ -12,24 +12,28 @@ by inspection or by an evaluator subagent.
 ## A. Build-time rubric (is the workspace well-formed?) — /100
 
 ### Structure & taxonomy — 20
-- **5** `[auto]` Lean core present: a flowing `{pipeline}/` + an `{entities}/` folder, plus
-  `knowledge/`, `library/`, `work/`, `artifacts/`, `routines/`, `plugin/`, `operations/`.
+- **5** `[auto]` Lean spine present: `plugin/`, `routines/`, `scripts/`, `docs/`, and `work/`.
 - **5** `[auto]` Every top-level folder name is a single lowercase word.
-- **5** No unjustified empty optional top-level folders (`reference/ proof/ content/ business/` only
-  when they hold real material). Over-preparation lives in subfolders/stubs, not extra root dirs.
-- **5** Domain fit: pipeline stages are numbered (`01-`,`02-`) and match the archetype; entity folder
-  matches the core unit.
+- **5** No unjustified empty on-demand folders. `operations/`, `knowledge/`, `library/`, `artifacts/`,
+  domain pipeline/entities, and optional folders exist only when real material or an organ needs them.
+- **5** Domain fit: when a pipeline exists, stages are numbered (`01-`, `02-`) and match the
+  archetype; when entities exist, the folder matches the core unit. Their absence is not a build
+  failure when the kickoff contains no real instances.
 
 ### The brain — 20
 - **8** `[auto]` `CLAUDE.md` exists, has no leftover `{DOMAIN}`/`{PIPELINE}`/`{ENTITY}` placeholders,
-  and contains all four contracts: auto-manage loop, never-stale, compound-learning, filing tree.
-- **4** `[auto]` `AGENTS.md` mirrors `CLAUDE.md` (symlink preferred; a "See CLAUDE.md" file is partial).
-- **4** `[auto]` `artifacts/dashboard.html` exists, is HTML, and is domain-customized (no placeholders).
-- **4** `[auto]` `operations/health.md` and `operations/improvements.md` are seeded.
+  and contains the auto-manage, never-stale, event-driven learning, filing, and managed-work routing
+  contracts.
+- **3** `[auto]` Root `AGENTS.md` mirrors `CLAUDE.md` (symlink preferred; a fallback pointer is partial).
+- **5** `[auto]` `work/README.md`, `work/AGENTS.md`, and the `work/CLAUDE.md` adapter exist; the work
+  index is explicitly derived rather than independently authoritative.
+- **4** `[auto]` `work/workspace-os-setup/README.md` records the live build and closes only after
+  verification evidence. `PROGRESS.md` contains material lifecycle entries.
 
 ### Skills & plugin — 30
-- **10** `[auto]` All six organs exist under `plugin/skills/`: `*-intake`, `*-doctor`, `*-janitor`,
-  `*-learn`, `*-reflect`, `*-skillify` — plus at least one domain-specific skill.
+- **10** `[auto]` All seven four-word organs exist under `plugin/skills/`: `*-process-input`,
+  `*-check-health`, `*-fix-drift`, `*-capture-learning`, `*-improve-machinery`, `*-promote-skill`,
+  and `*-find-unknowns` — plus at least one domain-specific skill.
 - **6** `[auto]` Each `SKILL.md` is valid: `name` matches its folder, has a `description`, no angle
   brackets in the description.
 - **6** `[auto]` Manifests valid + parity: both exist, same kebab `name` (defaults to `{slug}-os`),
@@ -38,13 +42,15 @@ by inspection or by an evaluator subagent.
 - **4** Doctor reads as read-only; janitor explicitly runs the doctor first (by content inspection).
 
 ### Compounding assets — 15
-- **8** `knowledge/` seeded sensibly (faqs / insights / decisions / sops). For rich input, real
-  material was extracted into it (not empty).
-- **7** `library/` seeded with reusable, domain-relevant instruments (templates/checklists/scripts).
+- **8** When the input contains settled reusable answers, `knowledge/` captures them with provenance.
+  Sparse builds do not manufacture knowledge to earn points.
+- **7** When reusable instruments are justified, `library/` contains domain-relevant templates or
+  checklists with real content. An absent library is acceptable when no instrument is warranted.
 
 ### Hygiene & honesty — 15
 - **5** Inferred facts are marked "draft — confirm"; no invented hard facts the user must own.
-- **5** No one-off work promoted to a top-level folder; `validate.py` packaging checks pass.
+- **5** No one-off work is promoted to a top-level folder; no empty optional package folders exist;
+  `validate.py` checks pass.
 - **5** A packaged `{slug}-os.plugin` was produced (or the attempt + outputs noted); intended janitor
   cadence + `armed:` status recorded in `routines/README.md` if no scheduler was available.
 
@@ -67,9 +73,10 @@ agent's own report. **This is the headline score.**
   outside this task).
 
 ### Compound learning — 20
-- **10** At least one durable learning was deposited (`knowledge/decisions|faqs|insights/`).
-- **10** A repeated question/decision was written once and reused — evidence of "never solve twice"
-  (e.g. the knowledge index updated, or the agent cited an existing entry instead of re-deriving).
+- **10** A genuinely reusable discovery was deposited with provenance, **or** the package records a
+  justified "nothing reusable" closeout without creating filler.
+- **10** A repeated question/decision was written once and reused, or the no-learning control correctly
+  produced no knowledge artifact.
 
 ### Self-improvement machinery — 20
 - **7** The **doctor** runs read-only and writes a sensible score + punch list to
@@ -86,6 +93,46 @@ agent's own report. **This is the headline score.**
 
 ---
 
+## C. Work-continuity rubric (can consequential work survive context loss?) — /100
+
+Score from per-turn snapshots and fresh-context operator behavior. Do not use the operator's own
+summary as the source of truth.
+
+### Canonical coordination state — 20
+- **10** Exactly one managed package represents the initiative, with unique ID, valid status, owner,
+  updated date, outcome, and acceptance criteria.
+- **10** Current state and exact next action are recoverable from the package README; optional
+  `plan.md` adds decomposition without copying package status.
+
+### Fresh-agent resume — 20
+- **10** A second agent with no prior chat finds the same package and starts from its recorded next
+  action.
+- **10** It does not repeat completed investigation or invent missing state.
+
+### Authority + same-turn reconciliation — 15
+- **8** Package coordination, domain state, and declared external fields remain in their assigned
+  authorities and link to each other instead of copying facts.
+- **7** Plan-changing evidence updates package truth and affected authoritative records in the same
+  turn.
+
+### Blocked, paused, and review continuity — 10
+- **10** Non-active work records the responsible party, condition, check date, preserved progress, and
+  exact resume action; no agent falsely completes it.
+
+### Evidence-gated closure — 15
+- **8** Complete/cancelled status has a closure date, outcome, evidence, and disposition of remaining
+  work.
+- **7** The stable package path appears in the closure-year archive view and all local links resolve.
+
+### Durable value — 10
+- **5** Reusable value is promoted with package provenance, or a valid no-op is recorded.
+- **5** Applied machinery improvements remain unverified until a replay or later run proves them.
+
+### Proportional overhead — 10
+- **10** The same-turn control creates no package, empty optional folders, or filler learning.
+
+---
+
 ## Reading the scores
 
 - **Build high, Use low** → the scaffold is pretty but inert. The fix is almost always in the
@@ -95,6 +142,10 @@ agent's own report. **This is the headline score.**
   packaging, skill-authoring). Often the skill is ambiguous or too heavy to finish in one context.
 - **Both low** → the kickoff was too sparse for the skill's inference rules, or a phase is
   underspecified. Check whether the builder even finished all 7 phases.
+- **Use high, Continuity low** → capable agents are reconstructing state ad hoc. Standardize the
+  package interface without replacing effective domain pipelines.
+- **Continuity shape high, Resume low** → the workspace has paperwork but does not teach a fresh
+  agent how to use it. Fix root routing or the shared work contract.
 
 Every finding becomes a row in `improvements-ledger.md`: *finding → evidence (run/agent) → the exact
 file in `workspace-os/` to change → status.*

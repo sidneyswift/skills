@@ -18,6 +18,9 @@ both manifest `"name"` fields use `{OS}-os`.
 ├── AGENTS.md                 # symlink -> CLAUDE.md
 ├── .agents/
 │   └── skills -> ../plugin/skills
+├── work/
+│   ├── AGENTS.md             # canonical managed-work lifecycle
+│   └── CLAUDE.md -> AGENTS.md# Claude adapter
 │
 └── plugin/
     ├── .claude-plugin/
@@ -42,6 +45,12 @@ ln -s ../plugin/skills {workspace}/.agents/skills
 ```
 If directory symlinks are unavailable, copy `plugin/skills/` into `.agents/skills/` and record that it
 is a compatibility mirror that must be refreshed after skill changes.
+
+Nested `AGENTS.md` discovery differs by runner. Root `CLAUDE.md` / `AGENTS.md` must explicitly require
+reading `work/AGENTS.md` before creating, resuming, changing, or closing managed work. Create
+`work/CLAUDE.md` as a symlink to `AGENTS.md`; when symlinks are unavailable, write a fallback that
+directs Claude to read `work/AGENTS.md`. Apply the same adapter rule when an exceptional
+package-specific `AGENTS.md` exists.
 
 ## Claude manifest
 Write `plugin/.claude-plugin/plugin.json` from `assets/claude-plugin.json.tmpl`:

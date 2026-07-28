@@ -75,7 +75,9 @@ plugin itself — see `packaging.md`). Expose those same skills to Cursor and Co
 workspace `.agents/skills` adapter; do not author a second copy there.
 Name every skill `{OS}-{area}-{verb}-{noun}` (above). The always-authored set (organs use
 `area = system`):
-1. An **orchestrator** `{OS}-system-process-input` — the auto-manage loop as one trigger (intake).
+1. An **orchestrator** `{OS}-system-process-input` (from
+   `assets/process-input-SKILL.md.tmpl`) — intake, authority reconciliation, and managed handoff as one
+   trigger.
 2. A **doctor** `{OS}-system-check-health` (from `assets/doctor-SKILL.md.tmpl`) — read-only
    verification surface (score + punch list to `operations/health.md`).
 3. A **janitor** `{OS}-system-fix-drift` (from `assets/janitor-SKILL.md.tmpl`) — runs the doctor, then
@@ -83,7 +85,8 @@ Name every skill `{OS}-{area}-{verb}-{noun}` (above). The always-authored set (o
 4. A **learn** skill `{OS}-system-capture-learning` (from `assets/compound-learn-SKILL.md.tmpl`) —
    compound domain knowledge.
 5. A **reflect** skill `{OS}-system-improve-machinery` (from `assets/reflect-SKILL.md.tmpl`) — improves
-   the OS itself into `operations/improvements.md` (the 50/50 budget).
+   the OS itself from observed friction and records verification state in
+   `operations/improvements.md`.
 6. A **skillify** skill `{OS}-system-promote-skill` (from `assets/skillify-SKILL.md.tmpl`) — promote
    proven repeatable work into staged, verified skills.
 7. A **find-unknowns** skill `{OS}-system-find-unknowns` — pre-work discovery (surface gaps before
@@ -115,8 +118,10 @@ Read `skillifying-work.md` when turning completed work into a new capability. Th
 general, not browser-specific: a successful one-off process becomes a skill only after it has evidence,
 verification, and user approval.
 
-1. Start from a proven result (accepted artifact, repeated task, or failure that should not recur).
-2. Draft in `work/YYYY-MM-DD-skillify-{name}/`, not directly in `plugin/skills/`.
+1. Start from a proven result and its source package (accepted artifact, repeated task, or failure).
+2. Draft in `work/{source-initiative}/YYYY-MM-DD-skillify-{name}/`, not directly in
+   `plugin/skills/`. Create a managed package first only when none exists and skillification itself
+   crosses the package threshold.
 3. Extract the repeatable process and remove one-off chat/context.
 4. Put exact/mechanical work into `scripts/`, `assets/`, or templates only when it removes real
    repetition. Keep judgment and decision rules in `SKILL.md`.
