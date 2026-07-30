@@ -22,6 +22,7 @@ that skill.
 - `/finding-unknowns/`: Surfaces requirement gaps before implementation.
 - `/gauntlet-loop/`: Runs repeated build-and-critique quality loops.
 - `/graph-max/`: Converts drawn workflow graphs into multi-agent scripts.
+- `/handoff-spec/`: Produces a stateless-successor handoff document combining a stable goal/spec with a point-in-time status snapshot.
 - `/problem-mining/`: Discovers valuable problems through structured interviews.
 - `/workspace-os/`: Builds self-managing, self-improving workspaces for any domain.
 
