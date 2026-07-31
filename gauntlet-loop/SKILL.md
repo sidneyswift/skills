@@ -12,7 +12,6 @@ description: >-
 metadata:
   author: Sidney Swift
   version: "0.1.0"
-  source: "Matt Shumer — 'How to Run a Gauntlet Loop' (somethingbig.ai/gauntlet-loop)"
 ---
 
 # Gauntlet Loop
