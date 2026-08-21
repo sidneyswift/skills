@@ -20,6 +20,7 @@ that skill.
 - `/design-inspiration/`: Mines curated design references to break creative blocks.
 - `/ecosystem-mapping/`: Maps surrounding friction into a reinforcing product ecosystem.
 - `/finding-unknowns/`: Surfaces requirement gaps before implementation.
+- `/spec-goals/`: Turns durable objectives into evidence-based Codex `/goal` specifications.
 - `/gauntlet-loop/`: Runs repeated build-and-critique quality loops.
 - `/graph-max/`: Converts drawn workflow graphs into multi-agent scripts.
 - `/problem-mining/`: Discovers valuable problems through structured interviews.
@@ -71,3 +72,10 @@ that skill.
 - `/workspace-os/assets/work-plan.md.tmpl`: Optional detailed decomposition without copied status.
 - `/workspace-os/assets/process-input-SKILL.md.tmpl`: Repeatable intake organ that reconciles package,
   domain, external, and compounding state.
+
+## Spec Goals
+
+- `/spec-goals/SKILL.md`: Goal-shape gate, six-element contract, interview, assembly, and delivery
+  workflow for Codex `/goal`.
+- `/spec-goals/references/examples.md`: Weak-to-strong `/goal` examples across performance,
+  testing, migrations, refactors, bugs, documentation, and research.
