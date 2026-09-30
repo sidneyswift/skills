@@ -3995,5 +3995,25 @@
     "pattern_ids": [
       "exploded-assembly"
     ]
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2072046386858848408",
+    "kind": "video-reference",
+    "title": "Higgsfield Nano Banana 2 Lite: freeze, explain, reveal and resume",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2072046386858848408"
+    ],
+    "inspection": "All235 source frames at640px in40 consecutive pages; six native3840x2160 checks. No temporal playback, audio or original code/project inspection. Reviewed2026-09-30.",
+    "note": "A slapstick action freezes for a speed claim and framed output, then resumes under a CTA. Counter units and actual generation latency are unverified; do not use the edited comparison as a benchmark.",
+    "topics": [
+      "higgsfield",
+      "freeze frame",
+      "speed storytelling",
+      "scene clock",
+      "output reveal",
+      "comedy",
+      "CTA contrast"
+    ],
+    "pattern_ids": []
   }
 ]

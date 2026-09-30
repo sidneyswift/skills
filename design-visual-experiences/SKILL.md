@@ -2,7 +2,7 @@
 name: design-visual-experiences
 description: Create or refine original digital visual experiences where art direction, motion, interaction, or spatial behavior is central. Use for expressive interfaces, interactive explainers, creative coding, and visual films; translate relevant references into implementation decisions and inspect the delivered result.
 metadata:
-  version: 0.3.7
+  version: 0.3.8
 ---
 
 # Design visual experiences
