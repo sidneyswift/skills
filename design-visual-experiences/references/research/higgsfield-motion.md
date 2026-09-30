@@ -135,3 +135,15 @@ The peel is visible at0 before foot contact40–43; a cup leaves the hand56–59
 The unlabeled counter does not map to ordinary minutes/seconds/source frames: at source1s it reads00:57:42; at3.5s it holds03:21:58. Do not reinterpret the digits as a measured generation duration. The film shows a speed comparison and presented output without request/completion evidence. Pixels do not establish which footage, graphics or compositing stages were generated or coded.
 
 The existing [parallel-action guidance](../feature-launch-films.md#parallel-action-and-return-of-control) now includes the freeze/explain/reveal/resume variant, independent scene/presentation/job clocks and continuity/CTA checks. These are original implementation recommendations, not recovered code. No new guide or mechanism card. Validated archived bytes reused; search cost$0.0016. Media and full post text remain private.
+
+## Sonnet MCP — connection, jobs and access contexts
+
+Source: [Higgsfield Sonnet MCP / Supercomputer announcement](https://x.com/higgsfield/status/2072107347502338235), published June 30, 2026, 23:57:44 UTC; media `2072106600366825472`. Availability and pipeline-efficiency statements are historical creator claims, not verified current service facts or benchmarks. No original code, project, job trace or live interaction inspected.
+
+All 322 decoded frames 0–321 at 30fps were visually read in 54 consecutive pages at 640px per cell, plus eight native 1920×1080 checks: 20, 113, 141, 156, 177, 197, 260, 321. Duration 10.733333s; final PTS 10.7s. No temporal playback or listening. Thirteen complete cases now total 8,229 frames; 138 native-source checks across the wider study.
+
+The opening partnership becomes a model selector, then a composer at 2s. Connection confirmation appears around 3.167s; ten pending cards assemble from about 4.1s, and portrait interiors reveal from 4.733s. Around 5.533–6.567s the grid leaves while the composer bridges into a dark Supercomputer context. A strategy request follows, then a magnified send-glyph loop; frame 260 shows an outgoing arrow tail and incoming arrow within the circle. The final availability card occupies frames 275–321, starting at 9.166667s and holding 1.566667s. Retained connecting and connected lines are both visible at native frame 113.
+
+This is a compressed access announcement: ten visible previews do not verify 1,000 completed outputs, and the second request has no shown strategy result. A visually continuous composer does not establish transfer of the previous job. Pixels do not identify generated versus coded production layers; glyph motion alone is not a submission receipt.
+
+The existing [story guidance](../feature-launch-films.md#story-and-agency) adds separate connection/job/preview states, delayed-item checks and explicit access-context changes. These are original implementation recommendations, not recovered code. No new guide or mechanism card. Validated archived bytes reused; search cost $0.0016. Raw media and full posts remain private.
