@@ -261,3 +261,7 @@ Version 0.3.2 adds [selection versus quality promotion](feature-launch-films.md#
 ## Offer mechanics — September 30
 
 Version 0.3.3 adds [balance depletion and replenishment](feature-launch-films.md#offer-mechanics-and-replenishment): shared state, coin-contact timing, minimum readable reservoir height and separate pool claims. [Source and limits](research/higgsfield-motion.md#seedance-api--offer-mechanics): all 673 frames at 320px, 588 consecutive larger rereads, 6 native stills; no playback/audio/source code. Seven complete temporal contact cases now total 6,232 frames; native checks 97. Search spend $0.002, no new videos found; validated archived bytes reused for this new deep study. Other mechanisms reuse existing guidance.
+
+## Illustration rig — September 30
+
+Version 0.3.4 adds [character assembly and performance](feature-launch-films.md#illustration-assembly-and-character-performance): independent reveal/action controls, prop attachment/release, gutter-crossing masks and native joint coverage. [Evidence and limits](research/higgsfield-motion.md#illustration-rig--assembly-and-performance): all390 source frames at640px,6 native stills; no temporal playback/audio/source code. Eight complete temporal cases total6,622frames; native checks103. Search cost$0.0016, no new eligible videos; archived bytes reused for a different deep study. Visible UI completion messages do not certify loop seams or drawing cadence.

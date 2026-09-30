@@ -3904,5 +3904,28 @@
       "motion design"
     ],
     "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2098581275158442478",
+    "kind": "video-reference",
+    "title": "Higgsfield illustration rig: assembly, staggered character actions and joint coverage",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2098581275158442478"
+    ],
+    "inspection": "All390 source frames at640px in65 consecutive six-frame pages; six native2160x2160 checks. No temporal playback, listening, live product or original project/code inspection. Reviewed2026-09-30.",
+    "note": "Parts assemble before full bodies connect; props cross panel gutters, cup remains attached during lift, stick has a detached flight phase. Native arm gaps motivate overlap checks. Visible model badge and loop/cadence requests are claims, not verified implementation.",
+    "topics": [
+      "higgsfield",
+      "illustration",
+      "character rig",
+      "assembly",
+      "cup lift",
+      "prop release",
+      "joint overlap",
+      "cross-panel mask",
+      "staggered action",
+      "motion design"
+    ],
+    "pattern_ids": []
   }
 ]
