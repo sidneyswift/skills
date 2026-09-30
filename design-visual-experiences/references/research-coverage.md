@@ -265,3 +265,7 @@ Version 0.3.3 adds [balance depletion and replenishment](feature-launch-films.md
 ## Illustration rig — September 30
 
 Version 0.3.4 adds [character assembly and performance](feature-launch-films.md#illustration-assembly-and-character-performance): independent reveal/action controls, prop attachment/release, gutter-crossing masks and native joint coverage. [Evidence and limits](research/higgsfield-motion.md#illustration-rig--assembly-and-performance): all390 source frames at640px,6 native stills; no temporal playback/audio/source code. Eight complete temporal cases total6,622frames; native checks103. Search cost$0.0016, no new eligible videos; archived bytes reused for a different deep study. Visible UI completion messages do not certify loop seams or drawing cadence.
+
+## Title-to-image handoff — September 30
+
+Version 0.3.5 adds [title-to-image handoff](feature-launch-films.md#title-to-image-handoff): a shared title block moves outside the focal region while image contrast rises; screen-space graphics stay independent of hero crop and later partner branding. [Evidence and limits](research/higgsfield-motion.md#seedream--title-to-image-handoff): all270 source frames at640px,7 native stills; no temporal playback/audio/source code. Nine complete temporal cases total6,892frames; native checks110. Search cost$0.0012; no new eligible videos, so validated archived bytes supported a different complete study. The post's infographic, sketch and language claims exceed the portrait film's visible demonstration.
