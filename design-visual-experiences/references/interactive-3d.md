@@ -1,5 +1,9 @@
 # Interactive and 3D design
 
+Use the opening sections for interaction/state/renderer choices, or jump directly to a focused recipe. These optional recipes extend the [canonical pattern cards](atlas.md); they are not prerequisites for every spatial experience.
+
+**In this guide:** [Design an interaction people can discover](#design-an-interaction-people-can-discover) · [Separate authored spectacle from a simulation](#separate-authored-spectacle-from-a-simulation) · [Build an experiment with several explanatory views](#build-an-experiment-with-several-explanatory-views) · [Make spatial scenes read well](#make-spatial-scenes-read-well) · [Product inspection through camera presets](#product-inspection-through-camera-presets) · [Rendering choices with practical consequences](#rendering-choices-with-practical-consequences) · [Reference routes](#reference-routes) · [Fold a structure through shared crease state](#fold-a-structure-through-shared-crease-state) · [Turn a gesture into one tangible release](#turn-a-gesture-into-one-tangible-release) · [Preserve compatible actions inside a spatial scene](#preserve-compatible-actions-inside-a-spatial-scene) · [Make physical objects part of the animation](#make-physical-objects-part-of-the-animation)
+
 ## Design an interaction people can discover
 
 Name the user's verb: drag, rotate, cut, tune, assemble, explore, compare, or play. Make the first action apparent through composition, a short cue, or a restrained demonstration. A long instruction panel usually cannot rescue an unclear affordance.

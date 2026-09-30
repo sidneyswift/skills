@@ -1,6 +1,6 @@
-# Pattern atlas
+# Mechanism atlas and guide routes
 
-104 implementation patterns across 12 families. These are original engineering adaptations of retrieved creator descriptions and prompts, not 104 independently reproduced projects. Each card states a mechanism, construction steps, tuning choices, a failure check, an adapted prompt and primary source links.
+Pattern cards below are the canonical mechanism guidance; task-specific links add deeper implementation and worked studies. These are original engineering adaptations of retrieved creator descriptions and prompts, not independently reproduced projects. Each card states a mechanism, construction steps, tuning choices, a failure check, an adapted prompt and primary source links.
 
 ## Find a mechanism
 
@@ -12,11 +12,16 @@ python3 scripts/search.py "ink dries and re wets" --kind sources --prompt-only
 python3 scripts/search.py "ink brush" --kind resources
 ```
 
-Search is local and needs only Python's standard library. The default result points to the exact family and anchor. Use `--family camera`, `--limit 10`, or `--json` as needed. `--prompt-only` on sources means a prompt marker appeared in retrieved text; it does not guarantee a complete prompt. If nothing useful appears, search a physical mechanism or browse a family below.
+Search is local and needs only Python's standard library. Default build results point to current pattern cards, guide sections and compositions. Narrow with `--kind patterns`, `guides` or `compositions`; use `--family camera`, `--limit 10`, or `--json` as needed. With `--kind sources`, `--prompt-only` requires inspected prompt content without certifying completeness; `--prompt-leads` also includes marker-only leads. If nothing useful appears, try the underlying physical relationship or browse a family below. When the library has no useful match, build from the brief; do not force an example into the project.
 
-Read the relevant cards, then choose a primary mechanism and at most a few supporting ones. Use [composition recipes](compositions.md) to combine them and [diagnosis](diagnosis.md) to fix a visible failure. [Source cards](source-cards.md) explain the 128 sources behind the atlas. [Inspected implementations](inspected-sources.md) show what was actually read in code. [Coverage](research-coverage.md) states the limits.
+Read the relevant cards, then choose a primary mechanism and at most a few supporting ones. Use [composition recipes](compositions.md) to combine them and [diagnosis](diagnosis.md) to fix a visible failure. [Source cards](source-cards.md) provide the reverse source-to-pattern lookup. [Inspected implementations](inspected-sources.md) show what was actually read in code. [Coverage](research-coverage.md) states the limits.
 
 ## Motion
+
+**Use deeper guidance when:** Refresh-rate differences → [time-based following](time-based-follow.md). Analytic spring/release code → [Elastic Matter](worked-study.md) and [worked spring notes](build-patterns.md#1-a-persistent-object-with-elastic-transformations). Origin-aware UI reveals or selection highlights → [interface vocabulary](motion-recipes.md#morphs-and-interface-motion).
+
+- [A particle form that contracts, bursts and returns](patterns/motion.md#contract-burst-return)
+- [Fit articulated product motion to measured reference poses](patterns/motion.md#measured-joint-motion)
 
 - [Consistent follow speed across refresh rates](patterns/motion.md#time-based-follow)
 
@@ -31,6 +36,8 @@ Read the relevant cards, then choose a primary mechanism and at most a few suppo
 
 ## Type
 
+**Use deeper guidance when:** Words carry structural meaning → [structural typography study](structural-type-study.md). Weight travels across text → [font metrics and footprint](build-patterns.md#traveling-font-weight).
+
 - [Words that become the structure of a scene](patterns/type.md#structural-type)
 - [Per-glyph entrances with phrase-level hierarchy](patterns/type.md#glyph-choreography)
 - [A letter counter becomes the next scene](patterns/type.md#glyph-aperture)
@@ -42,6 +49,8 @@ Read the relevant cards, then choose a primary mechanism and at most a few suppo
 
 ## Camera
 
+**Use deeper guidance when:** Inspection presets must preserve configuration → [product cameras](interactive-3d.md#product-inspection-through-camera-presets). Pinch/orbit must not become a tap → [spatial input](spatial-input.md).
+
 - [Nested worlds with constant perceived zoom](patterns/camera.md#portal-zoom)
 - [A continuous journey across orders of magnitude](patterns/camera.md#scale-ladder)
 - [Camera height that makes a small character feel small](patterns/camera.md#subject-scale)
@@ -52,6 +61,8 @@ Read the relevant cards, then choose a primary mechanism and at most a few suppo
 - [A final pullback that reinterprets the whole scene](patterns/camera.md#reveal-world-in-object)
 
 ## Materials
+
+**Use deeper guidance when:** A grab leaves a local residue → [material memory](local-material-memory.md). Glass moves over a moving scene → [registration](build-patterns.md#glass-under-camera-motion). A vessel casts moving light → [refracted footprints](refracted-light-footprints.md). Drawing competes with washing → [brush ownership](build-patterns.md#brush-gestures-and-an-animated-wash). Print dots must stay pinned → [printmaking notes](build-patterns.md#6-printmaking-as-a-rendering-system).
 
 - [A glossy spike field reaches toward an attractor](patterns/materials.md#attractor-spike-field)
 - [Slow paint marks on smoothly moving geometry](patterns/materials.md#paint-clock)
@@ -65,6 +76,8 @@ Read the relevant cards, then choose a primary mechanism and at most a few suppo
 
 ## Worlds
 
+**Use deeper guidance when:** Water needs flow and retained wetness → [terrain-water study](terrain-water.md). Match a captured room or compare scan/model → [source-view reconstruction](source-view-reconstruction.md). Physical objects become a projected stage → [spatial registration and staging](interactive-3d.md#make-physical-objects-part-of-the-animation).
+
 - [One weather field for every moving material](patterns/worlds.md#shared-wind)
 - [Time of day changes the whole environment](patterns/worlds.md#whole-world-daylight)
 - [A world drawn from points and motion ribbons](patterns/worlds.md#particle-illustration)
@@ -75,6 +88,10 @@ Read the relevant cards, then choose a primary mechanism and at most a few suppo
 - [An environment event that coordinates multiple actors](patterns/worlds.md#crossing-state-machine)
 
 ## Characters
+
+**Use deeper guidance when:** Generated facial features need independent control → [facial preparation](facial-preparation.md). A guide points at changing content → [embodied narrator](embodied-narrator.md). Sitting, holding and expression must coexist → [compatible actions](interactive-3d.md#preserve-compatible-actions-inside-a-spatial-scene).
+
+- [Recognizable dance moves driven by musical phase](patterns/characters.md#beat-locked-move-library)
 
 - [A character bible translated into a controllable rig](patterns/characters.md#identity-rig)
 - [Walk cycles that keep feet attached to the ground](patterns/characters.md#planted-foot-ik)
@@ -87,6 +104,8 @@ Read the relevant cards, then choose a primary mechanism and at most a few suppo
 
 ## Physics
 
+**Use deeper guidance when:** Explain a success, failure or constraint → [simulation verdicts](simulation-verdicts.md). Catch an event between displayed frames → [event stops](simulation-event-stops.md). Direct a fixed mechanical film → [contact-event scheduling](production.md#author-a-chain-reaction-around-contact-events).
+
 - [A chain reaction caused by contacts](patterns/physics.md#rigid-body-chain)
 - [A soft object that remains physical after cutting](patterns/physics.md#cuttable-soft-body)
 - [An expanding force field with persistent aftermath](patterns/physics.md#pressure-front)
@@ -97,6 +116,10 @@ Read the relevant cards, then choose a primary mechanism and at most a few suppo
 - [Keep dense simulation data on the GPU](patterns/physics.md#gpu-resident-motion)
 
 ## Explainers
+
+**Use deeper guidance when:** Views must share experiment inputs → [multiple explanatory views](interactive-3d.md#build-an-experiment-with-several-explanatory-views). Unfamiliar controls need practice → [action-gated lessons](action-gated-lessons.md).
+
+- [A mechanical explainer whose contacts compute the answer](patterns/explainers.md#contact-driven-computation)
 
 - [Compare mechanisms under the same input](patterns/explainers.md#shared-control-comparison)
 - [An optical explainer whose image comes from its model](patterns/explainers.md#computed-optical-image)
@@ -109,6 +132,8 @@ Read the relevant cards, then choose a primary mechanism and at most a few suppo
 
 ## Sound
 
+**Use deeper guidance when:** A changed voice take must retime motion → [narration cues](narration-cues.md). Music pickups or displayed frames use different clocks → [timing and presentation](timing-and-presentation.md). Choose a sound palette → [auditioning](production.md#audition-sound-identities-before-making-a-pack); compare recurring scores → [sound identity](production.md#review-sound-identity-across-projects).
+
 - [One event score for both audio and visual motion](patterns/sound.md#shared-score-clock)
 - [Map frequency bands to different physical parts](patterns/sound.md#band-to-part)
 - [A physical event that produces a musical note](patterns/sound.md#collision-instrument)
@@ -119,6 +144,10 @@ Read the relevant cards, then choose a primary mechanism and at most a few suppo
 - [One seed creates a coherent visual and musical world](patterns/sound.md#seeded-universe)
 
 ## Interaction
+
+**Use deeper guidance when:** Start with interaction, state and renderer choices → [interactive/3D primer](interactive-3d.md). Camera hands drive a material → [hand/depth input](hand-depth-input.md). Objects change only when hidden → [observation-gated motion](observation-gated-motion.md). One pull releases one payload → [tangible release](interactive-3d.md#turn-a-gesture-into-one-tangible-release). Flat and folded views agree → [crease state](interactive-3d.md#fold-a-structure-through-shared-crease-state).
+
+- [A working mechanism that keeps its phase while taken apart](patterns/interaction.md#phase-coherent-explode)
 
 - [An assembly that can be understood in either direction](patterns/interaction.md#exploded-assembly)
 - [A visual model constrained by a real parts inventory](patterns/interaction.md#buildable-bricks)
@@ -131,6 +160,8 @@ Read the relevant cards, then choose a primary mechanism and at most a few suppo
 
 ## Story
 
+**Use deeper guidance when:** A theme needs a meaningful action → [playable metaphor](principles.md#turn-an-abstract-theme-into-an-action). Particles resolve into readable content → [content handoff](particle-content-handoff.md).
+
 - [One motif changes meaning across scenes](patterns/story.md#motif-handoff)
 - [Make the benefit visible as a change in structure](patterns/story.md#chaos-to-organization)
 - [Stillness that makes an action or revelation register](patterns/story.md#quiet-payoff)
@@ -142,6 +173,10 @@ Read the relevant cards, then choose a primary mechanism and at most a few suppo
 
 ## Production
 
+**Use deeper guidance when:** Frames look good but transitions fail → [transition QA](transition-qa.md). Motion must survive later edits → [editable handoff](editable-motion-handoff.md). Expensive rendering repeats static work → [render reuse](production.md#spend-render-time-on-what-visibly-changes).
+
+- [Responsive scrubbing that cannot be overwritten by stale frames](patterns/production.md#latest-frame-presentation)
+
 - [Render any frame without playing earlier frames](patterns/production.md#pure-time-render)
 - [A loop whose motion continues across the seam](patterns/production.md#loop-position-velocity)
 - [Motion blur that preserves the information layer](patterns/production.md#selective-motion-blur)
@@ -151,20 +186,8 @@ Read the relevant cards, then choose a primary mechanism and at most a few suppo
 - [Recompose for each aspect ratio](patterns/production.md#aspect-aware-staging)
 - [Review moments where the system changes state](patterns/production.md#event-based-review)
 
+## Design, review and runnable studies
 
-## Recent additions
+Use [principles](principles.md) for art direction, [composition guidance](compositions.md) for combining mechanisms, [diagnosis](diagnosis.md) for failures, and [brief/review templates](briefs-and-review.md) when useful. [Fieldwork](mechanism-studies.md) demonstrates shared wind, planted feet and aperture travel. [Benchmark experiences](benchmark-lab.md) provide complete small briefs and revision evidence. [Visual comparisons](visual-comparisons.md) explains how to extract decisions from observed references.
 
-- [A working mechanism that keeps its phase while taken apart](patterns/interaction.md#phase-coherent-explode)
-- [A particle form that contracts, bursts and returns](patterns/motion.md#contract-burst-return)
-
-[September 29 evidence and lessons](updates/2026-09-29-evening.md).
-
-- [A mechanical explainer whose contacts compute the answer](patterns/explainers.md#contact-driven-computation)
-- [Fit articulated product motion to measured reference poses](patterns/motion.md#measured-joint-motion)
-
-[Causal motion update](updates/2026-09-29-causal-motion.md).
-
-- [Recognizable dance moves driven by musical phase](patterns/characters.md#beat-locked-move-library)
-- [Responsive scrubbing that cannot be overwritten by stale frames](patterns/production.md#latest-frame-presentation)
-
-[Timing and asynchronous presentation update](updates/2026-09-29-timing.md).
+For discovery only, the [historical example shortlist](examples.md) and [toolkit links](toolkits.md) retain earlier browsing material. Their example numbers are unrelated to pattern identities. For implementation, return to the relevant card or focused guide above.

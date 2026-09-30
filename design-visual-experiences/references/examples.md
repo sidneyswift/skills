@@ -1,10 +1,10 @@
-# Visual reference library: 104 selected X links
+# Historical visual-reference shortlist
 
-Research snapshot: September 29, 2026. These are references for study, not a ranked list of independently verified best work. Model, workflow, and prompt attribution come from creators or indexes. The initial collection used indexes. The full Apify pass retrieved 1,095 of the 1,101 backlog posts; see [coverage and evidence](research-coverage.md). This older 104-example shortlist is retained as a browsing aid. Videos and live controls were not exhaustively reviewed or reproduced. Start with [build patterns](build-patterns.md) to use the research in production.
+Research snapshot: September 29, 2026. These are references for study, not a ranked list of independently verified best work. Model, workflow, and prompt attribution come from creators or indexes. The initial collection used indexes. Use [coverage and evidence](research-coverage.md) for the current research scope. This older numbered shortlist is a discovery aid, separate from the pattern atlas. Videos and live controls were not exhaustively reviewed or reproduced. Use the [atlas](atlas.md) to find canonical implementation guidance.
 
-Examples 1–57 were checked through individual Claude Video index pages, 58–60 through athemeroy's reviewed dataset, and 61–104 through Tripo's source-linked catalog entries. Selected creator repositories were read. Some links point to a prompt reply rather than the root showcase; distinct post IDs can describe the same project. The new batch adds 38 post IDs to the earlier 1,063-link set and 44 entries to the earlier 60-item shortlist.
+Examples 1–57 were checked through individual Claude Video index pages, 58–60 through athemeroy's reviewed dataset, and 61–104 through Tripo's source-linked catalog entries. Selected creator repositories were read. Some links point to a prompt reply rather than the root showcase; distinct post IDs can describe the same project.
 
-**Prompt labels:** Shared prompt means prompt text appeared in the inspected indexed material; it does not certify completeness or a one-shot result. Partial brief is incomplete. Not located means absent from inspected material. Catalog prompt may be adapted or expanded unless original provenance is specifically established. Original-language catalog text remains index-only unless the post is listed in the retrieved evidence notes. Study notes below are this skill's suggested analysis questions, not claims about unseen code or video.
+**Historical prompt labels:** Labels describe the material available to that index pass; consult the canonical source catalog and linked evidence for later retrieval or inspection. Shared prompt means prompt text appeared in the inspected indexed material; it does not certify completeness or a one-shot result. Partial brief is incomplete. Not located means absent from inspected material. Catalog prompt may be adapted or expanded unless original provenance is specifically established. Original-language catalog text remains index-only unless the post is listed in the retrieved evidence notes. Study notes below are this skill's suggested analysis questions, not claims about unseen code or video.
 
 ## Find a direction
 
@@ -14,7 +14,7 @@ Examples 1–57 were checked through individual Claude Video index pages, 58–6
 - Worlds and playable experiences: 20–22, 47–50, 57, 62, 65, 71, 73–75, 78, 80, 84–86, 90–91, 93, 95, 100–104.
 - Workflows and prompts: 10–12, 43–44, 54, 58–60; also [toolkits](toolkits.md).
 
-Search this file by subject before reading it all. For more links, search [discovery.csv](discovery.csv). For actual production mechanisms, start with [build patterns](build-patterns.md) and the [worked study](worked-study.md).
+Search this file by subject before reading it all. For more links, search [discovery.csv](discovery.csv). For actual production mechanisms, start with the [atlas](atlas.md) and the relevant worked study.
 
 
 ## 1. Geometric motion reel
@@ -555,7 +555,7 @@ Catalog source: [Tripo / Awesome Opus 5.5 Prompts](https://github.com/TripoGrowt
 
 **INTERACTIVE** · [@ImaStudio_ai on X](https://x.com/ImaStudio_ai/status/2104517586092458039) · [Evidence / prompt](https://www.tripo3d.ai/3d-prompts/claude-opus-5-5-2104514806443303238)
 
-Prompt evidence: Catalog prompt; original provenance unverified.
+Prompt evidence: Original creator text subsequently retrieved; the described behavior remains a prompt specification, not verified output. See [retrieved evidence](evidence.md) and [worked implementation notes](build-patterns.md#7-shared-state-makes-spectacle-believable).
 
 Study: Check that deformation, cutting, and reset work beyond the first scripted action.
 
@@ -715,7 +715,7 @@ Catalog source: [Tripo / Awesome Opus 5.5 Prompts](https://github.com/TripoGrowt
 
 **3D / FILM** · [@AGIOyaZ on X](https://x.com/AGIOyaZ/status/2103145567945986461) · [Evidence / prompt](https://www.tripo3d.ai/3d-prompts/claude-opus-5-5-2103145567945986461)
 
-Prompt evidence: Catalog includes original-language prompt; not checked on X.
+Prompt evidence: Original creator text subsequently retrieved; the described behavior remains a prompt specification, not verified output. See [retrieved evidence](evidence.md) and [worked implementation notes](build-patterns.md#7-shared-state-makes-spectacle-believable).
 
 Study: Tie blocked openings and projected light to the same spatial state.
 

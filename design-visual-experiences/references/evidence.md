@@ -1,4 +1,19 @@
-# Retrieved evidence and limits
+# Evidence ownership and inspection limits
+
+Use [source-catalog.jsonl](source-catalog.jsonl) for source identity, attribution and current retrieval/prompt status; [inspected sources](inspected-sources.md) for revision-specific code inspection; and a linked dated record for the precise observed states and limits. A pattern's local evidence paragraph must identify the source that supports that particular claim. An observation from one creator is not evidence for another creator's result.
+
+## Current implementation and lookup ownership
+
+- `patterns/*.md` owns mechanism instructions, build steps, tuning, checks and adapted prompts. `patterns.json` owns stable IDs, families and source membership; its repeated implementation fields are generated compatibility summaries. Search reads the current cards directly.
+- Focused guides own substantial implementation detail. Compositions own relationships among mechanisms. Older browsing/workbook pages link to these owners rather than override them. Search derives guide and composition destinations from their Markdown; no second prose index is maintained.
+- `source-catalog.jsonl` keeps original evidence notes and normalized prompt fields. `prompt_availability` is `content-inspected`, `lead-only`, or `not-established`. `content-inspected` means prompt text or images were read; it does **not** certify completeness. `lead-only` means a marker was found without established prompt-content inspection. A tutorial or code inspection alone is not prompt inspection.
+- `prompt_format` records `text`, `image`, `linked-text`, or `unknown`; `prompt_completeness` records `not-certified` or `creator-claims-complete`. Keep detailed `prompt_signal` notes without using their free-form wording as program logic. New content must not inherit an inspected status merely from a creator's claim.
+
+`search.py --kind sources --prompt-only` returns inspected prompt content. `--prompt-leads` also permits marker-only leads. Pattern prompts are original adaptations, so these filters apply only to sources.
+
+For maintenance, run `python3 scripts/sync-index.py` after changing canonical cards/data, then `python3 scripts/sync-index.py --check` and `python3 scripts/test-library.py`. Preserve source IDs and scoped evidence relationships when updating cards. The checks establish local integrity and retrieval behavior, not visual quality or external URL availability.
+
+## Historical first pass
 
 Historical first-pass evidence. The full backlog retrieval and current counts are in [research coverage](research-coverage.md). Individual observations below remain scoped to what was inspected.
 

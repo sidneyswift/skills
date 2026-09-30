@@ -1,6 +1,6 @@
 # Motion recipes
 
-These are original implementation suggestions inspired by the linked references. They are not claims about undocumented creator code. Use the recipe that serves the brief, then adapt it to the project's visual language.
+This optional vocabulary guide helps name a visual move, especially an origin-aware reveal, selection highlight or shape grammar. For construction steps and authoritative mechanism detail, use the [atlas and pattern cards](atlas.md); for combinations, use [compositions](compositions.md). The numbered suggestions below retain earlier study links and are original adaptations. They are not claims about undocumented creator code. Use the recipe that serves the brief, then adapt it to the project's visual language.
 
 ## Morphs and interface motion
 
@@ -72,16 +72,7 @@ Choose what the sound drives: onset, energy in a frequency band, phrase structur
 
 ## When a move feels wrong
 
-| Symptom | First adjustment |
-|---|---|
-| Floaty | Shorten settlement, improve contact, or reduce ease symmetry |
-| Frantic | Remove competing motion and add a reading/recognition hold |
-| Generic | Change the visual metaphor or material behavior, not just the palette |
-| Sluggish | Respond immediately; separate feedback from decorative completion |
-| Jumpy | Inspect velocity at handoffs, loop seams, and interrupted transitions |
-| Unreadable | Increase hierarchy and hold time; reduce background movement |
-| Artificial | Check contact, occlusion, light consistency, and secondary motion |
-| Pretty but empty | Make the interaction or transformation explain something |
+Use [diagnosis](diagnosis.md) for symptoms, small tests and repairs. If the subject feels floaty, inspect contact and settlement before adding more bounce. If it feels generic, reconsider the material behavior or visual relationship, not only the palette.
 
 ## Translate timing advice between frame rates
 

@@ -4,7 +4,7 @@ import json, re, sys
 from collections import Counter
 from pathlib import Path
 sys.dont_write_bytecode = True
-from search import ROOT, search, load
+from search import ROOT, search, load, words, EXPANSIONS
 
 CASES = [
  ('ferrofluid glossy spikes reach toward moving attractor', 'attractor-spike-field'),
@@ -29,13 +29,13 @@ CASES = [
  ('scrubbing stale frames slow decode reversals', 'latest-frame-presentation'),
 ]
 for query, expected in CASES:
-    found = [x['id'] for x in search(query, limit=3)]
+    found = [x['id'] for x in search(query, kind='patterns', limit=3)]
     assert expected in found, (query, expected, found)
 assert search('ink', family='materials')
 assert all(p['family']=='materials' for p in search('ink',family='materials'))
 assert search('qzxvunknownterm') == []
 assert any('moyun' in r['url'].lower() for r in search('ink brush',kind='resources',limit=10))
-assert all(r['prompt_signal'] in {'marker-in-retrieved-text','creator-prompt-retrieved'} for r in search('motion',kind='sources',prompt_only=True))
+assert all(r['prompt_availability'] == 'content-inspected' for r in search('motion',kind='sources',prompt_only=True))
 
 patterns, sources, resources = load('patterns'), load('sources'), load('resources')
 coverage = json.loads((ROOT/'references/coverage.json').read_text())
@@ -78,4 +78,63 @@ for file in ROOT.rglob('*.md'):
         if anchor and '/patterns/' in str(target):
             assert f'id="{anchor}"' in target.read_text(), (file,dest)
         link_count+=1
-print(f'PASS: {len(CASES)} brief retrievals, catalog/evidence invariants, resource search, and {link_count} local links')
+print(f'PASS: {len(CASES)} pattern brief retrievals, catalog/evidence invariants, resource search, and {link_count} local links')
+
+# Task-language queries must reach actual local implementation destinations.
+BUILD_CASES = [
+ ('classroom lesson advances only after rubbing a match even if the video ends', 'references/action-gated-lessons.md'),
+ ('globe stops at an eclipse and resumes without skipping next event', 'references/simulation-event-stops.md'),
+ ('puppy accepts a stroke while chasing a toy but sitting and walking cannot run together', 'references/interactive-3d.md#preserve-compatible-actions-inside-a-spatial-scene'),
+ ('editable handoff from browser animation to an editor', 'references/editable-motion-handoff.md'),
+ ('ink brush dries and makes sound', 'references/compositions.md#an-ink-instrument'),
+ ('Generate a reproducible music responsive sculpture from a visitor name', 'references/compositions.md#a-music-responsive-sculpture'),
+]
+for query, expected in BUILD_CASES:
+    found = search(query, limit=5)
+    assert expected in [r['path'] for r in found], (query, expected, [r['path'] for r in found])
+    assert all((ROOT/r['path'].split('#')[0]).is_file() for r in found)
+recipe = search('ink brush dries and makes sound', kind='compositions', limit=1)[0]
+assert {'references/patterns/materials.md#distance-spaced-brush',
+        'references/patterns/materials.md#wet-dry-ink',
+        'references/patterns/sound.md#gesture-instrument'} <= {r['path'] for r in recipe['related']}
+
+# Exact stable IDs and resource topic tags remain valid lookup inputs.
+for pattern_id in ['seeded-universe', 'blueprint-rationale']:
+    assert search(pattern_id, kind='patterns', limit=1)[0]['id'] == pattern_id
+assert search('onboarding', kind='resources')
+assert search('receiver map', kind='resources')
+
+# Content inspected, marker only, and code inspected are different evidence states.
+for query, expected in [
+ ('Small SFX palette matched audition variations', '2104257004474671129'),
+ ('origami folding crease', '2104752931710902716'),
+ ('original coastline workflow', '2104641083733053881'),
+]:
+    assert expected in [r['id'] for r in search(query,kind='sources',prompt_only=True)]
+assert byid['2104752931710902716']['prompt_completeness'] == 'creator-claims-complete'
+assert byid['2104118647274787111']['prompt_availability'] == 'not-established'
+assert any(r['prompt_availability']=='lead-only' for r in search('motion',kind='sources',prompt_leads=True,limit=100))
+assert all(r['prompt_availability'] in {'content-inspected','lead-only','not-established'} for r in sources)
+assert all(r['prompt_completeness'] in {'not-certified','creator-claims-complete'} for r in sources)
+assert all(r['prompt_format'] in {'unknown','text','image','linked-text'} for r in sources)
+
+# Source-specific observations cannot be attached to unrelated type cards.
+# For each dated evidence link, at least one cited source must occur in that record.
+for pattern in [r for r in patterns if r['family']=='type']:
+    for target in re.findall(r'\]\((\.\./updates/[^)]+)\)', pattern['evidence']):
+        evidence = (ROOT/'references/patterns'/target).resolve().read_text()
+        source_ids = set(re.findall(r'https://(?:x|twitter)\.com/[^/]+/status/(\d+)', evidence))
+        assert source_ids.intersection(pattern['sources']), (pattern['id'],target,source_ids)
+
+# Stored compatibility summaries must match canonical Markdown instructions.
+raw_patterns=json.loads((ROOT/'references/patterns.json').read_text())
+for record, card in zip(raw_patterns, patterns):
+    assert record['id'] == card['id']
+    for field in ['title','mechanism','build','tune','check','prompt','evidence']:
+        assert record[field] == card[field], (record['id'],field,'run sync-index.py')
+print(f'PASS: {len(BUILD_CASES)} build routes, composition relationships, exact IDs, resource topics, prompt states and scoped typography evidence')
+
+assert search('focal plane ring',kind='visuals',limit=1)[0]['id']=='2103044654187081860'
+assert 'foot' in EXPANSIONS[words('footsteps')[0]]
+assert 'glyph' in EXPANSIONS[words('letters')[0]]
+print('PASS: comparison topic tags and normalized aliases')

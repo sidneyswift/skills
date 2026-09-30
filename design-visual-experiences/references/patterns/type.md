@@ -22,16 +22,16 @@ Read only the mechanisms relevant to the brief. Build steps, tuning and prompts 
 **Build:**
 
 1. Choose a small set of words with physical roles.
-2. Convert only those words to glyph outlines; maintain counters and readable proportions.
+2. Keep rigid words as text when sufficient; use glyph outlines when deformation, counters or geometry require them. Maintain readable proportions.
 3. Let a readable phrase become a beam, aperture or platform after its reading hold.
 
 **Tune:** Use one deformable element at a time; contrast tension with a deliberate stationary beat.
 
-**Failure check:** Read silently at delivery size. The sentence order and physical metaphor must both survive without narration.
+**Failure check:** Read silently at delivery size. The sentence order and physical metaphor must both survive without narration. Trace each named word to its intended structural role; supports and loads must share their attachment geometry.
 
 **Adapted prompt:** Give [key words] structural jobs in the composition. Build the ending from forms introduced earlier, after each line has time to read.
 
-**Evidence:** [@Gdgtify](https://x.com/Gdgtify/status/2103458245213929495). Creator description/prompt plus [selected original/remake states](../updates/2026-09-30-type-comparison.md). Letter displacement and a stable two-line result observed; exact spring, masking, blur method and loop seam remain unverified. The remake changes copy and branding.
+**Evidence:** [@Gdgtify](https://x.com/Gdgtify/status/2103458245213929495). Creator text/prompt retrieved; the mechanism above is an original adaptation. This citation alone does not establish visual or implementation verification.
 
 
 **Observed study:** [Structural typography comparison](../structural-type-study.md) records the suspended load, word supports and final platform. It separates those observations from the unverified aperture and loop-seam intentions.
@@ -75,7 +75,7 @@ Read only the mechanisms relevant to the brief. Build steps, tuning and prompts 
 
 **Adapted prompt:** Travel through the negative space of [glyph/object] into [next scene], preserving a clear visual relationship.
 
-**Evidence:** [@Gdgtify](https://x.com/Gdgtify/status/2103458245213929495), [@leo_xiaolei](https://x.com/leo_xiaolei/status/2102724347446305104). Creator description/prompt plus [selected original/remake states](../updates/2026-09-30-type-comparison.md). Letter displacement and a stable two-line result observed; exact spring, masking, blur method and loop seam remain unverified. The remake changes copy and branding.
+**Evidence:** [@Gdgtify](https://x.com/Gdgtify/status/2103458245213929495), [@leo_xiaolei](https://x.com/leo_xiaolei/status/2102724347446305104). Creator text/prompt retrieved; the mechanism above is an original adaptation. This citation alone does not establish visual or implementation verification.
 
 
 <a id="weight-as-action"></a>
@@ -119,7 +119,7 @@ Read only the mechanisms relevant to the brief. Build steps, tuning and prompts 
 
 **Adapted prompt:** Use the final narration timing to stage [message]. Keep captions readable and let the visual explain what the voice cannot show alone.
 
-**Evidence:** [@notdwd](https://x.com/notdwd/status/2103995183255998633), [@otsukaroom](https://x.com/otsukaroom/status/2104064557216149982). Creator description/prompt plus [selected original/remake states](../updates/2026-09-30-type-comparison.md). Letter displacement and a stable two-line result observed; exact spring, masking, blur method and loop seam remain unverified. The remake changes copy and branding.
+**Evidence:** [@notdwd](https://x.com/notdwd/status/2103995183255998633), [@otsukaroom](https://x.com/otsukaroom/status/2104064557216149982). Creator text/prompt retrieved; the mechanism above is an original adaptation. This citation alone does not establish visual or implementation verification.
 
 
 <a id="source-code-image"></a>
@@ -140,7 +140,7 @@ Read only the mechanisms relevant to the brief. Build steps, tuning and prompts 
 
 **Adapted prompt:** Render [subject] from [meaningful character set]. Preserve the silhouette, then reveal the hidden textual layer through motion or proximity.
 
-**Evidence:** [@midasavocado](https://x.com/midasavocado/status/2104019705917018536). Creator description/prompt plus [selected original/remake states](../updates/2026-09-30-type-comparison.md). Letter displacement and a stable two-line result observed; exact spring, masking, blur method and loop seam remain unverified. The remake changes copy and branding.
+**Evidence:** [@midasavocado](https://x.com/midasavocado/status/2104019705917018536). Creator text/prompt retrieved; the mechanism above is an original adaptation. This citation alone does not establish visual or implementation verification.
 
 
 <a id="contextual-color-history"></a>
@@ -161,7 +161,7 @@ Read only the mechanisms relevant to the brief. Build steps, tuning and prompts 
 
 **Adapted prompt:** Tell [history] through an evolving visual grammar, with one stable motif connecting the eras and sourced labels for factual claims.
 
-**Evidence:** [@amanojak2024](https://x.com/amanojak2024/status/2104062837228212282), [@dotey](https://x.com/dotey/status/2103964025683927166). Creator description/prompt plus [selected original/remake states](../updates/2026-09-30-type-comparison.md). Letter displacement and a stable two-line result observed; exact spring, masking, blur method and loop seam remain unverified. The remake changes copy and branding.
+**Evidence:** [@amanojak2024](https://x.com/amanojak2024/status/2104062837228212282), [@dotey](https://x.com/dotey/status/2103964025683927166). Creator text/prompt retrieved; the mechanism above is an original adaptation. This citation alone does not establish visual or implementation verification.
 
 
 <a id="blueprint-rationale"></a>
@@ -182,4 +182,4 @@ Read only the mechanisms relevant to the brief. Build steps, tuning and prompts 
 
 **Adapted prompt:** Explain why [layout decision] works by exposing its spatial relationships and showing the exact change.
 
-**Evidence:** [@moguzbulbul](https://x.com/moguzbulbul/status/2104206095313215591). Creator description/prompt plus [selected original/remake states](../updates/2026-09-30-type-comparison.md). Letter displacement and a stable two-line result observed; exact spring, masking, blur method and loop seam remain unverified. The remake changes copy and branding.
+**Evidence:** [@moguzbulbul](https://x.com/moguzbulbul/status/2104206095313215591). Creator text/prompt retrieved; the mechanism above is an original adaptation. This citation alone does not establish visual or implementation verification.
