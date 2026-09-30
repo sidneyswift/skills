@@ -285,3 +285,7 @@ Version0.3.8 extends existing [parallel-action guidance](feature-launch-films.md
 ## Connection, jobs and access contexts — September 30
 
 Version 0.3.9 extends existing [story guidance](feature-launch-films.md#story-and-agency) with separate connection/job/preview states, delayed-item checks and explicit context changes around a persistent composer. [Sonnet MCP evidence](research/higgsfield-motion.md#sonnet-mcp--connection-jobs-and-access-contexts): all 322 frames at 640px plus eight native 1920×1080 checks; no playback/audio/code/live interaction. Ten previews do not verify 1,000 completed jobs; the strategy request has no shown result. Thirteen complete cases total 8,229 frames; 138 native-source checks. Search cost $0.0016; archived bytes reused. No new guide or mechanism card.
+
+## Container motion and content stability — September 30
+
+Version0.3.10 extends [finishing guidance](feature-launch-films.md#composition-and-finishing) with separate container/content checks, declared changes and exact controlled labels for factual product evidence. [Omni re-edit evidence](research/higgsfield-motion.md#omni-re-edit--container-motion-and-content-stability): all286 frames at640px per whole frame plus eight native1440×1920 checks. No playback/listening/code; model attribution is a creator claim. Fourteen complete cases total8,515 frames;146 native-source checks. Search cost$0.002; archived bytes reused. No new guide or mechanism card.

@@ -4035,5 +4035,25 @@
       "persistent composer"
     ],
     "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2072455751143161984",
+    "kind": "video-reference",
+    "title": "Higgsfield Omni re-edit: container motion and content stability",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2072455751143161984"
+    ],
+    "inspection": "All 286 frames in 48 consecutive pages at640px per whole frame; eight native1440x1920 checks. No temporal playback, listening, original project or code inspection. Reviewed2026-09-30.",
+    "note": "Phase correspondence differs from synchronized timing. Smooth card trajectories coexist with changing secondary lettering; inspect both container geometry and exact content. Both panels end during reference search, without CTA.",
+    "topics": [
+      "higgsfield",
+      "re-edit comparison",
+      "container motion",
+      "content stability",
+      "label drift",
+      "phase correspondence",
+      "finishing"
+    ],
+    "pattern_ids": []
   }
 ]

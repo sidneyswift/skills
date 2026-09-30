@@ -147,3 +147,15 @@ The opening partnership becomes a model selector, then a composer at 2s. Connect
 This is a compressed access announcement: ten visible previews do not verify 1,000 completed outputs, and the second request has no shown strategy result. A visually continuous composer does not establish transfer of the previous job. Pixels do not identify generated versus coded production layers; glyph motion alone is not a submission receipt.
 
 The existing [story guidance](../feature-launch-films.md#story-and-agency) adds separate connection/job/preview states, delayed-item checks and explicit access-context changes. These are original implementation recommendations, not recovered code. No new guide or mechanism card. Validated archived bytes reused; search cost $0.0016. Raw media and full posts remain private.
+
+## Omni re-edit — container motion and content stability
+
+Source: [Higgsfield's Gemini Omni Flash re-edit comparison](https://x.com/higgsfield/status/2072455751143161984), published July 1, 2026, 23:02:10 UTC; media `2072441614212173824`. The creator attributes the re-edit to Gemini Omni Flash. No prompt, model run, editable project or code was inspected; the outer model label does not identify every production layer.
+
+All 286 decoded frames 0–285 at 30fps were visually read in 48 consecutive pages at 640px per complete source frame (each inset panel about 607px), plus eight native 1440×1920 checks: 20, 36, 137, 185, 188, 222, 247, 285. Duration 9.533333s; final PTS 9.5s. No temporal playback or listening; the selected rendition's probe lists video only. Fourteen complete cases now total 8,515 frames; 146 native-source checks across the wider study.
+
+Upper remake and lower reference share mascot/promise → collage → brand → search phases, with different local timing. Collage cuts occur at lower84 and upper92; search cuts at lower231 and upper244. The reference cuts to its brand mark at156, while the remake approaches a card and replaces its black symbol with a green starburst at185–188. A single timestamp offset cannot align the whole comparison. Conservative crisp wordmark intervals are lower209–230 and upper222–243, each22frames/0.733s; these are observations, not timing presets.
+
+Native137 confirms blending secondary lettering inside a trackable green card; native247 shows nonsensical small UI-like text, and285 includes a duplicated word in decorative code. These pixels do not establish the creator's intent, but they demonstrate why attractive composition and stable container motion do not certify exact content. Both panels end during searching, with no shown selection, final output or CTA. Their inner brands differ from the outer comparison identity.
+
+The existing [finishing guidance](../feature-launch-films.md#composition-and-finishing) adds separate transform/content checks, declared content changes and controlled exact-label layers for factual product evidence. This is original synthesis, not recovered implementation. No new guide or mechanism card. Archived bytes reused; search cost $0.002. Raw media and full posts remain private.
