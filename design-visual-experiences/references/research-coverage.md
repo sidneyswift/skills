@@ -253,3 +253,7 @@ The [September 29 comparison study](structural-type-study.md) samples the origin
 ## Parallel action and control handoff — September 30
 
 [Computer-use film evidence](research/higgsfield-motion.md#computer-use-extension--september-30) adds one reference and a searchable [parallel-action method](feature-launch-films.md#parallel-action-and-return-of-control). 77 sampled positions, 386 selected consecutive frames and 8 native stills inspected; no listening or full-film all-frame review. Corrected transient 99% to the depicted settled 91%; actual consumption unverified. Actual new Apify usage $0.0012. Version 0.3.1.
+
+## Preview Mode and native-cadence motion review — September 30
+
+Version 0.3.2 adds [selection versus quality promotion](feature-launch-films.md#exploration-before-fidelity) and [dense motion analysis](feature-launch-films.md#read-motion-at-native-cadence). [Evidence](research/higgsfield-motion.md#preview-mode--native-cadence-review): 538 source frames at contact scale, 246 larger consecutive rereads, six native stills; no playback or listening. Corrected an initial title-bobbing impression; comparison layouts are not fidelity benchmarks. Inventory stays 295; six complete temporal cases total 5,559 frames; wider native checks total 91. Existing downloaded material reused, no new paid spend.

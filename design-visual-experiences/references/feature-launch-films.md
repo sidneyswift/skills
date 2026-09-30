@@ -2,7 +2,7 @@
 
 Use this for motion-led announcements, feature launches and product demos. Choose the audience's new understanding or capability before borrowing a visual style. The methods below are original adaptations of inspected Higgsfield footage; [source observations and inspection limits](research/higgsfield-motion.md) remain separate. They are not a universal formula, a measured conversion result or recovered production code.
 
-**Read what fits:** [Parallel action and return of control](#parallel-action-and-return-of-control) · [Story and agency](#story-and-agency) · [Hooks and proof](#hooks-and-proof) · [Pacing and readable-hold-time](#pacing-and-readable-hold-time) · [Object continuity and movement](#object-continuity-and-movement) · [Composition and finishing](#composition-and-finishing) · [Generated assets and controlled graphics](#generated-assets-and-controlled-graphics) · [Branding and calls to action](#branding-and-calls-to-action).
+**Read what fits:** [Exploration before fidelity](#exploration-before-fidelity) · [Read motion at native cadence](#read-motion-at-native-cadence) · [Parallel action and return of control](#parallel-action-and-return-of-control) · [Story and agency](#story-and-agency) · [Hooks and proof](#hooks-and-proof) · [Pacing and readable-hold-time](#pacing-and-readable-hold-time) · [Object continuity and movement](#object-continuity-and-movement) · [Composition and finishing](#composition-and-finishing) · [Generated assets and controlled graphics](#generated-assets-and-controlled-graphics) · [Branding and calls to action](#branding-and-calls-to-action).
 
 ## Story and agency
 
@@ -33,6 +33,22 @@ Start with a meaningful state, event or specific ambition. A relevant unresolved
 Measure first visible action, first understandable promise and first credible proof separately. An opening title or quiet image can be intentional; an empty lead-in needs a reason. Inspect the delivered file at time zero and normal speed, including player/loading behavior, rather than assuming the timeline preview represents the opening.
 
 Show enough input and operation to make the result credible. Preserve the example's identity and exact factual claims: an electric-vehicle brief must not silently become a handheld-console website. Mark conceptual UI when it is not actual product behavior. Spectacular output alone demonstrates aspiration, not control of the production workflow.
+
+## Exploration before fidelity
+
+When a product separates trying alternatives from finishing a chosen result, give those decisions different visual operations. Preview Mode cycles through draft takes with the preview badge intact, enlarges a chosen take, then uses a separate render control and sweeping transformation. Enlargement selects the subject of attention; the later transformation communicates fidelity. See [observations and comparison limits](research/higgsfield-motion.md#preview-mode--native-cadence-review).
+
+**Original implementation:** keep `selectedTakeId` independent of `qualityTier`. Exploration changes the take; promotion preserves the choice and changes its quality state. Separate geometric arrival, distortion decay, image settling, badge confirmation and readable hold. The reference's card reaches its approximate bounds before the colored perimeter clears; one shared duration would erase that distinction. Keep controls stable enough to connect action and response. In live UI, confirmation follows actual completion, not an authored timer.
+
+For a resolution comparison, align action phase, crop and display size before assessing detail. The reference's unequal overlapping cards emphasize the final result but do not constitute a controlled fidelity benchmark. A sweep can conceal differences in framing or action: verify correspondence rather than treating the effect as proof. Expose take selection, card bounds, settling duration, sweep progress and confirmation time; test a changed take, interrupted render and mismatched crop.
+
+## Read motion at native cadence
+
+When studying motion references, use sparse storyboards to locate events, then inspect consecutive source frames through the full event and its neighboring holds. Preserve frame indices and presentation timestamps; do not interpolate extra frames as evidence. At 24 fps a one-second sample skips 23 positions, enough to miss the entire handoff. Use larger short sequences and native crops for small geometry, masks and type. Track extraction, viewed frames, resolution, playback and listening separately.
+
+Read position, scale, rotation, deformation, opacity and occlusion in each frame's own coordinates. Compare displacement over actual time to distinguish acceleration, settling and a hold; verify apparent bounce against stable landmarks. A dense review of Preview Mode corrected an initial impression of title bobbing: the main lockup settles while the footage continues behind it. The card transition instead visibly ripples as it shrinks. Do not infer the same motion rule for both.
+
+Review normal-speed and slowed playback for rhythm when temporal media is actually available. Still sequences support trajectories and timing, not certified audiovisual feel. Label that limitation if playback is unavailable. Exact easing functions or spring constants require source code or an explicitly fitted reconstruction; rendered frames alone do not reveal the original implementation.
 
 ## Pacing and readable-hold-time
 
