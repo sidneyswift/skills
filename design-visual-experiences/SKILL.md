@@ -2,7 +2,7 @@
 name: design-visual-experiences
 description: Create or refine original digital visual experiences where art direction, motion, interaction, or spatial behavior is central. Use for expressive interfaces, interactive explainers, creative coding, and visual films; translate relevant references into implementation decisions and inspect the delivered result.
 metadata:
-  version: 0.2.0
+  version: 0.3.0
 ---
 
 # Design visual experiences
@@ -44,6 +44,7 @@ The local search needs only Python's standard library. Default `--kind build` fi
 | Establish the visual direction | [Art-direction principles](references/principles.md) |
 | Repair a visible weakness | [Diagnosis](references/diagnosis.md): symptom, test and first repair |
 | Write a brief or review | [Optional brief and critique templates](references/briefs-and-review.md) |
+| Direct a feature launch or product-demo film | [Film direction](references/feature-launch-films.md): agency, proof, pacing, continuity and finishing |
 | Plan time, sound, performance or export | [Production](references/production.md) |
 | Adapt a runnable study | [Elastic Matter](references/worked-study.md), [Fieldwork](references/mechanism-studies.md), or [benchmark experiences](references/benchmark-lab.md) |
 | Inspect visible references | [Comparison method](references/visual-comparisons.md) |

@@ -1,0 +1,77 @@
+# Feature launches and product-demo films
+
+Use this for motion-led announcements, feature launches and product demos. Choose the audience's new understanding or capability before borrowing a visual style. The methods below are original adaptations of inspected Higgsfield footage; [source observations and inspection limits](research/higgsfield-motion.md) remain separate. They are not a universal formula, a measured conversion result or recovered production code.
+
+**Read what fits:** [Story and agency](#story-and-agency) · [Hooks and proof](#hooks-and-proof) · [Pacing and readable-hold-time](#pacing-and-readable-hold-time) · [Object continuity and movement](#object-continuity-and-movement) · [Composition and finishing](#composition-and-finishing) · [Generated assets and controlled graphics](#generated-assets-and-controlled-graphics) · [Branding and calls to action](#branding-and-calls-to-action).
+
+## Story and agency
+
+Choose what the viewer gains: **direct the world**, **finish precisely**, or **delegate and return**. Cinema Studio makes a scene manipulable; Layers alternates generated changes with manual finishing; Dots converts research into a blueprint and then an app. These are distinct roles for the human, with different emotional payoffs. A reclining user receiving a notification fits delegated work but may misrepresent a tool whose appeal is hands-on control.
+
+Keep one continuing example and make each operation answer a need left by the previous one. For a workflow film, research → decision → deliverable → next action is usually clearer than unrelated feature panels. Close a phase with a visible artifact before introducing another responsibility. If scenes can be shuffled without loss, check whether the film is intentionally a capability montage or accidentally an unordered demo.
+
+**Original worked combination:** A campaign-planning demo follows one real brief into research cards, a selected insight, a plan, and a finished creative. Share `briefId`, `selectedEvidenceId` and `deliverableId` across scenes; derive display states from one authored clock. The selected research card becomes a cited row in the plan. The plan's chosen direction becomes the hero creative. The final hold shows an action the real product supports. Use [composition guidance](compositions.md) for state and coordinate ownership; avoid separate lookalike objects whose content diverges at a handoff. This is an implementation proposal, not Higgsfield's code.
+
+Expose phase durations, selected item, output count and hero hold. Changing the chosen item should update every later appearance. Removing an unnecessary feature scene should preserve the central story; removing the decision that motivates the result should visibly break it.
+
+## Hooks and proof
+
+Start with a meaningful state, event or specific ambition. A relevant unresolved action creates a question; a visible transformation provides proof; a concrete unfinished job supplies motivation. Cinema Studio opens with an active rower and a threat developing behind him, then connects that cinematic image to control of the scene. A shocking opening that never reconnects to the capability wastes its narrative setup.
+
+Measure first visible action, first understandable promise and first credible proof separately. An opening title or quiet image can be intentional; an empty lead-in needs a reason. Inspect the delivered file at time zero and normal speed, including player/loading behavior, rather than assuming the timeline preview represents the opening.
+
+Show enough input and operation to make the result credible. Preserve the example's identity and exact factual claims: an electric-vehicle brief must not silently become a handheld-console website. Mark conceptual UI when it is not actual product behavior. Spectacular output alone demonstrates aspiration, not control of the production workflow.
+
+## Pacing and readable-hold-time
+
+Separate event rate, motion rate, reading rate and recognition time. Fast repetition can communicate abundance without asking the viewer to read every item. Then select one item, stabilize it and let it carry the explanation. A useful sequence is **one → many → one**: orientation, breadth, appreciation. It is an option, not a required shot count.
+
+In the inspected Dots stack, cards briefly change at roughly two-frame intervals; selected evidence receives a readable state. The 25.6-second GPT-5.6/Supercomputer film gives one hero output about 6.7 seconds after the grid. Borrow the allocation of attention, not those durations as presets.
+
+Author orientation, action, confirmation and appreciation as distinct timing concerns. Compress travel between meaningful states while preserving the important result. Count reading time after blur, clipping and motion stop materially competing with the copy: Layers' final card occupies about 3.09 seconds but offers about 2.79 seconds of comfortably crisp reading in the reviewed rendition. Tune with the actual sentence, crop and viewing size.
+
+Expose arrival duration, stagger, settling interval, crisp hold and departure. Test a longer headline and a narrower crop. If the message becomes unreadable, recompose or extend the hold instead of accelerating every other event. Use [production timing and sound](production.md); frame strips alone cannot establish rhythm or audiovisual synchronization.
+
+## Object continuity and movement
+
+Choose an invariant the viewer can track: identity, selected content, position, action phase, label or screen direction. A change of scale can change an object's role: Cinema Studio's image becomes a miniature set around 3.17–3.46 seconds, then a cast actor enters the set before the camera enters the performance. The movement explains a relationship.
+
+For a shared-object handoff, define source and destination bounds, coordinate space, parent transform, crop/mask and layer order. Keep one owner of the transferred object during overlap; switch ownership only when geometry and visible content agree. A shared clock coordinates camera, object and label. See [transition QA](transition-qa.md) and the existing [persistent shape](patterns/motion.md#persistent-shape) and [world-in-object reveal](patterns/camera.md#reveal-world-in-object) mechanisms.
+
+Choose the operation for its meaning: multiplication for breadth, a registered wipe for comparison, collection into a file for delivery, separation into parts for editability. Hard cuts between stable views can demonstrate angles more clearly than a morph. Do not independently animate every layer when one movement should define the event.
+
+Inspect immediately before, at and after the handoff: wrong identity, doubled objects, crop jumps, early labels, missed contact and reversed occlusion. Match action phases when comparing reference clips; equal timestamps need not show equivalent events. Rendered motion does not reveal an exact spring constant, easing curve or original renderer. Fit and test your own curve when useful; call it synthesis.
+
+## Composition and finishing
+
+Prepare space before the next message. Layers lowers a portrait group around 33.8 seconds before requesting its heading at 34.45. This makes typography part of the composition rather than a late overlay. Use deliberate focus changes: enlarge the relevant control or selected evidence, then give the completed output more area and retire used controls.
+
+Keep generated work and manual finishing distinct when the product supports both. A subtitle being typed, glasses dragged into place or a sticker nudged communicates intentional control. Color can identify a selection or target group without being the requested output color; labels and pixels must agree about that role.
+
+Review causal details: click before response, badge after the visible state changes, object behind the correct foreground edge, pose/contact reaching the intended phase before a cut. Check exact spelling and input/output identity at native resolution. A recognizable character is not proof that all unselected pixels stayed unchanged; compare those regions when claiming a localized edit.
+
+Let material and lighting support the chosen world. Establish which layers are photographic, tactile, graphic or spatial; adding every expensive-looking treatment does not produce coherent art direction. Use [principles](principles.md) for the overall visual language and [diagnosis](diagnosis.md) for the largest visible weakness.
+
+## Generated assets and controlled graphics
+
+Separate **content creation**, **film assembly** and **orchestration**. An agent invoking a model or writing After Effects expressions does not imply every pixel was rendered in code. An AI product badge does not establish that its outer announcement film was generated entirely by that model. Inspected production claims include storyboards, paintovers, performance references, selection/editing and specialist finishing; original editable projects were not inspected.
+
+For new work, choose the method per layer:
+
+| Layer | Preserve | Practical approach |
+|---|---|---|
+| Cinematic assets | Subject identity, framing, action, usable entry/exit states | Filming, generation, 3D or a hybrid; select takes for neighboring shots |
+| Product UI and evidence | Real labels, data and supported state changes | Capture or faithful designed UI, with conceptual behavior identified |
+| Type, logos and CTA | Exact wording, alignment and legible holds | Controlled graphic layers in motion software or code |
+| Comparisons, grids and transfers | Registration, shared geometry and timing | Deterministic composition; keep one source of state |
+| Sound and final edit | Intelligibility, emphasis and synchronization | A separate listening and editorial pass on the export |
+
+These are original production recommendations. Plan difficult handoffs before generating assets, and retain masks/depth only where the selected workflow can use them. A beautiful isolated frame may have no usable transition. Do not bundle third-party footage, full prompts or implementations into a new deliverable without appropriate rights. Link references and preserve attribution; use original assets for new work.
+
+## Branding and calls to action
+
+Keep a recognizable grammar while allowing the example's world to vary. Fix type roles, logo handling, status meanings and control behavior; vary imagery, genre and campaign palette deliberately. Distinguish the software brand, partner identity and fictional customer's output. Dots retains role markers across dark source posts, white UI and a purple customer app. Project branding always overrides the reference palette.
+
+Choose the ending's job: availability/destination, a usable deliverable, a human decision, recurring work, submission or brand recall. Dots closes with a lockup, not an observed “Try now” instruction. A fictional watch site's preorder is distinct from the surrounding integration announcement's availability. Do not invent a CTA when describing a reference or promise an action the real product cannot perform.
+
+Give the ending enough quiet and readable time for its actual copy at feed size. A source's small type or short card is not evidence of conversion effectiveness. Review the final encoded crop and player controls. For a brief, adapt: “Show [audience] completing [one real job]. Make [transformation] visible through [persistent object], use [operation] to explain it, let [proof] register, then offer [supported next action]. Preserve [brand and factual invariants].”
