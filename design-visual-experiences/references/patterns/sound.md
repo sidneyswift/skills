@@ -164,7 +164,7 @@ Read only the mechanisms relevant to the brief. Build steps, tuning and prompts 
 
 ## One seed creates a coherent visual and musical world
 
-**Mechanism:** A shared seed coordinates choices while separate streams prevent accidental coupling.
+**Mechanism:** A shared seed coordinates choices while separate streams prevent accidental coupling. Use for repeatable, personalized visual and musical worlds generated from text input such as a visitor name.
 
 **Build:**
 

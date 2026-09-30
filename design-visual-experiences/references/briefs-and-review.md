@@ -1,6 +1,6 @@
 # Briefs, prompts, and visual review
 
-The templates here are newly written for this skill. They are not recovered creator prompts. Adapt them to the user's actual scope; replace bracketed fields instead of passing an unresolved template to another tool.
+Use this page for optional wording templates, not an additional required workflow. [Principles](principles.md) owns art-direction decisions, [diagnosis](diagnosis.md) owns symptom-to-repair guidance, and [production](production.md) owns delivery checks. The templates here are newly written for this skill. They are not recovered creator prompts. Adapt them to the user's actual scope; replace bracketed fields instead of passing an unresolved template to another tool.
 
 ## A compact visual brief
 

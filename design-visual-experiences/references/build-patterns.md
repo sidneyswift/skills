@@ -1,6 +1,10 @@
-# Build patterns from retrieved research
+# Worked implementation notes
 
-Use these to make implementation decisions. Source statements below came from retrieved creator text or inspected source; they do not certify every video. **Build, tuning, and checks are this skill's original synthesis.** Numeric suggestions are starting points, not universal rules or claimed creator settings. Select one main mechanism, build it, observe it, then tune.
+Sections preserve concrete mappings, code snippets and source-specific observations. Keep the applicable pattern’s contract while adapting these examples.
+
+**In this guide:** [1. A persistent object with elastic transformations](#1-a-persistent-object-with-elastic-transformations) · [2. Kinetic typography with designed hierarchy](#2-kinetic-typography-with-designed-hierarchy) · [3. Painterly motion: two clocks, one coherent subject](#3-painterly-motion-two-clocks-one-coherent-subject) · [4. Water: make optical layers agree](#4-water-make-optical-layers-agree) · [5. Improve simulations through causal criticism](#5-improve-simulations-through-causal-criticism) · [6. Printmaking as a rendering system](#6-printmaking-as-a-rendering-system) · [7. Shared state makes spectacle believable](#7-shared-state-makes-spectacle-believable) · [8. Continuous transitions need resource and timing discipline](#8-continuous-transitions-need-resource-and-timing-discipline) · [9. Storyboards and assets as production inputs](#9-storyboards-and-assets-as-production-inputs) · [A reusable implementation prompt](#a-reusable-implementation-prompt) · [Glass under camera motion](#glass-under-camera-motion) · [Brush gestures and an animated wash](#brush-gestures-and-an-animated-wash) · [Traveling font weight](#traveling-font-weight)
+
+Read a selected section only when the [canonical pattern card](atlas.md) needs more implementation detail; this workbook is not a second mechanism catalog. Source statements below came from retrieved creator text or inspected source; they do not certify every video. **Build, tuning, and checks are this skill's original synthesis.** Numeric suggestions are starting points, not universal rules or claimed creator settings. Select one main mechanism, build it, observe it, then tune.
 
 ## 1. A persistent object with elastic transformations
 
@@ -113,10 +117,7 @@ For light transferred through a moving vessel, see [refracted-light footprints](
 
 ## A reusable implementation prompt
 
-This is a new synthesis, not a creator's original prompt:
-
-> Build [specific experience] for [audience]. The central idea is [one sentence]. Use [reference] for [specific mechanism] and [reference] for [specific material/composition decision]. Preserve [brand constraints]. State the causal mapping from input/time to geometry and appearance. First make [one convincing frame] and [one defining behavior]. Use [existing stack] unless it cannot meet [requirement]. Provide controls for [two or three meaningful parameters]. Inspect [named transitions and failure cases], fix the largest visible weakness, and deliver editable source plus the running/exported artifact. Distinguish what you observed from what you inferred.
-
+Use the [compact visual brief](briefs-and-review.md#a-compact-visual-brief), then name the selected mechanism and its failure check. For multi-mechanism work, use the [composition method](compositions.md#combine-mechanisms-beyond-these-examples). Prompts there are original adaptations.
 
 ## Glass under camera motion
 

@@ -1,6 +1,10 @@
 # Compose mechanisms into experiences
 
-These are original briefs assembled from the atlas, not extra source projects or claims of tested complete productions. The linked cards retain the primary citations. Choose a composition because its mechanism serves the user's subject; replace the example art direction.
+These are original combinations, not recovered creator projects or tested complete productions. Use the linked pattern cards for mechanism detail and attribution; adapt the subject and art direction to the brief.
+
+## Combine mechanisms beyond these examples
+
+Give each mechanism a visible job. Identify the authoritative state and clock, the coordinate space each effect reads, and which system owns input and readable content during a handoff. If two mechanisms modify the same value, choose an order or a single owner. Keep retained material history separate from transient appearance. Describe one integrated check that exposes disagreement: move the camera without moving a deposited mark; pause without drying it; complete a particle transition without duplicating readable content. Prove that combined moment before adding another effect. Infer routine architecture from the project; no worksheet or approval is required. These examples suggest combinations, not limits on what can be made. For export clocks and reproducibility, use [production](production.md#choose-the-correct-time-model).
 
 ## A tactile product transformation
 
@@ -136,13 +140,4 @@ These are original briefs assembled from the atlas, not extra source projects or
 
 ## A reliable rendered film
 
-**Combine:** [Render any frame without playing earlier frames](patterns/production.md#pure-time-render) + [Use a simple 3D blockout to control a later visual treatment](patterns/story.md#camera-from-previs) + [Review moments where the system changes state](patterns/production.md#event-based-review)
-
-**Direction:** The exported sequence matches the designed timeline and can be reproduced.
-
-**Construction:** Build a coarse animatic, establish global/local shot time, and record simulation inputs or bake state where random access is impossible. Inspect frames around semantic events and listen to the encoded result.
-
-**Iteration order:** Choose final resolution and aspect before polishing fine details. Reduce costly effects based on measured bottlenecks.
-
-**Proof:** Render the same frame twice and seek backward. Stateful trails or fluids require replay/checkpoints, not a time-uniform shortcut.
-
+For animatics, global/local shot time, stateful replay and event-centered export checks, use [production time models](production.md#choose-the-correct-time-model) and [review passes](production.md#review-passes-with-distinct-jobs). Those delivery choices apply to any composition above. Use [previsualization](patterns/story.md#camera-from-previs) when a coarse spatial blockout helps direct later imagery.

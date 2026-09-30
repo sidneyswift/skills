@@ -1,6 +1,6 @@
 # Toolkits, tutorials, and primary guidance
 
-Reviewed as public documentation on September 29, 2026. Tools were not installed or executed in this research. Counts are snapshot claims from their authors, not independently audited inventories. Check current compatibility and licensing before reusing code; links here do not make packages dependencies of this skill.
+This is an optional annotated directory of external references, reviewed as public documentation on September 29, 2026. Use the local [atlas](atlas.md) for mechanism guidance and the searchable [resource directory](resources.json) for source evidence. Tools were not installed or executed in this research. Counts are snapshot claims from their authors, not independently audited inventories. Check current compatibility and licensing before reusing code; links here do not make packages dependencies of this skill.
 
 ## Creator code and production workflows
 
@@ -55,4 +55,4 @@ Search creator names and specific mechanisms, not only “beautiful website.” 
 Record original post ID, root post versus reply when known, author, subject, evidence URL, prompt status, code/demo links, and date checked. Deduplicate by post ID while retaining project-level overlap. Add a one-sentence study question. Keep claims from the source separate from techniques you infer. Do not call the collection exhaustive or silently upgrade an index flag into a verified original prompt.
 
 
-The expanded [resource directory](resources.json) adds 109 creator-linked resources. Search it with `python3 scripts/search.py "your mechanism" --kind resources`; use [inspected sources](inspected-sources.md) for the 14 repository investigations and their evidence limits.
+The [resource directory](resources.json) contains the maintained creator-linked inventory. Search it with `python3 scripts/search.py "your mechanism" --kind resources`; use [inspected sources](inspected-sources.md) for investigation records and their evidence limits; current totals belong to [research coverage](research-coverage.md).

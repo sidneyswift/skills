@@ -528,5 +528,12 @@
   "visual_comparison_catalog_matches": 374,
   "visual_comparison_partial_prompt_labels": 110,
   "original_benchmark_experiences": 3,
-  "benchmark_model_checks": 44
+  "benchmark_model_checks": 44,
+  "guide_search_sections": 58,
+  "composition_search_sections": 13,
+  "prompt_availability_counts": {
+    "content-inspected": 10,
+    "lead-only": 565,
+    "not-established": 732
+  }
 }

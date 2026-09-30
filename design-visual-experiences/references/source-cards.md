@@ -1,6 +1,6 @@
 # Source cards
 
-128 retrieved posts and creator follow-ups support the pattern atlas. These short mechanism summaries are original synthesis. Consult the linked pattern for construction steps; a post or prompt does not establish achieved visual quality. Search the JSONL catalog for the complete original backlog and selected follow-ups.
+This reverse lookup maps supporting posts and creator follow-ups to pattern cards. Use it for attribution or source-to-mechanism browsing, not as an implementation guide. These short mechanism summaries are original synthesis. Consult the linked pattern for construction steps; a post or prompt does not establish achieved visual quality. Search the JSONL catalog for the complete original backlog and selected follow-ups.
 
 ### @StefanoStraus · 2104236916316971191
 

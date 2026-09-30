@@ -1,5 +1,9 @@
 # Production: time, sound, performance, and delivery
 
+Use this guide to choose the delivery time model and inspect the audience’s actual output. Read individual sound, contact, accessibility or render-reuse sections only when that work is in scope. [Pattern cards](atlas.md#production) own the reusable mechanisms.
+
+**In this guide:** [Choose the correct time model](#choose-the-correct-time-model) · [Author a chain reaction around contact events](#author-a-chain-reaction-around-contact-events) · [Timing and easing](#timing-and-easing) · [Sound that belongs to the picture](#sound-that-belongs-to-the-picture) · [Audition sound identities before making a pack](#audition-sound-identities-before-making-a-pack) · [Review passes with distinct jobs](#review-passes-with-distinct-jobs) · [Keep live motion responsive](#keep-live-motion-responsive) · [Accessibility without losing the idea](#accessibility-without-losing-the-idea) · [Deliver to the actual destination](#deliver-to-the-actual-destination) · [When two clocks disagree](#when-two-clocks-disagree) · [Review sound identity across projects](#review-sound-identity-across-projects) · [Spend render time on what visibly changes](#spend-render-time-on-what-visibly-changes)
+
 ## Choose the correct time model
 
 **Live UI:** Respond to current state and input. Make transitions interruptible; do not queue decorative animations behind rapidly changing user intent. A spring can preserve velocity when retargeted if the chosen implementation supports it. A fixed easing curve may be simpler for a known transition. See [spring physics](https://www.joshwcomeau.com/animation/a-friendly-introduction-to-spring-physics/).

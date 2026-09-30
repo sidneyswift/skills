@@ -1,6 +1,8 @@
 # Research coverage and evidence
 
-Snapshot: September 29, 2026. Scope: the supplied 1,101-post discovery backlog and relevant creator follow-ups. This is not a claim to enumerate all X posts or all Opus 5.5 work.
+Maintenance inventory updated September 30, 2026. For building, use [the atlas](atlas.md) or local search. This file preserves retrieval scope and dated history; historical counts below the inventory table are not current totals. [coverage.json](coverage.json) owns machine-readable current counts.
+
+Original research scope: the supplied 1,101-post discovery backlog and relevant creator follow-ups. This is not a claim to enumerate all X posts or all Opus 5.5 work.
 
 | Layer | Coverage | What it establishes |
 |---|---:|---|
@@ -49,6 +51,10 @@ Search [the atlas](atlas.md) by the needed mechanism. Use [source cards](source-
 
 The earlier [selected-post evidence](evidence.md) remains useful for its individual observations. Its 24-post count describes the earlier sample and is superseded by this coverage report.
 
+
+## Historical research ledger
+
+The following entries retain the dates, counts and limits of their individual passes. Consult the current inventory above for totals; these are provenance records, not an ordered build curriculum.
 
 For later additions beyond the original backlog, see [the September 29 evening update](updates/2026-09-29-evening.md). Its discovery counts are separate from the original full-pass review.
 

@@ -20,7 +20,7 @@
       "https://x.com/twoclipping/status/2103273003555402193",
       "https://x.com/verbove/status/2103483957266268381"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@twoclipping](https://x.com/twoclipping/status/2103273003555402193), [@verbove](https://x.com/verbove/status/2103483957266268381). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "unequal-edge-springs",
@@ -41,7 +41,7 @@
     "source_urls": [
       "https://x.com/twoclipping/status/2103273003555402193"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@twoclipping](https://x.com/twoclipping/status/2103273003555402193). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "release-momentum",
@@ -62,7 +62,7 @@
     "source_urls": [
       "https://x.com/listudio/status/2104162483888062945"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@listudio](https://x.com/listudio/status/2104162483888062945). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "rubber-boundary",
@@ -74,7 +74,7 @@
     "mechanism": "Compress overscroll into a finite visible distance, then return from that visible state.",
     "build": [
       "Separate the raw pointer coordinate from its displayed coordinate.",
-      "Beyond a bound, display sign(over) \u00d7 R \u00d7 (1-exp(-abs(over)/R)).",
+      "Beyond a bound, display sign(over) × R × (1-exp(-abs(over)/R)).",
       "Release from the displayed position and its derivative, rather than the unbounded raw input."
     ],
     "tune": "R controls maximum visible stretch, not allowable data value. Keep the semantic value clamped.",
@@ -83,7 +83,7 @@
     "source_urls": [
       "https://x.com/listudio/status/2104162483888062945"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@listudio](https://x.com/listudio/status/2104162483888062945). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "semantic-orb",
@@ -104,7 +104,7 @@
     "source_urls": [
       "https://x.com/listudio/status/2104162483888062945"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@listudio](https://x.com/listudio/status/2104162483888062945). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "constrained-badge",
@@ -125,7 +125,7 @@
     "source_urls": [
       "https://x.com/BThreeAgency/status/2103739079745827092"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@BThreeAgency](https://x.com/BThreeAgency/status/2103739079745827092). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "earned-reward",
@@ -146,7 +146,7 @@
     "source_urls": [
       "https://x.com/op7418/status/2104085539419021491"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@op7418](https://x.com/op7418/status/2104085539419021491). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "collect-to-destination",
@@ -167,7 +167,7 @@
     "source_urls": [
       "https://x.com/op7418/status/2104085539419021491"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@op7418](https://x.com/op7418/status/2104085539419021491). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "structural-type",
@@ -179,16 +179,16 @@
     "mechanism": "Typography performs the meaning of the words through load, support and space.",
     "build": [
       "Choose a small set of words with physical roles.",
-      "Convert only those words to glyph outlines; maintain counters and readable proportions.",
+      "Keep rigid words as text when sufficient; use glyph outlines when deformation, counters or geometry require them. Maintain readable proportions.",
       "Let a readable phrase become a beam, aperture or platform after its reading hold."
     ],
     "tune": "Use one deformable element at a time; contrast tension with a deliberate stationary beat.",
-    "check": "Read silently at delivery size. The sentence order and physical metaphor must both survive without narration. Trace a named word from reading to structural role to the final composition; keep the active sentence legible and inspect contact endpoints as the baseline levels.",
+    "check": "Read silently at delivery size. The sentence order and physical metaphor must both survive without narration. Trace each named word to its intended structural role; supports and loads must share their attachment geometry.",
     "prompt": "Give [key words] structural jobs in the composition. Build the ending from forms introduced earlier, after each line has time to read.",
     "source_urls": [
       "https://x.com/Gdgtify/status/2103458245213929495"
     ],
-    "evidence": "Creator prompt retrieved; selected original/remake video phases inspected on September 29. Word supports and shared load/platform composition observed; source implementation not inspected."
+    "evidence": "[@Gdgtify](https://x.com/Gdgtify/status/2103458245213929495). Creator text/prompt retrieved; the mechanism above is an original adaptation. This citation alone does not establish visual or implementation verification."
   },
   {
     "id": "glyph-choreography",
@@ -204,12 +204,12 @@
       "End all glyphs on a stable typographic layout."
     ],
     "tune": "Stagger by phrase length and available hold; never assume every language is separable into single code points.",
-    "check": "Check long words, ligatures, combining marks and small output size. No letter is still moving when the next phrase covers it.",
+    "check": "Check long words, ligatures, combining marks and small output size. No letter is still moving when the next phrase covers it. Check the interval between the final glyph becoming readable and the exit beginning; a long entrance is not automatically a long reading hold. Verify the actual wording as well as the layout.",
     "prompt": "Animate [short message] as deliberate letter choreography. Keep the reading order and a clean final typeset frame.",
     "source_urls": [
       "https://x.com/techhalla/status/2103411247618146715"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@techhalla](https://x.com/techhalla/status/2103411247618146715). Creator description/prompt plus [selected original/remake states](../updates/2026-09-30-type-comparison.md). Letter displacement and a stable two-line result observed; exact spring, masking, blur method and loop seam remain unverified. The remake changes copy and branding."
   },
   {
     "id": "glyph-aperture",
@@ -232,7 +232,7 @@
       "https://x.com/Gdgtify/status/2103458245213929495",
       "https://x.com/leo_xiaolei/status/2102724347446305104"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@Gdgtify](https://x.com/Gdgtify/status/2103458245213929495), [@leo_xiaolei](https://x.com/leo_xiaolei/status/2102724347446305104). Creator text/prompt retrieved; the mechanism above is an original adaptation. This citation alone does not establish visual or implementation verification."
   },
   {
     "id": "weight-as-action",
@@ -246,16 +246,16 @@
       "Confirm that the chosen font actually supports a weight axis.",
       "Drive weight from the action envelope while reserving sufficient layout width.",
       "Add a small baseline or scale response only if it reinforces the same action.",
-      "For a traveling emphasis, offset one shared weight envelope by glyph order; keep overall word expansion and tracking as separate authored controls.",
-      "Choose a fixed footprint or deliberate expanding footprint, measure advances across the chosen axis range, and anchor the word consistently."
+      "Offset one shared weight envelope across glyph order; keep tracking and whole-word expansion independently authored.",
+      "Choose a fixed or deliberately expanding footprint and a stable anchor. See [traveling weight and layout checks](../build-patterns.md#traveling-font-weight)."
     ],
     "tune": "Use a limited axis range first; compensate optical drift from measured glyph bounds rather than arbitrary offsets.",
-    "check": "Inspect thin, middle and heavy states plus the maximum mixed-weight phase. Check tight letter pairs, clipping, unintended reflow and optical drift. Any diagnostic bounds should come from the geometry actually drawn.",
+    "check": "Inspect thin, middle and heavy states plus maximum mixed weight. Check tight pairs, clipping, unintended reflow and diagnostic bounds against the actual drawn geometry.",
     "prompt": "Make [word] change weight as [force] acts on it. Keep the layout stable and the response causally tied to the event.",
     "source_urls": [
       "https://x.com/Dannnnnok/status/2103846630088716687"
     ],
-    "evidence": "Creator Opus 5.5 attribution and September 26 date verified from archived original. Skillry original/remake playback and selected type phases inspected; code, actual variable-font axis, frame rate and sound synchronization unverified. Guidance is original synthesis."
+    "evidence": "[@Dannnnnok](https://x.com/Dannnnnok/status/2103846630088716687). Original Opus 5.5 attribution/date verified; selected original/remake type phases inspected. [Observation limits](../updates/2026-09-29-weight-wave.md): actual font axis, renderer, sound and frame rate remain unverified."
   },
   {
     "id": "spoken-captions",
@@ -278,7 +278,7 @@
       "https://x.com/notdwd/status/2103995183255998633",
       "https://x.com/otsukaroom/status/2104064557216149982"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@notdwd](https://x.com/notdwd/status/2103995183255998633), [@otsukaroom](https://x.com/otsukaroom/status/2104064557216149982). Creator text/prompt retrieved; the mechanism above is an original adaptation. This citation alone does not establish visual or implementation verification."
   },
   {
     "id": "source-code-image",
@@ -299,7 +299,7 @@
     "source_urls": [
       "https://x.com/midasavocado/status/2104019705917018536"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@midasavocado](https://x.com/midasavocado/status/2104019705917018536). Creator text/prompt retrieved; the mechanism above is an original adaptation. This citation alone does not establish visual or implementation verification."
   },
   {
     "id": "contextual-color-history",
@@ -322,7 +322,7 @@
       "https://x.com/amanojak2024/status/2104062837228212282",
       "https://x.com/dotey/status/2103964025683927166"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@amanojak2024](https://x.com/amanojak2024/status/2104062837228212282), [@dotey](https://x.com/dotey/status/2103964025683927166). Creator text/prompt retrieved; the mechanism above is an original adaptation. This citation alone does not establish visual or implementation verification."
   },
   {
     "id": "blueprint-rationale",
@@ -343,7 +343,7 @@
     "source_urls": [
       "https://x.com/moguzbulbul/status/2104206095313215591"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@moguzbulbul](https://x.com/moguzbulbul/status/2104206095313215591). Creator text/prompt retrieved; the mechanism above is an original adaptation. This citation alone does not establish visual or implementation verification."
   },
   {
     "id": "portal-zoom",
@@ -364,7 +364,7 @@
     "source_urls": [
       "https://x.com/koldo2k/status/2103129347791986942"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[Creator prompt](https://x.com/koldo2k/status/2103129347791986942) and [sampled original/remake study](../updates/2026-09-30-portal-comparison.md). Selected states show a desert inside a camera lens and a watch landscape inside a mirror. Match event phases separately: the sampled mirror states occur near16.115s in the original and19.161s in the remake. Exact handoff continuity, proportional zoom speed and loop closure remain unverified. The creator credits Opus5.5 orchestration plus external media generation; the remake's production model was not independently verified."
   },
   {
     "id": "scale-ladder",
@@ -387,7 +387,7 @@
       "https://x.com/Acoramaa/status/2103833991879053577",
       "https://x.com/Cranefomo/status/2104223449849761837"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@Acoramaa](https://x.com/Acoramaa/status/2103833991879053577), [@Cranefomo](https://x.com/Cranefomo/status/2104223449849761837). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "subject-scale",
@@ -408,7 +408,7 @@
     "source_urls": [
       "https://x.com/pradeepXkapoor/status/2103176289482154373"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@pradeepXkapoor](https://x.com/pradeepXkapoor/status/2103176289482154373). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "motivated-handheld",
@@ -431,7 +431,7 @@
       "https://x.com/razeden0/status/2103153899431432535",
       "https://x.com/abxxai/status/2102775814437925228"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@razeden0](https://x.com/razeden0/status/2103153899431432535), [@abxxai](https://x.com/abxxai/status/2102775814437925228). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "train-window",
@@ -445,16 +445,16 @@
       "Separate carriage, near trackside, middle landscape and distant terrain.",
       "Move each outdoor layer by a speed derived from its apparent depth.",
       "Use passing objects or tunnels to motivate major environmental transitions.",
-      "Treat the window as the coverage region: change seasonal landscape state only when the intended occluder hides that region.",
-      "Keep carriage geometry anchored; stage interior exposure, lamp glow and reflections independently from the outdoor state change."
+      "Change the seasonal landscape only when the intended occluder covers the window, including its corners and any openings.",
+      "Keep carriage geometry anchored; animate interior exposure, lamp glow and reflection separately. See the [observed tunnel study](../updates/2026-09-30-train-window.md)."
     ],
     "tune": "Keep near-layer streaks brief and the horizon slow; add one small interior response to track impacts.",
-    "check": "Inspect just before occlusion, full coverage and reveal, including window corners and transparent openings. Check seasonal silhouettes/materials/particles update together while carriage geometry stays anchored; inspect loop seam separately.",
+    "check": "Inspect pre-occlusion, full cover and reveal. Update seasonal silhouettes, materials and particles together; preserve carriage placement. Inspect the loop seam separately.",
     "prompt": "Stage [journey] through a stable window composition. Let parallax and occlusion carry the passage of place and time.",
     "source_urls": [
       "https://x.com/itsolelehmann/status/2103124033365762215"
     ],
-    "evidence": "Original September24 Opus5.5 claim verified from archived post. Original/remake played muted and sampled independently; stable interiors, traveling scenery, dark tunnel phases and snowy states observed. Code, layer-speed ratio, audio synchronization and seamless loop unverified. Build details are original synthesis."
+    "evidence": "[@itsolelehmann](https://x.com/itsolelehmann/status/2103124033365762215). Original model/date verified; selected original/remake tunnel and season states observed. Layer speeds, audio, code and loop seam remain unverified."
   },
   {
     "id": "occlusion-reset",
@@ -477,7 +477,7 @@
       "https://x.com/Gdgtify/status/2103458245213929495",
       "https://x.com/koldo2k/status/2103129347791986942"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@Gdgtify](https://x.com/Gdgtify/status/2103458245213929495), [@koldo2k](https://x.com/koldo2k/status/2103129347791986942). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "guided-free-exploration",
@@ -500,7 +500,7 @@
       "https://x.com/dotey/status/2102940980379017293",
       "https://x.com/DannyLimanseta/status/2103169095034400772"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@dotey](https://x.com/dotey/status/2102940980379017293), [@DannyLimanseta](https://x.com/DannyLimanseta/status/2103169095034400772). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "reveal-world-in-object",
@@ -523,7 +523,7 @@
       "https://x.com/gmgmgm1545/status/2103793820815245507",
       "https://x.com/pradeepXkapoor/status/2103176289482154373"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@gmgmgm1545](https://x.com/gmgmgm1545/status/2103793820815245507), [@pradeepXkapoor](https://x.com/pradeepXkapoor/status/2103176289482154373). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "paint-clock",
@@ -539,14 +539,14 @@
       "Quantize a separate texture clock and seed brush variation by stroke ID and texture tick.",
       "Orient strokes to local form, then composite them under consistent lighting."
     ],
-    "tune": "Begin around 10\u201315 surface updates per second as a stylistic trial, not a universal rule. Keep large shape changes independent.",
+    "tune": "Begin around 10–15 surface updates per second as a stylistic trial, not a universal rule. Keep large shape changes independent.",
     "check": "Freeze the pose while time advances. It should look redrawn, not like the anatomy is melting.",
     "prompt": "Paint [subject] with stable form and a slower handmade surface rhythm. Preserve silhouette and lighting through motion.",
     "source_urls": [
       "https://x.com/yumaeriel/status/2103053172235264150",
       "https://x.com/GroundControl/status/2103679486629659063"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@yumaeriel](https://x.com/yumaeriel/status/2103053172235264150), [@GroundControl](https://x.com/GroundControl/status/2103679486629659063). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "wet-dry-ink",
@@ -567,7 +567,7 @@
     "source_urls": [
       "https://x.com/AxtonLiu/status/2103288413969621231"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@AxtonLiu](https://x.com/AxtonLiu/status/2103288413969621231). Selected code and live brush/water behavior inspected; see [observations and limits](../updates/2026-09-29-ink.md)."
   },
   {
     "id": "distance-spaced-brush",
@@ -580,7 +580,8 @@
     "build": [
       "Accumulate path distance between pointer samples.",
       "Insert stamps at fixed spacing relative to brush radius.",
-      "Normalize deposited pigment by spacing and reduce ink load with travel distance."
+      "Normalize deposited pigment by spacing and reduce ink load with travel distance.",
+      "If lifting reloads the brush, reset its load at the start of each stroke, not on every move event. Clear the gesture on release, cancellation and lost capture."
     ],
     "tune": "Use speed to shape width, with smoothing that preserves sharp turns. Keep bristle texture anchored across the stroke normal.",
     "check": "Draw the same path at different input rates. Coverage should remain comparable and corners should not leave gaps.",
@@ -588,7 +589,7 @@
     "source_urls": [
       "https://x.com/AxtonLiu/status/2103288413969621231"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@AxtonLiu](https://x.com/AxtonLiu/status/2103288413969621231). Selected code and live brush/water behavior inspected; see [observations and limits](../updates/2026-09-29-ink.md)."
   },
   {
     "id": "tile-flock",
@@ -613,7 +614,7 @@
       "https://x.com/LCSlates/status/2102503030469833168",
       "https://x.com/dfeinition/status/2102436001473786054"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@LCSlates](https://x.com/LCSlates/status/2102503028859211905), [@LCSlates](https://x.com/LCSlates/status/2102503030469833168), [@dfeinition](https://x.com/dfeinition/status/2102436001473786054). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "glass-volume",
@@ -634,7 +635,7 @@
     "source_urls": [
       "https://x.com/twoclipping/status/2103835273813496100"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@twoclipping](https://x.com/twoclipping/status/2103835273813496100). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "material-swap",
@@ -657,7 +658,7 @@
       "https://x.com/pradeepXkapoor/status/2103176289482154373",
       "https://x.com/pradeepXkapoor/status/2103099194693271874"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@pradeepXkapoor](https://x.com/pradeepXkapoor/status/2103176289482154373), [@pradeepXkapoor](https://x.com/pradeepXkapoor/status/2103099194693271874). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "lit-rain",
@@ -680,7 +681,7 @@
       "https://x.com/yangfei33113/status/2102611841122017632",
       "https://x.com/minosdevs/status/2103112948478570675"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@yangfei33113](https://x.com/yangfei33113/status/2102611841122017632), [@minosdevs](https://x.com/minosdevs/status/2103112948478570675). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "outline-normal-depth",
@@ -701,7 +702,7 @@
     "source_urls": [
       "https://x.com/op7418/status/2104085539419021491"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@op7418](https://x.com/op7418/status/2104085539419021491). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "shared-wind",
@@ -724,7 +725,7 @@
       "https://x.com/MengTo/status/2103155074705019158",
       "https://x.com/vib3coded/status/2102534606121746589"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@MengTo](https://x.com/MengTo/status/2103155074705019158), [@vib3coded](https://x.com/vib3coded/status/2102534606121746589). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "whole-world-daylight",
@@ -747,7 +748,7 @@
       "https://x.com/dotey/status/2102565403109085669",
       "https://x.com/ishuagra02/status/2102920888261742726"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@dotey](https://x.com/dotey/status/2102565403109085669), [@ishuagra02](https://x.com/ishuagra02/status/2102920888261742726). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "particle-illustration",
@@ -773,7 +774,7 @@
       "https://x.com/ishuagra02/status/2102920408743678129",
       "https://x.com/ishuagra02/status/2102920888261742726"
     ],
-    "evidence": "Original September24 Opus5.5 claim verified from archive. Selected original/remake ocean, under-pier, daylight and sunset views sampled muted. Pinned ribbons.js read: offscreen history is bounded, absent owners clear history. No trail edge-case execution, audio, performance or full-film validation; build additions are original synthesis."
+    "evidence": "[@ishuagra02](https://x.com/ishuagra02/status/2102920408743678129), [@ishuagra02](https://x.com/ishuagra02/status/2102920888261742726). Selected original/remake environments sampled; pinned trail code read. Lifecycle edge cases, audio and performance remain unverified."
   },
   {
     "id": "habitat-reactions",
@@ -796,7 +797,7 @@
       "https://x.com/SouranyPhomhome/status/2103539410302038359",
       "https://x.com/dangreenheck/status/2102878170089169235"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@SouranyPhomhome](https://x.com/SouranyPhomhome/status/2103539410302038359), [@dangreenheck](https://x.com/dangreenheck/status/2102878170089169235). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "architectural-grammar",
@@ -819,7 +820,7 @@
       "https://x.com/vib3coded/status/2103257873203462412",
       "https://x.com/techartist_/status/2103933640392786274"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@vib3coded](https://x.com/vib3coded/status/2103257873203462412), [@techartist_](https://x.com/techartist_/status/2103933640392786274). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "source-grounded-reconstruction",
@@ -842,7 +843,7 @@
       "https://x.com/alexalbert__/status/2102466524934271381",
       "https://x.com/aayush4soni/status/2104181266459644283"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@alexalbert__](https://x.com/alexalbert__/status/2102466524934271381), [@aayush4soni](https://x.com/aayush4soni/status/2104181266459644283). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "sakura-canopy",
@@ -863,7 +864,7 @@
     "source_urls": [
       "https://x.com/pound75423/status/2103480085319942353"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@pound75423](https://x.com/pound75423/status/2103480085319942353). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "crossing-state-machine",
@@ -884,7 +885,7 @@
     "source_urls": [
       "https://x.com/pound75423/status/2103480085319942353"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@pound75423](https://x.com/pound75423/status/2103480085319942353). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "identity-rig",
@@ -907,7 +908,7 @@
       "https://x.com/pradeepXkapoor/status/2103176289482154373",
       "https://x.com/akokoi1/status/2103149539880562718"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@pradeepXkapoor](https://x.com/pradeepXkapoor/status/2103176289482154373), [@akokoi1](https://x.com/akokoi1/status/2103149539880562718). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "planted-foot-ik",
@@ -930,7 +931,7 @@
       "https://x.com/vib3coded/status/2102450842070569099",
       "https://x.com/victormustar/status/2102707412704919910"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@vib3coded](https://x.com/vib3coded/status/2102450842070569099), [@victormustar](https://x.com/victormustar/status/2102707412704919910). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "grip-and-tool",
@@ -951,7 +952,7 @@
     "source_urls": [
       "https://x.com/MengTo/status/2103155074705019158"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@MengTo](https://x.com/MengTo/status/2103155074705019158). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "emotional-secondary",
@@ -974,7 +975,7 @@
       "https://x.com/pradeepXkapoor/status/2103176289482154373",
       "https://x.com/gmgmgm1545/status/2103794101892374823"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@pradeepXkapoor](https://x.com/pradeepXkapoor/status/2103176289482154373), [@gmgmgm1545](https://x.com/gmgmgm1545/status/2103794101892374823). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "pixel-performance",
@@ -997,7 +998,7 @@
       "https://x.com/majidmanzarpour/status/2102476499387383834",
       "https://x.com/akiy_8/status/2102545213218803769"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@majidmanzarpour](https://x.com/majidmanzarpour/status/2102476499387383834), [@akiy_8](https://x.com/akiy_8/status/2102545213218803769). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "layered-portrait",
@@ -1020,7 +1021,7 @@
       "https://x.com/shinshin86/status/2103108187272708544",
       "https://x.com/shinshin86/status/2103606937443336289"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@shinshin86](https://x.com/shinshin86/status/2103108187272708544), [@shinshin86](https://x.com/shinshin86/status/2103606937443336289). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "motion-retarget",
@@ -1041,7 +1042,7 @@
     "source_urls": [
       "https://x.com/Viggle_PINOC/status/2102861943094583723"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@Viggle_PINOC](https://x.com/Viggle_PINOC/status/2102861943094583723). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "tracked-body-type",
@@ -1062,7 +1063,7 @@
     "source_urls": [
       "https://x.com/aicreataro/status/2103757144789221819"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@aicreataro](https://x.com/aicreataro/status/2103757144789221819). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "rigid-body-chain",
@@ -1085,7 +1086,7 @@
       "https://x.com/leogao25/status/2102544081863717153",
       "https://x.com/nybobs/status/2103385835328680050"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@leogao25](https://x.com/leogao25/status/2102544081863717153), [@nybobs](https://x.com/nybobs/status/2103385835328680050). The latter's September 25 original explicitly credits Opus 5.5. Selected muted [original/remake phases](https://skillry.dev/ai-videos/opus-5-5/nybobs-680050) were inspected September 30: wall penetration, a weld-labeled wall and a friction-labeled row. The original overlay names AVBD and 110,000 bricks; the remake names a lightweight position-based solver and 49,724 bricks. These are displayed claims, not measured counts or independently verified implementations. See [inspection limits and test design](../updates/2026-09-30-rigid-body-comparison.md)."
   },
   {
     "id": "cuttable-soft-body",
@@ -1106,7 +1107,7 @@
     "source_urls": [
       "https://x.com/ImaStudio_ai/status/2104517586092458039"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@ImaStudio_ai](https://x.com/ImaStudio_ai/status/2104517586092458039). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "pressure-front",
@@ -1129,7 +1130,7 @@
       "https://x.com/FornYapayZeka/status/2102971287224135914",
       "https://x.com/FornYapayZeka/status/2102971287891009707"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@FornYapayZeka](https://x.com/FornYapayZeka/status/2102971287224135914), [@FornYapayZeka](https://x.com/FornYapayZeka/status/2102971287891009707). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "falling-materials",
@@ -1150,7 +1151,7 @@
     "source_urls": [
       "https://x.com/cyrilXBT/status/2103532793406149036"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@cyrilXBT](https://x.com/cyrilXBT/status/2103532793406149036). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "fluid-pipeline",
@@ -1173,7 +1174,7 @@
       "https://x.com/theailoser/status/2102565612874596411",
       "https://x.com/AxtonLiu/status/2103288413969621231"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@theailoser](https://x.com/theailoser/status/2102565612874596411), [@AxtonLiu](https://x.com/AxtonLiu/status/2103288413969621231). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "fire-to-smoke",
@@ -1194,7 +1195,7 @@
     "source_urls": [
       "https://x.com/NathanWilbanks_/status/2103881538592981110"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@NathanWilbanks_](https://x.com/NathanWilbanks_/status/2103881538592981110), September 26, explicitly credits Opus 5.5. Selected [original/remake phases](https://skillry.dev/ai-videos/opus-5-5/nathanwilbanks-981110) were inspected September 30: the original shows a bright flame, broad ground illumination and a rising smoke plume; the remake has taller foreground logs and a narrower exposed flame. Later sampled shots show a smaller campfire in a wider dark composition. These observations do not verify a fluid solver, physical blackbody model, sound coupling or the claimed frame rate. See [the dated comparison record](../updates/2026-09-30-fire-comparison.md)."
   },
   {
     "id": "causal-water",
@@ -1220,7 +1221,7 @@
       "https://x.com/MengTo/status/2103155074705019158",
       "https://x.com/StephanFerraro/status/2103020274107224281"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified. Additional terrain-runoff evidence: Opus 5.5 post dated September 24 retrieved. Solver, water shader and water tests read at 680f87e6d54984199525dd12005bd95711bb47bb. Three independent local numerical probes passed. Selected original/remake video frames inspected; full benchmark suite, live controls, accuracy and performance not validated."
+    "evidence": "[Source 1](https://x.com/dangreenheck/status/2102911556296052788), [Source 2](https://x.com/MengTo/status/2103155074705019158), [Source 3](https://x.com/StephanFerraro/status/2103020274107224281). Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified. Additional terrain-runoff evidence: Opus 5.5 post dated September 24 retrieved. Solver, water shader and water tests read at 680f87e6d54984199525dd12005bd95711bb47bb. Three independent local numerical probes passed. Selected original/remake video frames inspected; full benchmark suite, live controls, accuracy and performance not validated.\n\nRead the [terrain-water worked study](../terrain-water.md) for state, rendering and diagnostic choices."
   },
   {
     "id": "gpu-resident-motion",
@@ -1241,7 +1242,7 @@
     "source_urls": [
       "https://x.com/nybobs/status/2103385835328680050"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@nybobs](https://x.com/nybobs/status/2103385835328680050). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "shared-control-comparison",
@@ -1262,7 +1263,7 @@
     "source_urls": [
       "https://x.com/StefanoStraus/status/2104236916316971191"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@StefanoStraus](https://x.com/StefanoStraus/status/2104236916316971191). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "computed-optical-image",
@@ -1285,7 +1286,7 @@
       "https://x.com/cagrimbakirci/status/2104011756397842869",
       "https://x.com/The_MrAI/status/2104068960035713523"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@cagrimbakirci](https://x.com/cagrimbakirci/status/2104011756397842869), [@The_MrAI](https://x.com/The_MrAI/status/2104068960035713523). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "flow-cutaway",
@@ -1306,7 +1307,7 @@
     "source_urls": [
       "https://x.com/konstantinsaifo/status/2104094723887501736"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@konstantinsaifo](https://x.com/konstantinsaifo/status/2104094723887501736). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "causal-scale-story",
@@ -1327,7 +1328,7 @@
     "source_urls": [
       "https://x.com/mrmagan_/status/2103470233080254891"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@mrmagan_](https://x.com/mrmagan_/status/2103470233080254891). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "data-backed-image",
@@ -1350,7 +1351,7 @@
       "https://x.com/ng169onX/status/2103183904563998809",
       "https://x.com/arambarnett/status/2104011150471917838"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@ng169onX](https://x.com/ng169onX/status/2103183904563998809), [@arambarnett](https://x.com/arambarnett/status/2104011150471917838). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "linked-space-time",
@@ -1371,7 +1372,7 @@
     "source_urls": [
       "https://x.com/mizugame_22/status/2104045418141368438"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@mizugame_22](https://x.com/mizugame_22/status/2104045418141368438). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "constraint-aware-layout",
@@ -1392,7 +1393,7 @@
     "source_urls": [
       "https://x.com/goofyninjaaa/status/2103540288136315331"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@goofyninjaaa](https://x.com/goofyninjaaa/status/2103540288136315331). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "token-conservation",
@@ -1413,7 +1414,7 @@
     "source_urls": [
       "https://x.com/ParkerRex/status/2103206747846701462"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@ParkerRex](https://x.com/ParkerRex/status/2103206747846701462). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "shared-score-clock",
@@ -1436,7 +1437,7 @@
       "https://x.com/aiehon_aya/status/2103403361022419005",
       "https://x.com/GroundControl/status/2103679486629659063"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@aiehon_aya](https://x.com/aiehon_aya/status/2103403361022419005), [@GroundControl](https://x.com/GroundControl/status/2103679486629659063). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "band-to-part",
@@ -1459,7 +1460,7 @@
       "https://x.com/Acoramaa/status/2104145227573248467",
       "https://x.com/aratamadao/status/2103706285204255186"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@Acoramaa](https://x.com/Acoramaa/status/2104145227573248467), [@aratamadao](https://x.com/aratamadao/status/2103706285204255186). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "collision-instrument",
@@ -1482,7 +1483,7 @@
       "https://x.com/KamStudioLabs/status/2102899866762440893",
       "https://x.com/kantamk/status/2103148907228176511"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@KamStudioLabs](https://x.com/KamStudioLabs/status/2102899866762440893), [@kantamk](https://x.com/kantamk/status/2103148907228176511). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "gesture-instrument",
@@ -1505,7 +1506,7 @@
       "https://x.com/AxtonLiu/status/2103288413969621231",
       "https://x.com/DemitiyaGeekzen/status/2103517910274818523"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@AxtonLiu](https://x.com/AxtonLiu/status/2103288413969621231), [@DemitiyaGeekzen](https://x.com/DemitiyaGeekzen/status/2103517910274818523). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "peak-alignment",
@@ -1526,7 +1527,7 @@
     "source_urls": [
       "https://x.com/twoclipping/status/2102554209166000267"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@twoclipping](https://x.com/twoclipping/status/2102554209166000267). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "physical-timbre",
@@ -1549,7 +1550,7 @@
       "https://x.com/Rakhsh_Tech/status/2104144532644544921",
       "https://x.com/iniyanai/status/2103814603100856596"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@Rakhsh_Tech](https://x.com/Rakhsh_Tech/status/2104144532644544921), [@iniyanai](https://x.com/iniyanai/status/2103814603100856596). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "section-arrangement",
@@ -1572,7 +1573,7 @@
       "https://x.com/aratamadao/status/2103706285204255186",
       "https://x.com/pound75423/status/2103722560462475314"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@aratamadao](https://x.com/aratamadao/status/2103706285204255186), [@pound75423](https://x.com/pound75423/status/2103722560462475314). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "seeded-universe",
@@ -1581,7 +1582,7 @@
     "sources": [
       "2103837521645867073"
     ],
-    "mechanism": "A shared seed coordinates choices while separate streams prevent accidental coupling.",
+    "mechanism": "A shared seed coordinates choices while separate streams prevent accidental coupling. Use for repeatable, personalized visual and musical worlds generated from text input such as a visitor name.",
     "build": [
       "Hash the user input into a stable seed.",
       "Derive named sub-seeds for palette, geometry, rhythm and melody.",
@@ -1593,7 +1594,7 @@
     "source_urls": [
       "https://x.com/MiaAI_lab/status/2103837521645867073"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@MiaAI_lab](https://x.com/MiaAI_lab/status/2103837521645867073). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "exploded-assembly",
@@ -1616,7 +1617,7 @@
       "https://x.com/deedydas/status/2103174501345493197",
       "https://x.com/CurieuxExplorer/status/2103038628071133588"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@deedydas](https://x.com/deedydas/status/2103174501345493197), [@CurieuxExplorer](https://x.com/CurieuxExplorer/status/2103038628071133588). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "buildable-bricks",
@@ -1639,7 +1640,7 @@
       "https://x.com/johnkarp/status/2103802201739256312",
       "https://x.com/johnkarp/status/2103802213655294212"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@johnkarp](https://x.com/johnkarp/status/2103802201739256312), [@johnkarp](https://x.com/johnkarp/status/2103802213655294212). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "reveal-under-surface",
@@ -1660,7 +1661,7 @@
     "source_urls": [
       "https://x.com/iamtanzil_/status/2103459848793084047"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@iamtanzil_](https://x.com/iamtanzil_/status/2103459848793084047). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "cleaning-mask",
@@ -1681,7 +1682,7 @@
     "source_urls": [
       "https://x.com/chongdashu/status/2102674509593796808"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@chongdashu](https://x.com/chongdashu/status/2102674509593796808). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "one-input-meaning",
@@ -1704,7 +1705,7 @@
       "https://x.com/blitast_studio/status/2104003920251257328",
       "https://x.com/DannyLimanseta/status/2104215873120764032"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@blitast_studio](https://x.com/blitast_studio/status/2104003920251257328), [@DannyLimanseta](https://x.com/DannyLimanseta/status/2104215873120764032). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "readable-chase",
@@ -1725,7 +1726,7 @@
     "source_urls": [
       "https://x.com/froessell/status/2103789415323562325"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@froessell](https://x.com/froessell/status/2103789415323562325). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "operational-world",
@@ -1748,7 +1749,7 @@
       "https://x.com/kum1ta/status/2103998389058740521",
       "https://x.com/sanjay_khadka07/status/2104102479927620029"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@kum1ta](https://x.com/kum1ta/status/2103998389058740521), [@sanjay_khadka07](https://x.com/sanjay_khadka07/status/2104102479927620029). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "page-as-surface",
@@ -1769,7 +1770,7 @@
     "source_urls": [
       "https://x.com/kloss_xyz/status/2104021884350439465"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@kloss_xyz](https://x.com/kloss_xyz/status/2104021884350439465). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "motif-handoff",
@@ -1792,7 +1793,7 @@
       "https://x.com/park_danie36173/status/2104037878036824375",
       "https://x.com/leo_xiaolei/status/2102724347446305104"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@park_danie36173](https://x.com/park_danie36173/status/2104037878036824375), [@leo_xiaolei](https://x.com/leo_xiaolei/status/2102724347446305104). Creator description/prompt; verify the visual when fidelity matters.\n\n\nFor point-cloud transitions that settle into readable content, read [particle-to-content handoff](../particle-content-handoff.md). It covers shape sampling, correspondence, arrival timing and the crisp-content crossover."
   },
   {
     "id": "chaos-to-organization",
@@ -1813,7 +1814,7 @@
     "source_urls": [
       "https://x.com/juanpfgomes8/status/2104057509887553949"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@juanpfgomes8](https://x.com/juanpfgomes8/status/2104057509887553949). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "quiet-payoff",
@@ -1836,7 +1837,7 @@
       "https://x.com/Gdgtify/status/2103458245213929495",
       "https://x.com/pradeepXkapoor/status/2103176289482154373"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@Gdgtify](https://x.com/Gdgtify/status/2103458245213929495), [@pradeepXkapoor](https://x.com/pradeepXkapoor/status/2103176289482154373). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "archival-bridge",
@@ -1857,7 +1858,7 @@
     "source_urls": [
       "https://x.com/notdwd/status/2103995183255998633"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@notdwd](https://x.com/notdwd/status/2103995183255998633). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "silent-acting",
@@ -1880,7 +1881,7 @@
       "https://x.com/gmgmgm1545/status/2103794101892374823",
       "https://x.com/pradeepXkapoor/status/2103176289482154373"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@gmgmgm1545](https://x.com/gmgmgm1545/status/2103794101892374823), [@pradeepXkapoor](https://x.com/pradeepXkapoor/status/2103176289482154373). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "historical-construction",
@@ -1903,7 +1904,7 @@
       "https://x.com/techartist_/status/2102503719762018434",
       "https://x.com/RetropunkAI/status/2103237991091060898"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@techartist_](https://x.com/techartist_/status/2102503719762018434), [@RetropunkAI](https://x.com/RetropunkAI/status/2103237991091060898). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "camera-from-previs",
@@ -1918,18 +1919,18 @@
     "build": [
       "Block camera, subject motion and occlusion with simple geometry.",
       "Render guide passes that clearly separate identity, depth or parts as needed.",
-      "Choose what the guide is allowed to transfer: continuous video for required timing, or action-keyed storyboard frames when stiff proxy motion should be reinterpreted. Keep appearance references separate.",
+      "Choose video or action-keyed storyboard guidance according to which timing and motion qualities should transfer. Keep appearance references separate.",
       "Apply the final treatment while checking it against the staged motion and silhouette."
     ],
-    "tune": "Keep the guide semantically clear; do not expect a later model to repair impossible staging. Declare locked staging versus flexible articulation; panels do not lock exact camera velocity or timing.",
-    "check": "Compare guide and final at key actions. Identity, contact, direction and timing must remain consistent. Align corresponding events before comparing phases; verify handoff pose and direction instead of assuming a last-frame anchor guarantees continuity.",
+    "tune": "Keep the guide semantically clear; do not expect a later model to repair impossible staging.",
+    "check": "Compare guide and final at key actions. Identity, contact, direction and timing must remain consistent.",
     "prompt": "Plan [cinematic moment] in a simple spatial blockout, then preserve its staging through the final visual treatment.",
     "source_urls": [
       "https://x.com/OriSilver/status/2102817977812824335",
       "https://x.com/slipgatecentral/status/2104021676107407427",
       "https://x.com/viperstudios4/status/2102916712681079291"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified. September 24 viperstudios4 explicitly credits Astra for Blender clay previs and Seedance 2.5 for final video. Creator reports replacing stiff video guidance with storyboard frames. Selected paired recording frames inspected; framing differs at sampled moments. Exact camera preservation, causal improvement, audio and contact correctness unverified."
+    "evidence": "[@OriSilver](https://x.com/OriSilver/status/2102817977812824335), [@slipgatecentral](https://x.com/slipgatecentral/status/2104021676107407427). Creator description/prompt; verify the visual when fidelity matters.\n\n\n### Preserve staging without inheriting proxy motion\n\nIn [viperstudios4's September 24 workflow](https://x.com/viperstudios4/status/2102916712681079291), Astra built and animated clay previs in Blender. The creator reports that using its video directly carried stiff movement into generation, then describes using a 12-panel storyboard, separate appearance references and the previous clip's last frame with Seedance 2.5. **Astra supplied previs; Seedance supplied the final video.** The 12-panel count is this project's choice, not a requirement. Selected paired footage was inspected: both views show the giant/hero/hammer staging, but their framing differs at sampled moments. This does not verify an exact camera match or prove the claimed improvement over the earlier attempt."
   },
   {
     "id": "coherent-mixed-media",
@@ -1954,7 +1955,7 @@
       "https://x.com/makevoid/status/2103869706121970073",
       "https://x.com/kidpakerot/status/2103243082095329632"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@donaldjewkes](https://x.com/donaldjewkes/status/2102801469976248500), [@makevoid](https://x.com/makevoid/status/2103869706121970073). Creator description/prompt; verify the visual when fidelity matters.\n\n\nFor an iterative Astra workflow involving curated sound, reference breakdowns and a missing-brandbook critique, see [the September 29 update](../updates/2026-09-29-evening.md)."
   },
   {
     "id": "pure-time-render",
@@ -1977,7 +1978,7 @@
       "https://x.com/verbove/status/2103483957266268381",
       "https://x.com/twoclipping/status/2103835273813496100"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@verbove](https://x.com/verbove/status/2103483957266268381), [@twoclipping](https://x.com/twoclipping/status/2103835273813496100). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "loop-position-velocity",
@@ -1998,7 +1999,7 @@
     "source_urls": [
       "https://x.com/listudio/status/2104162483888062945"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@listudio](https://x.com/listudio/status/2104162483888062945). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "selective-motion-blur",
@@ -2021,7 +2022,7 @@
       "https://x.com/brainextends/status/2103801834930606193",
       "https://x.com/twoclipping/status/2102554209166000267"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@brainextends](https://x.com/brainextends/status/2103801834930606193), [@twoclipping](https://x.com/twoclipping/status/2102554209166000267). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "real-product-demo",
@@ -2046,7 +2047,7 @@
       "https://x.com/Bilimfili1/status/2103743802938671516",
       "https://x.com/HO_BA/status/2103845264649761062"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@xiaoerzhan](https://x.com/xiaoerzhan/status/2104076374281510985), [@Bilimfili1](https://x.com/Bilimfili1/status/2103743802938671516), [@HO_BA](https://x.com/HO_BA/status/2103845264649761062). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "reference-to-director-notes",
@@ -2069,7 +2070,7 @@
       "https://x.com/rexan_wong/status/2103707054108299437",
       "https://x.com/iniyanai/status/2104204321844007161"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@rexan_wong](https://x.com/rexan_wong/status/2103707054108299437), [@iniyanai](https://x.com/iniyanai/status/2104204321844007161). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "quality-tier-by-bottleneck",
@@ -2092,7 +2093,7 @@
       "https://x.com/dangreenheck/status/2103502611353633151",
       "https://x.com/nybobs/status/2103385835328680050"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@dangreenheck](https://x.com/dangreenheck/status/2103502611353633151), [@nybobs](https://x.com/nybobs/status/2103385835328680050). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "aspect-aware-staging",
@@ -2115,7 +2116,7 @@
       "https://x.com/kloss_xyz/status/2104021884350439465",
       "https://x.com/aiwarts/status/2103419817034428866"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@kloss_xyz](https://x.com/kloss_xyz/status/2104021884350439465), [@aiwarts](https://x.com/aiwarts/status/2103419817034428866). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "event-based-review",
@@ -2138,7 +2139,7 @@
       "https://x.com/Artless101/status/2103303449831964679",
       "https://x.com/listudio/status/2104162483888062945"
     ],
-    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+    "evidence": "[@Artless101](https://x.com/Artless101/status/2103303449831964679), [@listudio](https://x.com/listudio/status/2104162483888062945). Creator description/prompt; verify the visual when fidelity matters."
   },
   {
     "id": "phase-coherent-explode",
@@ -2161,7 +2162,7 @@
       "https://x.com/theparuchh/status/2105009377002299711",
       "https://x.com/theparuchh/status/2105009470292013286"
     ],
-    "evidence": "Creator prompt retrieved in full; selected frames from the comparison video inspected. Live controls, source code, mechanical correctness and claimed production times were not independently verified."
+    "evidence": "Creator prompt retrieved in full; selected frames from the comparison video inspected. Live controls, source code, mechanical correctness and claimed production times were not independently verified. [source 1](https://x.com/theparuchh/status/2105009377002299711) [source 2](https://x.com/theparuchh/status/2105009470292013286)"
   },
   {
     "id": "contract-burst-return",
@@ -2182,7 +2183,7 @@
     "source_urls": [
       "https://x.com/Acoramaa/status/2104962747125412335"
     ],
-    "evidence": "Creator attributes the work to GPT-6 Astra. Frames around 3, 5, 7, 11 and 15 seconds were inspected through the creator-linked video. Source code, audio and continuous playback quality were not assessed."
+    "evidence": "Creator attributes the work to GPT-6 Astra. Frames around 3, 5, 7, 11 and 15 seconds were inspected through the creator-linked video. Source code, audio and continuous playback quality were not assessed. [source 1](https://x.com/Acoramaa/status/2104962747125412335)"
   },
   {
     "id": "contact-driven-computation",
@@ -2203,7 +2204,7 @@
     "source_urls": [
       "https://x.com/GodsBoy7777/status/2103117450854150194"
     ],
-    "evidence": "Creator prompt retrieved. Astra mechanism and test code inspected at revision 1f3dddb74ab2180ec139413706632e0f4ff17c5a. All four supplied tests passed locally, including 256 input pairs. Browser visuals, sound and frame rate were not assessed."
+    "evidence": "Creator prompt retrieved. Astra mechanism and test code inspected at revision 1f3dddb74ab2180ec139413706632e0f4ff17c5a. All four supplied tests passed locally, including 256 input pairs. Browser visuals, sound and frame rate were not assessed. [Creator post](https://x.com/GodsBoy7777/status/2103117450854150194)."
   },
   {
     "id": "measured-joint-motion",
@@ -2224,7 +2225,7 @@
     "source_urls": [
       "https://x.com/everestchris6/status/2104965415164399895"
     ],
-    "evidence": "Creator prompt and linked product-hero-realism tutorial read at revision 255562b04b1e5ecaa4ba98e5c9aa191d5ba7f6fa. The tutorial\u2019s measured values and visual result were not independently reproduced; guidance here is an original adaptation."
+    "evidence": "Creator prompt and linked product-hero-realism tutorial read at revision 255562b04b1e5ecaa4ba98e5c9aa191d5ba7f6fa. The tutorial’s measured values and visual result were not independently reproduced; guidance here is an original adaptation. [Creator post](https://x.com/everestchris6/status/2104965415164399895)."
   },
   {
     "id": "beat-locked-move-library",
@@ -2242,7 +2243,7 @@
     "tune": "Control stance width, gesture extent, bounce amplitude, support-switch phase and transition duration. Choose framing and shot length that let the defining gesture read.",
     "check": "Inspect contact, anticipation, accent and recovery in sequence, then play with the final soundtrack. A static pose sheet cannot prove rhythm; costumes and camera cuts must not hide the action.",
     "prompt": "Create a short original dance for [character] using named, reusable pose functions tied to a measured musical phase. Prove the move on a plain rig, then in costume, then in a formation. Preserve support contacts and check the final soundtrack before expanding the sequence.",
-    "evidence": "Recent Opus 5.5 creator prompt retrieved; linked music-video-reimagined dance and timing tutorials read at 7d6b7b22caf08c6e330e1abb869953d8e4f2cc1a. README credits both Opus 5.5 and Sonnet 5.5. MIT source, not bundled; rendered film not inspected.",
+    "evidence": "[Creator post](https://x.com/LLMJunky/status/2104659866304516101). Recent Opus 5.5 creator prompt retrieved; linked music-video-reimagined dance and timing tutorials read at 7d6b7b22caf08c6e330e1abb869953d8e4f2cc1a. README credits both Opus 5.5 and Sonnet 5.5. MIT source, not bundled; rendered film not inspected.",
     "source_urls": [
       "https://x.com/LLMJunky/status/2104659866304516101"
     ]
@@ -2263,7 +2264,7 @@
     "tune": "Balance resolution, decoded memory, prefetch distance and input-to-presentation delay. A compressed file size is not its decoded footprint; start from a measured working set.",
     "check": "Throttle decoding, reverse direction, jump across the sequence, replace the source and dispose during an in-flight decode. Old results must not overwrite the target; pending work and retained bitmaps must remain bounded.",
     "prompt": "Build an inspectable frame sequence for [subject] with one authoritative requested progress and an explicit presented-frame state. Keep image labels synchronized with what is actually drawn. Test slow decode, reversals, source replacement and cleanup before claiming smooth scrubbing.",
-    "evidence": "Creator explicitly links an Astra 6 visual-engineering toolkit. Its frame-sequence tutorial and embedded mapping code were read at d18496cc2c0bdddc1e60abec6450c2872d9df6c4. No rendered demo or loader implementation was executed. No license file found in that tree; original synthesis only.",
+    "evidence": "[Creator post](https://x.com/nikunjkothiya/status/2104789479538266207). Creator explicitly links an Astra 6 visual-engineering toolkit. Its frame-sequence tutorial and embedded mapping code were read at d18496cc2c0bdddc1e60abec6450c2872d9df6c4. No rendered demo or loader implementation was executed. No license file found in that tree; original synthesis only.",
     "source_urls": [
       "https://x.com/nikunjkothiya/status/2104789479538266207"
     ]
@@ -2281,13 +2282,13 @@
       "If adapting a per-frame fraction a, record its reference frame rate f. Use halfLife = -ln(2)/(f*ln(1-a)); do not assume the original prompt specified f.",
       "For a scrubbed film with a fixed target segment, evaluate directly from its initial position and elapsed time. For live moving targets, update from measured dt and understand the target is assumed constant within each sample."
     ],
-    "tune": "Use half-life or settling duration instead of a frame fraction. A 12\u201319% fraction at an assumed 60 Hz corresponds to roughly 90\u201355 ms half-life; these are conversion examples, not universal taste settings.",
+    "tune": "Use half-life or settling duration instead of a frame fraction. A 12–19% fraction at an assumed 60 Hz corresponds to roughly 90–55 ms half-life; these are conversion examples, not universal taste settings.",
     "check": "Compare equal elapsed time at 30, 60 and 120 Hz and irregular partitions with a held target. Test target reversals separately: first-order following preserves position but changes velocity abruptly; use a spring when momentum continuity matters.",
     "prompt": "Make [follower] respond consistently across refresh rates. Specify its response in time units, verify equal-time positions with a held target, and choose a spring instead if a reversal must retain momentum.",
     "source_urls": [
       "https://x.com/notdwd/status/2104719555394232743"
     ],
-    "evidence": "September 28 creator prompt explicitly says it is used for Opus 5.5 motion. Text retrieved through the completed Apify run. The frame-rate correction, half-life conversion and implementation are original engineering synthesis; no associated visual output inspected."
+    "evidence": "September 28 creator prompt explicitly says it is used for Opus 5.5 motion. Text retrieved through the completed Apify run. The frame-rate correction, half-life conversion and implementation are original engineering synthesis; no associated visual output inspected. [Creator source](https://x.com/notdwd/status/2104719555394232743). See the [worked conversion](../time-based-follow.md)."
   },
   {
     "id": "attractor-spike-field",
@@ -2309,6 +2310,6 @@
     "source_urls": [
       "https://x.com/gogu_name/status/2104736947822645622"
     ],
-    "evidence": "September 29 creator explicitly credits GPT-6 Astra + Three.js + Remotion. Original recording played and selected frames inspected, including 4.89s rounded/pointed field, 9.33s red sphere with tall local peak, and end field. No creator code or prompt available; height-field method is original synthesis, not inspected implementation. Audio, physics, performance, live input and loop seam unverified."
+    "evidence": "[@gogu_name](https://x.com/gogu_name/status/2104736947822645622). September 29 creator explicitly credits GPT-6 Astra + Three.js + Remotion. Original recording played and selected frames inspected, including 4.89s rounded/pointed field, 9.33s red sphere with tall local peak, and end field. No creator code or prompt available; height-field method is original synthesis, not inspected implementation. Audio, physics, performance, live input and loop seam unverified.\n\n### A concrete authored approximation\n\nUse coordinates `(x,z)` on the dish and fixed peak centers `c_i`. One starting shape is `K_i = exp(-(|q-c_i|/r)^p)`, with `p > 1` so the tip has a defined zero gradient. Values near 1 sharpen the rounded apex but require finer tessellation; values near 2 produce softer mounds. Modulate each amplitude with `a_i = h_rest + gain * exp(-|c_i-attractorXZ|² / width²)`, keeping width positive and gain bounded. Form `H(q) = edge(q) * sum(a_i*K_i(q))`. The sum can exceed a single peak amplitude when kernels overlap: check its actual maximum against the sphere and dish clearance instead of assuming the gain is the maximum surface height. This is a design construction, not a recovered creator formula.\n\nUse a smooth radial edge mask that reaches zero with zero slope before the rim. For a mesh parameterized as `(x,H,z)`, derive the normal as `normalize(-dH/dx, 1, -dH/dz)`; central differences are a simple starting point. Reduce the difference step and increase tessellation together until highlights stop changing materially. A coarse mesh with a sharp kernel produces crawling specular facets. Keep peak spacing stable and animate amplitude, width or the attractor path before adding positional wobble.\n\nBlock out three readable phases: regular field, locally softened mounds, then a concentrated reaching peak. Those states were visible in the source; this proposed staging and its equations are synthesis. Design independent envelopes for base height, sharpness and attraction strength. If exporting by frame, evaluate time directly rather than accumulating per-frame displacements. For pointer input, map into the dish plane and use a time-based response; do not imply the source was interactive.\n\nUse a broad white reflection to show each peak and one warm edge reflection to join the valleys. Tune the geometry in a neutral material before reflective polish. Avoid adding noise to hide silhouette defects. This single-valued height surface cannot represent overhangs, pinch-off droplets or a real magnetic-fluid volume; choose a different representation if those are the defining behavior."
   }
 ]
