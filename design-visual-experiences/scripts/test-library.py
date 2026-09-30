@@ -82,6 +82,7 @@ print(f'PASS: {len(CASES)} pattern brief retrievals, catalog/evidence invariants
 
 # Task-language queries must reach actual local implementation destinations.
 BUILD_CASES = [
+ ('introduce components construct assembly tour separated parts restore exact rest pose', 'references/patterns/interaction.md#exploded-assembly'),
  ('room tour camera bookmarks manual walk cutaway return without clipping', 'references/patterns/camera.md#guided-free-exploration'),
  ('classroom lesson advances only after rubbing a match even if the video ends', 'references/action-gated-lessons.md'),
  ('globe stops at an eclipse and resumes without skipping next event', 'references/simulation-event-stops.md'),

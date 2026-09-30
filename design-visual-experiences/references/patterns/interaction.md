@@ -19,21 +19,22 @@ Read only the mechanisms relevant to the brief. Build steps, tuning and prompts 
 
 ## An assembly that can be understood in either direction
 
-**Mechanism:** Parts separate along purposeful paths while retaining their assembly relationships.
+**Mechanism:** Parts retain their assembly relationships while construction, separation and camera exploration follow distinct phases.
 
 **Build:**
 
-1. Create an inventory with part IDs, pivots, final transforms and assembly order.
-2. Assign collision-aware separation paths and use one progress state to interpolate assembled and exploded views.
-3. Highlight the current part and its connection without hiding the surrounding context.
+1. Store stable part IDs, local pivots, exact rest transforms and assembly order. Introduce a few representative components at readable scale before unveiling a dense whole when the audience needs its shape vocabulary.
+2. Assign collision-aware separation paths driven by one reversible rest-to-exploded parameter. Schedule camera travel independently so the view can explore a held separated field. Highlight a selected part/connection without hiding its surrounding context.
+3. Give initial construction its own arrival phase and stagger; group/height ordering can clarify a stylized build but does not prove structural validity. A return can contract directly to rest transforms instead of replaying initial construction.
+4. Preserve a wide landmark at departure and return, with an orientation pause before contraction. Derive transforms from stored poses rather than accumulating offsets, so reverse scrubbing lands exactly on the same assembly.
 
-**Tune:** Separate enough for understanding, not maximum distance; provide step and free-scrub controls.
+**Tune:** Expose component-introduction count/hold, arrival stagger, separation distance, camera clearance and final hold. Separate enough for understanding, not maximum distance. Provide step/free-scrub controls for an interactive explanation; let readable hero geometry, not sheer part count, carry close passes.
 
-**Failure check:** Scrub backward and select every part. Labels and transforms must stay attached to the correct piece.
+**Failure check:** Scrub backward and select every part; labels and transforms must stay attached to the correct piece. Review intermediate camera positions for clipping, foreground occlusion and crop seams. Derive any precise inventory claim from actual instances; a static parts list is not a progress meter. Return-to-whole is not a seamless loop: if repeating, compare opening/closing object transforms, camera and velocity.
 
-**Adapted prompt:** Explain [assembly] with reversible, stepwise part movement and a clear view of how each connection works.
+**Adapted prompt:** Explain [assembly] through a few readable components, an ordered first build, independent exploration of its separated parts and a precise return to the whole. Keep part identity stable and make the structure understandable in either direction.
 
-**Evidence:** [@deedydas](https://x.com/deedydas/status/2103174501345493197), [@CurieuxExplorer](https://x.com/CurieuxExplorer/status/2103038628071133588). Creator description/prompt; verify the visual when fidelity matters.
+**Evidence:** [@deedydas](https://x.com/deedydas/status/2103174501345493197), [@CurieuxExplorer](https://x.com/CurieuxExplorer/status/2103038628071133588): creator descriptions/prompts. [Higgsfield Notre-Dame study](../research/higgsfield-motion.md#notre-dame--component-introduction-and-independent-camera-travel): all435 source frames at640px, with seven native1600×1200 checks. Three introductory parts, height-progressive construction, an exploded close passage and a contracting return are visible; the final whole differs from the empty opening. Separate phase/state rules above are original synthesis. Exact block count, physical buildability, model workflow, source code, audio and temporal playback were not verified.
 
 
 <a id="buildable-bricks"></a>

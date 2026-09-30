@@ -3973,5 +3973,27 @@
     "pattern_ids": [
       "guided-free-exploration"
     ]
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2097116143022669928",
+    "kind": "video-reference",
+    "title": "Higgsfield Notre-Dame: component introduction, exploded camera passage and return to whole",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2097116143022669928"
+    ],
+    "inspection": "All435 source frames at640px in73 consecutive pages; seven native1600x1200 checks. No temporal playback, audio or original project/code inspection. Reviewed2026-09-30.",
+    "note": "Three parts teach component shape before construction; camera explores separated geometry, followed by direct contraction to the whole. Ending is not a seamless loop. Model workflow, actual block count and buildability are unverified creator claims.",
+    "topics": [
+      "higgsfield",
+      "exploded assembly",
+      "component introduction",
+      "construction order",
+      "camera travel",
+      "rest transforms",
+      "return to whole"
+    ],
+    "pattern_ids": [
+      "exploded-assembly"
+    ]
   }
 ]
