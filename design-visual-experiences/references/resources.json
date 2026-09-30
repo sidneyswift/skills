@@ -3881,5 +3881,28 @@
       "resolution comparison"
     ],
     "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2103900178260586993",
+    "kind": "video-reference",
+    "title": "Higgsfield Seedance API launch: cashback balance depletion and replenishment",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2103900178260586993"
+    ],
+    "inspection": "673 source frames at 320px; frames 0–587 reread consecutively at 640px; six native 1920x1080 stills. No temporal playback, listening, live product or project/code inspection. Reviewed 2026-09-30.",
+    "note": "Visible coin contact precedes balance increase; number, anchored reservoir and finishing explain the offer. Later pool countdown is a separate unverified promotional claim. Advertised Seedance 2.5 does not identify the outer renderer.",
+    "topics": [
+      "higgsfield",
+      "seedance api",
+      "offer",
+      "cashback",
+      "balance",
+      "depletion",
+      "replenishment",
+      "reservoir",
+      "coin contact",
+      "motion design"
+    ],
+    "pattern_ids": []
   }
 ]

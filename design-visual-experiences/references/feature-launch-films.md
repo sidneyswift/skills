@@ -2,7 +2,7 @@
 
 Use this for motion-led announcements, feature launches and product demos. Choose the audience's new understanding or capability before borrowing a visual style. The methods below are original adaptations of inspected Higgsfield footage; [source observations and inspection limits](research/higgsfield-motion.md) remain separate. They are not a universal formula, a measured conversion result or recovered production code.
 
-**Read what fits:** [Exploration before fidelity](#exploration-before-fidelity) · [Read motion at native cadence](#read-motion-at-native-cadence) · [Parallel action and return of control](#parallel-action-and-return-of-control) · [Story and agency](#story-and-agency) · [Hooks and proof](#hooks-and-proof) · [Pacing and readable-hold-time](#pacing-and-readable-hold-time) · [Object continuity and movement](#object-continuity-and-movement) · [Composition and finishing](#composition-and-finishing) · [Generated assets and controlled graphics](#generated-assets-and-controlled-graphics) · [Branding and calls to action](#branding-and-calls-to-action).
+**Read what fits:** [Offer mechanics and replenishment](#offer-mechanics-and-replenishment) · [Exploration before fidelity](#exploration-before-fidelity) · [Read motion at native cadence](#read-motion-at-native-cadence) · [Parallel action and return of control](#parallel-action-and-return-of-control) · [Story and agency](#story-and-agency) · [Hooks and proof](#hooks-and-proof) · [Pacing and readable-hold-time](#pacing-and-readable-hold-time) · [Object continuity and movement](#object-continuity-and-movement) · [Composition and finishing](#composition-and-finishing) · [Generated assets and controlled graphics](#generated-assets-and-controlled-graphics) · [Branding and calls to action](#branding-and-calls-to-action).
 
 ## Story and agency
 
@@ -33,6 +33,18 @@ Start with a meaningful state, event or specific ambition. A relevant unresolved
 Measure first visible action, first understandable promise and first credible proof separately. An opening title or quiet image can be intentional; an empty lead-in needs a reason. Inspect the delivered file at time zero and normal speed, including player/loading behavior, rather than assuming the timeline preview represents the opening.
 
 Show enough input and operation to make the result credible. Preserve the example's identity and exact factual claims: an electric-vehicle brief must not silently become a handheld-console website. Mark conceptual UI when it is not actual product behavior. Spectacular output alone demonstrates aspiration, not control of the production workflow.
+
+## Offer mechanics and replenishment
+
+For an offer-led launch, explain the transaction before adding urgency. In the Seedance API film, a balance drains, pauses, then refills as coins cross its rim. The main cashback claim stays in place while amount, reservoir height, color and arrows explain the change. The later total-pool countdown is a separate claim. See [observed phases and limits](research/higgsfield-motion.md#seedance-api--offer-mechanics).
+
+Combine the existing [particles-to-counter mechanism](patterns/motion.md#collect-to-destination) with an anchored reservoir and a depletion/replenishment story.
+
+**Original implementation:** derive an illustrative `balance(t)` from one authored clock with depletion, low hold, replenishment and confirmation phases. Share that value across the formatted number and reservoir geometry; give color/glint their own settling intervals. Keep the base and label anchored, and clamp a minimum height so small values remain readable. Schedule the leading coin's rim crossing at the first increase: visible arrival supplies a cause for the changing number. A particle shower unrelated to the value would weaken the explanation. These are reconstruction choices, not recovered source code; the reference's height and underbar are not calibrated proportional charts.
+
+Expose starting amount, low amount, returned amount, phase durations, minimum height and arrival time. Derive state from time rather than accumulating deposits per rendered frame, so seeking cannot double-credit the balance. Check immediately before contact, on the first increase, at the maximum and during departure. Also test partial returns, zero balance and longer labels. Let the result settle before moving the explanatory object away; keep decorative rotation or glints subordinate to the number.
+
+In a live product, actual verified events own the balance. In a film, distinguish illustrative figures from factual claims and verify promotional terms separately. A precise animated countdown is not evidence of live scarcity. Preserve a distinct `poolRemaining` from an individual's `balance`; do not let visual continuity imply those amounts are interchangeable.
 
 ## Exploration before fidelity
 

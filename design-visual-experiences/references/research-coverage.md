@@ -257,3 +257,7 @@ The [September 29 comparison study](structural-type-study.md) samples the origin
 ## Preview Mode and native-cadence motion review — September 30
 
 Version 0.3.2 adds [selection versus quality promotion](feature-launch-films.md#exploration-before-fidelity) and [dense motion analysis](feature-launch-films.md#read-motion-at-native-cadence). [Evidence](research/higgsfield-motion.md#preview-mode--native-cadence-review): 538 source frames at contact scale, 246 larger consecutive rereads, six native stills; no playback or listening. Corrected an initial title-bobbing impression; comparison layouts are not fidelity benchmarks. Inventory stays 295; six complete temporal cases total 5,559 frames; wider native checks total 91. Existing downloaded material reused, no new paid spend.
+
+## Offer mechanics — September 30
+
+Version 0.3.3 adds [balance depletion and replenishment](feature-launch-films.md#offer-mechanics-and-replenishment): shared state, coin-contact timing, minimum readable reservoir height and separate pool claims. [Source and limits](research/higgsfield-motion.md#seedance-api--offer-mechanics): all 673 frames at 320px, 588 consecutive larger rereads, 6 native stills; no playback/audio/source code. Seven complete temporal contact cases now total 6,232 frames; native checks 97. Search spend $0.002, no new videos found; validated archived bytes reused for this new deep study. Other mechanisms reuse existing guidance.
