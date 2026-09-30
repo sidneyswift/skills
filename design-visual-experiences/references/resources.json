@@ -4015,5 +4015,25 @@
       "CTA contrast"
     ],
     "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2072107347502338235",
+    "kind": "video-reference",
+    "title": "Higgsfield Sonnet MCP: connection, jobs and access contexts",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2072107347502338235"
+    ],
+    "inspection": "All 322 source frames at 640px in 54 consecutive pages; eight native 1920x1080 checks. No temporal playback, audio, live interaction or original code/project inspection. Reviewed 2026-09-30.",
+    "note": "Separate connection confirmation, pending-card arrival and preview reveal; a composer bridges access contexts. Ten previews do not prove 1,000 completed outputs; the strategy request has no shown result.",
+    "topics": [
+      "higgsfield",
+      "connection state",
+      "job state",
+      "pending cards",
+      "preview reveal",
+      "access context",
+      "persistent composer"
+    ],
+    "pattern_ids": []
   }
 ]

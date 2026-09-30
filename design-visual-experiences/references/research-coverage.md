@@ -281,3 +281,7 @@ Version0.3.7 strengthens the existing [exploded-assembly card](patterns/interact
 ## Freeze, explain, reveal, resume — September30
 
 Version0.3.8 extends existing [parallel-action guidance](feature-launch-films.md#parallel-action-and-return-of-control) with a short speed-story variant, separate presentation/scene/job clocks, continuous resumption and moving-background CTA checks. [Nano Banana 2 Lite evidence](research/higgsfield-motion.md#nano-banana-2-lite--freeze-explain-reveal-resume): all235frames at640px plus six native3840×2160 checks; no playback/audio/code. The displayed counter is not independently measured generation time. Twelve complete cases total7,907frames;130native-source checks. Search cost$0.0016; archived bytes reused. No new guide or mechanism card.
+
+## Connection, jobs and access contexts — September 30
+
+Version 0.3.9 extends existing [story guidance](feature-launch-films.md#story-and-agency) with separate connection/job/preview states, delayed-item checks and explicit context changes around a persistent composer. [Sonnet MCP evidence](research/higgsfield-motion.md#sonnet-mcp--connection-jobs-and-access-contexts): all 322 frames at 640px plus eight native 1920×1080 checks; no playback/audio/code/live interaction. Ten previews do not verify 1,000 completed jobs; the strategy request has no shown result. Thirteen complete cases total 8,229 frames; 138 native-source checks. Search cost $0.0016; archived bytes reused. No new guide or mechanism card.
