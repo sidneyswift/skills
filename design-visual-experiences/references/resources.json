@@ -3950,5 +3950,28 @@
       "motion design"
     ],
     "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2097741455041441968",
+    "kind": "video-reference",
+    "title": "Higgsfield office tour: named camera bookmarks, manual exploration and cutaway return",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2097741455041441968"
+    ],
+    "inspection": "All345 source frames at640px in58 consecutive pages; seven native-source1920x1440 checks displayed1824x1368. No temporal playback, audio, live viewer, input photos or original project/code inspection. Reviewed2026-09-30.",
+    "note": "Stable UI and yellow lamps maintain orientation through named views and manual walking. Brief obstructions and downward pitch motivate intermediate path checks. Creator reconstruction/model claims and GLB export are unverified.",
+    "topics": [
+      "higgsfield",
+      "camera bookmarks",
+      "room tour",
+      "manual exploration",
+      "cutaway",
+      "camera ownership",
+      "path clearance",
+      "spatial orientation"
+    ],
+    "pattern_ids": [
+      "guided-free-exploration"
+    ]
   }
 ]
