@@ -141,6 +141,8 @@ print('PASS: comparison topic tags and normalized aliases')
 
 # Film briefs must discover the directing guidance alongside existing mechanisms.
 FILM_CASES = [
+ ('product demo explore preview takes then promote chosen render fidelity', 'exploration-before-fidelity'),
+ ('analyze motion native cadence consecutive frames acceleration easing', 'read-motion-at-native-cadence'),
  ('agent edits while user makes coffee return control', 'parallel-action-and-return-of-control'),
  ('feature launch video hooks proof pacing', 'hooks-and-proof'),
  ('product demo blur reveal readable closing hold', 'pacing-and-readable-hold-time'),
@@ -151,4 +153,4 @@ for query, anchor in FILM_CASES:
     assert 'references/feature-launch-films.md#'+anchor in [r['path'] for r in search(query,limit=3)], query
 assert search('Higgsfield Layers',kind='resources',limit=1)[0]['url']=='https://x.com/higgsfield/status/2087225671714328813'
 assert not any('/research/' in r['path'] for r in load('build')), 'Provenance must not compete with build instructions'
-print('PASS: 5 film directing routes, curated video reference discovery and research separation')
+print('PASS: 7 film directing routes, curated video reference discovery and research separation')

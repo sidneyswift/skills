@@ -3859,5 +3859,27 @@
       "product demo"
     ],
     "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2102843590938644862",
+    "kind": "video-reference",
+    "title": "Higgsfield Preview Mode: exploration before fidelity and native-cadence motion",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2102843590938644862"
+    ],
+    "inspection": "538 consecutive frames at 320px, 246 reread at 640px in six-frame sequences, 6 native stills; no temporal playback, listening, live product or project inspection. Reviewed 2026-09-30.",
+    "note": "Separate take selection from quality promotion; image-to-card distortion settles separately from geometry. Unequal comparison areas and action/framing differences limit fidelity claims. Advertised Seedance 2.5 does not identify the outer renderer.",
+    "topics": [
+      "higgsfield",
+      "preview mode",
+      "draft",
+      "fidelity",
+      "take selection",
+      "native cadence",
+      "consecutive frames",
+      "motion analysis",
+      "resolution comparison"
+    ],
+    "pattern_ids": []
   }
 ]
