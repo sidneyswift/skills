@@ -249,3 +249,7 @@ The [September 29 comparison study](structural-type-study.md) samples the origin
 ## Refracted light footprints — September30
 
 [Selected caustics implementation and live checks](updates/2026-09-30-caustic-footprints.md) support original guidance for concentration and displaced direct illumination. One source, two resources, one repository investigation; no new pattern. Physical accuracy and benchmarks unverified.
+
+## Parallel action and control handoff — September 30
+
+[Computer-use film evidence](research/higgsfield-motion.md#computer-use-extension--september-30) adds one reference and a searchable [parallel-action method](feature-launch-films.md#parallel-action-and-return-of-control). 77 sampled positions, 386 selected consecutive frames and 8 native stills inspected; no listening or full-film all-frame review. Corrected transient 99% to the depicted settled 91%; actual consumption unverified. Actual new Apify usage $0.0012. Version 0.3.1.

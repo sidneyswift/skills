@@ -47,3 +47,13 @@ Source: [GPT-5.6 / Supercomputer](https://x.com/higgsfield/status/20753456057408
 - [Memory announcement](https://x.com/higgsfield/status/2054980957128855718): native 14s frame reads “Persistant memory.” This is a spelling defect, not a reference treatment.
 
 No audience/comprehension/conversion experiment establishes a universal AAA threshold. Sound quality, exact motion curves and unknown software provenance remain unverified. Public links are source pointers; later availability is not guaranteed. No third-party media, full prompts or code are redistributed in this skill.
+
+## Computer-use extension — September 30
+
+Source: [Computer-use extension](https://x.com/higgsfield/status/2105354097788412063), published 2026-09-30 at 17:48:27 UTC; media `2105352548903190528`. Incremental addition to the 294-media baseline above: inventory and sampled review now 295. The original post attributes the advertised integration to GPT-6.1 Sol; this is not an Opus/Astra source or proof of the film's production model.
+
+Viewed 77 approximately one-second positions across the 75.56s rendition, 386 consecutive positions in 28.5–34.5s, 60.5–65s and 70–75.458s, and eight selected native stills. Counts overlap. This is selected-window inspection, not complete temporal coverage of all 1,812 frames. No listening, live-product or original-project inspection.
+
+Organized folders precede a hard cut to coffee at 29.958s; after button press and hand withdrawal, editing returns at 33.625s. Export leads to a named file, then Done, then the blue agent cursor changes to an ordinary pointer at 63.875s; the human returns at 65s. Two progress tracks converge on a delivered artifact and return of control. The closing availability line starts at 73s while the human scene continues and a mug falls; the vase remains on the table.
+
+Correction from dense inspection: 99% left at 72s is transitional; the counter reaches 91% by 72.167s and holds through 72.958s. These are depicted advertising values, not verified consumption. The edited coffee interval does not establish actual processing time. Novel guidance is [parallel action and return of control](../feature-launch-films.md#parallel-action-and-return-of-control); production recommendations are original synthesis. New Apify receipt: run `UywhnRuHMfVda6OFr`, 3 returned rows, 1 new video, actual usage $0.0012. No third-party assets or prompts bundled.

@@ -2,7 +2,7 @@
 
 Use this for motion-led announcements, feature launches and product demos. Choose the audience's new understanding or capability before borrowing a visual style. The methods below are original adaptations of inspected Higgsfield footage; [source observations and inspection limits](research/higgsfield-motion.md) remain separate. They are not a universal formula, a measured conversion result or recovered production code.
 
-**Read what fits:** [Story and agency](#story-and-agency) · [Hooks and proof](#hooks-and-proof) · [Pacing and readable-hold-time](#pacing-and-readable-hold-time) · [Object continuity and movement](#object-continuity-and-movement) · [Composition and finishing](#composition-and-finishing) · [Generated assets and controlled graphics](#generated-assets-and-controlled-graphics) · [Branding and calls to action](#branding-and-calls-to-action).
+**Read what fits:** [Parallel action and return of control](#parallel-action-and-return-of-control) · [Story and agency](#story-and-agency) · [Hooks and proof](#hooks-and-proof) · [Pacing and readable-hold-time](#pacing-and-readable-hold-time) · [Object continuity and movement](#object-continuity-and-movement) · [Composition and finishing](#composition-and-finishing) · [Generated assets and controlled graphics](#generated-assets-and-controlled-graphics) · [Branding and calls to action](#branding-and-calls-to-action).
 
 ## Story and agency
 
@@ -13,6 +13,18 @@ Keep one continuing example and make each operation answer a need left by the pr
 **Original worked combination:** A campaign-planning demo follows one real brief into research cards, a selected insight, a plan, and a finished creative. Share `briefId`, `selectedEvidenceId` and `deliverableId` across scenes; derive display states from one authored clock. The selected research card becomes a cited row in the plan. The plan's chosen direction becomes the hero creative. The final hold shows an action the real product supports. Use [composition guidance](compositions.md) for state and coordinate ownership; avoid separate lookalike objects whose content diverges at a handoff. This is an implementation proposal, not Higgsfield's code.
 
 Expose phase durations, selected item, output count and hero hold. Changing the chosen item should update every later appearance. Removing an unnecessary feature scene should preserve the central story; removing the decision that motivates the result should visibly break it.
+
+## Parallel action and return of control
+
+For a delegated-work film, intercut the machine's progress with a familiar human activity: an agent edits while the user makes coffee, for example. Give both tracks a progression and reunite them around a usable result. The September 30 computer-use film cuts from organized folders to seating a coffee pot, then returns to editing after the machine is switched on. Later the exported file precedes the person's return. This makes waiting tangible; edited parallel action does not prove literal execution time.
+
+Cut on completed actions rather than a fixed alternation interval. Preserve one job and its output identity across both tracks. Introduce a repair feature when an obstacle motivates it: a continuity problem calls for a bridging shot; a cleanup problem calls for a localized correction. The human activity must advance rather than serve as unrelated lifestyle filler.
+
+**Original implementation:** derive both tracks from one authored clock, with named cut points tied to visible action phases. Keep `jobId` and `outputId` stable. A shared `controlOwner` state—agent, returning, human—drives cursor treatment, completion label and enabled controls. First reveal and settle the actual output, then retire the completion label and return control. In the reference, the blue cursor becomes an ordinary pointer after the file and Done appear; the exact renderer is unknown. In a live demo, use actual completion events instead of the film's authored timer.
+
+Tune human cut points, phase durations, output settling time, completion hold and control-return time. Scrub before/after each cut: unresolved actions, duplicate cursors, premature Done labels or a different output identity break causality. Check animated counters through their settled state: this film briefly shows 99% at 72s but settles at 91% shortly afterward. Neither value is independently verified consumption.
+
+A continuing human afterbeat can sit under the closing availability line. Keep the text stable and contrast sufficient; the joke must not consume the only readable interval. Choose a quiet card if the scene competes with the message. These are adaptations; see [source and exact inspection limits](research/higgsfield-motion.md#computer-use-extension--september-30).
 
 ## Hooks and proof
 
