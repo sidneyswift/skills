@@ -1,0 +1,20 @@
+# A narrator that directs attention
+
+Use for an explainer where a diagram, chart or mechanism needs a visible guide. A character should clarify where to look; a simple highlight may be enough for a short or serious piece.
+
+## Evidence
+
+[Ganz's September 29 post](https://x.com/ganz/status/2104965098594803975) describes a reusable narrator that can point and look, built with Opus 5.5, JavaScript and Canvas; narration is separately credited to ElevenLabs v4. Selected recording samples around 0:07, 0:43, 1:20 and 2:00 show a tentacled character beside explanation panels, extended limbs pointing toward panels, an expression-transition comparison and a vocabulary of expression labels with line-local timing marks. These are visible demonstrations and on-screen implementation claims, not inspected source. Playback was sampled muted; audio synchronization, teaching effectiveness, gaze accuracy, full continuity and library reuse were not independently verified.
+
+## Original build recipe
+
+1. **Name the target, not its pixel position.** Author cues such as `point(parser-node)` or `look(result-value)` against semantic anchors in the content layout. Resolve the anchor through the current layout and camera transforms. Reflow or camera movement must update the endpoint; missing targets should cancel or redirect the cue deliberately, never silently aim at the origin.
+2. **Give attention a sequence.** Establish the target, orient the eyes/head, then extend the pointing limb and hold while the viewer reads. Return to a neutral pose or the audience when the explanation changes. Tune the lead and hold by inspecting the actual sequence; these are directing choices, not universal millisecond constants. A gaze shift and pointer should agree unless a deliberate contrast is being shown.
+3. **Make a small pose vocabulary.** Separate gaze, gesture, expression and idle motion so one does not reset the others. Define ownership when cues overlap: a meaningful point can temporarily reduce idle sway. Keep a stable body silhouette and readable limb bends. Clamp unreachable targets, change stance or reposition the character instead of stretching through the composition.
+4. **Share narration timing.** Reference the same line IDs and resolved word cues used by text and camera; see [narration cues](narration-cues.md). Store gesture preparation, contact/point hold and release as explicit phases. If a voice take changes, retime the associated point and highlight together. Expression labels can map to a small controlled set, with a neutral fallback for an unknown label.
+5. **Inspect the journey between poses.** Show expression endpoints and intermediate states; smooth numeric interpolation alone does not preserve a readable face. Use deliberate blink or staged feature transitions where direct morphs look broken. Check eyes, mouth and outline at the halfway state. This is a design option suggested by the demo's comparison, not a reconstruction of its implementation.
+6. **Protect the explanation.** Reserve a character area and test pointer paths against text, values and active controls. When the target moves or disappears, interrupt the gesture cleanly. Review the actual crop and normal-speed playback: the viewer needs time to inspect the target without constant competing motion. For reduced motion, retain the information with a still pose, highlight and captions where needed.
+
+Controls: target anchor, character scale/position, gaze lead, gesture reach, hold/release, expression intensity and idle amplitude. Test a left target, right target, moving target, missing target and changed voice take before expanding the gesture library.
+
+**Adapted prompt:** Build a reusable explainer guide with a compact set of looks, points and expressions. Drive gestures from semantic content anchors and shared narration cues. Demonstrate a diagram reflow and a changed voice take, preserve readable intermediate faces, and keep the character clear of the information. Separate observed playback from claims about learning or implementation.

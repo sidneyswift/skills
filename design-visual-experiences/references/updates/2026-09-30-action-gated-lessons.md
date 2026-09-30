@@ -1,0 +1,17 @@
+# September 30 — lessons driven by actions and effects
+
+Added [action-gated lesson guidance](../action-gated-lessons.md): separate input/effect/outcome evidence, stage constraints, teach tool contrast, define cumulative versus step-local progress, and distinguish demonstrated from bypassed completion. One source and one live resource added; no new atlas pattern or repository investigation.
+
+**Primary attribution:** [@chongdashu's original post](https://x.com/chongdashu/status/2103497553191051321), September 25, 2026, 14:51:12 UTC. Full archived body read; it explicitly credits Claude Opus 5.5 and Blender and describes an iterative process. Its chapters separately credit GPT Images 2.5 mockups and Tripo/Blender characters. This does not establish every asset or code file as Opus-generated. [Creator site](https://pressurewashpanic.com/) links the [game](https://pressurewash.aioriented.dev/) and [video](https://www.youtube.com/watch?v=3QwU8TM7Rag).
+
+**Selected video evidence:** sampled original X recording at558.216 seconds shows a greybox-testing request and separate character/prop pipeline;610.162 shows a development journal with a placeholder level;850.929 shows the introductory checklist with movement/spray checked and panel cleaning in progress. The first is a visible request, not proof every requested task ran. These are sampled frames, not continuous playback validation. No transcript was available through the YouTube export route and audio was not auditioned.
+
+**Live observation:** menu and tutorial introduction opened; first lesson rendered with two-panel objective, FAN active, JET locked and no timer visible. Brief keyboard inputs after canvas focus changed avatar/scene position but did not visibly complete a checklist step or clean a panel. This does not establish a defect or successful completion. Later lessons were not exercised.
+
+**Inspected code:** selected definitions and update/reset paths in the publicly served [main-CTb-aa1t.js](https://pressurewash.aioriented.dev/assets/main-CTb-aa1t.js), SHA256 `610b2231d513430084429e35fba1e660e3eeac8ea473fe0d48f660a10f9f02c6`, read September30. This is a shipped-bundle study, not a repository investigation. No explicit reuse license established; no implementation bundled.
+
+- Lesson1 checks cumulative planar movement above1.5 scene units, accumulated valid spray above1.2 seconds and completed panel count. Spray accumulation requires both pressure and valid impact, not merely a pressed input. Counters accumulate during play and reset with the lesson.
+- Lesson2 encodes a resistant-target FAN trial, JET unlock/switch, a stain-pop event, and a return to FAN. Lesson3 introduces a120-second limit and three strikes. These are code findings, not live validation of later lessons.
+- The coach evaluates the current predicate and advances one step per update. Target markers are camera-projected. Its finalization method marks remaining steps complete when the job completes, irrespective of each intermediate predicate. The adapted guidance therefore separates completion reason from checklist styling and does not treat the reference as proof of learning.
+
+Archived screenshots and the inspected bundle remain in the private research archive. No overall visual-quality, performance, physics, accessibility, sound or full gameplay certification. No new paid API spend: reused the0559 retrieval. Catalog1,306; resources139; patterns104; repository investigations28. Skillry comparison counts unchanged.

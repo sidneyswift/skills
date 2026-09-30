@@ -1,0 +1,6 @@
+interface:
+  display_name: "Visual Design Experiences"
+  short_description: "Art direction, interactive visuals, motion, and 3D"
+  default_prompt: "Use $design-visual-experiences to create a distinctive visual experience with relevant references, purposeful interaction, and polished motion."
+policy:
+  allow_implicit_invocation: true

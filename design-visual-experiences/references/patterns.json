@@ -1,0 +1,2314 @@
+[
+  {
+    "id": "persistent-shape",
+    "family": "motion",
+    "title": "One object, many functional states",
+    "sources": [
+      "2103273003555402193",
+      "2103483957266268381"
+    ],
+    "mechanism": "Preserve one enclosing silhouette while its function changes; continuity comes from geometry and position, not a crossfade.",
+    "build": [
+      "Represent each state as center, width, height, radius and color targets.",
+      "Use one continuous track per property; replace content inside a separate clipped layer.",
+      "Exit the old text before the container reaches its most compressed shape; reveal new content after usable space exists."
+    ],
+    "tune": "Start with three states and one accent. Keep the shortest dimension above the content minimum; camera framing is a separate track.",
+    "check": "Scrub backward and interrupt a transition. No duplicated shells, title overlap, abrupt width resets, or clipped focus target.",
+    "prompt": "Transform [object] through [three meaningful states]. Keep its visual identity legible and make each transformation explain a user action.",
+    "source_urls": [
+      "https://x.com/twoclipping/status/2103273003555402193",
+      "https://x.com/verbove/status/2103483957266268381"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "unequal-edge-springs",
+    "family": "motion",
+    "title": "Elastic indicator with independently timed edges",
+    "sources": [
+      "2103273003555402193"
+    ],
+    "mechanism": "A pill stretches because its leading and trailing boundaries respond differently.",
+    "build": [
+      "Animate left and right bounds independently toward the selected item.",
+      "Choose the leading edge from travel direction, so rightward and leftward motion both stretch correctly.",
+      "Enforce a positive minimum width without changing the final target bounds."
+    ],
+    "tune": "Use a faster leading response and slightly delayed trailing response; keep overshoot small for precise controls.",
+    "check": "Rapidly alternate adjacent and distant targets. Width must stay positive and the last selection must settle exactly.",
+    "prompt": "Make the selection marker feel tensile. Use separate edge dynamics and preserve continuity when selection changes before settling.",
+    "source_urls": [
+      "https://x.com/twoclipping/status/2103273003555402193"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "release-momentum",
+    "family": "motion",
+    "title": "Direct drag followed by a momentum-preserving snap",
+    "sources": [
+      "2104162483888062945"
+    ],
+    "mechanism": "Held objects follow the pointer; released objects inherit the actual release velocity.",
+    "build": [
+      "Track pointer displacement directly while captured.",
+      "Estimate velocity from recent timestamped samples, rejecting stale events.",
+      "On release, initialize a spring with the current position and velocity toward the snap target."
+    ],
+    "tune": "Tune snap spacing, velocity clamp and damping independently. Slow dragging must still feel exact.",
+    "check": "Release in both directions, at a bound, and after pausing while held. Check pointercancel and keyboard equivalents.",
+    "prompt": "Build a tactile [slider/deck]. It should track exactly under the finger and carry its momentum into a bounded settle.",
+    "source_urls": [
+      "https://x.com/listudio/status/2104162483888062945"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "rubber-boundary",
+    "family": "motion",
+    "title": "Soft resistance outside an interaction limit",
+    "sources": [
+      "2104162483888062945"
+    ],
+    "mechanism": "Compress overscroll into a finite visible distance, then return from that visible state.",
+    "build": [
+      "Separate the raw pointer coordinate from its displayed coordinate.",
+      "Beyond a bound, display sign(over) \u00d7 R \u00d7 (1-exp(-abs(over)/R)).",
+      "Release from the displayed position and its derivative, rather than the unbounded raw input."
+    ],
+    "tune": "R controls maximum visible stretch, not allowable data value. Keep the semantic value clamped.",
+    "check": "Very large drags must not escape the screen. Releasing must not jump from the resisted coordinate to the raw coordinate.",
+    "prompt": "Give [control] a soft end stop. Show resistance without letting the underlying value exceed its valid range.",
+    "source_urls": [
+      "https://x.com/listudio/status/2104162483888062945"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "semantic-orb",
+    "family": "motion",
+    "title": "An animated object that communicates system state",
+    "sources": [
+      "2104162483888062945"
+    ],
+    "mechanism": "One object changes its behavior vocabulary across listening, thinking and completion.",
+    "build": [
+      "Define named states with independent amplitude, deformation speed and color targets.",
+      "Map listening to a measured or scripted syllable envelope; reserve a distinct completion gesture.",
+      "Keep its trajectory and silhouette continuous when it becomes a smaller avatar."
+    ],
+    "tune": "Give idle the least activity. Do not use faster random noise as the only distinction between states.",
+    "check": "Compare muted stills and short loops for each state. The behavior must distinguish states without implying progress that is not real.",
+    "prompt": "Create a [material] companion for [task]. Make listening, processing and completion unmistakable through different behaviors.",
+    "source_urls": [
+      "https://x.com/listudio/status/2104162483888062945"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "constrained-badge",
+    "family": "motion",
+    "title": "Badge tilt with a bounded celebration",
+    "sources": [
+      "2103739079745827092"
+    ],
+    "mechanism": "A familiar graphic gains depth without losing the original composition.",
+    "build": [
+      "Separate the badge face, relief and shadow.",
+      "Convert normalized pointer position into a small tilt and move the highlight consistently.",
+      "Run a brief completion accent, then return to a quiet resting state."
+    ],
+    "tune": "Start with low tilt; limit particle area to the badge perimeter and keep the central mark unobscured.",
+    "check": "Inspect front view, extreme tilt and reduced motion. The artwork must remain readable and recognizable.",
+    "prompt": "Preserve [badge] exactly while adding restrained depth, cursor response and one short earned celebration.",
+    "source_urls": [
+      "https://x.com/BThreeAgency/status/2103739079745827092"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "earned-reward",
+    "family": "motion",
+    "title": "Anticipation, release and readable reward",
+    "sources": [
+      "2104085539419021491"
+    ],
+    "mechanism": "Intensity has a clear arc; the reveal clears space so the reward becomes readable.",
+    "build": [
+      "Model anticipation, charge, burst, reveal and collect as explicit states.",
+      "Put moving parts on real pivots and route VFX from the physical release point.",
+      "On reveal, remove competing layers; cancel prior oscillations before starting the next state."
+    ],
+    "tune": "Scale light, timing and debris by reward tier; keep the peak brief and offer a calmer motion variant.",
+    "check": "Spam activation, mute audio and replay. Reward balance changes only once; the hero is not hidden behind bloom.",
+    "prompt": "Stage [achievement] as a short payoff. Build tension, release it, then give the actual reward a clean readable hold.",
+    "source_urls": [
+      "https://x.com/op7418/status/2104085539419021491"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "collect-to-destination",
+    "family": "motion",
+    "title": "Particles that arrive at the value they change",
+    "sources": [
+      "2104085539419021491"
+    ],
+    "mechanism": "A collection effect explains where a reward goes, rather than spraying decoration.",
+    "build": [
+      "Give each item a deterministic curved path from the reward to its destination.",
+      "Schedule arrivals and update the displayed total from those arrivals.",
+      "Separate the animation count from the authoritative award so interruptions cannot duplicate rewards."
+    ],
+    "tune": "Use a few representative tokens for large amounts; preserve the exact final total.",
+    "check": "Skip animation, resize during travel, and replay. The final balance and destination position must remain correct.",
+    "prompt": "Make [earned items] travel into [counter]. The movement should explain the transfer and finish at the exact earned total.",
+    "source_urls": [
+      "https://x.com/op7418/status/2104085539419021491"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "structural-type",
+    "family": "type",
+    "title": "Words that become the structure of a scene",
+    "sources": [
+      "2103458245213929495"
+    ],
+    "mechanism": "Typography performs the meaning of the words through load, support and space.",
+    "build": [
+      "Choose a small set of words with physical roles.",
+      "Convert only those words to glyph outlines; maintain counters and readable proportions.",
+      "Let a readable phrase become a beam, aperture or platform after its reading hold."
+    ],
+    "tune": "Use one deformable element at a time; contrast tension with a deliberate stationary beat.",
+    "check": "Read silently at delivery size. The sentence order and physical metaphor must both survive without narration. Trace a named word from reading to structural role to the final composition; keep the active sentence legible and inspect contact endpoints as the baseline levels.",
+    "prompt": "Give [key words] structural jobs in the composition. Build the ending from forms introduced earlier, after each line has time to read.",
+    "source_urls": [
+      "https://x.com/Gdgtify/status/2103458245213929495"
+    ],
+    "evidence": "Creator prompt retrieved; selected original/remake video phases inspected on September 29. Word supports and shared load/platform composition observed; source implementation not inspected."
+  },
+  {
+    "id": "glyph-choreography",
+    "family": "type",
+    "title": "Per-glyph entrances with phrase-level hierarchy",
+    "sources": [
+      "2103411247618146715"
+    ],
+    "mechanism": "Letter motion can add rhythm without destroying the sentence as a unit.",
+    "build": [
+      "Shape text into grapheme clusters with the actual font before positioning.",
+      "Animate baseline displacement, opacity and optional blur with a shared phrase cue and short per-glyph offsets.",
+      "End all glyphs on a stable typographic layout."
+    ],
+    "tune": "Stagger by phrase length and available hold; never assume every language is separable into single code points.",
+    "check": "Check long words, ligatures, combining marks and small output size. No letter is still moving when the next phrase covers it.",
+    "prompt": "Animate [short message] as deliberate letter choreography. Keep the reading order and a clean final typeset frame.",
+    "source_urls": [
+      "https://x.com/techhalla/status/2103411247618146715"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "glyph-aperture",
+    "family": "type",
+    "title": "A letter counter becomes the next scene",
+    "sources": [
+      "2103458245213929495",
+      "2102724347446305104"
+    ],
+    "mechanism": "A recognizable opening gives a motivated transition into a new scale or world.",
+    "build": [
+      "Choose a counter or negative-space shape with a clear interior.",
+      "Render the next scene behind a mask derived from that opening.",
+      "Expand the camera until the mask fully covers the viewport, then hand off under occlusion."
+    ],
+    "tune": "Preserve the opening shape until recognition; use the viewport corners to determine full coverage.",
+    "check": "Check all aspect ratios and the frame before the handoff. No edge flashes or unrelated path-point explosions.",
+    "prompt": "Travel through the negative space of [glyph/object] into [next scene], preserving a clear visual relationship.",
+    "source_urls": [
+      "https://x.com/Gdgtify/status/2103458245213929495",
+      "https://x.com/leo_xiaolei/status/2102724347446305104"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "weight-as-action",
+    "family": "type",
+    "title": "Variable font weight as a physical event",
+    "sources": [
+      "2103846630088716687"
+    ],
+    "mechanism": "Weight change can convey pressure or impact when the baseline and optical center remain controlled.",
+    "build": [
+      "Confirm that the chosen font actually supports a weight axis.",
+      "Drive weight from the action envelope while reserving sufficient layout width.",
+      "Add a small baseline or scale response only if it reinforces the same action.",
+      "For a traveling emphasis, offset one shared weight envelope by glyph order; keep overall word expansion and tracking as separate authored controls.",
+      "Choose a fixed footprint or deliberate expanding footprint, measure advances across the chosen axis range, and anchor the word consistently."
+    ],
+    "tune": "Use a limited axis range first; compensate optical drift from measured glyph bounds rather than arbitrary offsets.",
+    "check": "Inspect thin, middle and heavy states plus the maximum mixed-weight phase. Check tight letter pairs, clipping, unintended reflow and optical drift. Any diagnostic bounds should come from the geometry actually drawn.",
+    "prompt": "Make [word] change weight as [force] acts on it. Keep the layout stable and the response causally tied to the event.",
+    "source_urls": [
+      "https://x.com/Dannnnnok/status/2103846630088716687"
+    ],
+    "evidence": "Creator Opus 5.5 attribution and September 26 date verified from archived original. Skillry original/remake playback and selected type phases inspected; code, actual variable-font axis, frame rate and sound synchronization unverified. Guidance is original synthesis."
+  },
+  {
+    "id": "spoken-captions",
+    "family": "type",
+    "title": "Captions built from speech timing",
+    "sources": [
+      "2103995183255998633",
+      "2104064557216149982"
+    ],
+    "mechanism": "The reading unit follows the utterance and emphasis, not a uniform word timer.",
+    "build": [
+      "Align the final voice track to word timestamps.",
+      "Group words into meaningful short phrases and choose line breaks at delivery size.",
+      "Highlight or reveal from those timestamps; schedule graphics in the space left by the captions."
+    ],
+    "tune": "Reading hold and safe area take priority over a beat grid. Keep one primary text unit active.",
+    "check": "Listen and read at once. Check fast clauses, pauses, names and the final word after trimming the audio.",
+    "prompt": "Use the final narration timing to stage [message]. Keep captions readable and let the visual explain what the voice cannot show alone.",
+    "source_urls": [
+      "https://x.com/notdwd/status/2103995183255998633",
+      "https://x.com/otsukaroom/status/2104064557216149982"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "source-code-image",
+    "family": "type",
+    "title": "An image formed from meaningful characters",
+    "sources": [
+      "2104019705917018536"
+    ],
+    "mechanism": "Text density and local luminance form an image while the character set carries a second meaning.",
+    "build": [
+      "Rasterize the target into a sampling grid.",
+      "Map cell luminance to a calibrated glyph-density table from the actual font.",
+      "Fill cells using a seeded stream of relevant code or symbols, keeping the image silhouette stable."
+    ],
+    "tune": "Tune cell aspect ratio and contrast before adding motion; preserve semantic excerpts only where readable.",
+    "check": "View at thumbnail and full size. The image should read at distance and the characters should remain intentional up close.",
+    "prompt": "Render [subject] from [meaningful character set]. Preserve the silhouette, then reveal the hidden textual layer through motion or proximity.",
+    "source_urls": [
+      "https://x.com/midasavocado/status/2104019705917018536"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "contextual-color-history",
+    "family": "type",
+    "title": "Let the visual system evolve with the story",
+    "sources": [
+      "2104062837228212282",
+      "2103964025683927166"
+    ],
+    "mechanism": "Changes in palette, rendering resolution or ornament become part of the historical explanation.",
+    "build": [
+      "Define period-specific visual rules tied to verified milestones.",
+      "Maintain one recurring motif while changing its representation across chapters.",
+      "Coordinate sound and typography changes with the same chapter boundary."
+    ],
+    "tune": "Use a few clearly distinguishable stages; do not claim historical accuracy from a stylistic progression alone.",
+    "check": "Check dates and labels against sources. Without captions, the transitions should still communicate meaningful progression.",
+    "prompt": "Tell [history] through an evolving visual grammar, with one stable motif connecting the eras and sourced labels for factual claims.",
+    "source_urls": [
+      "https://x.com/amanojak2024/status/2104062837228212282",
+      "https://x.com/dotey/status/2103964025683927166"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "blueprint-rationale",
+    "family": "type",
+    "title": "Explain a design decision through construction",
+    "sources": [
+      "2104206095313215591"
+    ],
+    "mechanism": "Construction lines reveal relationships that a polished final screen hides.",
+    "build": [
+      "Keep one stable coordinate system for the original design.",
+      "Isolate the relevant module and draw alignment, spacing or grouping relationships.",
+      "Animate only the actual changed geometry, then return to the finished visual treatment."
+    ],
+    "tune": "One decision per segment. Put explanatory text outside moving regions; avoid decorative dimensions with no meaning.",
+    "check": "Compare the final state to its source. Unchanged modules must not drift; labels must identify a real design consequence.",
+    "prompt": "Explain why [layout decision] works by exposing its spatial relationships and showing the exact change.",
+    "source_urls": [
+      "https://x.com/moguzbulbul/status/2104206095313215591"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "portal-zoom",
+    "family": "camera",
+    "title": "Nested worlds with constant perceived zoom",
+    "sources": [
+      "2103129347791986942"
+    ],
+    "mechanism": "Exponential scale keeps a zoom moving at a consistent proportional rate through nested portals.",
+    "build": [
+      "Place the next world in a portal in the current world.",
+      "Interpolate log(scale) and derive duration from total log magnification.",
+      "Hand off only when the portal covers the viewport; align position, scale and travel direction."
+    ],
+    "tune": "Choose portal focal points before adding parallax. Protect newly revealed edges with background fill.",
+    "check": "Inspect seam frames and velocity on either side. A seamless still is insufficient if the zoom suddenly accelerates.",
+    "prompt": "Build a journey through [three objects]. Keep proportional zoom speed consistent and hide each world handoff inside a motivated opening.",
+    "source_urls": [
+      "https://x.com/koldo2k/status/2103129347791986942"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "scale-ladder",
+    "family": "camera",
+    "title": "A continuous journey across orders of magnitude",
+    "sources": [
+      "2103833991879053577",
+      "2104223449849761837"
+    ],
+    "mechanism": "Nested scenes use explicit scale references to make invisible sizes comprehensible.",
+    "build": [
+      "Define each scale domain and its units before modeling.",
+      "Use local scene coordinates, overlapping handoff objects and a logarithmic scale rail.",
+      "Slow down where the viewer must identify a new structure."
+    ],
+    "tune": "Limit simultaneous labels; choose transition objects that exist in both adjacent scales.",
+    "check": "Verify units and ratios. Avoid floating-point precision loss by keeping each domain near its own origin.",
+    "prompt": "Travel from [large system] to [small component] with explicit scale landmarks and a clear causal link at each handoff.",
+    "source_urls": [
+      "https://x.com/Acoramaa/status/2103833991879053577",
+      "https://x.com/Cranefomo/status/2104223449849761837"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "subject-scale",
+    "family": "camera",
+    "title": "Camera height that makes a small character feel small",
+    "sources": [
+      "2103176289482154373"
+    ],
+    "mechanism": "Scale is communicated by the camera and familiar surrounding objects, not merely a small mesh.",
+    "build": [
+      "Set the camera near the character eye line.",
+      "Stage familiar foreground objects at their real relative size.",
+      "Keep the face large enough in screen space while nearby objects establish physical scale."
+    ],
+    "tune": "Use restrained foreground blur and parallax; a huge depth-of-field blur should not erase geography.",
+    "check": "Render wide, medium and close views. The character must remain readable while the environment feels consistently larger.",
+    "prompt": "Film [small protagonist] at its own height. Use [familiar objects] to establish scale and preserve readable acting.",
+    "source_urls": [
+      "https://x.com/pradeepXkapoor/status/2103176289482154373"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "motivated-handheld",
+    "family": "camera",
+    "title": "Handheld motion with a plausible camera operator",
+    "sources": [
+      "2103153899431432535",
+      "2102775814437925228"
+    ],
+    "mechanism": "Framing imperfections follow where a person could hold and move the camera.",
+    "build": [
+      "Specify operator position, available movement and intended subject.",
+      "Add low-frequency body sway plus smaller grip motion in camera space.",
+      "Let focus or exposure lag only after a meaningful subject or lighting change."
+    ],
+    "tune": "Reduce motion until it reads as observation rather than noise. Keep horizons and eye lines intentional.",
+    "check": "Check for impossible camera travel, perpetual oscillation and focus hunting during otherwise stable shots.",
+    "prompt": "Shoot [moment] from [physical camera position]. Make movement, focus response and occlusion consistent with that viewpoint.",
+    "source_urls": [
+      "https://x.com/razeden0/status/2103153899431432535",
+      "https://x.com/abxxai/status/2102775814437925228"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "train-window",
+    "family": "camera",
+    "title": "A fixed foreground with layered traveling scenery",
+    "sources": [
+      "2103124033365762215"
+    ],
+    "mechanism": "The stationary interior makes differing background velocities read as depth.",
+    "build": [
+      "Separate carriage, near trackside, middle landscape and distant terrain.",
+      "Move each outdoor layer by a speed derived from its apparent depth.",
+      "Use passing objects or tunnels to motivate major environmental transitions.",
+      "Treat the window as the coverage region: change seasonal landscape state only when the intended occluder hides that region.",
+      "Keep carriage geometry anchored; stage interior exposure, lamp glow and reflections independently from the outdoor state change."
+    ],
+    "tune": "Keep near-layer streaks brief and the horizon slow; add one small interior response to track impacts.",
+    "check": "Inspect just before occlusion, full coverage and reveal, including window corners and transparent openings. Check seasonal silhouettes/materials/particles update together while carriage geometry stays anchored; inspect loop seam separately.",
+    "prompt": "Stage [journey] through a stable window composition. Let parallax and occlusion carry the passage of place and time.",
+    "source_urls": [
+      "https://x.com/itsolelehmann/status/2103124033365762215"
+    ],
+    "evidence": "Original September24 Opus5.5 claim verified from archived post. Original/remake played muted and sampled independently; stable interiors, traveling scenery, dark tunnel phases and snowy states observed. Code, layer-speed ratio, audio synchronization and seamless loop unverified. Build details are original synthesis."
+  },
+  {
+    "id": "occlusion-reset",
+    "family": "camera",
+    "title": "Reset a loop while the viewer cannot see the change",
+    "sources": [
+      "2103458245213929495",
+      "2103129347791986942"
+    ],
+    "mechanism": "A moving foreground occluder creates a legal place to restore hidden state.",
+    "build": [
+      "Plan an occluder that covers every viewport corner.",
+      "Restore hidden objects only during complete coverage.",
+      "Match the visible camera and occluder trajectories across the wrap."
+    ],
+    "tune": "Keep occlusion motivated by the scene, not an unexplained blackout. Test portrait and wide crops separately.",
+    "check": "Compare near-seam playback, position and velocity. Matching endpoints alone can still produce a perceptible stop.",
+    "prompt": "Close [loop] through a natural occluding object so hidden state resets without a visible teleport.",
+    "source_urls": [
+      "https://x.com/Gdgtify/status/2103458245213929495",
+      "https://x.com/koldo2k/status/2103129347791986942"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "guided-free-exploration",
+    "family": "camera",
+    "title": "A directed tour that allows local curiosity",
+    "sources": [
+      "2102940980379017293",
+      "2103169095034400772"
+    ],
+    "mechanism": "Narrative guidance and free exploration share the same world and state.",
+    "build": [
+      "Store named landmarks, camera poses and associated explanation.",
+      "During a guided segment allow bounded look-around relative to the authored camera.",
+      "On exit restore direct navigation; on resume explicitly choose nearest chapter or the prior position."
+    ],
+    "tune": "Keep the rejoin motion short and avoid dragging the camera away while the user is actively steering.",
+    "check": "Jump between chapters, pause, explore and resume. Object state and narration must agree after every path.",
+    "prompt": "Create a guided path through [world], with optional exploration and a predictable way back into the story.",
+    "source_urls": [
+      "https://x.com/dotey/status/2102940980379017293",
+      "https://x.com/DannyLimanseta/status/2103169095034400772"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "reveal-world-in-object",
+    "family": "camera",
+    "title": "A final pullback that reinterprets the whole scene",
+    "sources": [
+      "2103793820815245507",
+      "2103176289482154373"
+    ],
+    "mechanism": "The ending reveals a containing object, changing the meaning of earlier motion.",
+    "build": [
+      "Establish the inner world with consistent scale and lighting.",
+      "Design the outer container and a camera path that reveals it without invalidating the earlier view.",
+      "Plant one subtle clue in the inner scene and let the reveal hold."
+    ],
+    "tune": "Reserve a quiet interval for recognition. Match reflections and lighting through the container boundary.",
+    "check": "Watch without explanatory text. The viewer should understand the reveal before the next action starts.",
+    "prompt": "End [story] by revealing its containing [object]. Seed a visual clue early and make the pullback explain it.",
+    "source_urls": [
+      "https://x.com/gmgmgm1545/status/2103793820815245507",
+      "https://x.com/pradeepXkapoor/status/2103176289482154373"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "paint-clock",
+    "family": "materials",
+    "title": "Slow paint marks on smoothly moving geometry",
+    "sources": [
+      "2103053172235264150",
+      "2103679486629659063"
+    ],
+    "mechanism": "The subject remains coherent while the surface redraws at a lower cadence.",
+    "build": [
+      "Animate the underlying pose and camera continuously.",
+      "Quantize a separate texture clock and seed brush variation by stroke ID and texture tick.",
+      "Orient strokes to local form, then composite them under consistent lighting."
+    ],
+    "tune": "Begin around 10\u201315 surface updates per second as a stylistic trial, not a universal rule. Keep large shape changes independent.",
+    "check": "Freeze the pose while time advances. It should look redrawn, not like the anatomy is melting.",
+    "prompt": "Paint [subject] with stable form and a slower handmade surface rhythm. Preserve silhouette and lighting through motion.",
+    "source_urls": [
+      "https://x.com/yumaeriel/status/2103053172235264150",
+      "https://x.com/GroundControl/status/2103679486629659063"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "wet-dry-ink",
+    "family": "materials",
+    "title": "Ink that dries, settles and can be re-wetted",
+    "sources": [
+      "2103288413969621231"
+    ],
+    "mechanism": "Wet pigment and settled pigment behave differently, giving the medium memory.",
+    "build": [
+      "Maintain separate fields for mobile pigment, water and deposited pigment.",
+      "Transport the wet fields, evaporate water, and transfer pigment into a settled layer.",
+      "Re-wetting should mobilize only a controlled fraction of deposited pigment."
+    ],
+    "tune": "Tune drying time, diffusion and paper anisotropy separately. Start at low simulation resolution before adding fibers.",
+    "check": "Paint slowly, quickly, then add water to a dry stroke. Each action should have a distinct repeatable effect.",
+    "prompt": "Make [ink medium] respond to speed, drying and re-wetting. The marks should retain a history of how they were made.",
+    "source_urls": [
+      "https://x.com/AxtonLiu/status/2103288413969621231"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "distance-spaced-brush",
+    "family": "materials",
+    "title": "A brush that stays consistent at different event rates",
+    "sources": [
+      "2103288413969621231"
+    ],
+    "mechanism": "Stamp spacing follows traveled distance, so a slow device does not create dotted strokes.",
+    "build": [
+      "Accumulate path distance between pointer samples.",
+      "Insert stamps at fixed spacing relative to brush radius.",
+      "Normalize deposited pigment by spacing and reduce ink load with travel distance."
+    ],
+    "tune": "Use speed to shape width, with smoothing that preserves sharp turns. Keep bristle texture anchored across the stroke normal.",
+    "check": "Draw the same path at different input rates. Coverage should remain comparable and corners should not leave gaps.",
+    "prompt": "Build a [brush] whose width and ink respond to gesture speed while coverage remains stable across pointer sampling rates.",
+    "source_urls": [
+      "https://x.com/AxtonLiu/status/2103288413969621231"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "tile-flock",
+    "family": "materials",
+    "title": "A mosaic whose pieces become moving figures",
+    "sources": [
+      "2102503028859211905",
+      "2102503030469833168",
+      "2102436001473786054"
+    ],
+    "mechanism": "Persistent tile identities connect a flat image to articulated movement and back.",
+    "build": [
+      "Give every tile a home transform and a figure-local transform.",
+      "Blend groups into the moving figure while preserving its silhouette.",
+      "Return each tile to its own home location with a spatially ordered settling wave."
+    ],
+    "tune": "Control flock noise below the silhouette scale. Separate highlight intensity from base-color contrast.",
+    "check": "Inspect the figure in flight and edge-on tiles during flips. Avoid a moment where the entire composition disappears.",
+    "prompt": "Let parts of [mosaic] lift into [creature/action] and settle back into their original positions without losing the figure shape.",
+    "source_urls": [
+      "https://x.com/LCSlates/status/2102503028859211905",
+      "https://x.com/LCSlates/status/2102503030469833168",
+      "https://x.com/dfeinition/status/2102436001473786054"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "glass-volume",
+    "family": "materials",
+    "title": "Glass whose shape is readable through distortion",
+    "sources": [
+      "2103835273813496100"
+    ],
+    "mechanism": "Refraction, edge response and thickness must agree with the same surface.",
+    "build": [
+      "Start with a signed distance or mesh normal field.",
+      "Use the normal to offset a background sample and use thickness to modulate absorption.",
+      "Add a restrained edge highlight and verify the center remains transmissive."
+    ],
+    "tune": "Increase distortion only until volume reads; do not let chromatic separation become an unrelated rainbow outline.",
+    "check": "Move the object over stripes and text. Distortion should follow surface orientation and stay continuous at joins.",
+    "prompt": "Create [glass form] whose refraction and highlights explain its volume against a deliberately structured background.",
+    "source_urls": [
+      "https://x.com/twoclipping/status/2103835273813496100"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "material-swap",
+    "family": "materials",
+    "title": "Change style while preserving object identity",
+    "sources": [
+      "2103176289482154373",
+      "2103099194693271874"
+    ],
+    "mechanism": "A shared rig or geometry survives changes in shading, line work and texture.",
+    "build": [
+      "Define identity invariants: silhouette, proportions and key marks.",
+      "Make material style a separate renderer layer or skin.",
+      "Transition the environment and subject treatment with a clear order while holding pose continuity."
+    ],
+    "tune": "Change only a few style dimensions per world; keep a recognizable color or accessory across all states.",
+    "check": "Compare a lineup at the same pose. If the character appears redesigned rather than restyled, restore the invariants.",
+    "prompt": "Take [character/object] through [styles] using one consistent design and motion rig. Let rendering change while identity stays fixed.",
+    "source_urls": [
+      "https://x.com/pradeepXkapoor/status/2103176289482154373",
+      "https://x.com/pradeepXkapoor/status/2103099194693271874"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "lit-rain",
+    "family": "materials",
+    "title": "Rain and wet surfaces that belong to the scene",
+    "sources": [
+      "2102611841122017632",
+      "2103112948478570675"
+    ],
+    "mechanism": "Drops, splashes and reflections respond to existing lights and surfaces.",
+    "build": [
+      "Place rain at several depths with shared wind direction.",
+      "Tint or brighten drops as they enter local light volumes.",
+      "Spawn splashes at receiving surfaces and reflect only plausible nearby light sources."
+    ],
+    "tune": "Use density, shutter length and exposure together. Keep the subject visible beneath the weather.",
+    "check": "Turn a light off and inspect its rain and reflection. Both should change with it; rain must not pass through solid awnings.",
+    "prompt": "Add rain to [scene] using its own lights, depth layers and shelter geometry so the weather feels physically present.",
+    "source_urls": [
+      "https://x.com/yangfei33113/status/2102611841122017632",
+      "https://x.com/minosdevs/status/2103112948478570675"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "outline-normal-depth",
+    "family": "materials",
+    "title": "Stable toon outlines from geometry buffers",
+    "sources": [
+      "2104085539419021491"
+    ],
+    "mechanism": "Contours and creases need different detection rules to avoid noisy diagonal edges.",
+    "build": [
+      "Render depth and normals to intermediate targets.",
+      "Detect silhouettes from depth discontinuity and internal creases from normal change.",
+      "Scale line width in screen space and composite before text and interface layers."
+    ],
+    "tune": "Tune thresholds at grazing angles; high depth sensitivity often invents stripes on smooth faces.",
+    "check": "Rotate the object slowly, including oblique views. Edges should remain coherent without internal crawling or hidden-object outlines.",
+    "prompt": "Give [3D object] a clean illustrative outline with stable exterior weight and quieter internal seams.",
+    "source_urls": [
+      "https://x.com/op7418/status/2104085539419021491"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "shared-wind",
+    "family": "worlds",
+    "title": "One weather field for every moving material",
+    "sources": [
+      "2103155074705019158",
+      "2102534606121746589"
+    ],
+    "mechanism": "A shared wind signal creates environmental coherence while different materials respond differently.",
+    "build": [
+      "Evaluate wind direction and gust strength in world space.",
+      "Feed it into foliage, cloth, smoke, water detail and loose particles.",
+      "Give each material a different inertia and frequency response instead of an unrelated sine wave."
+    ],
+    "tune": "Use a broad gust plus local variation. Keep trunks and heavy objects much stiffer than leaves.",
+    "check": "Follow a gust across the scene. Flags, smoke and foliage must agree about its broad direction.",
+    "prompt": "Make [environment] breathe under one shared wind system, with material-specific stiffness and lag.",
+    "source_urls": [
+      "https://x.com/MengTo/status/2103155074705019158",
+      "https://x.com/vib3coded/status/2102534606121746589"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "whole-world-daylight",
+    "family": "worlds",
+    "title": "Time of day changes the whole environment",
+    "sources": [
+      "2102565403109085669",
+      "2102920888261742726"
+    ],
+    "mechanism": "The hour coordinates light, atmosphere, activity and sound rather than changing only the sky color.",
+    "build": [
+      "Use one time-of-day parameter for sun direction and environment state.",
+      "Derive sky, fog, exposure, artificial lights and habitat activity from it.",
+      "Keep transitions continuous and reserve discrete events for meaningful thresholds."
+    ],
+    "tune": "Protect readable night values. Use hysteresis around light-on thresholds to avoid flicker while scrubbing.",
+    "check": "Scrub dawn, noon, dusk and night in both directions. Reflections and emissive objects must match the current state.",
+    "prompt": "Let [place] change coherently across a full day, including light, reflections, sound and the behavior of its inhabitants.",
+    "source_urls": [
+      "https://x.com/dotey/status/2102565403109085669",
+      "https://x.com/ishuagra02/status/2102920888261742726"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "particle-illustration",
+    "family": "worlds",
+    "title": "A world drawn from points and motion ribbons",
+    "sources": [
+      "2102920408743678129",
+      "2102920888261742726"
+    ],
+    "mechanism": "Point placement describes form while ribbons reveal recent motion.",
+    "build": [
+      "Sample surfaces by stable seeded positions, with denser accents around important silhouettes.",
+      "Animate skeletal or scene transforms underneath those points.",
+      "Build ribbons from a short history of meaningful anchors, with width and alpha fading along the trail.",
+      "Separate render culling from trail history: while an owner remains active offscreen, retain only a bounded, expiring history if continuity on re-entry matters.",
+      "Clear history deliberately when the owner despawns, respawns, teleports or time jumps; do not join unrelated positions into a long ribbon.",
+      "Give sampling distance, maximum history length and lifetime separate controls. A distance threshold alone does not resample a fast sparse input into uniform segments."
+    ],
+    "tune": "Tune point size against target pixel density. Keep enough dark gaps that the image does not become a solid glow.",
+    "check": "Compare steady motion, a stationary anchor, fast motion, camera exit/re-entry, owner despawn/respawn and teleport. Check bounded history, expired samples and unwanted long segments; inspect silhouettes at near and far views without merging all marks into glow.",
+    "prompt": "Draw [world] as luminous marks and selective gesture trails, preserving structure and a clear focal hierarchy.",
+    "source_urls": [
+      "https://x.com/ishuagra02/status/2102920408743678129",
+      "https://x.com/ishuagra02/status/2102920888261742726"
+    ],
+    "evidence": "Original September24 Opus5.5 claim verified from archive. Selected original/remake ocean, under-pier, daylight and sunset views sampled muted. Pinned ribbons.js read: offscreen history is bounded, absent owners clear history. No trail edge-case execution, audio, performance or full-film validation; build additions are original synthesis."
+  },
+  {
+    "id": "habitat-reactions",
+    "family": "worlds",
+    "title": "Small creatures that react to proximity and care",
+    "sources": [
+      "2103539410302038359",
+      "2102878170089169235"
+    ],
+    "mechanism": "A few purposeful state changes make a world feel inhabited.",
+    "build": [
+      "Give each creature idle, approach, flee or feed states with explicit triggers.",
+      "Use local steering within its habitat and keep contact with the correct surface.",
+      "Add cooldowns and individual seeded thresholds to avoid synchronized crowds."
+    ],
+    "tune": "Start with one believable reaction; tune awareness radius, turn speed and recovery time.",
+    "check": "Approach slowly, quickly and repeatedly. Creatures must recover rather than oscillate forever between two states.",
+    "prompt": "Make [habitat] respond to [simple visitor action] through a small set of readable creature behaviors.",
+    "source_urls": [
+      "https://x.com/SouranyPhomhome/status/2103539410302038359",
+      "https://x.com/dangreenheck/status/2102878170089169235"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "architectural-grammar",
+    "family": "worlds",
+    "title": "An environment with a distinctive structural language",
+    "sources": [
+      "2103257873203462412",
+      "2103933640392786274"
+    ],
+    "mechanism": "Repeated architectural rules create identity while landmarks create orientation.",
+    "build": [
+      "Choose a structural vocabulary, proportions and material hierarchy.",
+      "Generate secondary buildings from that grammar and author a few hero landmarks.",
+      "Validate that stairs, doors, bridges and paths actually connect."
+    ],
+    "tune": "Spend detail where the camera can approach; vary modules within the same grammar rather than scattering random primitives.",
+    "check": "Walk the intended route and inspect key sightlines. Nothing floats, routes connect, and landmarks remain distinguishable.",
+    "prompt": "Build [place] around a coherent architectural vocabulary and a few memorable landmarks that support exploration.",
+    "source_urls": [
+      "https://x.com/vib3coded/status/2103257873203462412",
+      "https://x.com/techartist_/status/2103933640392786274"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "source-grounded-reconstruction",
+    "family": "worlds",
+    "title": "Reconstruct a place from evidence with visible uncertainty",
+    "sources": [
+      "2102466524934271381",
+      "2104181266459644283"
+    ],
+    "mechanism": "Geometry traces back to measurements and sources rather than plausible invention.",
+    "build": [
+      "Build a source table of footprint, height, material and confidence.",
+      "Generate repeated architectural elements from those records.",
+      "Flag contradictory measurements and leave uncertain details labeled or simplified."
+    ],
+    "tune": "Match major proportions before ornament. Use a known-size reference to keep the whole scene in scale.",
+    "check": "Trace several visible objects back to their source rows. A beautiful render must not conceal guessed dimensions.",
+    "prompt": "Reconstruct [place] from [drawings/photos] with sourced proportions and explicit handling of conflicting or missing details.",
+    "source_urls": [
+      "https://x.com/alexalbert__/status/2102466524934271381",
+      "https://x.com/aayush4soni/status/2104181266459644283"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "sakura-canopy",
+    "family": "worlds",
+    "title": "A flowering tree with an intentional silhouette",
+    "sources": [
+      "2103480085319942353"
+    ],
+    "mechanism": "Branch architecture gives a canopy volume; flower cards supply detail.",
+    "build": [
+      "Build the trunk and primary branches to define a readable umbrella or weeping silhouette.",
+      "Distribute clustered cards around branch volumes with some inner fill.",
+      "Apply lighter outer and darker inner values before adding small wind deformation."
+    ],
+    "tune": "Use alpha testing or an appropriate transparency strategy; budget overdraw and vary card orientation.",
+    "check": "View from below, side and distance. Avoid a hollow shell of flowers or an opaque pink sphere.",
+    "prompt": "Construct [flowering tree] from a purposeful branch structure, layered blossom density and restrained shared-wind motion.",
+    "source_urls": [
+      "https://x.com/pound75423/status/2103480085319942353"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "crossing-state-machine",
+    "family": "worlds",
+    "title": "An environment event that coordinates multiple actors",
+    "sources": [
+      "2103480085319942353"
+    ],
+    "mechanism": "A train crossing feels real because signals, gates, vehicles and pedestrians share one event state.",
+    "build": [
+      "Define approach, warning, closed, passing and reopening states.",
+      "Make agents wait based on the crossing state rather than a fixed independent timer.",
+      "Drive light, bell and gate motion from the same transition events."
+    ],
+    "tune": "Leave enough warning time to avoid a gate intersecting traffic; test delayed arrivals and paused simulation.",
+    "check": "Restart in each state. No actor should cross while the gate is closed or continue waiting after reopening.",
+    "prompt": "Build [coordinated environmental event] with one shared state machine controlling movement, signals and sound.",
+    "source_urls": [
+      "https://x.com/pound75423/status/2103480085319942353"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "identity-rig",
+    "family": "characters",
+    "title": "A character bible translated into a controllable rig",
+    "sources": [
+      "2103176289482154373",
+      "2103149539880562718"
+    ],
+    "mechanism": "The character stays recognizable because proportions and expression vocabulary are explicit.",
+    "build": [
+      "Record silhouette, proportions, distinctive features and palette.",
+      "Build a hierarchy with pivots at anatomical or mechanical joints.",
+      "Produce a turnaround and expression lineup before staging a long sequence."
+    ],
+    "tune": "Make eye direction and pose readable at final viewing size; add secondary detail only after the lineup works.",
+    "check": "Compare front, side, back and extreme expressions. Features must not drift or detach under rotation.",
+    "prompt": "Build [character] as a consistent rig with a small expression vocabulary, then prove identity across views before animating the story.",
+    "source_urls": [
+      "https://x.com/pradeepXkapoor/status/2103176289482154373",
+      "https://x.com/akokoi1/status/2103149539880562718"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "planted-foot-ik",
+    "family": "characters",
+    "title": "Walk cycles that keep feet attached to the ground",
+    "sources": [
+      "2102450842070569099",
+      "2102707412704919910"
+    ],
+    "mechanism": "The body moves over a temporarily fixed support foot instead of sliding the foot beneath it.",
+    "build": [
+      "Split each leg cycle into stance and swing.",
+      "Store the stance contact in world space and solve the leg toward it.",
+      "During swing, advance to the next contact along a raised arc; align foot orientation to terrain."
+    ],
+    "tune": "Tune stride length from travel speed. Clamp unreachable targets and choose a consistent knee bend side.",
+    "check": "Watch only the feet on a marked floor, then on a slope. Stance contacts must not skate or penetrate terrain.",
+    "prompt": "Make [creature] walk with planted stance feet and purposeful swing arcs, adapting its stride to speed and terrain.",
+    "source_urls": [
+      "https://x.com/vib3coded/status/2102450842070569099",
+      "https://x.com/victormustar/status/2102707412704919910"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "grip-and-tool",
+    "family": "characters",
+    "title": "Hands and tools constrained through an action",
+    "sources": [
+      "2103155074705019158"
+    ],
+    "mechanism": "A tool interaction reads as effort when hands, feet and the contact point agree.",
+    "build": [
+      "Define the tool path and its contact point first.",
+      "Solve hand targets on the tool and support contacts on the floor.",
+      "Add torso lean and recovery around that constrained action, then secondary cloth."
+    ],
+    "tune": "Keep the tool reachable throughout the cycle. Change grip intentionally rather than letting the hands slide.",
+    "check": "Inspect the action from the side. The tool must not pass through hands, body or supporting geometry.",
+    "prompt": "Animate [character] using [tool] with fixed grip points, planted support and visible transfer of effort.",
+    "source_urls": [
+      "https://x.com/MengTo/status/2103155074705019158"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "emotional-secondary",
+    "family": "characters",
+    "title": "Secondary parts that express the character state",
+    "sources": [
+      "2103176289482154373",
+      "2103794101892374823"
+    ],
+    "mechanism": "Antennae, ears or accessories reinforce acting through controlled lag and pose.",
+    "build": [
+      "Assign a resting pose to each emotional state.",
+      "Blend toward it with inertia and add impulses from meaningful body actions.",
+      "Keep small idle movement subordinate to intentional gestures."
+    ],
+    "tune": "Vary stiffness by material. Reserve stillness for attention or surprise rather than animating everything continuously.",
+    "check": "Mute the scene and hide dialogue. The emotional change should be legible from pose, eyes and the secondary feature.",
+    "prompt": "Use [distinctive appendage] to reinforce [character] emotions with deliberate pose changes and material-appropriate follow-through.",
+    "source_urls": [
+      "https://x.com/pradeepXkapoor/status/2103176289482154373",
+      "https://x.com/gmgmgm1545/status/2103794101892374823"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "pixel-performance",
+    "family": "characters",
+    "title": "Pixel animation with deliberate pose timing",
+    "sources": [
+      "2102476499387383834",
+      "2102545213218803769"
+    ],
+    "mechanism": "A fixed logical grid and held poses produce intentional sprite motion.",
+    "build": [
+      "Render to a low-resolution offscreen surface with a fixed palette.",
+      "Animate pose parameters, then quantize drawing positions and hold pose updates at an authored cadence.",
+      "Scale with nearest-neighbor sampling and letterbox when integer scaling does not fill the screen."
+    ],
+    "tune": "Choose logical resolution from silhouette detail; use a few strong poses rather than smooth subpixel wobble.",
+    "check": "Resize repeatedly and inspect diagonals. Pixels must remain crisp and the silhouette must read in each pose.",
+    "prompt": "Create a pixel-art [character/action] with a controlled palette, strong key poses and deliberate held-frame timing.",
+    "source_urls": [
+      "https://x.com/majidmanzarpour/status/2102476499387383834",
+      "https://x.com/akiy_8/status/2102545213218803769"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "layered-portrait",
+    "family": "characters",
+    "title": "Turn a still into a rig without inventing hidden art",
+    "sources": [
+      "2103108187272708544",
+      "2103606937443336289"
+    ],
+    "mechanism": "Separating depth layers enables motion, but unseen expressions and overlaps require actual artwork.",
+    "build": [
+      "Separate back hair, body, head, facial features and front hair into registered layers.",
+      "Define motion limits from available coverage behind each layer.",
+      "Add genuine closed-eye and mouth variants; distinguish temporary preview shapes from finished expression art."
+    ],
+    "tune": "Keep rotations modest until hidden regions are repaired. Check front/back ordering for crossing limbs.",
+    "check": "Blink, open the mouth and turn at limits. Look for holes, duplicate facial features and shoulder edges crossing clothing.",
+    "prompt": "Prepare [portrait] for controlled motion with explicit layer order and honest limits on missing expression artwork.",
+    "source_urls": [
+      "https://x.com/shinshin86/status/2103108187272708544",
+      "https://x.com/shinshin86/status/2103606937443336289"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "motion-retarget",
+    "family": "characters",
+    "title": "Retarget a motion clip to a simplified character",
+    "sources": [
+      "2102861943094583723"
+    ],
+    "mechanism": "A simple figure can inherit joint motion without inheriting the source mesh or its drift.",
+    "build": [
+      "Map source joints to the target body segments.",
+      "Normalize forward direction and decide whether locomotion owns root translation.",
+      "Trim or blend the loop at matching poses and trigger props from specific action frames."
+    ],
+    "tune": "Retain a small joint map; match limb lengths before adding corrective offsets.",
+    "check": "Inspect foot contacts, hand-held tools and the loop seam. Root motion must not be applied twice.",
+    "prompt": "Adapt [motion clip] onto [simple rig], preserving action timing, consistent facing and clean contact points.",
+    "source_urls": [
+      "https://x.com/Viggle_PINOC/status/2102861943094583723"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "tracked-body-type",
+    "family": "characters",
+    "title": "Graphics anchored to a real performer",
+    "sources": [
+      "2103757144789221819"
+    ],
+    "mechanism": "Type and effects appear to emerge from movement because they share tracked anchors.",
+    "build": [
+      "Extract pose tracks with confidence values and smooth them without erasing fast gestures.",
+      "Attach words or effects to selected joints and derive accents from motion events.",
+      "Switch to a fallback or hide the attachment when tracking confidence collapses."
+    ],
+    "tune": "Use normalized coordinates and transform through the same crop as the video. Reserve large type for clean silhouette moments.",
+    "check": "Check occlusions, fast turns and reframing. Graphics must not jump to unrelated body parts or lag visibly.",
+    "prompt": "Attach [graphic language] to the performer through tracked joints and meaningful motion events, with graceful handling of occlusion.",
+    "source_urls": [
+      "https://x.com/aicreataro/status/2103757144789221819"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "rigid-body-chain",
+    "family": "physics",
+    "title": "A chain reaction caused by contacts",
+    "sources": [
+      "2102544081863717153",
+      "2103385835328680050"
+    ],
+    "mechanism": "The outcome emerges from constraints and collisions, allowing meaningful perturbations.",
+    "build": [
+      "Use a fixed simulation step independent of display rate.",
+      "Define contact shapes, friction and joints separately from decorative meshes.",
+      "Record inputs and seed randomness so a reset can reproduce the same setup."
+    ],
+    "tune": "Tune mass ratios, substeps and solver iterations on a small scene first.",
+    "check": "Change the initial impulse and compare results. The reaction must change causally rather than playing the same keyed sequence.",
+    "prompt": "Build [chain reaction] from actual contacts and constraints, with reset and adjustable initial conditions.",
+    "source_urls": [
+      "https://x.com/leogao25/status/2102544081863717153",
+      "https://x.com/nybobs/status/2103385835328680050"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "cuttable-soft-body",
+    "family": "physics",
+    "title": "A soft object that remains physical after cutting",
+    "sources": [
+      "2104517586092458039"
+    ],
+    "mechanism": "A cut changes connectivity while retaining the material state at the cut instant.",
+    "build": [
+      "Represent shape with a volumetric or surface constraint system suited to the desired effect.",
+      "Split connectivity along the cut and construct valid new boundary surfaces.",
+      "Transfer position, velocity and material properties to the resulting pieces."
+    ],
+    "tune": "Prove one clean cut before arbitrary slicing. Tune compliance independently from damping.",
+    "check": "Cut during motion, cut twice and reset. Pieces must not explode from stale constraints or lose all momentum.",
+    "prompt": "Make [soft material] deform and separate under a controlled cut, preserving the state and motion of each resulting piece.",
+    "source_urls": [
+      "https://x.com/ImaStudio_ai/status/2104517586092458039"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "pressure-front",
+    "family": "physics",
+    "title": "An expanding force field with persistent aftermath",
+    "sources": [
+      "2102971287224135914",
+      "2102971287891009707"
+    ],
+    "mechanism": "An event changes objects as its front reaches them, leaving an interpretable spatial trace.",
+    "build": [
+      "Compute arrival time from distance and propagation speed.",
+      "Apply a distance-dependent impulse or damage value when the front crosses each object.",
+      "Persist displacement or damage after the luminous front disappears."
+    ],
+    "tune": "Separate visual brightness from physical effect; label stylized models rather than implying accurate blast prediction.",
+    "check": "Pause at several radii. Effects should not occur before arrival, and replay should clear prior damage.",
+    "prompt": "Visualize [expanding event] through propagation, local response and lasting aftermath, with inspectable timing.",
+    "source_urls": [
+      "https://x.com/FornYapayZeka/status/2102971287224135914",
+      "https://x.com/FornYapayZeka/status/2102971287891009707"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "falling-materials",
+    "family": "physics",
+    "title": "Distinct materials in a grid simulation",
+    "sources": [
+      "2103532793406149036"
+    ],
+    "mechanism": "Materials differ by movement and interaction rules, not color alone.",
+    "build": [
+      "Store material and auxiliary state per cell.",
+      "Update with double buffering or conflict-resolved moves so each cell is processed predictably.",
+      "Define density, displacement and transformation rules for a small initial material set."
+    ],
+    "tune": "Vary update traversal or use deterministic parity to avoid permanent directional bias.",
+    "check": "Drop each material in isolation and in pairs. Check mass accounting, boundaries and reset before adding more types.",
+    "prompt": "Build a sandbox where [materials] behave differently under the same forces and interact through explicit local rules.",
+    "source_urls": [
+      "https://x.com/cyrilXBT/status/2103532793406149036"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "fluid-pipeline",
+    "family": "physics",
+    "title": "A fluid field with a coherent solver order",
+    "sources": [
+      "2102565612874596411",
+      "2103288413969621231"
+    ],
+    "mechanism": "Velocity transport, pressure projection and dye advection serve different jobs.",
+    "build": [
+      "Keep velocity and dye in separate ping-pong targets.",
+      "Advect velocity, apply forces, solve pressure and subtract its gradient, then transport dye using the projected flow.",
+      "Set explicit boundary behavior and expose a velocity or divergence debug view."
+    ],
+    "tune": "Resolution, pressure iterations and vorticity strength trade cost against appearance; avoid presenting artistic vorticity as physical validation.",
+    "check": "A closed field should not accumulate obvious divergence. Compare still water, one impulse and boundary contact.",
+    "prompt": "Create [fluid interaction] with clear velocity, pressure and pigment stages, then tune the artistic response without hiding instability.",
+    "source_urls": [
+      "https://x.com/theailoser/status/2102565612874596411",
+      "https://x.com/AxtonLiu/status/2103288413969621231"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "fire-to-smoke",
+    "family": "physics",
+    "title": "Combustion-inspired fields that evolve together",
+    "sources": [
+      "2103881538592981110"
+    ],
+    "mechanism": "Flame, heat and smoke share an evolving field rather than unrelated particle emitters.",
+    "build": [
+      "Track fuel, temperature and smoke or soot as separate quantities.",
+      "Couple buoyancy and visible emission to temperature, then let cooling produce a different visual state.",
+      "Sample lighting and sound intensity from the same event or field summary."
+    ],
+    "tune": "Start with a stylized model; keep resolution and buoyancy stable before adding turbulent detail.",
+    "check": "Extinguish the source. Flame should decay while existing smoke continues; light should not remain at full intensity.",
+    "prompt": "Make [fire effect] evolve from heat into smoke with connected motion, lighting and decay.",
+    "source_urls": [
+      "https://x.com/NathanWilbanks_/status/2103881538592981110"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "causal-water",
+    "family": "physics",
+    "title": "Water effects driven by depth and disturbance",
+    "sources": [
+      "2102911556296052788",
+      "2103155074705019158",
+      "2103020274107224281"
+    ],
+    "mechanism": "Shore foam, wakes and refraction arise from specific spatial conditions.",
+    "build": [
+      "Use depth to separate shallow and deep appearance.",
+      "Generate wakes from moving hulls and foam from breaking or obstructed flow regions.",
+      "Share the same water normal field across reflection, refraction and specular response.",
+      "For terrain runoff, track water depth and neighbor flux separately from shading. Limit total outgoing volume to available water and account explicitly for sources, evaporation and drainage."
+    ],
+    "tune": "Tune the near-shore transition before adding more distant wave detail. Keep visual stream visibility thresholds separate from physical depth; inspect map boundaries and shallow wet/dry transitions.",
+    "check": "Move the obstacle or boat. The wake must follow it and disappear appropriately; foam must not slide with the camera. For runoff, reconcile the water budget and test an incline and a basin before judging the finished landscape.",
+    "prompt": "Build [water scene] around depth, obstacles and moving sources so each visible effect has a clear cause.",
+    "source_urls": [
+      "https://x.com/dangreenheck/status/2102911556296052788",
+      "https://x.com/MengTo/status/2103155074705019158",
+      "https://x.com/StephanFerraro/status/2103020274107224281"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified. Additional terrain-runoff evidence: Opus 5.5 post dated September 24 retrieved. Solver, water shader and water tests read at 680f87e6d54984199525dd12005bd95711bb47bb. Three independent local numerical probes passed. Selected original/remake video frames inspected; full benchmark suite, live controls, accuracy and performance not validated."
+  },
+  {
+    "id": "gpu-resident-motion",
+    "family": "physics",
+    "title": "Keep dense simulation data on the GPU",
+    "sources": [
+      "2103385835328680050"
+    ],
+    "mechanism": "Rendering from simulation buffers avoids copying every body back to the CPU each frame.",
+    "build": [
+      "Choose a data layout usable by both compute and rendering.",
+      "Run simulation passes on the device and draw instances from the updated state.",
+      "Read back only selected bodies or events needed by interaction and diagnostics."
+    ],
+    "tune": "Benchmark a representative small scene before scaling; adapt count or quality to measured device capacity.",
+    "check": "Measure compute, render and readback separately. A large advertised body count on another machine is not a performance guarantee.",
+    "prompt": "Build [dense simulation] with minimal data transfer and a measured quality tier suited to the target device.",
+    "source_urls": [
+      "https://x.com/nybobs/status/2103385835328680050"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "shared-control-comparison",
+    "family": "explainers",
+    "title": "Compare mechanisms under the same input",
+    "sources": [
+      "2104236916316971191"
+    ],
+    "mechanism": "A common control makes different responses directly comparable.",
+    "build": [
+      "Define one input variable with units and a valid range.",
+      "Feed it into each model and align camera, time scale and labels.",
+      "Add a synchronized slow-motion control without changing the underlying input relationship."
+    ],
+    "tune": "Keep the comparison frame and colors stable; highlight the differing mechanism only.",
+    "check": "Set equal inputs and pause at the same phase. Labels, speeds and outputs must agree with the models.",
+    "prompt": "Compare [two mechanisms] under one shared [input], using synchronized time and matched views to expose the difference.",
+    "source_urls": [
+      "https://x.com/StefanoStraus/status/2104236916316971191"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "computed-optical-image",
+    "family": "explainers",
+    "title": "An optical explainer whose image comes from its model",
+    "sources": [
+      "2104011756397842869",
+      "2104068960035713523"
+    ],
+    "mechanism": "The visible result changes because the simulated rays or mapping change.",
+    "build": [
+      "Choose and state the approximation: ray tracing, geometric projection or a stylized mapping.",
+      "Compute the image or ray paths from editable parameters.",
+      "Display controls and labels that expose the relationship between cause and output."
+    ],
+    "tune": "Limit adjustable parameters to a few understandable ones. Separate aesthetic lens distortion from the instructional model.",
+    "check": "Change one parameter and verify the expected direction of change against a known simple case.",
+    "prompt": "Explain [optical phenomenon] with imagery computed from the model, including a clear statement of the approximation.",
+    "source_urls": [
+      "https://x.com/cagrimbakirci/status/2104011756397842869",
+      "https://x.com/The_MrAI/status/2104068960035713523"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "flow-cutaway",
+    "family": "explainers",
+    "title": "A cutaway that follows a moving substance",
+    "sources": [
+      "2104094723887501736"
+    ],
+    "mechanism": "The viewer follows a coherent route through components instead of seeing a disconnected exploded diagram.",
+    "build": [
+      "Model the physical path as connected segments with named components.",
+      "Animate tracers along path distance and show flow direction consistently.",
+      "Reveal cutaway geometry as the tracer reaches a component, then connect its behavior to a control."
+    ],
+    "tune": "Keep path topology readable before adding dense particles; use distinct channels for separate fluids.",
+    "check": "Trace the whole route manually. No tracer should jump between unconnected channels or move against its arrow.",
+    "prompt": "Explain [system] by following [substance] through its actual connected path and exposing each component at the useful moment.",
+    "source_urls": [
+      "https://x.com/konstantinsaifo/status/2104094723887501736"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "causal-scale-story",
+    "family": "explainers",
+    "title": "Explain a process across several scales",
+    "sources": [
+      "2103470233080254891"
+    ],
+    "mechanism": "Each new scale explains the consequence of the previous stage.",
+    "build": [
+      "List the entities and transformations in order before designing transitions.",
+      "Preserve a recognizable substructure at each handoff.",
+      "Distinguish literal scale, schematic spacing and time compression in the explanation."
+    ],
+    "tune": "Use fewer stages with clear causality rather than a spectacular unlabelled zoom.",
+    "check": "Ask whether each transition answers what changed and why. Independently verify scientific claims and quantities.",
+    "prompt": "Connect [small process] to [large outcome] through a sequence of causal transformations with explicit scale and time assumptions.",
+    "source_urls": [
+      "https://x.com/mrmagan_/status/2103470233080254891"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "data-backed-image",
+    "family": "explainers",
+    "title": "An explanatory animation driven by real outputs",
+    "sources": [
+      "2103183904563998809",
+      "2104011150471917838"
+    ],
+    "mechanism": "The picture uses actual data or model results instead of a convincing-looking substitute.",
+    "build": [
+      "Load or generate the real dataset with a recorded source and processing step.",
+      "Bind visible marks, counts and labels to that output.",
+      "Keep a clear distinction between sample data, measured results and illustrative geometry."
+    ],
+    "tune": "Reduce data volume for clarity without changing its meaning; expose the aggregation rule.",
+    "check": "Recompute a few displayed values independently. A changed input must update the corresponding visual output.",
+    "prompt": "Make [concept] visible using real [data/model outputs], with every displayed number traceable to the underlying computation.",
+    "source_urls": [
+      "https://x.com/ng169onX/status/2103183904563998809",
+      "https://x.com/arambarnett/status/2104011150471917838"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "linked-space-time",
+    "family": "explainers",
+    "title": "Link a spatial selection to a time series",
+    "sources": [
+      "2104045418141368438"
+    ],
+    "mechanism": "Selecting a point in the scene reveals its behavior over time.",
+    "build": [
+      "Use stable IDs for spatial samples and their time-indexed values.",
+      "Bind the selected point, chart highlight and current-time marker to one state.",
+      "Explain units, sampling interval and the source of the values."
+    ],
+    "tune": "Choose meaningful defaults and avoid implying fine precision from coarse samples.",
+    "check": "Select several locations and scrub time. The chart and scene must identify the same sample and timestamp.",
+    "prompt": "Let viewers select [spatial feature] and inspect its [time-varying quantity] through synchronized scene and chart views.",
+    "source_urls": [
+      "https://x.com/mizugame_22/status/2104045418141368438"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "constraint-aware-layout",
+    "family": "explainers",
+    "title": "A layout tool that shows the consequences of placement",
+    "sources": [
+      "2103540288136315331"
+    ],
+    "mechanism": "Moving objects changes computed clearances and feasibility, not just the picture.",
+    "build": [
+      "Represent footprints, doors and required clearance zones separately.",
+      "Recompute collisions and passage widths from object transforms.",
+      "Display the active conflict beside the affected geometry and offer a reversible adjustment."
+    ],
+    "tune": "Prioritize major passage conflicts before small decorative overlaps; document assumed dimensions.",
+    "check": "Rotate, resize and move objects through boundaries. Reported clearance must match the visible geometry.",
+    "prompt": "Make [planning scene] editable with real geometric constraints and immediate explanations of what a placement changes.",
+    "source_urls": [
+      "https://x.com/goofyninjaaa/status/2103540288136315331"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "token-conservation",
+    "family": "explainers",
+    "title": "Make a resource rule visible through conserved quantities",
+    "sources": [
+      "2103206747846701462"
+    ],
+    "mechanism": "A resource animation becomes explanatory when its counters obey the same rule as its marks.",
+    "build": [
+      "Implement the resource update independently of rendering.",
+      "Represent each admission, refill and rejection as an event from that model.",
+      "Derive labels and moving tokens from the event log so they cannot disagree."
+    ],
+    "tune": "Choose a slowed demonstration time without changing the ratios; expose capacity and rate in units.",
+    "check": "Test empty, full, burst and steady input. Counts must never become negative or exceed capacity.",
+    "prompt": "Explain [rate or queue rule] with a working model, synchronized counters and visible admissions or rejections.",
+    "source_urls": [
+      "https://x.com/ParkerRex/status/2103206747846701462"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "shared-score-clock",
+    "family": "sound",
+    "title": "One event score for both audio and visual motion",
+    "sources": [
+      "2103403361022419005",
+      "2103679486629659063"
+    ],
+    "mechanism": "Sound and picture use the same event times rather than two approximately synchronized timers.",
+    "build": [
+      "Create a cue list in seconds or beats with one tempo conversion.",
+      "Schedule audio against its clock and derive visual time from the same playback origin.",
+      "For export, evaluate both from absolute timeline time."
+    ],
+    "tune": "Support pause and seek explicitly; recreate or cancel scheduled audio on transport changes.",
+    "check": "Play, pause, resume and seek repeatedly. Check a sharp visible impact against its audible onset.",
+    "prompt": "Compose [piece] from one shared cue score that drives both visible events and sound.",
+    "source_urls": [
+      "https://x.com/aiehon_aya/status/2103403361022419005",
+      "https://x.com/GroundControl/status/2103679486629659063"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "band-to-part",
+    "family": "sound",
+    "title": "Map frequency bands to different physical parts",
+    "sources": [
+      "2104145227573248467",
+      "2103706285204255186"
+    ],
+    "mechanism": "A deliberate mapping turns music into a coordinated mechanical performance.",
+    "build": [
+      "Extract band envelopes and onset events from the actual track.",
+      "Assign low, mid and high activity to distinct parts with different response characteristics.",
+      "Use the song section to change the arrangement instead of scaling every effect together."
+    ],
+    "tune": "Normalize per band and add attack/release smoothing. Keep an inactive baseline so silence has a visible form.",
+    "check": "Mute one band or inspect it alone. Its assigned part should have a clear specific response.",
+    "prompt": "Make [mechanical object] perform the music through separate bass, transient and high-frequency behaviors.",
+    "source_urls": [
+      "https://x.com/Acoramaa/status/2104145227573248467",
+      "https://x.com/aratamadao/status/2103706285204255186"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "collision-instrument",
+    "family": "sound",
+    "title": "A physical event that produces a musical note",
+    "sources": [
+      "2102899866762440893",
+      "2103148907228176511"
+    ],
+    "mechanism": "Visible contact and audible onset are one event, making the piece understandable by ear and eye.",
+    "build": [
+      "Emit a contact event from the collision model.",
+      "Map body identity or location to a pitch set and impact energy to a bounded intensity.",
+      "Debounce resting contacts so one collision does not create a machine-gun trill."
+    ],
+    "tune": "Limit polyphony and shape note decay; use an intentional scale if harmony is desired.",
+    "check": "Slow playback and inspect first contact. The note must not precede the collision or repeat while objects rest together.",
+    "prompt": "Turn [physical system] into an instrument where every note is caused by a visible event.",
+    "source_urls": [
+      "https://x.com/KamStudioLabs/status/2102899866762440893",
+      "https://x.com/kantamk/status/2103148907228176511"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "gesture-instrument",
+    "family": "sound",
+    "title": "A drawing gesture that makes a musical phrase",
+    "sources": [
+      "2103288413969621231",
+      "2103517910274818523"
+    ],
+    "mechanism": "Gesture position, speed and pauses control an instrument rather than adding background music.",
+    "build": [
+      "Choose a mapping from position to pitch or scale degree.",
+      "Use speed or pressure for articulation and brightness.",
+      "Trigger notes at distance or time thresholds, then add a brief release to avoid clicks."
+    ],
+    "tune": "Keep note density bounded; preserve silence when the gesture stops.",
+    "check": "Draw slowly, quickly and in place. Sound must respond predictably without becoming a continuous harsh tone.",
+    "prompt": "Make [creative gesture] playable as [instrument], with a clear relation between movement, pitch and articulation.",
+    "source_urls": [
+      "https://x.com/AxtonLiu/status/2103288413969621231",
+      "https://x.com/DemitiyaGeekzen/status/2103517910274818523"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "peak-alignment",
+    "family": "sound",
+    "title": "Align an effect by its perceptual attack",
+    "sources": [
+      "2102554209166000267"
+    ],
+    "mechanism": "The significant transient may occur after the beginning of the sound file.",
+    "build": [
+      "Measure or listen for the attack offset within each effect.",
+      "Place the clip start at visualEventTime minus attackOffset.",
+      "Check the final mixed and encoded output, not only the source timeline."
+    ],
+    "tune": "Use the perceptually relevant attack rather than blindly choosing the largest later peak.",
+    "check": "Inspect a sharp event at slow playback and listen at normal speed. Trimmed leading silence must not shift the intended hit.",
+    "prompt": "Synchronize [sound effect] to [visible action] using its actual attack rather than its file start.",
+    "source_urls": [
+      "https://x.com/twoclipping/status/2102554209166000267"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "physical-timbre",
+    "family": "sound",
+    "title": "Sound synthesis tied to a visible material",
+    "sources": [
+      "2104144532644544921",
+      "2103814603100856596"
+    ],
+    "mechanism": "The sound suggests how the visible object vibrates or is struck.",
+    "build": [
+      "Choose an excitation and resonator model appropriate to the material.",
+      "Drive the excitation from the visible action and vary resonance with a meaningful parameter.",
+      "Keep a separate ambience layer so every movement does not require a loud accent."
+    ],
+    "tune": "Tune attack and decay before reverb. Prefer a small coherent sound vocabulary.",
+    "check": "Compare repeated actions at different strengths. Timbre and intensity should remain related to the object.",
+    "prompt": "Give [material/object] a sound model whose attack, resonance and decay follow the action seen on screen.",
+    "source_urls": [
+      "https://x.com/Rakhsh_Tech/status/2104144532644544921",
+      "https://x.com/iniyanai/status/2103814603100856596"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "section-arrangement",
+    "family": "sound",
+    "title": "Change visual grammar with the musical section",
+    "sources": [
+      "2103706285204255186",
+      "2103722560462475314"
+    ],
+    "mechanism": "Sections change the composition and behavior vocabulary, not only effect intensity.",
+    "build": [
+      "Mark phrase boundaries, quiet passages, builds and releases in the real track.",
+      "Assign a visual grammar to each section and maintain one connecting motif.",
+      "Reserve the most complex arrangement for the intended peak."
+    ],
+    "tune": "Use contrast in density, scale and stillness; avoid identical cuts on every beat.",
+    "check": "Watch the full piece without sound, then listen without picture. The large-scale energy arcs should still correspond.",
+    "prompt": "Design [music piece] around its actual sections, with changing composition and a recognizable motif across them.",
+    "source_urls": [
+      "https://x.com/aratamadao/status/2103706285204255186",
+      "https://x.com/pound75423/status/2103722560462475314"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "seeded-universe",
+    "family": "sound",
+    "title": "One seed creates a coherent visual and musical world",
+    "sources": [
+      "2103837521645867073"
+    ],
+    "mechanism": "A shared seed coordinates choices while separate streams prevent accidental coupling.",
+    "build": [
+      "Hash the user input into a stable seed.",
+      "Derive named sub-seeds for palette, geometry, rhythm and melody.",
+      "Constrain each generator to a designed vocabulary so random output still feels authored."
+    ],
+    "tune": "Changing particle count must not unexpectedly change the melody; use independent streams.",
+    "check": "The same input should reproduce the same world. Small implementation changes in one subsystem should not scramble the others.",
+    "prompt": "Turn [user input] into a repeatable visual and musical world using constrained generators with independent named random streams.",
+    "source_urls": [
+      "https://x.com/MiaAI_lab/status/2103837521645867073"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "exploded-assembly",
+    "family": "interaction",
+    "title": "An assembly that can be understood in either direction",
+    "sources": [
+      "2103174501345493197",
+      "2103038628071133588"
+    ],
+    "mechanism": "Parts separate along purposeful paths while retaining their assembly relationships.",
+    "build": [
+      "Create an inventory with part IDs, pivots, final transforms and assembly order.",
+      "Assign collision-aware separation paths and use one progress state to interpolate assembled and exploded views.",
+      "Highlight the current part and its connection without hiding the surrounding context."
+    ],
+    "tune": "Separate enough for understanding, not maximum distance; provide step and free-scrub controls.",
+    "check": "Scrub backward and select every part. Labels and transforms must stay attached to the correct piece.",
+    "prompt": "Explain [assembly] with reversible, stepwise part movement and a clear view of how each connection works.",
+    "source_urls": [
+      "https://x.com/deedydas/status/2103174501345493197",
+      "https://x.com/CurieuxExplorer/status/2103038628071133588"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "buildable-bricks",
+    "family": "interaction",
+    "title": "A visual model constrained by a real parts inventory",
+    "sources": [
+      "2103802201739256312",
+      "2103802213655294212"
+    ],
+    "mechanism": "The same discrete part list drives the model, instructions and bill of materials.",
+    "build": [
+      "Quantize the source into supported colors and dimensions.",
+      "Tile the volume with available parts and create an assembly order.",
+      "Check connectivity, intersections and support, then derive all exports from the final inventory."
+    ],
+    "tune": "Prefer robust structural connections over a perfect front-view color match. Separate computer checks from physical build testing.",
+    "check": "Rebuild using a reduced inventory. Parts counts, rendered steps and shopping list must agree exactly.",
+    "prompt": "Convert [image/form] into a buildable discrete assembly with consistent geometry, instructions and inventory.",
+    "source_urls": [
+      "https://x.com/johnkarp/status/2103802201739256312",
+      "https://x.com/johnkarp/status/2103802213655294212"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "reveal-under-surface",
+    "family": "interaction",
+    "title": "A movable inspection lens over aligned layers",
+    "sources": [
+      "2103459848793084047"
+    ],
+    "mechanism": "The reveal works only when exterior and interior imagery share registration.",
+    "build": [
+      "Align both layers in the same image coordinate system.",
+      "Transform pointer or touch position into that local space and mask the interior with a feathered aperture.",
+      "Provide a keyboard or slider alternative that can reveal the same information."
+    ],
+    "tune": "Keep lens lag minimal for inspection; feather enough to avoid a pasted-on circle.",
+    "check": "Resize and change crop. The interior must stay aligned with the exterior, including near image edges.",
+    "prompt": "Let viewers inspect [object] through a movable reveal lens, keeping both layers registered and usable without hover.",
+    "source_urls": [
+      "https://x.com/iamtanzil_/status/2103459848793084047"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "cleaning-mask",
+    "family": "interaction",
+    "title": "An irreversible-looking surface action with reversible state",
+    "sources": [
+      "2102674509593796808"
+    ],
+    "mechanism": "Cleaning feels satisfying when the tool changes a persistent surface field.",
+    "build": [
+      "Store dirt or coverage in a texture or grid.",
+      "Project the tool footprint onto the surface and reduce coverage with pressure and dwell time.",
+      "Derive wetness, debris and progress from the changed area rather than pointer distance."
+    ],
+    "tune": "Control edge softness and flow; let reset restore a known initial field.",
+    "check": "Sweep the same area twice. Progress must count newly cleaned area only, and off-object input must not count.",
+    "prompt": "Build [surface treatment] with a persistent coverage map so the visible result and completion measure reflect actual work.",
+    "source_urls": [
+      "https://x.com/chongdashu/status/2102674509593796808"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "one-input-meaning",
+    "family": "interaction",
+    "title": "A simple control with several meaningful consequences",
+    "sources": [
+      "2104003920251257328",
+      "2104215873120764032"
+    ],
+    "mechanism": "Depth comes from context and timing rather than a large control vocabulary.",
+    "build": [
+      "Choose one primary action and define its effect in each meaningful state.",
+      "Make the state visible through pose, environment or a concise cue.",
+      "Add variation in timing, obstacles or resources before adding more buttons."
+    ],
+    "tune": "Keep the first successful interaction easy to discover; make failure explain the rule.",
+    "check": "Test with no instructions. A new user should understand the action and predict one next consequence.",
+    "prompt": "Build [small experience] around one clear input whose timing and context produce interesting choices.",
+    "source_urls": [
+      "https://x.com/blitast_studio/status/2104003920251257328",
+      "https://x.com/DannyLimanseta/status/2104215873120764032"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "readable-chase",
+    "family": "interaction",
+    "title": "Emergent pursuit with deliberately imperfect opponents",
+    "sources": [
+      "2103789415323562325"
+    ],
+    "mechanism": "Pursuers become part of the player strategy because they predict, overshoot and collide.",
+    "build": [
+      "Steer toward playerPosition plus playerVelocity times a prediction horizon.",
+      "Give opponents limited turn ability and imperfect avoidance.",
+      "Make collisions, damage and recovery visible through coordinated feedback."
+    ],
+    "tune": "Tune one opponent in an empty arena before adding density; preserve a clear player silhouette.",
+    "check": "The player should be able to intentionally cause an opponent mistake. If outcomes feel random, reduce speed or improve telegraphing.",
+    "prompt": "Create [chase mechanic] where readable opponent prediction creates opportunities for skillful escapes and chain reactions.",
+    "source_urls": [
+      "https://x.com/froessell/status/2103789415323562325"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "operational-world",
+    "family": "interaction",
+    "title": "A spatial metaphor backed by real system state",
+    "sources": [
+      "2103998389058740521",
+      "2104102479927620029"
+    ],
+    "mechanism": "A world becomes useful when its inhabitants and objects represent current operations.",
+    "build": [
+      "Map each entity to a stable system ID and a small state vocabulary.",
+      "Animate transitions from real events, distinguishing queued, active, failed and complete.",
+      "Offer a direct route from the visual entity to its underlying details."
+    ],
+    "tune": "Use spatial organization to aid recognition; do not make essential information depend on watching an animation.",
+    "check": "Feed out-of-order and repeated events. The world must not show completion early or duplicate an entity.",
+    "prompt": "Represent [workflow] as [spatial metaphor], with every visible state grounded in actual events and accessible details.",
+    "source_urls": [
+      "https://x.com/kum1ta/status/2103998389058740521",
+      "https://x.com/sanjay_khadka07/status/2104102479927620029"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "page-as-surface",
+    "family": "interaction",
+    "title": "A sketchbook with real pages and drawing interaction",
+    "sources": [
+      "2104021884350439465"
+    ],
+    "mechanism": "The book has a spatial page model while each page owns its own drawing state.",
+    "build": [
+      "Render page art to textures or 2D surfaces.",
+      "Deform page geometry around a turn axis, retaining front/back mapping.",
+      "Store drawing strokes in page-local coordinates and transform input through the current page view."
+    ],
+    "tune": "Keep curl readable before adding paper texture; distinguish page-turn gestures from drawing gestures.",
+    "check": "Turn forward and backward, draw near an edge, and resize. Marks must remain on the intended page.",
+    "prompt": "Make [book/journal] a tactile interactive object with coherent page turns and persistent page-local artwork.",
+    "source_urls": [
+      "https://x.com/kloss_xyz/status/2104021884350439465"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "motif-handoff",
+    "family": "story",
+    "title": "One motif changes meaning across scenes",
+    "sources": [
+      "2104037878036824375",
+      "2102724347446305104"
+    ],
+    "mechanism": "Continuity is stronger when a shape is also a conceptual bridge.",
+    "build": [
+      "Choose a motif that can plausibly represent several stages of the idea.",
+      "List its role in each scene and the visible transformation between roles.",
+      "Preserve one feature, direction or rhythm across each handoff."
+    ],
+    "tune": "Use a few meaningful transformations; avoid morphing unrelated objects merely because their outlines match.",
+    "check": "Explain each transition in one causal sentence. If it only says that two shapes look alike, strengthen the narrative relationship.",
+    "prompt": "Carry [motif] through [story] so each transformation advances the idea and retains a recognizable visual feature.",
+    "source_urls": [
+      "https://x.com/park_danie36173/status/2104037878036824375",
+      "https://x.com/leo_xiaolei/status/2102724347446305104"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "chaos-to-organization",
+    "family": "story",
+    "title": "Make the benefit visible as a change in structure",
+    "sources": [
+      "2104057509887553949"
+    ],
+    "mechanism": "Order is satisfying when the viewer sees what was difficult and how it becomes manageable.",
+    "build": [
+      "Create a legible initial disorder with identifiable items.",
+      "Show an organizing action that assigns relationships or destinations.",
+      "Preserve item identity into the final arrangement so the transformation can be followed."
+    ],
+    "tune": "Keep some variation in the initial state, but avoid clutter so dense that individual movement is unreadable.",
+    "check": "Track several items through the transformation. No unexplained duplicates or disappearances should manufacture the benefit.",
+    "prompt": "Show [problem] becoming [useful structure] through visible organization of the same underlying items.",
+    "source_urls": [
+      "https://x.com/juanpfgomes8/status/2104057509887553949"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "quiet-payoff",
+    "family": "story",
+    "title": "Stillness that makes an action or revelation register",
+    "sources": [
+      "2103458245213929495",
+      "2103176289482154373"
+    ],
+    "mechanism": "A pause creates contrast and gives meaning time to land.",
+    "build": [
+      "Locate the moment the viewer must recognize a change.",
+      "Reduce camera, background and sound activity together around that moment.",
+      "Resume motion from a deliberate cue rather than leaving ambient loops running at full strength."
+    ],
+    "tune": "Tune the hold by watching at delivery size; a fixed universal duration cannot fit every phrase or reveal.",
+    "check": "Ask what the viewer can understand during the pause. If nothing changes in understanding, shorten it.",
+    "prompt": "Give [key realization] a deliberate quiet beat so it is understood before the sequence continues.",
+    "source_urls": [
+      "https://x.com/Gdgtify/status/2103458245213929495",
+      "https://x.com/pradeepXkapoor/status/2103176289482154373"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "archival-bridge",
+    "family": "story",
+    "title": "Connect a historical artifact to a present-day idea",
+    "sources": [
+      "2103995183255998633"
+    ],
+    "mechanism": "A real artifact establishes context, then a visual link connects it to the current story.",
+    "build": [
+      "Choose an authentic artifact that demonstrates the old behavior.",
+      "Preserve its provenance and distinguish its content from new narration or counters.",
+      "Use a recurring object, phrase or action to bridge into the present."
+    ],
+    "tune": "Keep archival texture local to the artifact unless the entire film intentionally adopts it.",
+    "check": "Verify quoted facts and asset rights. Do not manufacture a historical screen or statistic as if it were documentary evidence.",
+    "prompt": "Use [authentic artifact] to establish the old way of [activity], then connect it visually to the new idea.",
+    "source_urls": [
+      "https://x.com/notdwd/status/2103995183255998633"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "silent-acting",
+    "family": "story",
+    "title": "Tell the story through decisions and reactions",
+    "sources": [
+      "2103794101892374823",
+      "2103176289482154373"
+    ],
+    "mechanism": "A character wants something, reacts to obstacles, and changes behavior without explanatory dialogue.",
+    "build": [
+      "Write the desire, obstacle and payoff before shots.",
+      "Assign readable gaze, pose and action for each story beat.",
+      "Use recurring props or light as emotional anchors and reserve sound as reinforcement."
+    ],
+    "tune": "Make one action dominate each beat; test the story without subtitles or narration.",
+    "check": "Show the muted sequence at small size. The goal, setback and response should remain understandable.",
+    "prompt": "Tell [short story] through a character goal, clear reactions and a visual payoff that works without spoken explanation.",
+    "source_urls": [
+      "https://x.com/gmgmgm1545/status/2103794101892374823",
+      "https://x.com/pradeepXkapoor/status/2103176289482154373"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "historical-construction",
+    "family": "story",
+    "title": "A structure assembles as its story unfolds",
+    "sources": [
+      "2102503719762018434",
+      "2103237991091060898"
+    ],
+    "mechanism": "Construction order becomes the narrative timeline instead of a decorative reveal.",
+    "build": [
+      "Define the stages of construction and what each stage explains.",
+      "Start from footprint or structural lines, then add mass, systems and finish.",
+      "Maintain alignment and scale while changing representation."
+    ],
+    "tune": "Use construction order where factual; label stylized assembly when it is only a visual metaphor.",
+    "check": "Pause at each stage. The new layer must answer a question about the structure, not simply add detail.",
+    "prompt": "Explain [structure] by building it from its organizing lines into a finished place, with each stage revealing a useful fact.",
+    "source_urls": [
+      "https://x.com/techartist_/status/2102503719762018434",
+      "https://x.com/RetropunkAI/status/2103237991091060898"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "camera-from-previs",
+    "family": "story",
+    "title": "Use a simple 3D blockout to control a later visual treatment",
+    "sources": [
+      "2102817977812824335",
+      "2104021676107407427",
+      "2102916712681079291"
+    ],
+    "mechanism": "Spatial staging and timing are solved before expensive or less controllable image treatment.",
+    "build": [
+      "Block camera, subject motion and occlusion with simple geometry.",
+      "Render guide passes that clearly separate identity, depth or parts as needed.",
+      "Choose what the guide is allowed to transfer: continuous video for required timing, or action-keyed storyboard frames when stiff proxy motion should be reinterpreted. Keep appearance references separate.",
+      "Apply the final treatment while checking it against the staged motion and silhouette."
+    ],
+    "tune": "Keep the guide semantically clear; do not expect a later model to repair impossible staging. Declare locked staging versus flexible articulation; panels do not lock exact camera velocity or timing.",
+    "check": "Compare guide and final at key actions. Identity, contact, direction and timing must remain consistent. Align corresponding events before comparing phases; verify handoff pose and direction instead of assuming a last-frame anchor guarantees continuity.",
+    "prompt": "Plan [cinematic moment] in a simple spatial blockout, then preserve its staging through the final visual treatment.",
+    "source_urls": [
+      "https://x.com/OriSilver/status/2102817977812824335",
+      "https://x.com/slipgatecentral/status/2104021676107407427",
+      "https://x.com/viperstudios4/status/2102916712681079291"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified. September 24 viperstudios4 explicitly credits Astra for Blender clay previs and Seedance 2.5 for final video. Creator reports replacing stiff video guidance with storyboard frames. Selected paired recording frames inspected; framing differs at sampled moments. Exact camera preservation, causal improvement, audio and contact correctness unverified."
+  },
+  {
+    "id": "coherent-mixed-media",
+    "family": "story",
+    "title": "Combine generated footage and editable graphics deliberately",
+    "sources": [
+      "2102801469976248500",
+      "2103869706121970073",
+      "2103243082095329632"
+    ],
+    "mechanism": "Different media have different jobs, connected by common framing, timing and identity.",
+    "build": [
+      "Assign footage to visual texture or performance and code to precise text, layout and timing.",
+      "Establish character and scene references before generating shots.",
+      "Composite under a shared grade and cue sheet while retaining editable layers."
+    ],
+    "tune": "Avoid asking a video model to supply exact small text or interface values.",
+    "check": "Check continuity across shots and compare overlays to product facts. Report which assets were generated, supplied or coded.",
+    "prompt": "Build [film] with a deliberate division between footage and programmable graphics, preserving identity and exact information.",
+    "source_urls": [
+      "https://x.com/donaldjewkes/status/2102801469976248500",
+      "https://x.com/makevoid/status/2103869706121970073",
+      "https://x.com/kidpakerot/status/2103243082095329632"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "pure-time-render",
+    "family": "production",
+    "title": "Render any frame without playing earlier frames",
+    "sources": [
+      "2103483957266268381",
+      "2103835273813496100"
+    ],
+    "mechanism": "Frame state is derived from time, assets and a fixed seed instead of accumulated browser animation.",
+    "build": [
+      "Define scene state as a function of absolute time.",
+      "Precompute simulations or replay fixed-step checkpoints where pure formulas are insufficient.",
+      "Await fonts, images and video-frame decoding before declaring a frame ready."
+    ],
+    "tune": "Keep interactive transport separate from render state; do not create tracks or random seeds inside seek.",
+    "check": "Render timestamps in shuffled order and compare with sequential playback. Identical time and inputs should produce the same state.",
+    "prompt": "Make [piece] reliably seekable and exportable, with explicit asset readiness and deterministic frame evaluation.",
+    "source_urls": [
+      "https://x.com/verbove/status/2103483957266268381",
+      "https://x.com/twoclipping/status/2103835273813496100"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "loop-position-velocity",
+    "family": "production",
+    "title": "A loop whose motion continues across the seam",
+    "sources": [
+      "2104162483888062945"
+    ],
+    "mechanism": "Matching the image at two endpoints is only part of a smooth loop.",
+    "build": [
+      "Make periodic signals use integer cycles over the loop duration.",
+      "For spring tracks, include sufficient previous-cycle history or solve the periodic boundary condition.",
+      "Check position, velocity and audio at the wrap; export frames in the half-open interval [0,L)."
+    ],
+    "tune": "Use an error tolerance for residual tails, not a fixed claim that two cycles always suffice.",
+    "check": "Compare the seam difference to neighboring frame differences. Do not duplicate the endpoint frame and create a one-frame hold.",
+    "prompt": "Close [animation] with continuous motion and sound across its loop boundary, then test the encoded repeated playback.",
+    "source_urls": [
+      "https://x.com/listudio/status/2104162483888062945"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "selective-motion-blur",
+    "family": "production",
+    "title": "Motion blur that preserves the information layer",
+    "sources": [
+      "2103801834930606193",
+      "2102554209166000267"
+    ],
+    "mechanism": "Temporal integration smooths moving objects while text can remain crisp when its role demands it.",
+    "build": [
+      "Choose a shutter interval and sample the moving scene at several subframe times.",
+      "Accumulate in an appropriate linear-light workflow when available.",
+      "Composite stationary captions or interface labels separately if they should not blur."
+    ],
+    "tune": "Increase samples only until stepping disappears. Use a shorter shutter for precise interface motion.",
+    "check": "Inspect fast edges, thin strokes and text. Repeated ghost images or halos indicate insufficient samples or incorrect compositing.",
+    "prompt": "Add controlled blur to [fast motion] while preserving the readability of [information layer].",
+    "source_urls": [
+      "https://x.com/brainextends/status/2103801834930606193",
+      "https://x.com/twoclipping/status/2102554209166000267"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "real-product-demo",
+    "family": "production",
+    "title": "A product film grounded in actual UI and actions",
+    "sources": [
+      "2104076374281510985",
+      "2103743802938671516",
+      "2103845264649761062"
+    ],
+    "mechanism": "Actual product components or recordings supply the content; motion explains their relationships.",
+    "build": [
+      "Identify the real product flow and gather its assets or components.",
+      "Use a stable demo state or authorized recording path and preserve genuine labels and values.",
+      "Animate framing or component layout around those states without inventing capabilities."
+    ],
+    "tune": "Prioritize a few meaningful actions over an exhaustive feature fly-through.",
+    "check": "Compare every shown state to the product. Verify that transitions do not imply an action or result the product cannot perform.",
+    "prompt": "Make [product story] from the real interface and a few actual actions, with motion that clarifies the benefit.",
+    "source_urls": [
+      "https://x.com/xiaoerzhan/status/2104076374281510985",
+      "https://x.com/Bilimfili1/status/2103743802938671516",
+      "https://x.com/HO_BA/status/2103845264649761062"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "reference-to-director-notes",
+    "family": "production",
+    "title": "Translate a reference into specific change requests",
+    "sources": [
+      "2103707054108299437",
+      "2104204321844007161"
+    ],
+    "mechanism": "Useful feedback identifies a visible defect, its cause and the intended change.",
+    "build": [
+      "Break a reference into composition, material, timing and behavior.",
+      "Compare the current output at corresponding moments.",
+      "Change the largest specific mismatch, then review the affected sequence again."
+    ],
+    "tune": "Use measurable relationships or visible outcomes rather than escalating adjectives or self-awarded scores.",
+    "check": "Each revision should resolve a named issue without introducing a new one. Preserve a before image or clip for comparison.",
+    "prompt": "Compare [output] to [reference] and fix the most consequential concrete difference in composition, material or motion.",
+    "source_urls": [
+      "https://x.com/rexan_wong/status/2103707054108299437",
+      "https://x.com/iniyanai/status/2104204321844007161"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "quality-tier-by-bottleneck",
+    "family": "production",
+    "title": "Reduce the expensive effect rather than arbitrary detail",
+    "sources": [
+      "2103502611353633151",
+      "2103385835328680050"
+    ],
+    "mechanism": "Quality tiers should target measured render cost while preserving the defining behavior.",
+    "build": [
+      "Measure frame time by major pass or subsystem.",
+      "Reduce resolution, transparency layers, simulation count or sample count where the bottleneck actually is.",
+      "Retain the hero silhouette and interaction in every tier."
+    ],
+    "tune": "Avoid lowering geometry when fragment overdraw is the problem. Re-measure after each meaningful change.",
+    "check": "Test the target device and resolution. A still image and a desktop FPS claim do not establish mobile performance.",
+    "prompt": "Profile [experience] and create a lower-cost mode that preserves its defining behavior and visual hierarchy.",
+    "source_urls": [
+      "https://x.com/dangreenheck/status/2103502611353633151",
+      "https://x.com/nybobs/status/2103385835328680050"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "aspect-aware-staging",
+    "family": "production",
+    "title": "Recompose for each aspect ratio",
+    "sources": [
+      "2104021884350439465",
+      "2103419817034428866"
+    ],
+    "mechanism": "A new crop is a new composition, even when it shares the same scene and timing.",
+    "build": [
+      "Separate world state from camera and layout presets.",
+      "Define focal point, safe text area and supporting-object positions per format.",
+      "Share semantic events while adjusting framing and spacing."
+    ],
+    "tune": "Use the smallest delivery width as a readability check. Avoid blindly shrinking the entire wide composition.",
+    "check": "Review every key state in wide, square and portrait output. No important action should occur behind platform overlays or outside the crop.",
+    "prompt": "Adapt [piece] to [formats] through deliberate framing and layout while retaining one shared narrative timeline.",
+    "source_urls": [
+      "https://x.com/kloss_xyz/status/2104021884350439465",
+      "https://x.com/aiwarts/status/2103419817034428866"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "event-based-review",
+    "family": "production",
+    "title": "Review moments where the system changes state",
+    "sources": [
+      "2103303449831964679",
+      "2104162483888062945"
+    ],
+    "mechanism": "Uniform screenshots can miss failures concentrated around transitions and interactions.",
+    "build": [
+      "List state boundaries, contacts, reveals and asset handoffs.",
+      "Inspect frames immediately before, during and after each event, plus normal-speed playback.",
+      "Exercise alternative input paths and verify the exported artifact separately."
+    ],
+    "tune": "Use contact sheets for coverage and playback for timing; neither replaces the other.",
+    "check": "A seek directly into a later state should reconstruct the correct objects, particles, audio position and controls.",
+    "prompt": "Validate [experience] at its meaningful events and through actual playback, including interruption, reset and direct seeking.",
+    "source_urls": [
+      "https://x.com/Artless101/status/2103303449831964679",
+      "https://x.com/listudio/status/2104162483888062945"
+    ],
+    "evidence": "Creator text or prompt retrieved; mechanism is an original engineering adaptation. Visual result not implied verified."
+  },
+  {
+    "id": "phase-coherent-explode",
+    "family": "interaction",
+    "title": "A working mechanism that keeps its phase while taken apart",
+    "sources": [
+      "2105009377002299711",
+      "2105009470292013286"
+    ],
+    "mechanism": "One clock controls operation while a separate inspection parameter controls where the parts are displayed.",
+    "build": [
+      "Represent part identity, assembled transforms and inspection offsets separately from gear or linkage phase.",
+      "Derive connected rotations from one master phase and explicit ratios; compose local operation with inspection placement rather than overwriting either transform.",
+      "Let scroll or chapter selection change only inspection progress. Readouts, pause and speed controls use the operating clock."
+    ],
+    "tune": "Prove the assembled relationships before spreading the parts. Use rests for labels; keep pause independent from interface navigation.",
+    "check": "Scrub inspection backward while operation continues, then pause and inspect another part. Relative phases and computed readouts must remain consistent. Visual separation does not prove the assembled mechanism is physically correct.",
+    "prompt": "Build an inspectable [mechanism] whose operation continues as its parts separate. Use independent operation time and inspection progress, preserve part identity, and verify the relationships shown by the readouts.",
+    "source_urls": [
+      "https://x.com/theparuchh/status/2105009377002299711",
+      "https://x.com/theparuchh/status/2105009470292013286"
+    ],
+    "evidence": "Creator prompt retrieved in full; selected frames from the comparison video inspected. Live controls, source code, mechanical correctness and claimed production times were not independently verified."
+  },
+  {
+    "id": "contract-burst-return",
+    "family": "motion",
+    "title": "A particle form that contracts, bursts and returns",
+    "sources": [
+      "2104962747125412335"
+    ],
+    "mechanism": "A recognizable particle form passes through concentrated anticipation, rapid expansion and a legible return using persistent particle identities.",
+    "build": [
+      "Give particles stable home coordinates and seeded variation; define an inward target and outward displacement for each identity.",
+      "Author separate envelopes for contraction, expansion, brightness and return. Reach a compact focal point before the expansive gesture.",
+      "Blend particles back to their own home coordinates; let trails and bloom decay instead of resetting the entire image."
+    ],
+    "tune": "Separate scale from exposure so brightness is not the only sign of anticipation. Keep some spatial structure visible in the burst. Use different durations for compression and release.",
+    "check": "Inspect pre-burst, peak expansion and reassembly. No random reseeding, teleportation or frame-filling white flash should hide broken continuity. Treat this as choreographed motion unless a physical model is actually implemented.",
+    "prompt": "Create a [particle form] that gathers tension, releases into an expansive event, and reforms recognizably. Keep particle identities stable and make timing, extent, brightness and camera independently editable.",
+    "source_urls": [
+      "https://x.com/Acoramaa/status/2104962747125412335"
+    ],
+    "evidence": "Creator attributes the work to GPT-6 Astra. Frames around 3, 5, 7, 11 and 15 seconds were inspected through the creator-linked video. Source code, audio and continuous playback quality were not assessed."
+  },
+  {
+    "id": "contact-driven-computation",
+    "family": "explainers",
+    "title": "A mechanical explainer whose contacts compute the answer",
+    "sources": [
+      "2103117450854150194"
+    ],
+    "mechanism": "Arrival events change discrete state; the displayed answer is decoded from that state after the visible process settles.",
+    "build": [
+      "Define a transition table for each gate and route an arriving token according to its previous state.",
+      "Use one arrival handler to mutate state, trigger the visible gate response and choose the outgoing path. Keep joins continuous.",
+      "Derive output from final gate states. Test against an independent oracle and verify that every state change occurred at its visible contact."
+    ],
+    "tune": "Use fixed simulation steps and arc-length paths for stable timing. Slow important contacts enough to explain the change; separate render quality from simulation state.",
+    "check": "Verify limiting inputs, carry chains, reset and interruption. A correct final value alone is insufficient: every transition must have an on-screen cause. Scripted paths are not rigid-body physics.",
+    "prompt": "Build [process] so its visible interactions actually drive the state being explained. Derive the readout from the resulting state and test both the final answer and the causal events.",
+    "source_urls": [
+      "https://x.com/GodsBoy7777/status/2103117450854150194"
+    ],
+    "evidence": "Creator prompt retrieved. Astra mechanism and test code inspected at revision 1f3dddb74ab2180ec139413706632e0f4ff17c5a. All four supplied tests passed locally, including 256 input pairs. Browser visuals, sound and frame rate were not assessed."
+  },
+  {
+    "id": "measured-joint-motion",
+    "family": "motion",
+    "title": "Fit articulated product motion to measured reference poses",
+    "sources": [
+      "2104965415164399895"
+    ],
+    "mechanism": "A measured pose trajectory preserves the characteristic acceleration, dwell and contact of a real articulated object.",
+    "build": [
+      "Choose reference frames with clear geometry; record time, joint pose and uncertainty. Calibrate viewpoint before inferring rotation from projected width.",
+      "Fit a shape-preserving curve through the pose keys and explicitly set endpoint behavior. Separate camera travel from joint movement.",
+      "Compare rendered poses and per-frame angular changes to the reference. Preserve display content and lighting cues through articulation instead of matching only the silhouette."
+    ],
+    "tune": "Retain measured pauses and contact behavior. A monotone interpolant is useful on a one-direction segment; split direction changes into separate segments. Treat source-specific camera, lighting and blur numbers as examples.",
+    "check": "Inspect angular velocity for unintended extra peaks and inspect contact for artificial rebound. If pose and camera cannot be disentangled, obtain a clearer reference or label the estimate instead of calling it measured truth.",
+    "prompt": "Animate [articulated object] from a small set of measured reference poses. Preserve its characteristic acceleration and contact, state uncertain measurements, and compare pose and velocity before adding surface polish.",
+    "source_urls": [
+      "https://x.com/everestchris6/status/2104965415164399895"
+    ],
+    "evidence": "Creator prompt and linked product-hero-realism tutorial read at revision 255562b04b1e5ecaa4ba98e5c9aa191d5ba7f6fa. The tutorial\u2019s measured values and visual result were not independently reproduced; guidance here is an original adaptation."
+  },
+  {
+    "id": "beat-locked-move-library",
+    "family": "characters",
+    "title": "Recognizable dance moves driven by musical phase",
+    "sources": [
+      "2104659866304516101"
+    ],
+    "mechanism": "A named pose function carries a recognizable gesture while a shared musical phase controls contact, bounce and routine changes.",
+    "build": [
+      "Identify a short signature move and annotate supporting foot, free limb, arm target and body accent at key musical phases. Separate tempo, downbeat offset and pickup timing.",
+      "Create a compact pose interface for the target rig. Resolve limb targets from its geometry; test the move on a plain figure and in costume before staging an ensemble.",
+      "Schedule moves in musical counts. Preserve contacts through transitions and introduce small bounded ensemble variations without moving the principal accents."
+    ],
+    "tune": "Control stance width, gesture extent, bounce amplitude, support-switch phase and transition duration. Choose framing and shot length that let the defining gesture read.",
+    "check": "Inspect contact, anticipation, accent and recovery in sequence, then play with the final soundtrack. A static pose sheet cannot prove rhythm; costumes and camera cuts must not hide the action.",
+    "prompt": "Create a short original dance for [character] using named, reusable pose functions tied to a measured musical phase. Prove the move on a plain rig, then in costume, then in a formation. Preserve support contacts and check the final soundtrack before expanding the sequence.",
+    "evidence": "Recent Opus 5.5 creator prompt retrieved; linked music-video-reimagined dance and timing tutorials read at 7d6b7b22caf08c6e330e1abb869953d8e4f2cc1a. README credits both Opus 5.5 and Sonnet 5.5. MIT source, not bundled; rendered film not inspected.",
+    "source_urls": [
+      "https://x.com/LLMJunky/status/2104659866304516101"
+    ]
+  },
+  {
+    "id": "latest-frame-presentation",
+    "family": "production",
+    "title": "Responsive scrubbing that cannot be overwritten by stale frames",
+    "sources": [
+      "2104789479538266207"
+    ],
+    "mechanism": "Requested progress and presented frame are separate states; only a result valid for the current source and target may replace the visible image.",
+    "build": [
+      "Define an ordered frame manifest with dimensions, timestamps or frame rate, crop and source version. Map progress to actual manifest indices, including the first and last frame.",
+      "Maintain target index, presented index and source generation. Prioritize nearby frames with a bounded decode queue and cache; keep a valid poster or previous image while waiting.",
+      "On completion, reject obsolete source generations and recheck the current target before presenting. Derive explanatory labels from the presented state when they describe what is visible."
+    ],
+    "tune": "Balance resolution, decoded memory, prefetch distance and input-to-presentation delay. A compressed file size is not its decoded footprint; start from a measured working set.",
+    "check": "Throttle decoding, reverse direction, jump across the sequence, replace the source and dispose during an in-flight decode. Old results must not overwrite the target; pending work and retained bitmaps must remain bounded.",
+    "prompt": "Build an inspectable frame sequence for [subject] with one authoritative requested progress and an explicit presented-frame state. Keep image labels synchronized with what is actually drawn. Test slow decode, reversals, source replacement and cleanup before claiming smooth scrubbing.",
+    "evidence": "Creator explicitly links an Astra 6 visual-engineering toolkit. Its frame-sequence tutorial and embedded mapping code were read at d18496cc2c0bdddc1e60abec6450c2872d9df6c4. No rendered demo or loader implementation was executed. No license file found in that tree; original synthesis only.",
+    "source_urls": [
+      "https://x.com/nikunjkothiya/status/2104789479538266207"
+    ]
+  },
+  {
+    "id": "time-based-follow",
+    "family": "motion",
+    "title": "Consistent follow speed across refresh rates",
+    "sources": [
+      "2104719555394232743"
+    ],
+    "mechanism": "Convert per-frame remaining-distance easing into a time-based exponential response, so the same held target settles at the same speed across refresh rates.",
+    "build": [
+      "Choose a half-life in seconds: the time in which the remaining distance should halve. For a constant target, update with alpha = 1 - exp(-ln(2) * dt / halfLife).",
+      "If adapting a per-frame fraction a, record its reference frame rate f. Use halfLife = -ln(2)/(f*ln(1-a)); do not assume the original prompt specified f.",
+      "For a scrubbed film with a fixed target segment, evaluate directly from its initial position and elapsed time. For live moving targets, update from measured dt and understand the target is assumed constant within each sample."
+    ],
+    "tune": "Use half-life or settling duration instead of a frame fraction. A 12\u201319% fraction at an assumed 60 Hz corresponds to roughly 90\u201355 ms half-life; these are conversion examples, not universal taste settings.",
+    "check": "Compare equal elapsed time at 30, 60 and 120 Hz and irregular partitions with a held target. Test target reversals separately: first-order following preserves position but changes velocity abruptly; use a spring when momentum continuity matters.",
+    "prompt": "Make [follower] respond consistently across refresh rates. Specify its response in time units, verify equal-time positions with a held target, and choose a spring instead if a reversal must retain momentum.",
+    "source_urls": [
+      "https://x.com/notdwd/status/2104719555394232743"
+    ],
+    "evidence": "September 28 creator prompt explicitly says it is used for Opus 5.5 motion. Text retrieved through the completed Apify run. The frame-rate correction, half-life conversion and implementation are original engineering synthesis; no associated visual output inspected."
+  },
+  {
+    "id": "attractor-spike-field",
+    "family": "materials",
+    "title": "A glossy spike field reaches toward an attractor",
+    "sources": [
+      "2104736947822645622"
+    ],
+    "mechanism": "Ferrofluid-inspired surface: stable peak centers share one continuous height field; a bounded attractor envelope changes local height while reflections reveal connected valleys.",
+    "build": [
+      "Place fixed peak centers on a hexagonal grid inside a dish; use one tessellated surface and a smooth edge mask.",
+      "Blend smooth radial peak kernels into that surface, varying their amplitudes with a bounded distance-to-attractor envelope. Treat this as authored geometry, not magnetic fluid physics.",
+      "Compute normals from the same height field; stage broad white reflections and one warm rim before increasing surface detail.",
+      "Separate field motion from camera motion; use deterministic time or a stable input filter, then inspect flat rest, tall peaks, reversals and edge contact."
+    ],
+    "tune": "Peak spacing and radius, tip sharpness, rest height, attraction gain and width, rim margin, roughness, light-card size; start with a fixed camera.",
+    "check": "Zero gain preserves the regular field; zero height produces a flat surface with upward normals; attractor at a peak stays finite. Check mesh resolution at maximum height and prevent rim/sphere intersections. No physical accuracy or seamless-loop claim.",
+    "prompt": "Create a responsive sculpture of glossy dark peaks in a shallow ceramic dish. A restrained moving attractor lifts a local cluster while the base stays continuous. Establish one clear silhouette and broad readable reflections. Expose attraction width, peak height and sharpness; include a static state. Use an authored approximation and label it accordingly.",
+    "source_urls": [
+      "https://x.com/gogu_name/status/2104736947822645622"
+    ],
+    "evidence": "September 29 creator explicitly credits GPT-6 Astra + Three.js + Remotion. Original recording played and selected frames inspected, including 4.89s rounded/pointed field, 9.33s red sphere with tall local peak, and end field. No creator code or prompt available; height-field method is original synthesis, not inspected implementation. Audio, physics, performance, live input and loop seam unverified."
+  }
+]

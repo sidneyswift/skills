@@ -1,0 +1,532 @@
+{
+  "original_posts": 1101,
+  "retrieved_original_posts": 1095,
+  "unresolved_original_posts": 6,
+  "raw_thread_results": 6159,
+  "unique_thread_posts": 6147,
+  "novel_thread_posts": 5207,
+  "thread_candidates_screened": 472,
+  "catalog_records": 1307,
+  "pattern_count": 104,
+  "pattern_families": 12,
+  "pattern_source_posts": 128,
+  "original_posts_with_prompt_marker": 484,
+  "all_original_texts_reviewed": true,
+  "thread_review": "All 472 candidate previews screened; selected detailed prompts read in full. Other replies retained in research archive, not all manually read.",
+  "visual_review": "Not all videos watched. Text, code inspection and observed behavior are separate evidence levels.",
+  "incremental_additions": [
+    {
+      "date": "2026-09-29",
+      "search_rows": 3000,
+      "search_unique": 2512,
+      "new_to_archive": 2502,
+      "selected_added_sources": 4,
+      "patterns_added": 2,
+      "review_status": "Selected sources reviewed; remaining search results queued for later passes, not all manually read."
+    },
+    {
+      "date": "2026-09-29",
+      "pass": "1955",
+      "candidate_previews_screened": 30,
+      "selected_full_posts_reviewed": 2,
+      "patterns_added": 2,
+      "source_records_added": 2,
+      "repository_links_added": 3,
+      "new_paid_api_usage_usd": 0,
+      "external_tests": "4 marble mechanism tests passed; no browser validation"
+    },
+    {
+      "date": "2026-09-29",
+      "pass_id": "2015",
+      "patterns_added": 2,
+      "source_records_added": 2,
+      "repository_investigations_added": 2,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Selected tutorials and embedded code read; no new visual or external runtime verification."
+    },
+    {
+      "date": "2026-09-29",
+      "pass_id": "2025",
+      "patterns_added": 0,
+      "patterns_strengthened": [
+        "causal-water"
+      ],
+      "new_paid_api_usage_usd": 0,
+      "external_numerical_probes_passed": 3,
+      "visual_comparisons_sampled": 1
+    },
+    {
+      "date": "2026-09-29",
+      "pass_id": "benchmark-lab",
+      "original_experiences_added": 3,
+      "patterns_added": 0,
+      "source_records_added": 0,
+      "new_paid_api_usage_usd": 0,
+      "verification": "44 model checks; selected browser interactions and sampled frames; see benchmark-lab.md for limits"
+    },
+    {
+      "date": "2026-09-29",
+      "pass_id": "2049",
+      "patterns_added": 1,
+      "source_records_added": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Creator prompt read; original numerical conversion tested; no new visual verification."
+    },
+    {
+      "date": "2026-09-29",
+      "pass_id": "2059",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "repository_investigations_added": 1,
+      "new_paid_api_usage_usd": 0,
+      "external_gesture_scenarios_passed": 5,
+      "inspection": "Pinned source and selected tests read, independent camera harness run; no new visual inspection."
+    },
+    {
+      "date": "2026-09-29",
+      "pass_id": "2109",
+      "patterns_added": 0,
+      "source_records_added": 0,
+      "patterns_strengthened": [
+        "structural-type"
+      ],
+      "visual_comparisons_sampled": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Original model/date verified from archive; original/remake sampled phases inspected; aperture, stillness duration, seam and renderer code not verified."
+    },
+    {
+      "date": "2026-09-29",
+      "pass_id": "2119",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Primary Astra simulation tutorial read; recorded two-package video sampled at approximately 0,12,25 seconds. No source code or live simulation run."
+    },
+    {
+      "date": "2026-09-29",
+      "pass_id": "2129",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 2,
+      "repository_investigations_added": 1,
+      "external_tests_passed": 3,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Article and pinned overlay code/contact docs read. Tabletop camera, material swap and reset observed live. No full reconstruction or contact validation."
+    },
+    {
+      "date": "2026-09-29",
+      "pass_id": "2139",
+      "patterns_added": 0,
+      "source_records_added": 0,
+      "patterns_strengthened": [
+        "glass-volume"
+      ],
+      "visual_comparisons_sampled": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Original Opus attribution/date verified; original/remake sampled independently. Added original sampling-coordinate and layer-order guidance; no source code, audio, frame-rate or loop-seam verification."
+    },
+    {
+      "date": "2026-09-29",
+      "pass_id": "2149",
+      "patterns_added": 0,
+      "source_records_added": 0,
+      "patterns_strengthened": [
+        "wet-dry-ink",
+        "distance-spaced-brush"
+      ],
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Selected live ink/water and wash controls inspected; archived pointer/wash handlers read. Added gesture-load and wash ownership guidance. No sound, speed or performance verification."
+    },
+    {
+      "date": "2026-09-29",
+      "pass_id": "2209",
+      "patterns_added": 1,
+      "source_records_added": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Original Astra-attributed ferrofluid recording played; selected frames inspected. Original height-field synthesis added; creator code, audio, physics and live input unverified."
+    },
+    {
+      "date": "2026-09-29",
+      "pass_id": "2229",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "new_paid_api_usage_usd": 0.0004,
+      "inspection": "Creator explanation and selected Blender recording frames; original contact-event scheduling guidance added. No creator code or physical validation. Separate targeted article retrieval returned metadata only."
+    },
+    {
+      "date": "2026-09-29",
+      "pass_id": "2239",
+      "patterns_added": 0,
+      "patterns_strengthened": [
+        "camera-from-previs"
+      ],
+      "source_records_added": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Creator mixed-model workflow read; paired previs/final frames inspected. Added representation choice and transfer constraints. No A/B causal proof or exact camera/temporal fidelity."
+    },
+    {
+      "date": "2026-09-29",
+      "pass_id": "2259",
+      "patterns_added": 0,
+      "source_records_added": 2,
+      "resources_added": 2,
+      "repository_investigations_added": 1,
+      "new_paid_api_usage_usd": 0.004,
+      "inspection": "Creator hand/depth stack follow-up retrieved; official worker read at pinned revision and depth documentation checked. Prior recorded visual inspection retained; no live camera or solver validation."
+    },
+    {
+      "date": "2026-09-29",
+      "pass_id": "2309",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 1,
+      "repository_investigations_added": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Creator-linked narration timing code read at pinned revision. Original cue-resolution and retiming guidance added; no external execution or visual quality verification."
+    },
+    {
+      "date": "2026-09-29",
+      "pass_id": "2319",
+      "patterns_added": 0,
+      "source_records_added": 0,
+      "patterns_strengthened": [
+        "weight-as-action"
+      ],
+      "visual_comparisons_sampled": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Original attribution/date and creator prompt verified from archive. Selected original/remake type phases inspected; no code, font-axis, audio or frame-rate verification."
+    },
+    {
+      "date": "2026-09-29",
+      "pass_id": "2329",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Creator Astra attribution and date verified; selected live angle/view/layer/reset controls tested. No source code, aerodynamic, audio or performance validation."
+    },
+    {
+      "date": "2026-09-29",
+      "pass_id": "2349",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 0,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Retrieved SFX prompt read; joint Astra/Sol attribution preserved. Original matched-audition and cue-sheet guidance added. Audio not heard, export requirements not verified."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0009",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 1,
+      "repository_investigations_added": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Pinned render and QA code read; synthetic isolated-peak limitation probe. No external rendering or visual quality verification."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0019",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 0,
+      "new_paid_api_usage_usd": 0.0012,
+      "inspection": "Original narrator post and selected muted video samples; original semantic-target and gesture-phase guidance. Separate facial-animation creator replies retrieved, not promoted."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0029",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 0,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Selected muted tutorial frames and captions; creator replies reused. Original face representation, texture cleanup and combination checks. No source, rig response or export verification."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0039",
+      "patterns_added": 0,
+      "source_records_added": 0,
+      "patterns_strengthened": [
+        "train-window"
+      ],
+      "visual_comparisons_sampled": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Original date/model verified from archive; independent original/remake season and tunnel frames sampled muted. No code, exact speeds, audio sync or loop-seam verification."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0109",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 1,
+      "repository_investigations_added": 1,
+      "new_paid_api_usage_usd": 0.0008,
+      "inspection": "Pinned observation/movement code and tests read; live initial scene only. September17 source from broader 30-day window."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0129",
+      "patterns_added": 0,
+      "source_records_added": 0,
+      "resources_added": 0,
+      "patterns_strengthened": [
+        "particle-illustration"
+      ],
+      "visual_comparisons_sampled": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Paired environment samples and archived pinned ribbon-code reread; lifecycle edge cases not executed. Gallery partial badge counts unchanged; completeness note corrected."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0149",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Selected live configurator controls and reset; original camera, material comparison and effect isolation guidance. September 22 broader-window source; Astra attribution limited to optimization assistance."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0159",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 1,
+      "new_paid_api_usage_usd": 0.0008,
+      "inspection": "Live maze path revelation, two-process divergence and answer-then-explanation observed. Strengthened existing simulation guide; no code or scientific validity verified."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0209",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Diomira selected live tap/orbit states support actionable extension of visual metaphor principle. No code, audio or exact timing verified."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0219",
+      "patterns_added": 0,
+      "source_records_added": 0,
+      "resources_added": 0,
+      "new_paid_api_usage_usd": 0.0028,
+      "inspection": "Existing Invisible Cities record enriched with six creator follow-ups; no additional visual/code verification. Other reviewed tutorial and spatial QA sources duplicate existing guidance."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0229",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Read two-page creator prompt and sampled labeled Opus/Sonnet comparison video. Added original crease-state guidance; no source code, live interaction or physical validity verified."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0239",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Selected live PID lesson/replay and public inline code inspected. Original intent/constraint/response guidance added; scientific quality not certified."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0249",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 1,
+      "repository_investigations_added": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Selected pinned sound-comparison code read; original sound identity review added. No code execution, listening or visual verification."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0259",
+      "patterns_added": 0,
+      "source_records_added": 0,
+      "resources_added": 0,
+      "patterns_strengthened": [
+        "glyph-choreography"
+      ],
+      "visual_comparisons_sampled": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Original/remake typography states observed; changed copy and branding documented. No audio/code/loop certification."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0309",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Live pull/consume/partial-pull/refill checked; selected public code read. Added original latch/ownership/stock guidance."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0319",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Linked coastline prompt read; focused original residual-wetness guidance. No code or visual verification."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0329",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 0,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Original Opus5.5 post and mechanism follow-up verified; selected recorded playback and sought frames. New particle-content handoff guide; no implementation inspected."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0339",
+      "patterns_added": 0,
+      "source_records_added": 2,
+      "resources_added": 2,
+      "repository_investigations_added": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Astra6 tactile deformation selected code/live study; original coastline attribution corrected to hajimetwi3."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0349",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 3,
+      "repository_investigations_added": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Astra6 apartment tutorial, selected pinned pose geometry/gesture strength code and live couch/ball actions."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0359",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 0,
+      "repository_investigations_added": 1,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Existing Open Edit resource upgraded through selected pinned timeline export/import code and test reading; no execution or media inspection."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0409",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 1,
+      "repository_investigations_added": 0,
+      "new_paid_api_usage_usd": 0.64,
+      "inspection": "Noir creator production article read; selected raw clip states. Fresh Apify run NKYsGJgC6rHZCYe4l returned1600 rows/1301 unique/419 new candidates;80 previews screened."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0419",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 0,
+      "repository_investigations_added": 0,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Original projection mapping post and selected recording states; automatic calibration not verified.90 more previews screened from existing batch."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0439",
+      "patterns_added": 0,
+      "source_records_added": 0,
+      "resources_added": 0,
+      "repository_investigations_added": 0,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Existing portal-zoom pattern and source/comparison evidence strengthened from archived creator posts and selected paired recording states. External-media attribution clarified;90 more previews screened."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0449",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 1,
+      "repository_investigations_added": 0,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Ants gallery selected inline engine/frame code and live event stop/resume/jump/reset inspected. Last69 current-batch previews screened;419 total."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0459",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 1,
+      "repository_investigations_added": 0,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Broader-window kitchen twin primary body reused; selected inline viewer code and live comparison controls inspected. Existing reconstruction guide extended."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0509",
+      "patterns_added": 0,
+      "patterns_strengthened": [
+        "selective-motion-blur"
+      ],
+      "source_records_added": 1,
+      "resources_added": 0,
+      "repository_investigations_added": 1,
+      "new_paid_api_usage_usd": 0.002,
+      "inspection": "Five creator follow-up rows read; pinned ft-motion runtime and docs inspected. Independent timing arithmetic probe; source renderer/visual/audio uninspected."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0519",
+      "patterns_added": 0,
+      "patterns_strengthened": [
+        "fire-to-smoke"
+      ],
+      "source_records_added": 0,
+      "resources_added": 0,
+      "repository_investigations_added": 0,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Existing campfire original/remake selected muted phases inspected; archived original date/model and creator replies read. No code/physics/audio/performance verification."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0549",
+      "patterns_added": 0,
+      "patterns_strengthened": [
+        "rigid-body-chain"
+      ],
+      "source_records_added": 0,
+      "resources_added": 0,
+      "repository_investigations_added": 0,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Existing rigid-body original/remake selected muted phases inspected; different displayed solver descriptions/body counts retained. Archived original date/model verified; no physics/performance/code validation."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0620",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 1,
+      "repository_investigations_added": 0,
+      "new_paid_api_usage_usd": 0,
+      "inspection": "Selected game lesson bundle code read and initial live/tutorial states sampled; original action/effect/outcome guidance. Later lessons untested."
+    },
+    {
+      "date": "2026-09-30",
+      "pass_id": "0700",
+      "patterns_added": 0,
+      "source_records_added": 1,
+      "resources_added": 2,
+      "repository_investigations_added": 1,
+      "new_paid_api_usage_usd": 0.0008,
+      "inspection": "Pinned caustic ray-grid and coverage composition; live toggle and glass drag. Original light-footprint guidance; physical accuracy/performance unverified."
+    }
+  ],
+  "resource_count": 141,
+  "repository_investigations": 29,
+  "visual_comparison_count": 389,
+  "visual_comparison_catalog_matches": 374,
+  "visual_comparison_partial_prompt_labels": 110,
+  "original_benchmark_experiences": 3,
+  "benchmark_model_checks": 44
+}

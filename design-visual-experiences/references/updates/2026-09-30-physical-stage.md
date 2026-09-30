@@ -1,0 +1,11 @@
+# September 30 — physical objects as an animated stage
+
+Added [physical-stage guidance](../interactive-3d.md#make-physical-objects-part-of-the-animation): give real geometry a narrative role, separate content anchors and masks from output alignment, prove registration with diagnostics, choreograph transfers on one timeline and test projected light on the actual material.
+
+[Original creator post](https://x.com/antipdoom/status/2105102530049175928), September 30 01:08:48 UTC, explicitly names Opus 5.5. Its text describes a camera/projector setup and automatic calibration for three candles and a white pot. The original post was read directly on X; the visible reply was by another author and supplied no implementation evidence. No original tutorial, repository, calibration sequence or accuracy measurement was available in that inspected conversation.
+
+The recording was sampled near player times 1.758, 34.318 and 68.365 seconds, with screenshots archived. A luminous character appears near the pot in the early state and near a candle in the middle state; colored light covers portions of the objects, and the late state includes wall graphics. These selected states support object-anchored visual staging, not continuous motion quality, exact contact alignment, automatic calibration, dynamic tracking or arbitrary viewpoint correctness. Playback was muted for deliberate samples; audio was not evaluated. No hardware setup or source implementation was reproduced. The build steps and adapted prompt are original synthesis, not a reconstruction of the creator's undisclosed calibration method. No third-party implementation or full prompt is bundled.
+
+Research: 90 more previews screened from the existing Apify batch, bringing this batch to170 of419 candidate previews;249 remain. Selected full bodies were read for model attribution and resource leads. Heart, chameleon, steer-by-wire and rendering-mode examples remain pending media inspection rather than promoted on their claims. No new paid retrieval this pass; the reused batch's previously reported actual receipt remains $0.64.
+
+Skill totals: 1,302 catalog records, 136 resources, 104 atlas patterns, 27 repository investigations. This is one new observed reference and a spatial build recipe, not another atlas pattern or code investigation.

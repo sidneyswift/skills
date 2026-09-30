@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fieldwork — motion studies</title>
+<style>
+:root{font-family:Arial,sans-serif;color:#eeeadd;background:#162c2b;color-scheme:dark}*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0}main{max-width:1500px;margin:auto;padding:34px 5vw}header{display:flex;justify-content:space-between;align-items:baseline;gap:25px}h1{font:italic clamp(38px,6vw,74px) Georgia,serif;margin:0 0 16px;letter-spacing:-.04em}.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9ab5ae}.nav{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0 16px}button{font:inherit;color:inherit;background:transparent;border:1px solid #58706a;border-radius:30px;padding:10px 18px;cursor:pointer}button[aria-pressed=true]{background:#eeeadd;color:#162c2b;border-color:#eeeadd}button:focus-visible,input:focus-visible{outline:3px solid #dca672;outline-offset:4px}.stage{position:relative;overflow:hidden;border-radius:4px;background:#e9e4d6}canvas{width:100%;height:clamp(300px,50vw,590px);display:block;touch-action:pan-y}.caption{display:flex;justify-content:space-between;gap:30px;margin:20px 0;line-height:1.5}.caption h2{font:28px Georgia,serif;margin:0 0 8px}.caption p{margin:0;max-width:620px;color:#b4c7c0;font-size:14px}.controls{display:flex;align-items:center;gap:20px;flex-wrap:wrap;font-size:12px}label{display:flex;align-items:center;gap:9px}input{accent-color:#dca672}output{font-variant-numeric:tabular-nums;min-width:40px}footer{margin-top:24px;color:#8da7a0;font-size:11px;letter-spacing:.06em}@media(max-width:600px){main{padding:24px 20px}header,.caption{display:block}.caption>span{display:block;margin-top:10px}.nav button{padding:9px 13px}.controls{gap:14px}canvas{height:350px}}
+</style>
+<main><header><div><div class="eyebrow">Three original studies · Design visual experiences</div><h1>Fieldwork</h1></div><div class="eyebrow">Form follows a rule.</div></header>
+<nav class="nav" aria-label="Choose a study"><button data-study="wind" aria-pressed="true">01 / Shared wind</button><button data-study="stride" aria-pressed="false">02 / Planted feet</button><button data-study="portal" aria-pressed="false">03 / Through the aperture</button></nav>
+<div class="stage"><canvas id="scene" role="img" aria-label="Animated field of reeds responding to shared wind"></canvas></div>
+<div class="caption"><div><h2 id="title">One wind. Many responses.</h2><p id="description">The tall stems yield slowly. Short leaves answer quickly. Their movement belongs to one field. Click Gust to see a shared event pass through the composition.</p></div><span class="eyebrow" id="number">Study 01</span></div>
+<div class="controls"><button id="play">Pause</button><button id="reset">Reset</button><button id="gust">Gust</button><label>Intensity <input id="intensity" type="range" min="0" max="2" step=".05" value="1"><output id="amount">1.00</output></label><label>Time <input id="time" type="range" min="0" max="20" step=".01" value="0"><output id="clock">0.00</output></label></div>
+<footer>Original executable examples. Study the mechanism, then supply your own art direction. Motion pauses by default when reduced motion is requested.</footer></main>
+<script type="module">
+import {seedFor,randomAt,sharedWind,envelopeAt,footAt,solveLimb,logZoom} from './experience-kernel.mjs';
+const $=id=>document.getElementById(id),canvas=$('scene'),ctx=canvas.getContext('2d'),reduced=matchMedia('(prefers-reduced-motion: reduce)');
+let study='wind',t=0,playing=!reduced.matches,last=performance.now(),events=[],W=1000,H=550,intensity=1;
+const seed=seedFor('fieldwork','plants');
+const copy={wind:['One wind. Many responses.','The tall stems yield slowly. Short leaves answer quickly. Their movement belongs to one field. Click Gust to see a shared event pass through the composition.','Animated field of reeds responding to shared wind'],stride:['The ground holds its promise.','During stance, the foot stays attached to the ground. The body passes over it; a two-segment leg solves the changing distance. Watch the little contact marks.','Walking figure with planted foot contacts'],portal:['A journey measured in ratios.','Scale grows exponentially, so each doubling takes the same time. One aperture becomes the next world. The geometry is evaluated directly from time.','Nested geometric apertures with continuous proportional zoom']};
+function circle(x,y,r,c){ctx.fillStyle=c;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill()}
+function line(x,y,a,b,width,color){ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(a,b);ctx.stroke()}
+function wind(){
+ ctx.fillStyle='#e9e4d6';ctx.fillRect(0,0,W,H);circle(W*.76,H*.22,H*.1,'#bf6c50');
+ for(let layer=0;layer<3;layer++)for(let i=0;i<48;i++){
+  const n=layer*100+i,x=randomAt(seed,n)*W,depth=layer/2,base=H*(.72+.2*depth),len=H*(.11+.22*randomAt(seed,n+400))*(.65+.45*depth);
+  const pulse=envelopeAt(t-x/W*.5,events,.12,.9),bend=(sharedWind(x,t-layer*.12,intensity)+pulse*.6)*len*.2;
+  const color=['#abb3a0','#667d69','#304f44'][layer],tipX=x+bend,tipY=base-len;
+  ctx.strokeStyle=color;ctx.lineWidth=1+depth*1.5;ctx.beginPath();ctx.moveTo(x,base);ctx.bezierCurveTo(x,base-len*.45,tipX-bend*.25,tipY+len*.25,tipX,tipY);ctx.stroke();
+  ctx.save();ctx.translate(tipX,tipY+len*.09);ctx.rotate(bend/len*.8);ctx.fillStyle=layer===2?'#875940':color;ctx.beginPath();ctx.ellipse(0,0,2+depth*2,len*.105,0,0,Math.PI*2);ctx.fill();ctx.restore();
+  for(let k=0;k<2;k++){const yy=base-len*(.24+k*.2),xx=x+bend*(.14+k*.16),side=(i+k)%2?1:-1;ctx.strokeStyle=color;ctx.lineWidth=1+depth;ctx.beginPath();ctx.moveTo(xx,yy);ctx.quadraticCurveTo(xx+side*len*.23+bend*.15,yy-len*.2,xx+side*len*.26+bend*.3,yy-len*.32);ctx.stroke()}
+ }
+ ctx.fillStyle='#304f44';ctx.fillRect(0,H*.95,W,H*.05);
+}
+function stride(){
+ ctx.fillStyle='#ebe6d9';ctx.fillRect(0,0,W,H);const scale=Math.min(W/850,H/430),speed=90/1.4,world=t*speed;ctx.save();ctx.translate(W*.48,H*.72);ctx.scale(scale,scale);
+ line(-W/scale,0,W/scale,0,1,'#b6b9aa');for(let k=Math.floor(world/40)-20;k<world/40+25;k++)line(k*40-world,4,k*40-world,10,1,'#9fae9e');
+ const root={x:world,y:-108+Math.sin(t/1.4*4*Math.PI)*2};
+ for(const [offset,color] of [[.5,'#9ba797'],[0,'#2f5149']]){
+  const f=footAt(t,{stride:90,period:1.4,offset,lift:27}),target={x:f.x,y:f.y-5},leg=solveLimb(root,target,64,64,-1);
+  line(root.x-world,root.y,leg.joint.x-world,leg.joint.y,10,color);line(leg.joint.x-world,leg.joint.y,leg.end.x-world,leg.end.y,8,color);line(leg.end.x-world-5,leg.end.y,leg.end.x-world+15,leg.end.y,8,color);
+  if(f.stance){circle(f.x-world,6,3,'#ba6d50');line(f.x-world-9,13,f.x-world+9,13,2,'#ba6d50')}
+ }
+ ctx.fillStyle='#bd6e4f';ctx.beginPath();ctx.roundRect(-25,root.y-63,49,68,17);ctx.fill();circle(6,root.y-82,23,'#2f5149');circle(15,root.y-85,3,'#ebe6d9');
+ const arm=Math.sin(t/1.4*2*Math.PI)*17*intensity;line(-4,root.y-43,arm+5,root.y-15,8,'#ebe6d9');ctx.restore();
+}
+function portal(){
+ const colors=['#203e3a','#e9e4d6','#ba6d50','#7b9581'];ctx.fillStyle=colors[0];ctx.fillRect(0,0,W,H);const duration=4,cycle=Math.floor(t/duration),q=(t/duration)-cycle;const zoom=logZoom(1,3,q),max=Math.max(W,H)*1.6;
+ for(let i=-1;i<8;i++){
+  const radius=max*Math.pow(3,-i)*zoom;ctx.fillStyle=colors[((cycle+i)%4+4)%4];ctx.beginPath();ctx.ellipse(W*.5,H*.5,radius*.67,radius,Math.PI/9,0,Math.PI*2);ctx.fill();
+  if(radius>2){const a=t*.3+cycle+i;circle(W*.5+Math.cos(a)*radius*.4,H*.5+Math.sin(a)*radius*.5,Math.max(1,radius*.016),'#e9c893')}
+ }
+}
+function render(){const d=Math.min(devicePixelRatio||1,2),r=canvas.getBoundingClientRect();W=r.width;H=r.height;if(canvas.width!==Math.round(W*d)||canvas.height!==Math.round(H*d)){canvas.width=Math.round(W*d);canvas.height=Math.round(H*d)}ctx.setTransform(d,0,0,d,0,0);({wind,stride,portal})[study]();$('clock').value=t.toFixed(2);$('time').value=t;$('play').textContent=playing?'Pause':'Play';}
+for(const b of document.querySelectorAll('[data-study]'))b.onclick=()=>{study=b.dataset.study;t=0;events=[];document.querySelectorAll('[data-study]').forEach(x=>x.setAttribute('aria-pressed',x===b));$('title').textContent=copy[study][0];$('description').textContent=copy[study][1];canvas.setAttribute('aria-label',copy[study][2]);$('number').textContent='Study '+({wind:'01',stride:'02',portal:'03'})[study];$('gust').hidden=study!=='wind';$('intensity').closest('label').hidden=study==='portal';render()};
+$('play').onclick=()=>{if(t>=20){t=0;events=[]}playing=!playing;last=performance.now();render()};$('reset').onclick=()=>{t=0;events=[];render()};$('gust').onclick=()=>{events.push({time:t-.01,strength:1.5});playing=true;last=performance.now();render()};$('intensity').oninput=e=>{intensity=Number(e.target.value);$('amount').value=intensity.toFixed(2);render()};$('time').oninput=e=>{t=Number(e.target.value);playing=false;render()};
+reduced.addEventListener('change',e=>{if(e.matches)playing=false;render()});window.addEventListener('resize',render);
+window.studyFrame=(at,name=study)=>{if(!copy[name])throw Error('Unknown study');study=name;t=at;playing=false;render()};
+function tick(now){if(playing){t+=Math.min((now-last)/1000,.1);if(t>=20){t=20;playing=false}}last=now;render();requestAnimationFrame(tick)}render();requestAnimationFrame(tick);
+</script></html>

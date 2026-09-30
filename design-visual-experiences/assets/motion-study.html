@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Elastic Matter — a motion study</title>
+<style>
+:root{color-scheme:light;--paper:#f1eee5;--ink:#212722;--muted:#687168;--orange:#dc4b28}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+main{min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;padding:30px 42px;gap:18px}
+header{display:flex;align-items:start;justify-content:space-between;gap:30px}h1{font-size:clamp(30px,5vw,66px);line-height:.98;letter-spacing:-.07em;margin:12px 0}p{margin:0;line-height:1.5;font-size:13px}.eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase}.intro{max-width:240px;padding-top:24px}
+.stage{position:relative;min-height:420px;display:grid;place-items:center;isolation:isolate}canvas{width:100%;height:100%;position:absolute;inset:0;touch-action:none;cursor:grab}canvas:active{cursor:grabbing}canvas:focus-visible{outline:2px solid var(--orange);outline-offset:3px}.axis{position:absolute;font-family:monospace;font-size:10px;color:var(--muted);pointer-events:none}.axis.top{left:0;top:10px}.axis.bottom{right:0;bottom:14px}
+footer{display:flex;align-items:end;justify-content:space-between;gap:30px;padding-top:18px;box-shadow:0 -1px #21272225}.controls{display:flex;gap:5px;flex-wrap:wrap}.controls button{border:0;background:transparent;color:var(--ink);padding:11px 15px;border-radius:24px;font-size:12px;cursor:pointer}.controls button[aria-pressed=true]{background:var(--ink);color:var(--paper)}button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}.detail{max-width:300px;color:var(--muted)}#status{color:var(--ink);margin-bottom:3px}.scrubber{display:flex;align-items:center;gap:10px;margin-top:15px;font-size:10px;color:var(--muted)}input{accent-color:var(--orange);width:140px}a{color:inherit}
+@media(max-width:650px){main{padding:20px;gap:12px}header{gap:15px}.intro{max-width:145px;font-size:11px;padding-top:4px}.stage{min-height:390px}footer{align-items:start;flex-direction:column;gap:18px}h1{font-size:44px}.controls button{padding:10px 13px}.detail{max-width:none}}
+</style>
+<main>
+<header><div><div class="eyebrow">Motion studies / 001</div><h1>Elastic<br>matter.</h1></div><p class="intro">One form. Three behaviors.<br>Drag the sculpture, release it,<br>then change its state.</p></header>
+<section class="stage" aria-label="Interactive kinetic sculpture">
+<canvas tabindex="0" role="img" aria-label="Coral ribs morph between an orbit, wave, and folded ribbon. Drag to pull; arrow keys also pull; Escape releases."></canvas>
+<span class="axis top">72 RIBS / CONTINUOUS FORM</span><span class="axis bottom" id="readout">ORBIT — 01</span>
+</section>
+<footer><div><div class="controls" aria-label="Sculpture states">
+<button data-mode="orbit" aria-pressed="true">01 Orbit</button><button data-mode="wave" aria-pressed="false">02 Wave</button><button data-mode="fold" aria-pressed="false">03 Fold</button><button id="sequence" aria-pressed="false">Play sequence</button>
+</div><div class="scrubber"><label for="timeline">Sequence time</label><input id="timeline" type="range" min="0" max="12" step="0.01" value="0"><output id="time">0.00s</output><button id="reset" style="border:0;background:none;color:inherit;cursor:pointer">Reset</button></div></div>
+<div class="detail"><p id="status" role="status">Pull it. Notice what follows.</p><p>Staggered springs give each rib weight. A shared contour keeps the object recognizable.</p></div></footer>
+</main>
+<script type="module">
+import {clamp,mix,hash,targetTrack,release} from './motion-kernel.mjs';
+const canvas=document.querySelector('canvas'),ctx=canvas.getContext('2d'),stage=document.querySelector('.stage');
+const buttons=[...document.querySelectorAll('[data-mode]')],play=document.querySelector('#sequence'),slider=document.querySelector('#timeline');
+const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+const params=new URLSearchParams(location.search);let mode='orbit',sequence=false,paused=params.has('frame'),clock=Number(params.get('frame')||0),previous=performance.now();
+let events=[],initial=0,pull={x:0,y:0},held=false,released={time:0,x:0,y:0,vx:0,vy:0},lastPointer=null,velocity={x:0,y:0},W=1000,H=500,dpr=1;
+const film=[{time:1,value:1},{time:4.5,value:2},{time:8,value:0}];
+if(params.has('frame')){sequence=true;play.setAttribute('aria-pressed','true');play.textContent='Resume sequence'}
+const grain=document.createElement('canvas');grain.width=grain.height=128;const gx=grain.getContext('2d');
+for(let i=0;i<1000;i++){gx.fillStyle=`rgba(38,42,32,${hash(i+3)*.07})`;gx.fillRect(hash(i)*128,hash(i+9000)*128,1,1)}
+function resize(){const b=stage.getBoundingClientRect();W=b.width;H=b.height;dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);render(clock)}
+new ResizeObserver(resize).observe(stage);
+function property(t,delay){
+ if(reduced.matches&&!sequence)return ({orbit:0,wave:1,fold:2})[mode];
+ const list=sequence?film:events;
+ return targetTrack(t-delay,sequence?0:initial,list,10,0.83);
+}
+function shape(u,state){
+ const a=u*Math.PI*2-Math.PI/2;
+ const orbit={x:Math.cos(a)*.57,y:Math.sin(a)*.57,angle:a,len:.23};
+ const wave={x:(u-.5)*1.95,y:Math.sin(u*Math.PI*2)*.20,angle:Math.PI/2,len:.18+.27*Math.pow(Math.sin(u*Math.PI),2)};
+ const fold={x:(u-.5)*1.5,y:Math.sin(u*Math.PI*2)*.4,angle:Math.PI/2+Math.sin(u*Math.PI*2)*.9,len:.4};
+ // Unwrapped angles prevent a mid-morph spin through the wrong direction.
+ wave.angle= a+Math.atan2(Math.sin(wave.angle-a),Math.cos(wave.angle-a));
+ fold.angle=wave.angle+Math.atan2(Math.sin(fold.angle-wave.angle),Math.cos(fold.angle-wave.angle));
+ const p=state<=1?orbit:wave,q=state<=1?wave:fold,v=state<=1?state:state-1;
+ return {x:mix(p.x,q.x,v),y:mix(p.y,q.y,v),angle:mix(p.angle,q.angle,v),len:mix(p.len,q.len,v)};
+}
+function currentPull(t){return held?pull:{x:release(t-released.time,released.x,released.vx,0,9,.55),y:release(t-released.time,released.y,released.vy,0,9,.55)}}
+function render(t){
+ ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#f1eee5';ctx.fillRect(0,0,W,H);
+ const S=Math.min(W/2.7,H/1.9),cx=W/2,cy=H/2,force=currentPull(t);
+ ctx.strokeStyle='#21272212';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(0,cy);ctx.lineTo(W,cy);ctx.moveTo(cx,35);ctx.lineTo(cx,H-35);ctx.stroke();
+ for(let i=0;i<72;i++){
+  const u=i/72,p=shape(u,property(t,i*.0019)),local=(.3+.7*Math.pow(Math.sin(u*Math.PI),2));
+  const x=cx+S*p.x+force.x*local,y=cy+S*p.y+force.y*local;
+  const twist=(force.x*.0015+force.y*.001)*Math.sin(u*Math.PI);
+  const a=p.angle+twist,dx=Math.cos(a)*p.len*S,dy=Math.sin(a)*p.len*S;
+  ctx.lineWidth=Math.max(2.5,S*.017);ctx.lineCap='round';
+  // A second restrained ink gives overlap depth without a glow/post stack.
+  ctx.strokeStyle='#243c3745';ctx.beginPath();ctx.moveTo(x-dx+4,y-dy+7);ctx.lineTo(x+dx+4,y+dy+7);ctx.stroke();
+  ctx.strokeStyle=i%9===0?'#ad3520':'#df4b2d';ctx.beginPath();ctx.moveTo(x-dx,y-dy);ctx.lineTo(x+dx,y+dy);ctx.stroke();
+ }
+ ctx.fillStyle=ctx.createPattern(grain,'repeat');ctx.fillRect(0,0,W,H);
+ document.querySelector('#time').textContent=sequence?t.toFixed(2)+'s':'—';slider.disabled=!sequence;slider.value=clamp(t,0,12);
+ buttons.forEach(b=>b.setAttribute('aria-pressed',!sequence&&b.dataset.mode===mode));
+ document.querySelector('#readout').textContent=(sequence?'CONTINUOUS STUDY':mode.toUpperCase())+' / '+(held?'UNDER TENSION':'AT REST');
+}
+function releasePull(){if(!held)return;held=false;released={time:clock,x:pull.x,y:pull.y,vx:clamp(velocity.x,-900,900),vy:clamp(velocity.y,-900,900)};lastPointer=null;if(reduced.matches)released={time:clock,x:0,y:0,vx:0,vy:0}}
+function takeOver(){if(sequence){initial=0;events=film.filter(e=>e.time<=clock);sequence=false}}
+canvas.addEventListener('pointerdown',e=>{takeOver();play.setAttribute('aria-pressed','false');play.textContent='Play sequence';canvas.setPointerCapture(e.pointerId);const f=currentPull(clock);pull=f;held=true;velocity={x:0,y:0};lastPointer={x:e.clientX,y:e.clientY,now:performance.now()};paused=false});
+canvas.addEventListener('pointermove',e=>{if(!held||!lastPointer)return;const now=performance.now(),dt=Math.max(.008,(now-lastPointer.now)/1000),dx=e.clientX-lastPointer.x,dy=e.clientY-lastPointer.y;pull={x:clamp(pull.x+dx,-W*.3,W*.3),y:clamp(pull.y+dy,-H*.3,H*.3)};velocity={x:mix(velocity.x,dx/dt,.4),y:mix(velocity.y,dy/dt,.4)};lastPointer={x:e.clientX,y:e.clientY,now}});
+for(const ev of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(ev,releasePull);
+canvas.addEventListener('keydown',e=>{const d={ArrowRight:[22,0],ArrowLeft:[-22,0],ArrowUp:[0,-22],ArrowDown:[0,22]}[e.key];if(d){e.preventDefault();takeOver();const f=currentPull(clock);held=true;pull={x:clamp(f.x+d[0],-W*.3,W*.3),y:clamp(f.y+d[1],-H*.3,H*.3)};velocity={x:0,y:0};paused=false}if(e.key==='Escape')releasePull()});
+canvas.addEventListener('keyup',e=>{if(e.key.startsWith('Arrow'))releasePull()});canvas.addEventListener('blur',releasePull);
+function choose(next){takeOver();mode=next;events.push({time:clock,value:({orbit:0,wave:1,fold:2})[mode]});paused=false;play.setAttribute('aria-pressed','false');play.textContent='Play sequence';buttons.forEach(b=>b.setAttribute('aria-pressed',b.dataset.mode===mode));document.querySelector('#status').textContent=({orbit:'A contour held in common.',wave:'Leading edges arrive first.',fold:'One shape, a different reading.'})[mode]}
+buttons.forEach(b=>b.addEventListener('click',()=>choose(b.dataset.mode)));
+play.addEventListener('click',()=>{if(sequence&&!paused){paused=true;play.textContent='Resume sequence';return}if(!sequence){sequence=true;clock=0;held=false;released={time:0,x:0,y:0,vx:0,vy:0}}paused=false;play.setAttribute('aria-pressed','true');play.textContent='Pause sequence';document.querySelector('#status').textContent='Orbit → wave → fold → orbit.'});
+slider.addEventListener('input',()=>{sequence=true;paused=true;clock=Number(slider.value);held=false;released={time:0,x:0,y:0,vx:0,vy:0};play.textContent='Resume sequence';play.setAttribute('aria-pressed','true');render(clock)});
+document.querySelector('#reset').addEventListener('click',()=>{mode='orbit';sequence=false;paused=false;clock=0;events=[];initial=0;held=false;released={time:0,x:0,y:0,vx:0,vy:0};buttons.forEach(b=>b.setAttribute('aria-pressed',b.dataset.mode==='orbit'));play.setAttribute('aria-pressed','false');play.textContent='Play sequence';document.querySelector('#status').textContent='Pull it. Notice what follows.';render(0)});
+reduced.addEventListener('change',()=>{if(reduced.matches){paused=true;releasePull()}render(clock)});
+window.seek=t=>{paused=true;sequence=true;clock=clamp(t,0,12);held=false;released={time:0,x:0,y:0,vx:0,vy:0};render(clock)};
+function tick(now){const dt=Math.min((now-previous)/1000,.05);previous=now;if(!paused){clock+=dt;if(sequence&&clock>=12){clock=12;paused=true;play.textContent='Replay sequence';initial=0;events=film.slice();sequence=false;mode='orbit';buttons.forEach(b=>b.setAttribute('aria-pressed',b.dataset.mode==='orbit'));play.setAttribute('aria-pressed','false')}}render(clock);requestAnimationFrame(tick)}
+resize();requestAnimationFrame(tick);
+</script>
+</html>

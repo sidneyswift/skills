@@ -1,0 +1,11 @@
+# September 30, 2026 — coupled flat and folded views
+
+Added [crease-state guidance](../interactive-3d.md#fold-a-structure-through-shared-crease-state) for folding toys, diagrams and packaging experiences: shared crease identity, rigid-face hinges, repeatable progress, separate tactile responses and structural failure checks. This is original engineering synthesis, not a transcription of the demonstrated implementation.
+
+The [original September 29 comparison](https://x.com/vaclav_kozak/status/2104752931710902716) explicitly labels the upper result Opus 5.5 and the lower Sonnet 5.5. Its [prompt follow-up](https://x.com/vaclav_kozak/status/2104753860682068305) contains two images, both read. Requested features include fold axes and edge constraints, a progress slider, crease editing, tactile behavior, paper rendering and procedural sound. A requested feature is not evidence of successful implementation.
+
+Selected footage samples: near 11 seconds a flat sheet begins the frog segment; at 36 seconds the caption describes a spring response around folded cranes; at 41 seconds the Opus pane shows a flat sheet at 0% with a crease panel; at 44 seconds it shows a raised zigzag sheet at 100%; near 47 seconds a crane scene accompanies a backlight/pattern comparison caption. The 41/44-second states were saved as inspection evidence. These are sampled video states, not a complete temporal or live-interaction test.
+
+[Creator notes](https://x.com/vaclav_kozak/status/2104753448499454433) describe four/nine/twelve steps and tap-triggered heart/frog/crane actions for Opus. [Editor notes](https://x.com/vaclav_kozak/status/2104753618184176019) describe line-to-fold editing. Those counts, arbitrary editor behavior, edge constraints, general foldability, self-collision, shader physics, source code, audio and performance were not independently verified. The creator calls it a snapshot rather than a benchmark in the [long-video link](https://x.com/vaclav_kozak/status/2104753703701868578); that longer video was not inspected. Sonnet-specific pattern counts and fold-sequence search claims are not Opus evidence.
+
+No full copyrighted prompt, third-party implementation or media bundled in the skill. One source record and one prompt resource added; no new pattern count. Totals: 1,291 catalog records, 126 resources, 104 patterns. No additional paid API spend.
