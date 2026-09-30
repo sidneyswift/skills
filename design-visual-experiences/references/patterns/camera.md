@@ -147,21 +147,22 @@ Read only the mechanisms relevant to the brief. Build steps, tuning and prompts 
 
 ## A directed tour that allows local curiosity
 
-**Mechanism:** Narrative guidance and free exploration share the same world and state.
+**Mechanism:** Named camera bookmarks and free exploration share one world, with explicit ownership of camera movement.
 
 **Build:**
 
-1. Store named landmarks, camera poses and associated explanation.
-2. During a guided segment allow bounded look-around relative to the authored camera.
-3. On exit restore direct navigation; on resume explicitly choose nearest chapter or the prior position.
+1. Store named landmarks, camera positions, look targets and associated explanation. Compose overview → recognizable landmark → detail → overview when spatial orientation matters.
+2. Give preset travel, manual walk/orbit and autorotation one active camera owner. On takeover capture the current visible pose and cancel the previous updater. Keep the last selected bookmark separate from navigation mode and actual pose.
+3. During a guided segment allow bounded look-around relative to the authored camera. On resume choose the nearest chapter or prior position explicitly; build the rejoin from the current pose, not an old bookmark endpoint.
+4. Plan position and look-target paths together. Keep wall/ceiling visibility as separate state with an intentional switch point; a cutaway overview and enclosed interior need different visibility policies.
 
-**Tune:** Keep the rejoin motion short and avoid dragging the camera away while the user is actively steering.
+**Tune:** Expose travel duration, settled hold, pitch limits, clearance and visibility timing. Keep recognizable landmarks in view without letting them mask the promised destination. Do not drag the camera away while the user is steering.
 
-**Failure check:** Jump between chapters, pause, explore and resume. Object state and narration must agree after every path.
+**Failure check:** Jump between bookmarks, interrupt travel, walk beside tall objects, then return to overview. Review every intermediate frame for near-geometry obstruction, floor-directed pitch or competing camera updates; clean endpoints are insufficient. Test multiple starting poses and give each destination a readable hold. Object state, location labels and narration must agree after every path.
 
-**Adapted prompt:** Create a guided path through [world], with optional exploration and a predictable way back into the story.
+**Adapted prompt:** Create a guided room tour through [world], with named camera bookmarks, optional manual exploration and a predictable return. Preserve landmarks, separate camera ownership from visibility, and inspect the entire rejoin path.
 
-**Evidence:** [@dotey](https://x.com/dotey/status/2102940980379017293), [@DannyLimanseta](https://x.com/DannyLimanseta/status/2103169095034400772). Creator description/prompt; verify the visual when fidelity matters.
+**Evidence:** [@dotey](https://x.com/dotey/status/2102940980379017293), [@DannyLimanseta](https://x.com/DannyLimanseta/status/2103169095034400772): creator descriptions/prompts. [Higgsfield office demo](../research/higgsfield-motion.md#office-tour--camera-ownership-and-path-clearance): all345 source frames inspected consecutively at640px, with seven native-source detail checks. Named views, manual exploration and return to cutaway are visible; brief black obstructions and a downward turn also appear. Camera ownership/path rules above are original synthesis. Live controls, source code, photo fidelity, audio and temporal playback were not inspected.
 
 
 <a id="reveal-world-in-object"></a>
