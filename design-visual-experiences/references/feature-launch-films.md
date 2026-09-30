@@ -2,7 +2,7 @@
 
 Use this for motion-led announcements, feature launches and product demos. Choose the audience's new understanding or capability before borrowing a visual style. The methods below are original adaptations of inspected Higgsfield footage; [source observations and inspection limits](research/higgsfield-motion.md) remain separate. They are not a universal formula, a measured conversion result or recovered production code.
 
-**Read what fits:** [Illustration assembly and character performance](#illustration-assembly-and-character-performance) · [Offer mechanics and replenishment](#offer-mechanics-and-replenishment) · [Exploration before fidelity](#exploration-before-fidelity) · [Read motion at native cadence](#read-motion-at-native-cadence) · [Parallel action and return of control](#parallel-action-and-return-of-control) · [Story and agency](#story-and-agency) · [Hooks and proof](#hooks-and-proof) · [Pacing and readable-hold-time](#pacing-and-readable-hold-time) · [Object continuity and movement](#object-continuity-and-movement) · [Composition and finishing](#composition-and-finishing) · [Generated assets and controlled graphics](#generated-assets-and-controlled-graphics) · [Branding and calls to action](#branding-and-calls-to-action).
+**Read what fits:** [Title-to-image handoff](#title-to-image-handoff) · [Illustration assembly and character performance](#illustration-assembly-and-character-performance) · [Offer mechanics and replenishment](#offer-mechanics-and-replenishment) · [Exploration before fidelity](#exploration-before-fidelity) · [Read motion at native cadence](#read-motion-at-native-cadence) · [Parallel action and return of control](#parallel-action-and-return-of-control) · [Story and agency](#story-and-agency) · [Hooks and proof](#hooks-and-proof) · [Pacing and readable-hold-time](#pacing-and-readable-hold-time) · [Object continuity and movement](#object-continuity-and-movement) · [Composition and finishing](#composition-and-finishing) · [Generated assets and controlled graphics](#generated-assets-and-controlled-graphics) · [Branding and calls to action](#branding-and-calls-to-action).
 
 ## Story and agency
 
@@ -93,6 +93,14 @@ For a shared-object handoff, define source and destination bounds, coordinate sp
 Choose the operation for its meaning: multiplication for breadth, a registered wipe for comparison, collection into a file for delivery, separation into parts for editability. Hard cuts between stable views can demonstrate angles more clearly than a morph. Do not independently animate every layer when one movement should define the event.
 
 Inspect immediately before, at and after the handoff: wrong identity, doubled objects, crop jumps, early labels, missed contact and reversed occlusion. Match action phases when comparing reference clips; equal timestamps need not show equivalent events. Rendered motion does not reveal an exact spring constant, easing curve or original renderer. Fit and test your own curve when useful; call it synthesis.
+
+## Title-to-image handoff
+
+When a launch needs both a readable name and an image worth inspecting, give them consecutive moments of emphasis. In the [Seedream portrait announcement](research/higgsfield-motion.md#seedream--title-to-image-handoff), a centered title settles over a dimmed portrait, then shrinks and moves below the eye as the image brightens. Partner marks arrive later above it. The title remains visible while the eye, glass glints and gentle image enlargement carry the next phase. This is an availability announcement, not a demonstrated product workflow.
+
+**Original reconstruction:** keep the two-line title as one screen-space block, separate from the hero's crop/push-in parent. Coordinate title bounds, image brightness and partner reveal from one authored clock, with independent settling intervals. Reserve a focal exclusion region around the eye or product detail; move the title outside it before the appreciation hold. Scope travel blur to the moving graphic so the revealed detail stays clear. Reuse [object continuity](#object-continuity-and-movement) for identity and [composition guidance](compositions.md) for transform ownership.
+
+Expose center/docked bounds, focal region, contrast change, brand delay and crisp holds. Test a longer name and alternate crop: recompute the destination rather than copying the reference's bottom position. Check the readable center, maximum blur, settled dock and final branded state. Keep settled labels fixed while the image moves. The source's two-second white availability card is measured evidence, not a universal reading-time target; test the actual copy at export size. No source easing, renderer or audiovisual rhythm was established.
 
 ## Composition and finishing
 
