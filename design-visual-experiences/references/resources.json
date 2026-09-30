@@ -3838,5 +3838,26 @@
       "gpt-5.6 / supercomputer"
     ],
     "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2105354097788412063",
+    "kind": "video-reference",
+    "title": "Higgsfield computer-use extension: parallel human activity and return of control",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2105354097788412063"
+    ],
+    "inspection": "77 sampled positions, 386 selected consecutive frames at contact-sheet scale, eight native stills; not full all-frame review. No audio listening or original project inspection. Reviewed 2026-09-30.",
+    "note": "Coffee progress intercut with delegated editing; artifact, Done and cursor ownership handoff. Counter settles at 91%, not transient 99%. GPT-6.1 Sol is the advertised integration attribution, not proven film production provenance.",
+    "topics": [
+      "higgsfield",
+      "computer use",
+      "parallel action",
+      "coffee",
+      "delegation",
+      "return of control",
+      "feature launch",
+      "product demo"
+    ],
+    "pattern_ids": []
   }
 ]

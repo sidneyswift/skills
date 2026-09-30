@@ -522,14 +522,14 @@
       "inspection": "Pinned caustic ray-grid and coverage composition; live toggle and glass drag. Original light-footprint guidance; physical accuracy/performance unverified."
     }
   ],
-  "resource_count": 146,
+  "resource_count": 147,
   "repository_investigations": 29,
   "visual_comparison_count": 389,
   "visual_comparison_catalog_matches": 374,
   "visual_comparison_partial_prompt_labels": 110,
   "original_benchmark_experiences": 3,
   "benchmark_model_checks": 44,
-  "guide_search_sections": 65,
+  "guide_search_sections": 66,
   "composition_search_sections": 13,
   "prompt_availability_counts": {
     "content-inspected": 10,
@@ -538,14 +538,16 @@
   },
   "higgsfield_motion_reference_study": {
     "reviewed_at": "2026-09-30",
-    "media_inventory": 294,
-    "sampled_media_reviewed": 294,
+    "media_inventory": 295,
+    "sampled_media_reviewed": 295,
     "complete_temporal_case_studies": 5,
     "complete_case_frames": 5021,
     "all_cases_contact_sheet_resolution": true,
-    "native_still_files_in_wider_study": 77,
+    "native_still_files_in_wider_study": 85,
     "audio_listened": 0,
     "source_catalog_membership": "separate motion-reference study; no inferred Opus/Astra attribution",
-    "evidence": "research/higgsfield-motion.md"
+    "evidence": "research/higgsfield-motion.md",
+    "incremental_selected_window_studies": 1,
+    "incremental_consecutive_positions": 386
   }
 }
