@@ -1,0 +1,15 @@
+# September 30 — refracted light and displaced direct illumination
+
+Added [refracted-light footprint guidance](../refracted-light-footprints.md): shared optical state, area-based concentration, undeviated coverage, independent ray/map resolution and failure checks for overlap, clipping and singularities. One source, two resources and one repository investigation added; atlas count unchanged.
+
+**Attribution:** [@chanian's original](https://x.com/chanian/status/2104350551244939753), September27,2026 at23:20:43UTC, explicitly credits Opus5.5 for the experiment. The [creator follow-up](https://x.com/chanian/status/2104350553275039781) links background references; those papers/scenes were not independently inspected in this pass. Speed and model provenance remain creator claims.
+
+**Code inspected:** [gotoandstop repository](https://github.com/chanian/gotoandstop/tree/09c11c31b5a54d9af265f398cb41f8bef6dcbc7b/caustics) at `09c11c31b5a54d9af265f398cb41f8bef6dcbc7b`: README, selected `main.js` pass/uniform/settings paths, `shaders.js` tracing, receiving-map and table-light composition, and quality settings. The deployed main module matched the pinned file. Other modules were not fully inspected. Repository metadata and recursive tree exposed no license file; reuse permission is not established. No implementation or media bundled.
+
+The implementation uses a structured grid traced through analytic boundaries and splatted onto a table-space map. The local area ratio scales transmitted throughput; denominator floor and intensity cap limit singularities. A separate straight-ray pass writes coverage used to replace intercepted direct light. This is more specific than the original post's photon-mapping label and does not establish a general physically accurate photon mapper. Source preset bounce limits range from8 to20; the inspected live High preset displayed16. The post's20-bounce description is not every preset's setting.
+
+**Observed live:** [Whiskey Caustics](https://chanian.github.io/gotoandstop/caustics/) rendered a glass and liquid on a wooden surface. Disabling caustics removed both the bright transmitted pattern and the dark footprint; reenabling restored them. Dragging the glass displaced it and the footprint and visibly disturbed the liquid surface. Three screenshots retained privately. No exhaustive reset, touch, collision, energy conservation, continuous-quality or audio verification. Displayed performance statistics were observed but not treated as an independently controlled benchmark.
+
+**Original synthesis:** preserve the paired coverage/radiance debug views, distinguish ray sampling from receiver resolution, and test overlap, grazing light and map boundaries. This is adaptable implementation guidance, not a claim that those edge cases are solved in the inspected demo.
+
+Validation uses the existing retrieval, evidence and local-link checks. Backup and installed/ZIP hash receipts are in the private archive. New paid retrieval: one creator thread,2posts, actual$0.0008. Catalog1,307; resources141; repository investigations29; patterns104. Comparison counts unchanged.
