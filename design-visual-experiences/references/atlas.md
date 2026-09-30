@@ -18,6 +18,8 @@ Read the relevant cards, then choose a primary mechanism and at most a few suppo
 
 ## Motion
 
+**Feature launches and product demos:** [Film direction](feature-launch-films.md) connects story, hooks, readable holds, object continuity and generated/controlled production layers.
+
 **Use deeper guidance when:** Refresh-rate differences → [time-based following](time-based-follow.md). Analytic spring/release code → [Elastic Matter](worked-study.md) and [worked spring notes](build-patterns.md#1-a-persistent-object-with-elastic-transformations). Origin-aware UI reveals or selection highlights → [interface vocabulary](motion-recipes.md#morphs-and-interface-motion).
 
 - [A particle form that contracts, bursts and returns](patterns/motion.md#contract-burst-return)

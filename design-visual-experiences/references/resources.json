@@ -3371,7 +3371,7 @@
   {
     "url": "https://github.com/blendi-remade/weeping-angels",
     "kind": "repository",
-    "title": "Don\u2019t Look Away: conservative visibility and hidden motion",
+    "title": "Don’t Look Away: conservative visibility and hidden motion",
     "source_posts": [
       "https://x.com/BlendiByl/status/2100442177159729336",
       "https://x.com/BlendiByl/status/2100442181983195500"
@@ -3736,6 +3736,106 @@
       "light transport",
       "area concentration",
       "receiver map"
+    ],
+    "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2034362238526726624",
+    "kind": "video-reference",
+    "title": "Higgsfield Cinema Studio 2.5 motion study",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2034362238526726624"
+    ],
+    "inspection": "All 677 consecutive frames inspected at reduced contact-sheet resolution on 2026-09-30; selected native checks separately recorded. No listening or original-project inspection.",
+    "note": "Active rower at frame zero; image becomes a miniature around 3.17–3.46s; actor placement precedes entering the resulting scene. Supports a shift from spectator to director, not a verified renderer or animation curve.",
+    "topics": [
+      "higgsfield",
+      "feature launch",
+      "product demo",
+      "motion design",
+      "storytelling",
+      "pacing",
+      "cinema studio 2.5"
+    ],
+    "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2104989726604484946",
+    "kind": "video-reference",
+    "title": "Higgsfield Dots motion study",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2104989726604484946"
+    ],
+    "inspection": "All 1787 consecutive frames inspected at reduced contact-sheet resolution on 2026-09-30; selected native checks separately recorded. No listening or original-project inspection.",
+    "note": "Research stack → selected evidence → blueprint around 38s → purple Plotline app around 45.8s → returning human. The cards represent research, not hundreds of completed apps. Publishing badge does not demonstrate an actual marketplace listing.",
+    "topics": [
+      "higgsfield",
+      "feature launch",
+      "product demo",
+      "motion design",
+      "storytelling",
+      "pacing",
+      "dots"
+    ],
+    "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2087225671714328813",
+    "kind": "video-reference",
+    "title": "Higgsfield Layers motion study",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2087225671714328813"
+    ],
+    "inspection": "All 1317 consecutive frames inspected at reduced contact-sheet resolution on 2026-09-30; selected native checks separately recorded. No listening or original-project inspection.",
+    "note": "Portraits move down around 33.8s before the heading request at 34.45s. CTA appears blurred at 51.843s, readable with blur at 51.969s, comfortably crisp at 52.135s. Crisp hold approximately 2.79s. Manual glasses/subtitle/sticker changes alternate with generation. Unmarked trousers also change; strict pixel preservation is not demonstrated.",
+    "topics": [
+      "higgsfield",
+      "feature launch",
+      "product demo",
+      "motion design",
+      "storytelling",
+      "pacing",
+      "layers"
+    ],
+    "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2026717242411675683",
+    "kind": "video-reference",
+    "title": "Higgsfield SOUL 2 HEX motion study",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2026717242411675683"
+    ],
+    "inspection": "All 472 consecutive frames inspected at reduced contact-sheet resolution on 2026-09-30; selected native checks separately recorded. No listening or original-project inspection.",
+    "note": "Image → sampled color → related image family. Arrival, settling and recognition are separable events. Contact-sheet inspection supports sequence and timing, not an exact color-processing algorithm or original project implementation.",
+    "topics": [
+      "higgsfield",
+      "feature launch",
+      "product demo",
+      "motion design",
+      "storytelling",
+      "pacing",
+      "soul 2 hex"
+    ],
+    "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2075345605740892493",
+    "kind": "video-reference",
+    "title": "Higgsfield GPT-5.6 / Supercomputer motion study",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2075345605740892493"
+    ],
+    "inspection": "All 768 consecutive frames inspected at reduced contact-sheet resolution on 2026-09-30; selected native checks separately recorded. No listening or original-project inspection.",
+    "note": "25.6s film: input brief around 5.1–6.9s; result breadth around 7.03–12.3s; one hero output around 17.33–24.067s; availability around 24.1–25.57s. The approximately 6.7s hero hold gives breadth a memorable result. Native review found a mirrored package label; identity continuity does not guarantee exact lettering.",
+    "topics": [
+      "higgsfield",
+      "feature launch",
+      "product demo",
+      "motion design",
+      "storytelling",
+      "pacing",
+      "gpt-5.6 / supercomputer"
     ],
     "pattern_ids": []
   }

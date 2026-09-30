@@ -12,7 +12,7 @@ STOP = set('a an the and or for to of in with make create build want that this f
 ALIASES = {'sumi': ['ink'], 'watercolor': ['ink', 'paint'], 'watercolour': ['ink', 'paint'], 'typography': ['type', 'glyph'], 'kinetic': ['motion'], 'spring': ['elastic', 'snap'], 'ik': ['foot', 'rig'], 'footsteps': ['foot', 'contact'], 'audio': ['sound'], 'lofi': ['pixel', 'daylight'], 'weather': ['wind', 'rain', 'daylight'], 'morph': ['shape', 'transition'], 'storytelling': ['story'], 'puppet': ['rig', 'character'], 'simulation': ['physics'], 'reactive': ['response'], 'responsive': ['response'], '3d': ['spatial'], 'letters': ['glyph', 'letter'], 'messy': ['disorder', 'chaos'], 'organized': ['organization', 'order'], 'feet': ['foot'], 'walking': ['stance', 'gait'], 'reproducible': ['seeded', 'replay'], 'repeatable': ['seeded', 'replay']}
 # Evidence/history and alternate browsing views are deliberately outside build search.
 RESEARCH = {'atlas', 'examples', 'source-cards', 'principles', 'toolkits', 'evidence', 'research-coverage', 'inspected-sources', 'visual-comparisons', 'motion-recipes', 'briefs-and-review'}
-SECTION_GUIDES = {'production', 'interactive-3d', 'build-patterns', 'principles', 'diagnosis'}
+SECTION_GUIDES = {'feature-launch-films', 'production', 'interactive-3d', 'build-patterns', 'principles', 'diagnosis'}
 CORE_FIELDS = {'Mechanism': 'mechanism', 'Build': 'build', 'Tune': 'tune', 'Failure check': 'check', 'Adapted prompt': 'prompt', 'Evidence': 'evidence'}
 
 

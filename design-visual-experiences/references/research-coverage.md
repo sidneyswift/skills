@@ -16,8 +16,12 @@ Original research scope: the supplied 1,101-post discovery backlog and relevant 
 | Source catalog | 1,307 records | All 1,101 backlog entries plus 162 original follow-ups and forty-four later additions |
 | Prompt markers in retrieved original posts | 484 | A text marker, not proof that a complete original prompt was provided |
 | Pattern atlas | 104 patterns, 12 families, 128 source posts | Original implementation guidance derived from selected evidence |
-| Linked resources | 141 | Includes creator-linked code/tutorials and the Skillry comparison gallery; availability is not inspection |
+| Linked resources | 146 | Includes creator-linked code/tutorials and the Skillry comparison gallery; availability is not inspection |
 | Repository investigations | 29 | Selected code and documentation investigations; see pinned revisions and execution limits |
+
+## Additional motion-film reference study
+
+The [Higgsfield evidence summary](research/higgsfield-motion.md) records a separate 294-media visual study and five complete consecutive-frame case studies. Five curated video references are indexed in resources; they are not relabeled as Opus 5.5/Astra sources. Downloaded footage and the full research archive remain outside the skill. Audio listening and original-project inspection are unverified.
 
 ## How to interpret a source
 
