@@ -143,6 +143,7 @@ print('PASS: comparison topic tags and normalized aliases')
 
 # Film briefs must discover the directing guidance alongside existing mechanisms.
 FILM_CASES = [
+ ('loading ring points to where new object appears while previous edits remain', 'story-and-agency'),
  ('container motion content stability label drift', 'composition-and-finishing'),
  ('connection jobs preview reveals access contexts persistent composer', 'story-and-agency'),
  ('freeze comedy action explain speed show output resume scene clock', 'parallel-action-and-return-of-control'),
@@ -161,4 +162,4 @@ for query, anchor in FILM_CASES:
     assert 'references/feature-launch-films.md#'+anchor in [r['path'] for r in search(query,limit=3)], query
 assert search('Higgsfield Layers',kind='resources',limit=1)[0]['url']=='https://x.com/higgsfield/status/2087225671714328813'
 assert not any('/research/' in r['path'] for r in load('build')), 'Provenance must not compete with build instructions'
-print('PASS: 13 film directing routes, curated video reference discovery and research separation')
+print('PASS: 14 film directing routes, curated video reference discovery and research separation')

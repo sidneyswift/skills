@@ -159,3 +159,15 @@ Upper remake and lower reference share mascot/promise → collage → brand → 
 Native137 confirms blending secondary lettering inside a trackable green card; native247 shows nonsensical small UI-like text, and285 includes a duplicated word in decorative code. These pixels do not establish the creator's intent, but they demonstrate why attractive composition and stable container motion do not certify exact content. Both panels end during searching, with no shown selection, final output or CTA. Their inner brands differ from the outer comparison identity.
 
 The existing [finishing guidance](../feature-launch-films.md#composition-and-finishing) adds separate transform/content checks, declared content changes and controlled exact-label layers for factual product evidence. This is original synthesis, not recovered implementation. No new guide or mechanism card. Archived bytes reused; search cost $0.002. Raw media and full posts remain private.
+
+## Nano Banana 2 — spatial loading cues
+
+Source: [Higgsfield's Nano Banana 2 launch](https://x.com/higgsfield/status/2027111761812521420), February 26, 2026, 20:01:20 UTC; media `2027111677721022464`. The creator advertises Nano Banana 2 and speed/quality capabilities. This does not establish the film's production pipeline or measured generation latency.
+
+All 321 decoded frames 0–320 were visually inspected in 54 consecutive pages at 640px per frame, plus 12 native 960×720 checks: 7, 50, 81, 129, 196–201, 267, 320. Nominal 24fps; last PTS 13.333333s; container/stream duration 13.458333s. No temporal playback, listening, editable project or code inspection. The rendition does not verify native 4K output.
+
+A comic title expands and settles, then fragments as a dark composer arrives. A command introduces a lower-left loading ring at frame59; the watermelon appears beneath it at81/3.375s. The next command retains the fruit and room; an upper-right ring starts at107 and a character appears beneath it at129/5.375s. Completion accents retire as the workflow advances. Both cue-to-result intervals are22frames/about0.917s, observed editorial durations rather than timing presets. The third command requests an action and retires the composer without another ring.
+
+Hand/hilt preparation precedes the fruit separating at201/8.375s. Native196–201 does not show clear blade contact; the story implies an exceptionally fast slice, but a physically continuous strike was not demonstrated. After the halves fall, product/claim text arrives at227, destination at249, and a qualified seven-day offer at267. The full closing stack holds through320. Availability and offer are shown; no imperative CTA is invented.
+
+[Story and agency](../feature-launch-films.md#story-and-agency) now adds shared cue/result anchors, retained scene identity and delayed-result/crop checks. These are original build recommendations. Raw footage remains private. This release also incorporates privately completed non-promoted studies into coverage totals: 18 complete frame-sequence cases, 9,761 frames; 184 native checks across the wider study. No new guide or mechanism card. Search cost $0.0016; archived bytes reused.

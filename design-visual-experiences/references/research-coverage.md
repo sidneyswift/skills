@@ -289,3 +289,7 @@ Version 0.3.9 extends existing [story guidance](feature-launch-films.md#story-an
 ## Container motion and content stability — September 30
 
 Version0.3.10 extends [finishing guidance](feature-launch-films.md#composition-and-finishing) with separate container/content checks, declared changes and exact controlled labels for factual product evidence. [Omni re-edit evidence](research/higgsfield-motion.md#omni-re-edit--container-motion-and-content-stability): all286 frames at640px per whole frame plus eight native1440×1920 checks. No playback/listening/code; model attribution is a creator claim. Fourteen complete cases total8,515 frames;146 native-source checks. Search cost$0.002; archived bytes reused. No new guide or mechanism card.
+
+## Spatial loading cues — October 1
+
+Version 0.3.11 extends [Story and agency](feature-launch-films.md#story-and-agency) with cue/result anchors, retained scene identity and crop/delayed-result checks. [Nano Banana 2 evidence](research/higgsfield-motion.md#nano-banana-2--spatial-loading-cues): all 321 frames at 640px plus 12 native 960×720 checks; no playback, audio or source-code inspection. The comic action implies a fast slice without showing clear blade contact. Coverage now includes 18 complete cases/9,761 frames and 184 native checks, including intervening studies that required no skill additions. Search cost $0.0016; archived bytes reused. No new guide or mechanism card.
