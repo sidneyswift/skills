@@ -313,3 +313,7 @@ Version0.3.15 strengthens existing [parallel-action guidance](feature-launch-fil
 ## Localization and format verification — October 1
 
 Version 0.3.16 adds [localized campaign and aspect-ratio checks](feature-launch-films.md#localization-and-format-variants): separate visible copy from layer metadata, preserve claim meaning, reflow per destination and inspect moving occlusion. [Wavu evidence](research/higgsfield-motion.md#wavu--localization-and-format-variants) covers all 2,459 source frames at 640px and 24 native 1920×1080 stills. No playback, audio, code or live-product verification. Aggregate: 69 complete consecutive-still cases and 916 selected source-still/crop files; per-case records distinguish native display from resized views. No new mechanism card; non-promoted studies remain private.
+
+## Recreation fidelity audit — October 1
+
+Version 0.3.17 extends [native-cadence reference review](feature-launch-films.md#read-motion-at-native-cadence) with a correspondence table, shared-timeline versus action-phase comparison, and separate semantic/state checks. [Free Mode evidence](research/higgsfield-motion.md#free-mode--recreation-fidelity-audit) covers 1,315 frames at 640px and 16 full-source 1916×2156 views. No playback, audio, project/code or production-session verification; panel provenance remains unassigned. Aggregate: 72 complete consecutive-still cases and 965 selected source-still/crop files. No new mechanism card or raw media included.
