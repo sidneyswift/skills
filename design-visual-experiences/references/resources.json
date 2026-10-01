@@ -4117,5 +4117,26 @@
       "finishing"
     ],
     "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2049582424535830917",
+    "kind": "video-reference",
+    "title": "Higgsfield Canvas: closing product name from demonstrated artifacts",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2049582424535830917"
+    ],
+    "inspection": "All 1279 frames in 214 consecutive pages at 640px per frame; 14 additional full-source stills displayed at1824x1368 and four unscaled native crops. No temporal playback, listening, code or project inspection. Reviewed2026-10-01.",
+    "note": "Earlier artifact types form CANVAS in a recomposed closing callback; reversed note arrow and cut-in scribble prevent claiming continuous unchanged-canvas travel. Historical capability claims and editorial latency not independently verified.",
+    "topics": [
+      "higgsfield",
+      "canvas",
+      "brand recall",
+      "closing product name",
+      "demonstrated artifacts",
+      "letter construction",
+      "recomposed callback",
+      "product demo"
+    ],
+    "pattern_ids": []
   }
 ]

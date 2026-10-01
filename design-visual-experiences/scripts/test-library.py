@@ -143,6 +143,7 @@ print('PASS: comparison topic tags and normalized aliases')
 
 # Film briefs must discover the directing guidance alongside existing mechanisms.
 FILM_CASES = [
+ ('closing product name letters from demonstrated artifacts brand callback', 'branding-and-calls-to-action'),
  ('bounded score percentage overshoot color legend decision state', 'composition-and-finishing'),
  ('avoid generating neutral facial expressions through silhouette lighting and camera angle', 'generated-assets-and-controlled-graphics'),
  ('loading ring points to where new object appears while previous edits remain', 'story-and-agency'),
@@ -164,4 +165,4 @@ for query, anchor in FILM_CASES:
     assert 'references/feature-launch-films.md#'+anchor in [r['path'] for r in search(query,limit=3)], query
 assert search('Higgsfield Layers',kind='resources',limit=1)[0]['url']=='https://x.com/higgsfield/status/2087225671714328813'
 assert not any('/research/' in r['path'] for r in load('build')), 'Provenance must not compete with build instructions'
-print('PASS: 16 film directing routes, curated video reference discovery and research separation')
+print('PASS: 17 film directing routes, curated video reference discovery and research separation')
