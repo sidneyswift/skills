@@ -4075,5 +4075,26 @@
       "nano banana 2"
     ],
     "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2095254404295512206",
+    "kind": "video-reference",
+    "title": "Higgsfield taxi faces: simplify a shot through art direction",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2095254404295512206"
+    ],
+    "inspection": "All 112 source frames in 38 consecutive pages at 640px source-frame width; ten unscaled 1200x720 crops. No temporal playback, listening, project, code or prompt inspection. Reviewed 2026-10-01.",
+    "note": "Paired taxi treatments retain travel action while one reduces facial detail. Creator describes avoiding neutral-expression generation. Lighting, framing and background also change; no controlled test or measured retry reduction.",
+    "topics": [
+      "higgsfield",
+      "shot simplification",
+      "hidden faces",
+      "neutral expressions",
+      "silhouette",
+      "art direction",
+      "occlusion",
+      "lighting"
+    ],
+    "pattern_ids": []
   }
 ]
