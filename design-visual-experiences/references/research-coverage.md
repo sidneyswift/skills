@@ -293,3 +293,7 @@ Version0.3.10 extends [finishing guidance](feature-launch-films.md#composition-a
 ## Spatial loading cues — October 1
 
 Version 0.3.11 extends [Story and agency](feature-launch-films.md#story-and-agency) with cue/result anchors, retained scene identity and crop/delayed-result checks. [Nano Banana 2 evidence](research/higgsfield-motion.md#nano-banana-2--spatial-loading-cues): all 321 frames at 640px plus 12 native 960×720 checks; no playback, audio or source-code inspection. The comic action implies a fast slice without showing clear blade contact. Coverage now includes 18 complete cases/9,761 frames and 184 native checks, including intervening studies that required no skill additions. Search cost $0.0016; archived bytes reused. No new guide or mechanism card.
+
+## Shot simplification — October 1
+
+Version 0.3.12 extends [generated assets and controlled graphics](feature-launch-films.md#generated-assets-and-controlled-graphics) with art-direction choices that reduce unnecessary generation detail while preserving story and product evidence. [Taxi comparison evidence](research/higgsfield-motion.md#taxi-faces--simplification-through-art-direction): all 112 frames at 640px plus ten native crops; no playback, listening or source-project inspection. Both treatments change more than facial visibility. Private aggregate coverage now includes 25 complete consecutive-still cases and 251 native checks, including intervening studies that needed no skill additions. Search cost $0.0008; archived bytes reused. No new guide or mechanism card.
