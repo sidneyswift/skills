@@ -309,3 +309,7 @@ Version 0.3.14 extends [branding and calls to action](feature-launch-films.md#br
 ## Repair-state verification — October 1
 
 Version0.3.15 strengthens existing [parallel-action guidance](feature-launch-films.md#parallel-action-and-return-of-control): inspect unobstructed intermediate repair states and derive interface summaries from the same state as their visible contents. [Computer-use evidence](research/higgsfield-motion.md#computer-use-extension--september-30) now covers all1,812frames at640px,12 additional full-source1920×1080 views and3 unscaled crops. This supersedes selected-window coverage; counts overlap. Aggregate:63 complete consecutive-still cases; no temporal playback or audio assessment. No new guide or mechanism card.
+
+## Localization and format verification — October 1
+
+Version 0.3.16 adds [localized campaign and aspect-ratio checks](feature-launch-films.md#localization-and-format-variants): separate visible copy from layer metadata, preserve claim meaning, reflow per destination and inspect moving occlusion. [Wavu evidence](research/higgsfield-motion.md#wavu--localization-and-format-variants) covers all 2,459 source frames at 640px and 24 native 1920×1080 stills. No playback, audio, code or live-product verification. Aggregate: 69 complete consecutive-still cases and 916 selected source-still/crop files; per-case records distinguish native display from resized views. No new mechanism card; non-promoted studies remain private.
