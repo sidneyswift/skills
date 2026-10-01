@@ -4138,5 +4138,27 @@
       "product demo"
     ],
     "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2098409362041753708",
+    "kind": "video-reference",
+    "title": "Higgsfield Wavu workflow: localization and format verification",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2098409362041753708"
+    ],
+    "inspection": "All 2459 decoded frames in 410 consecutive pages at 640px per frame; 24 full-source native 1920x1080 checks. No temporal playback, listening, live execution, source project or code inspection. Reviewed 2026-10-01.",
+    "note": "Campaign evolves through aspect-ratio reflow and localization. Longer translated copy becomes obscured and a visible phrase resembles internal layer wording; hidden full text and cause unverified. Named outputs do not verify files or exports.",
+    "topics": [
+      "higgsfield",
+      "localization",
+      "translation",
+      "aspect ratio",
+      "reflow",
+      "campaign copy",
+      "semantic invariants",
+      "moving occlusion",
+      "product demo"
+    ],
+    "pattern_ids": []
   }
 ]
