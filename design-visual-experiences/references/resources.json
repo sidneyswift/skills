@@ -4160,5 +4160,27 @@
       "product demo"
     ],
     "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2096367800633921699",
+    "kind": "video-reference",
+    "title": "Higgsfield Free Mode recreation: shared timeline and action-phase audit",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2096367800633921699"
+    ],
+    "inspection": "All 1315 decoded frames in 220 consecutive pages at 640px per frame; 16 full-source 1916x2156 checks. No temporal playback, listening, source project, code or production-session inspection. Reviewed 2026-10-01.",
+    "note": "Stacked comparison retains story but changes assets, copy, persistent selection label and cut timing; intermittent upper text loss. Panel provenance unassigned. Creator After Effects/computer-operation claim unverified.",
+    "topics": [
+      "higgsfield",
+      "remake",
+      "recreation",
+      "fidelity audit",
+      "absolute timestamps",
+      "action phase",
+      "cut timing",
+      "semantic state",
+      "product demo"
+    ],
+    "pattern_ids": []
   }
 ]
