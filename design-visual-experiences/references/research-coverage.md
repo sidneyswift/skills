@@ -305,3 +305,7 @@ Version 0.3.13 extends [composition and finishing](feature-launch-films.md#compo
 ## Closing letters from demonstrations — October 1
 
 Version 0.3.14 extends [branding and calls to action](feature-launch-films.md#branding-and-calls-to-action) with backward planning from readable letter silhouettes to demonstrated artifacts, stable artifact destinations, and a deliberate choice between continuous handoff and recomposed callback. [Canvas evidence](research/higgsfield-motion.md#canvas--demonstrations-become-the-name): all1,279 frames at640px,14 additional source stills displayed at1824×1368 and four unscaled crops. No temporal playback or audio assessment. Aggregate:62 complete consecutive-still cases and796 selected source-still/crop files; file count does not certify native display scale. Intervening no-addition studies remain private. No new guide or mechanism card.
+
+## Repair-state verification — October 1
+
+Version0.3.15 strengthens existing [parallel-action guidance](feature-launch-films.md#parallel-action-and-return-of-control): inspect unobstructed intermediate repair states and derive interface summaries from the same state as their visible contents. [Computer-use evidence](research/higgsfield-motion.md#computer-use-extension--september-30) now covers all1,812frames at640px,12 additional full-source1920×1080 views and3 unscaled crops. This supersedes selected-window coverage; counts overlap. Aggregate:63 complete consecutive-still cases; no temporal playback or audio assessment. No new guide or mechanism card.
