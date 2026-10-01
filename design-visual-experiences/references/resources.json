@@ -4096,5 +4096,26 @@
       "lighting"
     ],
     "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2053139109074657482",
+    "kind": "video-reference",
+    "title": "Higgsfield Virality Predictor: bounded metrics and explicit color meanings",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2053139109074657482"
+    ],
+    "inspection": "All 668 source frames in 112 consecutive pages at 640px per frame; thirteen native 960x720 stills. No temporal playback, listening, live product, code or project inspection. Reviewed 2026-10-01.",
+    "note": "Mode switch, single report, integration handoff and batch cards. Native frame234 shows Memory108%; red cards show87/100 without explicit decision labels. Demonstration and creator prediction claims are not validated accuracy.",
+    "topics": [
+      "higgsfield",
+      "bounded metrics",
+      "score animation",
+      "percentage overshoot",
+      "color legend",
+      "decision state",
+      "product demo",
+      "finishing"
+    ],
+    "pattern_ids": []
   }
 ]
