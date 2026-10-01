@@ -4055,5 +4055,25 @@
       "finishing"
     ],
     "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2027111761812521420",
+    "kind": "video-reference",
+    "title": "Higgsfield Nano Banana 2: spatial loading cues and cumulative scene edits",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2027111761812521420"
+    ],
+    "inspection": "All 321 source frames in 54 consecutive pages at 640px per frame; twelve native 960x720 checks. No temporal playback, listening, project or code inspection. Reviewed 2026-10-01.",
+    "note": "Pending rings mark future result locations while previous additions persist. Third action breaks the repeated reveal pattern. Fruit separation is visible; clear blade contact and measured generation latency are not established.",
+    "topics": [
+      "higgsfield",
+      "spatial loading cues",
+      "result anchor",
+      "cumulative scene edits",
+      "pending cue",
+      "retained objects",
+      "nano banana 2"
+    ],
+    "pattern_ids": []
   }
 ]
