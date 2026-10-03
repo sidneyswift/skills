@@ -4182,5 +4182,26 @@
       "product demo"
     ],
     "pattern_ids": []
+  },
+  {
+    "url": "https://x.com/higgsfield/status/2097494221318234401",
+    "kind": "video-reference",
+    "title": "Higgsfield scale explorer: small-object locators and separate detail scales",
+    "source_posts": [
+      "https://x.com/higgsfield/status/2097494221318234401"
+    ],
+    "inspection": "All 293 decoded frames reviewed in 49 consecutive pages at 640px per frame, plus 12 native 2500×2000 stills. No temporal playback, listening, code or live AR inspection.",
+    "note": "Explicit too-small location markers and separately scaled detail thumbnails motivate preserving measured geometry while improving legibility. Displayed measurements and creator claims remain unverified.",
+    "topics": [
+      "higgsfield",
+      "scale",
+      "tiny objects",
+      "locator",
+      "legibility",
+      "separately scaled thumbnails"
+    ],
+    "pattern_ids": [
+      "scale-ladder"
+    ]
   }
 ]
