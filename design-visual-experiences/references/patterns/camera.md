@@ -47,14 +47,16 @@ Read only the mechanisms relevant to the brief. Build steps, tuning and prompts 
 1. Define each scale domain and its units before modeling.
 2. Use local scene coordinates, overlapping handoff objects and a logarithmic scale rail.
 3. Slow down where the viewer must identify a new structure.
+4. Keep quantity-to-geometry ratios independent of screen-sized labels and locators. When an object projects below the delivery-size legibility threshold, retain its measured dimensions and add an explicitly labeled location marker; group crowded locators.
+5. Label enlarged inspection thumbnails or detail views as separately scaled, outside the shared comparison scale.
 
 **Tune:** Limit simultaneous labels; choose transition objects that exist in both adjacent scales.
 
-**Failure check:** Verify units and ratios. Avoid floating-point precision loss by keeping each domain near its own origin.
+**Failure check:** Verify units and ratios. Test threshold crossings in both directions at delivery size: a locator must never masquerade as the measured silhouette. Avoid floating-point precision loss by keeping each domain near its own origin.
 
 **Adapted prompt:** Travel from [large system] to [small component] with explicit scale landmarks and a clear causal link at each handoff.
 
-**Evidence:** [@Acoramaa](https://x.com/Acoramaa/status/2103833991879053577), [@Cranefomo](https://x.com/Cranefomo/status/2104223449849761837). Creator description/prompt; verify the visual when fidelity matters.
+**Evidence:** [@Acoramaa](https://x.com/Acoramaa/status/2103833991879053577), [@Cranefomo](https://x.com/Cranefomo/status/2104223449849761837). Creator description/prompt; verify the visual when fidelity matters. Small-object locator and separate-detail observations: [Higgsfield scale explorer](https://x.com/higgsfield/status/2097494221318234401), [review scope](../research/higgsfield-motion.md#scale-explorer--small-object-locators).
 
 
 <a id="subject-scale"></a>

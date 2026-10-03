@@ -378,16 +378,18 @@
     "build": [
       "Define each scale domain and its units before modeling.",
       "Use local scene coordinates, overlapping handoff objects and a logarithmic scale rail.",
-      "Slow down where the viewer must identify a new structure."
+      "Slow down where the viewer must identify a new structure.",
+      "Keep quantity-to-geometry ratios independent of screen-sized labels and locators. When an object projects below the delivery-size legibility threshold, retain its measured dimensions and add an explicitly labeled location marker; group crowded locators.",
+      "Label enlarged inspection thumbnails or detail views as separately scaled, outside the shared comparison scale."
     ],
     "tune": "Limit simultaneous labels; choose transition objects that exist in both adjacent scales.",
-    "check": "Verify units and ratios. Avoid floating-point precision loss by keeping each domain near its own origin.",
+    "check": "Verify units and ratios. Test threshold crossings in both directions at delivery size: a locator must never masquerade as the measured silhouette. Avoid floating-point precision loss by keeping each domain near its own origin.",
     "prompt": "Travel from [large system] to [small component] with explicit scale landmarks and a clear causal link at each handoff.",
     "source_urls": [
       "https://x.com/Acoramaa/status/2103833991879053577",
       "https://x.com/Cranefomo/status/2104223449849761837"
     ],
-    "evidence": "[@Acoramaa](https://x.com/Acoramaa/status/2103833991879053577), [@Cranefomo](https://x.com/Cranefomo/status/2104223449849761837). Creator description/prompt; verify the visual when fidelity matters."
+    "evidence": "[@Acoramaa](https://x.com/Acoramaa/status/2103833991879053577), [@Cranefomo](https://x.com/Cranefomo/status/2104223449849761837). Creator description/prompt; verify the visual when fidelity matters. Small-object locator and separate-detail observations: [Higgsfield scale explorer](https://x.com/higgsfield/status/2097494221318234401), [review scope](../research/higgsfield-motion.md#scale-explorer--small-object-locators)."
   },
   {
     "id": "subject-scale",
