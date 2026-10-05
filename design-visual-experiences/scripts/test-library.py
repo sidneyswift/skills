@@ -169,3 +169,14 @@ for query, anchor in FILM_CASES:
 assert search('Higgsfield Layers',kind='resources',limit=1)[0]['url']=='https://x.com/higgsfield/status/2087225671714328813'
 assert not any('/research/' in r['path'] for r in load('build')), 'Provenance must not compete with build instructions'
 print('PASS: 20 film directing routes, curated video reference discovery and research separation')
+
+# Creative production must be discoverable from production problems, not only its title.
+for query, expected in [
+ ('generated shot world silhouette visible event viewpoint taste', 'references/creative-production.md#direct-a-shot-instead-of-decorating-a-prompt'),
+ ('inner edited sequence footage shrinking into UI source PTS playback', 'references/creative-production.md#decide-the-edit-before-generating-its-ingredients'),
+ ('scene contract named cue conflicting track ownership', 'references/creative-production.md#scene-contract-and-engine-helpers'),
+ ('longer phrase changed media dimensions stale review hashes approval', 'references/creative-production.md#prove-reuse-and-preserve-review-state'),
+]:
+    found = [r['path'] for r in search(query, limit=5)]
+    assert expected in found, (query, expected, found)
+print('PASS: creative direction, edited sequences, scene contracts and reuse review retrieval')
