@@ -1,0 +1,45 @@
+<!doctype html><meta charset="utf-8"><title>Scene contract transfer study</title>
+<style>body{margin:24px;background:#eee;font:16px system-ui}canvas{display:block;width:min(960px,100%);background:white}button,input{margin:12px 8px 0 0}p{max-width:960px}</style>
+<h1>Editable scene / mechanical transfer study</h1>
+<p>Original geometric footage fixtures, not generated media or a product claim. Change content and scrub across the inner edit while the outer card moves.</p>
+<canvas width="960" height="540"></canvas><button id="variant">Change content</button><input id="seek" type="range" min="0" max="4" step=".01"><span id="clock"></span>
+<script type="module">
+import {compileScene,compileSequence,focalPlacement} from './scene-kernel.mjs';
+const canvas=document.querySelector('canvas'),ctx=canvas.getContext('2d');
+const sources={object:{duration:3,pts:Array.from({length:72},(_,i)=>i/24)},diagram:{duration:3,pts:Array.from({length:90},(_,i)=>i/30)}};
+const edit=compileSequence({sources,clips:[{source:'object',in:.5,out:2.5},{source:'diagram',in:.2,out:2.2}]});
+const variants=[{text:'Change the view.',ratio:16/9,submit:1.4},
+ {text:'Show the object from another angle and keep the material detail visible.',ratio:9/16,submit:1.7}];
+function wrap(text,width){const words=text.split(/\s+/),lines=[];let line='';for(const word of words){const next=line?line+' '+word:word;if(ctx.measureText(next).width>width&&line){lines.push(line);line=word;}else line=next;}if(line)lines.push(line);return lines;}
+window.renderStudy=(variant,time)=>{
+ const content=variants[variant],scene=compileScene({duration:4,cues:{send:content.submit,result:{cue:'send',offset:.25}},
+  objects:{media:{values:{dock:0}},feedback:{values:{alpha:0}}},tracks:[
+   {target:'media',property:'dock',at:.2,end:.9,from:0,to:1,ease:'smoother'},
+   {target:'feedback',property:'alpha',at:{cue:'result'},end:{cue:'result',offset:.2},from:0,to:1}]});
+ const state=scene.sample(time),media=edit.sample(Math.min(time,4-1e-6));
+ ctx.fillStyle='#faf9f5';ctx.fillRect(0,0,960,540);ctx.font='20px sans-serif';
+ const lines=wrap(content.text,350),panel={x:500,y:145,w:410,h:112+lines.length*26};
+ ctx.fillStyle='#fff';ctx.fillRect(panel.x,panel.y,panel.w,panel.h);ctx.strokeStyle='#ccc';ctx.strokeRect(panel.x,panel.y,panel.w,panel.h);
+ ctx.fillStyle='#262626';lines.forEach((line,i)=>ctx.fillText(line,panel.x+30,panel.y+42+i*26));
+ const button={x:panel.x+292,y:panel.y+panel.h-52,w:90,h:32};
+ ctx.fillStyle='#222';ctx.fillRect(button.x,button.y,button.w,button.h);ctx.fillStyle='white';ctx.font='16px sans-serif';ctx.fillText('Send',button.x+24,button.y+22);
+ const p=state.media.dock,screenW=(1-p)*960+p*Math.min(350,300*content.ratio),screenH=(1-p)*540+p*Math.min(300,350/content.ratio);
+ const camera={x:480-60*p,y:270,scale:1+.3*p};
+ const focus=[480+(235-480)*p,270],g=focalPlacement({viewport:[960,540],camera,focus,size:[screenW,screenH]});
+ ctx.save();ctx.translate(480,270);ctx.scale(camera.scale,camera.scale);ctx.translate(-camera.x,-camera.y);
+ ctx.beginPath();ctx.rect(g.x,g.y,g.w,g.h);ctx.clip();ctx.fillStyle=media.source==='object'?'#142c40':'#d4e1c4';ctx.fillRect(g.x,g.y,g.w,g.h);
+ const fit=Math.min(g.w/400,g.h/300);ctx.translate(g.x+g.w/2,g.y+g.h/2);ctx.scale(fit,fit);ctx.translate(-200,-150);
+ const phase=media.pts;
+ ctx.fillStyle=media.source==='object'?'#142c40':'#d4e1c4';ctx.fillRect(0,0,400,300);
+ if(media.source==='object'){
+  ctx.translate(200,155);ctx.rotate(phase*.6);ctx.fillStyle='#ecb654';ctx.fillRect(-85,-50,170,100);ctx.strokeStyle='white';ctx.lineWidth=3;ctx.strokeRect(-70,-35,140,70);
+ }else{
+  ctx.strokeStyle='#29473c';ctx.lineWidth=6;for(let i=0;i<3;i++){ctx.beginPath();ctx.arc(200,150,30+i*35+Math.sin(phase*3)*6,0,Math.PI*2);ctx.stroke();}
+ }
+ ctx.restore();ctx.globalAlpha=state.feedback.alpha;ctx.fillStyle='#262626';ctx.font='18px sans-serif';ctx.fillText('Authored response',530,panel.y+panel.h+42);ctx.globalAlpha=1;
+ document.querySelector('#clock').textContent=`${time.toFixed(2)}s · ${media.source} f${media.frameIndex}`;
+ return {media,lines,button,panel,measuredWidths:lines.map(line=>{ctx.font='20px sans-serif';return ctx.measureText(line).width}),resultTime:scene.cues.result,feedback:state.feedback.alpha,focus};
+};
+let variant=0;const seek=document.querySelector('#seek');seek.oninput=()=>renderStudy(variant,+seek.value);document.querySelector('#variant').onclick=()=>{variant=1-variant;renderStudy(variant,+seek.value)};
+window.ready=Promise.resolve();renderStudy(0,0);
+</script>

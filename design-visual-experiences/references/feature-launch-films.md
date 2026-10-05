@@ -148,6 +148,8 @@ A composition tab, translated layer list, folder name or MP4 badge proves only a
 
 ## Generated assets and controlled graphics
 
+For shot specificity, choosing one take versus an edited sequence, and reusable scene/timing contracts, use [creative production](creative-production.md). Keep generated imagery and controlled UI in separate layers; the final composition determines whether the source is useful.
+
 Separate **content creation**, **film assembly** and **orchestration**. An agent invoking a model or writing After Effects expressions does not imply every pixel was rendered in code. An AI product badge does not establish that its outer announcement film was generated entirely by that model. Inspected production claims include storyboards, paintovers, performance references, selection/editing and specialist finishing; original editable projects were not inspected.
 
 For new work, choose the method per layer:
