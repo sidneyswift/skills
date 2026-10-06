@@ -180,3 +180,13 @@ for query, expected in [
     found = [r['path'] for r in search(query, limit=5)]
     assert expected in found, (query, expected, found)
 print('PASS: creative direction, edited sequences, scene contracts and reuse review retrieval')
+
+# New-project task language must retrieve choreography and editorial decisions.
+for query, expected in [
+ ('UI entrance exit localized activation readable hold', 'references/composition-choreography.md'),
+ ('rejected footage stronger shots input file benefit story', 'references/feature-launch-films.md'),
+ ('persist project selected rejected takes brand claims review states', 'references/creative-production.md'),
+]:
+    found = search(query, limit=5)
+    assert any(r['path'].startswith(expected) for r in found), (query, found)
+print('PASS: composition choreography, shot rejection, story and project decision retrieval')

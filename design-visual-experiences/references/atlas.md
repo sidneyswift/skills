@@ -193,3 +193,5 @@ Read the relevant cards, then choose a primary mechanism and at most a few suppo
 Use [principles](principles.md) for art direction, [composition guidance](compositions.md) for combining mechanisms, [diagnosis](diagnosis.md) for failures, and [brief/review templates](briefs-and-review.md) when useful. [Fieldwork](mechanism-studies.md) demonstrates shared wind, planted feet and aperture travel. [Benchmark experiences](benchmark-lab.md) provide complete small briefs and revision evidence. [Visual comparisons](visual-comparisons.md) explains how to extract decisions from observed references.
 
 For discovery only, the [historical example shortlist](examples.md) and [toolkit links](toolkits.md) retain earlier browsing material. Their example numbers are unrelated to pattern identities. For implementation, return to the relevant card or focused guide above.
+
+For UI entrances/exits across footage, see [Composition choreography](composition-choreography.md): layered timing, localized activation, readable holds, persistent anchors and consequence-driven departure.

@@ -2,7 +2,7 @@
 name: design-visual-experiences
 description: Create or refine original digital visual experiences where art direction, motion, interaction, or spatial behavior is central. Use for expressive interfaces, interactive explainers, creative coding, and visual films; translate relevant references into implementation decisions and inspect the delivered result.
 metadata:
-  version: 0.4.0
+  version: 0.4.1
 ---
 
 # Design visual experiences
@@ -46,6 +46,7 @@ The local search needs only Python's standard library. Default `--kind build` fi
 | Write a brief or review | [Optional brief and critique templates](references/briefs-and-review.md) |
 | Direct a feature launch or product-demo film | [Film direction](references/feature-launch-films.md): agency, proof, pacing, continuity and finishing |
 | Direct generated shots, combine edits with UI, or reuse choreography across content | [Creative production](references/creative-production.md): shot direction, separate timelines, scene contracts and editability tests |
+| Choreograph UI entrances, exits and attention across footage | [Composition choreography](references/composition-choreography.md): scene response, layered timing, readable holds and consequence handoffs |
 | Plan time, sound, performance or export | [Production](references/production.md) |
 | Adapt a runnable study | [Elastic Matter](references/worked-study.md), [Fieldwork](references/mechanism-studies.md), or [benchmark experiences](references/benchmark-lab.md) |
 | Inspect visible references | [Comparison method](references/visual-comparisons.md) |
@@ -78,6 +79,8 @@ For ambitious original experiences, preserve a first playable version and inspec
 ## Finish with evidence
 
 For live work, exercise the main controls, reset/replay, rapid input, resizing, and the relevant touch/keyboard path. Provide reduced motion or a meaningful static alternative where applicable. Profile expensive effects on the target environment instead of inferring speed from a screenshot.
+
+For mixed-media product films, read creative production and composition choreography before implementing the defining transition. Persist the shot decisions, take rejections, semantic cues and reviewed evidence in the project; do not rely on chat history.
 
 For films, inspect the opening, key actions, transitions, text holds, ending, and any loop seam; listen to the exported audio. Verify the actual export's dimensions, duration, frame rate, and audio when those are part of the brief. A contact sheet checks composition but cannot prove smoothness or synchronization.
 
