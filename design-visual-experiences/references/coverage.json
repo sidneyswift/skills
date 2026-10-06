@@ -529,7 +529,7 @@
   "visual_comparison_partial_prompt_labels": 110,
   "original_benchmark_experiences": 3,
   "benchmark_model_checks": 44,
-  "guide_search_sections": 77,
+  "guide_search_sections": 86,
   "composition_search_sections": 13,
   "prompt_availability_counts": {
     "content-inspected": 10,

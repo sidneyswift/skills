@@ -2,6 +2,16 @@
 
 Use this guide for generated imagery combined with authored graphics, product films, or a motion treatment that must survive new content. Start from [film direction](feature-launch-films.md) for the story and [production](production.md) for export and sound. These mechanisms are optional building blocks, not a mandatory look or a replacement for the existing renderer.
 
+## Carry decisions from brief through delivery
+
+For a new film, resolve the product/job and brand from current project sources, choose a concrete story, inspect useful reference passages, direct and select source shots, assemble the inner edit, then build the outer composition around meaningful events. Prove the hardest handoff before expanding the film. Use generated media for subjects/worlds that code cannot convincingly supply and authored graphics for precise product meaning; choose each medium for its job.
+
+Persist a compact project record beside editable source: supported claims and caveats; brand inputs; reference mechanisms and inspected ranges; shot jobs and take hashes; selected/rejected assets with reasons; inner edit recipe; outer cue/attention plan; actual export hashes; and separate technical, frame, playback, audio and human review states. Reuse existing manifests rather than creating a second source of truth. Keep full prompts, private research and third-party media in the project, outside shared skill distributions.
+
+Record feedback as a scoped decision: preserve this successful opening, replace this weak source, simplify this read, or change this transition. Distinguish a user-approved choice from a model hypothesis. Before each revision check those decisions; before a new project retrieve mechanisms without inheriting another project's colors, celebrity styling, runtime constraints or business claims. An explicit rejection remains excluded until the user revisits it.
+
+Judge competing versions using the actual final crop and a clear question: Is the action understood without explanation? Does the source have a distinctive, coherent world? Does the UI direct attention and demonstrate the promise? Does the result fit the brand and funnel job? Can the final action be read? Require the relevant evidence before claiming these are satisfied. File validity, sheet count and checklist completion do not answer them.
+
 ## Direct a shot instead of decorating a prompt
 
 Resolve the shot's job, attention target, world, visible event, viewpoint and editorial use before translating them into a model prompt. A specific world comes from mutually reinforcing geometry, silhouette, materials, light and action. More adjectives, noise, expensive-looking surfaces or camera numbers do not establish taste. Choose details that survive the intended crop and display size.
@@ -31,6 +41,8 @@ Compose the meaningful arrival frame first. Derive the camera and incoming movem
 For an energy pass, first remove unnecessary anticipation/settling, overlap compatible actions and strengthen travel direction. Preserve recognition and completed-text holds. Do not accelerate all footage or add bounce everywhere. Keep nonzero transit velocity through flowing waypoints; use stops where the subject should actually rest. A source action can determine the reveal's landing time more meaningfully than an arbitrary UI duration.
 
 Protect the image from unnecessary chrome. Branding requires correct identity when shown, not a persistent corner logo. Project brand sources override reference palettes. Keep conceptual UI, verified product behavior and factual outcome claims distinct. A visually working button or an exported local file is not proof that a product performs the depicted operation.
+
+For detailed UI staging, overlap, readable holds, localized feedback and departures into results, use [composition choreography](composition-choreography.md). Apply its executable checks through the renderer when these constraints matter.
 
 ## Scene contract and engine helpers
 

@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Composition choreography transfer fixture</title>
+<style>body{margin:24px;background:#e8e8e6;color:#202020;font:16px system-ui}canvas{display:block;max-width:100%;max-height:74vh;background:#161719}button,select,input{margin:12px 8px 12px 0}p{max-width:70ch}</style>
+<h1>Composition choreography transfer fixture</h1><p>Synthetic mechanics only. Change story, copy and aspect; the media clock continues while the interface enters, reads, acts and leaves. No generated-media or aesthetic acceptance claim.</p>
+<select id="story"><option value="object">Object — inspect a hinge</option><option value="space">Space — reshape a room</option></select><label><input type="checkbox" id="long">Long copy</label><label><input type="checkbox" id="portrait">Portrait</label><button id="play">Play</button><input id="seek" type="range" min="0" max="6" step="0.01" value="0"><output id="time"></output><canvas id="film" width="960" height="540"></canvas>
+<script type="module">
+import {compileChoreography,pressScale,visibilityEnvelope} from './choreography-kernel.mjs';
+import {compileSequence} from './scene-kernel.mjs';
+const canvas=document.querySelector('canvas'),ctx=canvas.getContext('2d');
+const story=document.querySelector('#story'),long=document.querySelector('#long'),portrait=document.querySelector('#portrait');
+const inner=compileSequence({sources:{wide:{duration:3,pts:Array.from({length:72},(_,i)=>i/24)},detail:{duration:3,pts:Array.from({length:72},(_,i)=>i/24)}},clips:[{source:'wide',in:0,out:3},{source:'detail',in:0,out:3}]});
+let compiled,copy,lines,clock=0,running=false,last=0;
+function wrap(text,width){let rows=[''];for(const word of text.split(' ')){const i=rows.length-1,test=rows[i]?rows[i]+' '+word:word;if(ctx.measureText(test).width>width&&rows[i])rows.push(word);else rows[i]=test;}return rows;}
+function setup(){
+ canvas.width=portrait.checked?540:960;canvas.height=portrait.checked?960:540;
+ copy=story.value==='object'?'Show the hinge opening':'Open the room to daylight';
+ if(long.checked)copy+=' and preserve the original material while revealing the construction';
+ ctx.font='24px system-ui';lines=wrap(copy,canvas.width*.78-48);
+ const complete=1.05+copy.length*.014,act=complete+.55,exit=act+.38,gone=exit+.22;
+ compiled=compileChoreography({scene:{duration:6,cues:{complete,act,exit,gone},objects:{layout:{values:{progress:0}},text:{values:{opacity:0}}},tracks:[
+ {target:'layout',property:'progress',at:.4,end:1.05,from:0,to:1,ease:'smoother'},
+ {target:'text',property:'opacity',at:1,end:1.05,from:0,to:1},
+ {target:'layout',property:'progress',at:{cue:'exit'},end:{cue:'gone'},from:1,to:0,ease:'out4'},
+ {target:'text',property:'opacity',at:{cue:'exit'},end:{cue:'gone'},from:1,to:0}]},
+ relations:[{id:'read-before-act',before:{cue:'complete'},after:{cue:'act'},minGap:.55}],
+ holds:[{id:'read',at:{cue:'complete'},end:{cue:'act'},channels:[{target:'layout',property:'progress',min:1,max:1},{target:'text',property:'opacity',min:1,max:1}]}]});
+ render(clock);
+}
+function render(t){
+ clock=t;const state=compiled.sample(t),p=state.layout.progress,w=canvas.width,h=canvas.height;
+ const source=inner.sample(Math.min(t,6-1e-9)),accent=story.value==='object'?'#c28b56':'#7faaa3';
+ ctx.fillStyle='#181a1e';ctx.fillRect(0,0,w,h);
+ const panelHeight=lines.length*31+78,mediaHeight=h-p*(panelHeight+65),margin=24*p;
+ ctx.save();ctx.beginPath();ctx.roundRect(margin,margin,w-margin*2,mediaHeight-margin*2,22*p);ctx.clip();
+ ctx.fillStyle=story.value==='object'?'#343a47':'#334643';ctx.fillRect(0,0,w,h);
+ const x=w*.5+Math.sin(t)*w*.1,y=mediaHeight*.46,size=(source.source==='detail'?1.45:1)*Math.min(w,mediaHeight)*.28;
+ ctx.translate(x,y);ctx.rotate(t*.2);ctx.fillStyle=accent;ctx.fillRect(-size/2,-size/2,size,size);ctx.fillStyle='#e5e0d4';ctx.fillRect(-size*.36,-size*.36,size*.5,size*.5);ctx.restore();
+ const visible=visibilityEnvelope(t,{enter:.45,ready:1.05,exit:compiled.cues.exit,gone:compiled.cues.gone});
+ ctx.save();ctx.globalAlpha=visible;const px=w*.11,py=h-panelHeight-24+(1-p)*50,pw=w*.78;
+ ctx.fillStyle='#f3f1ec';ctx.beginPath();ctx.roundRect(px,py,pw,panelHeight,20);ctx.fill();
+ const count=Math.floor(Math.max(0,Math.min(1,(t-1.05)/(compiled.cues.complete-1.05)))*copy.length);
+ ctx.fillStyle='#24262a';ctx.font='24px system-ui';ctx.globalAlpha=visible*state.text.opacity;
+ wrap(copy.slice(0,count),pw-48).forEach((line,i)=>ctx.fillText(line,px+24,py+37+i*31));
+ ctx.globalAlpha=visible;const scale=pressScale(t,{at:compiled.cues.act,duration:.18,depth:.07});ctx.translate(px+pw-62,py+panelHeight-32);ctx.scale(scale,scale);ctx.fillStyle=accent;ctx.beginPath();ctx.roundRect(-38,-18,76,36,18);ctx.fill();ctx.fillStyle='#111';ctx.font='18px system-ui';ctx.fillText('Apply',-23,6);ctx.restore();
+ document.querySelector('#seek').value=t;document.querySelector('#time').value=t.toFixed(2)+'s';
+ return {state,source,cues:compiled.cues,lines,copy,width:w,height:h};
+}
+window.fixture={render,configure(options){story.value=options.story??'object';long.checked=!!options.long;portrait.checked=!!options.portrait;setup();return render(0);}};
+for(const e of [story,long,portrait])e.onchange=setup;
+document.querySelector('#seek').oninput=e=>{running=false;render(+e.target.value);};
+document.querySelector('#play').onclick=()=>{running=!running;if(clock>=6)clock=0;last=performance.now();};
+function tick(now){if(running){clock=Math.min(6,clock+(now-last)/1000);render(clock);if(clock===6)running=false;}last=now;requestAnimationFrame(tick);}setup();requestAnimationFrame(tick);
+</script></html>
