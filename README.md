@@ -18,6 +18,7 @@ npx skills add sidneyswift/skills
 
 | Skill | Description |
 | --- | --- |
+| [apple-hig](./apple-hig/) | Design, implement, and review Apple-platform interfaces with current HIG guidance, platform-specific patterns, accessibility checks, and source-backed findings. [Download v0.1.0](./packages/apple-hig-v0.1.0.zip). |
 | [design-inspiration](./design-inspiration/) | Break through design blocks by systematically mining nine curated high-signal galleries — social posts, web UI, minimal sites, OG images, decks, logos, branding, editorial, and brand guidelines. Structured sweep → cross-pollinate → extract patterns → restart momentum. |
 | [design-visual-experiences](./design-visual-experiences/) | Create original interactive visuals, simulations, kinetic typography, motion graphics, and spatial experiences with searchable mechanisms, composition guides, scoped source evidence, and runnable examples. [Download v0.4.1](./packages/design-visual-experiences-v0.4.1.zip). |
 | [ecosystem-mapping](./ecosystem-mapping/) | Take a core solution and map every friction point around it into a compounding product ecosystem. Walks through core transformation extraction, friction mapping (before/during/after), two-sided market scans, and reinforcement mapping — so products strengthen each other instead of standing alone. |

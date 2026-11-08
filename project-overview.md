@@ -17,6 +17,7 @@ that skill.
 
 ## Skills
 
+- `/apple-hig/`: Applies Apple's Human Interface Guidelines to design, implementation, and evidence-based interface review, with focused foundations, patterns, platform, and source references.
 - `/design-inspiration/`: Mines curated design references to break creative blocks.
 - `/ecosystem-mapping/`: Maps surrounding friction into a reinforcing product ecosystem.
 - `/finding-unknowns/`: Surfaces requirement gaps before implementation.
