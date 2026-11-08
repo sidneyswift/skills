@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apple Human Interface Guidelines"
+  short_description: "Design and review interfaces with Apple's HIG"
+  default_prompt: "Use $apple-hig to design, implement, or review this interface against the relevant Apple Human Interface Guidelines."
