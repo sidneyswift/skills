@@ -46,3 +46,17 @@ also refreshes its canonical catalog when invoked from an installed copy, while
 honoring explicit branch/revision/local-development requests and disclosing
 cached-catalog fallback. That freshness clause was reviewed directly, not
 exercised against a future catalog change.
+
+## Addy Osmani catalog addition — 2026-11-09
+
+- Checked upstream README, universal/host setup guidance, plugin manifests, and
+  shared-reference layout at
+  [`301b02b`](https://github.com/addyosmani/agent-skills/tree/301b02b12bff98e4688e6984af6556802322bbde).
+- Read-only Skills CLI discovery returned 25 skills without a skipped-skill
+  warning. Their parsed names do not collide with the first collection's
+  previously verified names.
+- Added whole-collection selection and source-specific guidance for root-level
+  shared checklists, plugin versus file-install capabilities, and avoiding
+  contributor instructions or duplicate always-on routers in consumer projects.
+- Revalidated the gateway and rebuilt the unreleased v0.1.0 ZIP. This addition
+  was not installed into a live host; no native plugin/runtime behavior tested.

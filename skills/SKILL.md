@@ -33,6 +33,7 @@ from `sidneyswift/skills`.
 | ID | Source | Selection | Why it's here |
 | --- | --- | --- | --- |
 | matt-pocock | [mattpocock/skills](https://github.com/mattpocock/skills) | All skills (`*`) | Matt Pocock's engineering and productivity workflows. |
+| addy-osmani | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | All skills (`*`) | Engineering lifecycle workflows, from specs and implementation to testing, review, and shipping. |
 
 `All` means the skills exposed by that source's current installer discovery,
 including new additions on a later install/update. It is not a frozen list or a
@@ -52,6 +53,24 @@ specific skills or a repository subdirectory; respect that narrower selection.
   before using its engineering workflows. Report that next step after install.
   Do not run it merely to install files: it configures project instructions,
   issue tracking, and labels, which is a separate task.
+
+### Addy Osmani notes
+
+- Follow the upstream [Quick Start](https://github.com/addyosmani/agent-skills#quick-start)
+  and the linked setup guide for the target host. The portable Skills CLI
+  installs the skill folders; native integrations can also carry pack-level
+  resources. Use one installation method per host, not plugin plus duplicate
+  file installs.
+- Shared checklists in the repository's root `references/` directory are outside
+  individual skill folders and are not included by a per-skill CLI install.
+  Prefer a whole-repository integration when available; otherwise retain a
+  source checkout for shared references and record its location/revision for
+  later lookup. Verify reference availability separately from installed skill
+  names, and report any missing supplementary resources.
+- Install all selected skills, but load them on demand. Do not copy the source
+  repo's contributor `AGENTS.md` or `CLAUDE.md` into the user's project, preload
+  its meta-router on a host with native routing, or claim that file-only installs
+  include native slash commands, hooks, or agent personas.
 
 ## Install or update the collection
 
@@ -75,7 +94,8 @@ specific skills or a repository subdirectory; respect that narrower selection.
    reported, not silently counted as installed. Install the nonconflicting
    remainder and report blocked names.
 4. **Install the selected set.** For a clean target, use the commands below for
-   each catalog entry. On a repeat install, skip intact matching installations
+   each catalog entry, applying its source-specific installation notes above.
+   On a repeat install, skip intact matching installations
    and explicitly select only missing skills. On an update request, refresh
    unmodified skills from the catalog's sources and pick up new selected skills;
    preserve local edits. Use explicit `--skill` names when excluding conflicts.
