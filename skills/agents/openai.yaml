@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sidney's Skills"
+  short_description: "Install and maintain Sidney's curated skill collection"
+  default_prompt: "Use $skills to install every collection in Sidney's catalog for this agent."

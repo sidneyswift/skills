@@ -18,6 +18,7 @@ npx skills add sidneyswift/skills
 
 | Skill | Description |
 | --- | --- |
+| [skills](./skills/) | The gateway to Sidney's favorite skill collections. Install everything in the catalog, update it, or add another find. Starts with [Matt Pocock's collection](https://github.com/mattpocock/skills). [Download v0.1.0](./packages/skills-v0.1.0.zip). |
 | [design-inspiration](./design-inspiration/) | Break through design blocks by systematically mining nine curated high-signal galleries — social posts, web UI, minimal sites, OG images, decks, logos, branding, editorial, and brand guidelines. Structured sweep → cross-pollinate → extract patterns → restart momentum. |
 | [design-visual-experiences](./design-visual-experiences/) | Create original interactive visuals, simulations, kinetic typography, motion graphics, and spatial experiences with searchable mechanisms, composition guides, scoped source evidence, and runnable examples. [Download v0.4.1](./packages/design-visual-experiences-v0.4.1.zip). |
 | [ecosystem-mapping](./ecosystem-mapping/) | Take a core solution and map every friction point around it into a compounding product ecosystem. Walks through core transformation extraction, friction mapping (before/during/after), two-sided market scans, and reinforcement mapping — so products strengthen each other instead of standing alone. |
@@ -28,6 +29,23 @@ npx skills add sidneyswift/skills
 | [handoff-spec](./handoff-spec/) | Produce a handoff document for a stateless successor agent to pick up in-progress work when the current agent is low on usage credits, context, or switching platforms. Combines a stable Goal/Spec section with a point-in-time Handoff Status section — done, out-of-scope, remaining, nice-to-haves, live in production, merged but not deployed, still in progress — verified against real repo/PR/issue state rather than conversation memory. |
 | [problem-mining](./problem-mining/) | Interview-driven discovery that surfaces profitable problems hiding in your own experience. 1-question-at-a-time interview across four phases — achievements, problems overcome, desire mapping, and root-cause reframing — then synthesizes validated product ideas. |
 | [workspace-os](./workspace-os/) | Build a self-managing workspace OS with resumable work packages, shared agent instructions, domain skills, an installable plugin, report-only health checks, and evidence-backed learning loops. |
+
+## Install my collection
+
+Point your agent at [`skills/SKILL.md`](./skills/SKILL.md) and say:
+
+> Read this skill and install every collection in its catalog for this agent.
+
+Or install the gateway first, then ask the agent to use it:
+
+```bash
+npx skills@latest add sidneyswift/skills --skill skills
+```
+
+Installing the gateway alone does not install the collections. The gateway
+discovers their current skills, chooses the right agent destination, preserves
+existing customizations, and verifies what was installed. To grow the catalog,
+send an agent a new link and say "add this to my skills collection."
 
 ## License
 
