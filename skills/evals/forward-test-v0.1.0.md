@@ -60,3 +60,34 @@ exercised against a future catalog change.
   contributor instructions or duplicate always-on routers in consumer projects.
 - Revalidated the gateway and rebuilt the unreleased v0.1.0 ZIP. This addition
   was not installed into a live host; no native plugin/runtime behavior tested.
+
+## Five-source expansion — 2026-11-09
+
+Read pinned upstream installation documentation, manifests, and resource layouts:
+
+| Source | Checked revision | Exported source inventory / route |
+| --- | --- | --- |
+| Cloudflare security audit | [`c1c8a8c`](https://github.com/cloudflare/security-audit-skill/tree/c1c8a8c1471069fb0e188eeaff69b8e8db6564a8) | One skill; complete guides/schema/validator bundle |
+| Google EGM | [`5382b17`](https://github.com/google/elephant-goldfish-model/tree/5382b17619be07811a14b2146c7672620b34a791) | Seven root skills; native full-plugin route with agents and document standards |
+| pstack | [`74dd229`](https://github.com/poteto/plugins/tree/74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12/pstack) | 34 skills in the requested subtree; native Cursor integration or scoped files with limitations |
+| gstack | [`10fc9b1`](https://github.com/garrytan/gstack/tree/10fc9b1eab44bc5bb5422bcb3f2f68d3dd381659) | Whole checkout and explicit host setup; not raw folder copying |
+| Compound Engineering | [`8e5d1c8`](https://github.com/EveryInc/compound-engineering-plugin/tree/8e5d1c87613f484a5bdfeacedf86a7aaaccfa264) | 37 root skills; native plugin or supported host adapter |
+
+- Parsed frontmatter for the four static skill inventories. Remote CLI discovery
+  of the exact pstack tree URL returned its 34 skills without sibling plugins.
+- Cross-source raw-name checks exposed pstack/Matt `tdd` and gstack/Matt `retro`.
+  Actual collisions depend on host-rendered names and namespaces; the gateway
+  inventories these before writing and never chooses by catalog order.
+- Documented pstack's marketplace/source mismatch, missing native-agent and
+  external-tool dependencies; EGM full-plugin requirements; gstack host/setup
+  and multi-registration update scope; CE root-layout and marketplace refresh.
+- An independent evaluator checked fresh Codex installation, unsupported EGM on
+  OpenClaw, an edited/existing Matt `tdd`, single-host gstack updates, and
+  catalog-only additions. No blocking or material issue found in the five new
+  routes. Same-name/unsupported items must remain explicit incomplete outcomes.
+- Reviewed the Addy reference fallback to make clear that retaining a clone
+  does not itself repair copied relative links; the lookup must be recorded and
+  tested or the resource reported unavailable.
+- Revalidated frontmatter and packaging. No plugin, setup script, audit, design
+  workflow, or live installation was run for these additions. Source inspection
+  and discovery are not runtime certification.
